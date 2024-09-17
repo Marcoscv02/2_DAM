@@ -1,4 +1,10 @@
+package org.example;
+
 import java.util.Scanner;
+
+/**
+ * calculates number of 1 bits in a series of numbers
+ */
 
 public class Bithdaystdin {
     public static void main(String[] args) {
