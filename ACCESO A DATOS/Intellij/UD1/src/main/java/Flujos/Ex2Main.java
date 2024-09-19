@@ -5,6 +5,7 @@ import java.io.*;
 
 public class Ex2Main {
 
+    //Metodo para inserir un estudiante
     public static void añadirPersona(){
         //Pide los nombres de las personas
         String nombre = (String) JOptionPane.showInputDialog(null, "Nombre persona 1 ",
@@ -34,7 +35,8 @@ public class Ex2Main {
         }
     }
 
-    public static void mostrarPersona(){
+    //Método para mostrar todos los estudiantes
+    public static void mostrarPersonas(){
         //Deserialización
         try {
 
@@ -49,6 +51,10 @@ public class Ex2Main {
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
+    }
+    //Método para mostrar un estudiante en concreto
+    private static void mostrarpersona(){
+
     }
 
     public static void main(String[] args) {
@@ -67,6 +73,28 @@ public class Ex2Main {
                 JOptionPane.INFORMATION_MESSAGE);
         int option = Integer.parseInt( JOptionPane.showInputDialog(null, "Seleccione una opción",
                 null, JOptionPane.QUESTION_MESSAGE));
+
+        switch (option){
+            case 1:
+                añadirPersona();
+                main(null);
+
+            case 2:
+                main(null);
+
+            case 3:
+                main(null);
+
+            case 4:
+                break;
+
+            default:
+                System.out.println("Debe elegir un número entre 1 y 4");
+
+         JOptionPane.showMessageDialog(null, "Debe elegir un número entre 1 y 4",
+                        null, JOptionPane.INFORMATION_MESSAGE);
+
+        }
 
 
 
