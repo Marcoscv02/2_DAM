@@ -2,8 +2,11 @@ package Flujos;
 
 import javax.swing.*;
 import java.io.*;
+import java.util.ArrayList;
 
 public class Ex2Main {
+
+    private static ArrayList <Ex2Persona> personas= new ArrayList<>();
 
     //Metodo para inserir un estudiante
     public static void añadirPersona(){
@@ -39,10 +42,19 @@ public class Ex2Main {
     public static void mostrarPersonas(){
         //Deserialización
         try {
-
             FileInputStream fileIn=new FileInputStream("persona.ser");
             ObjectInputStream in= new ObjectInputStream(fileIn);
-            Ex2Persona persSerializada=  (Ex2Persona) in.readObject();
+            personas = (ArrayList<Ex2Persona>) in.readObject();
+            if (personas.isEmpty()){
+                JOptionPane.showMessageDialog(null, "No existen personas en el archivo",
+                        null, JOptionPane.INFORMATION_MESSAGE);
+            }else{
+
+                for (int i = 0; i < personas.size(); i++) {
+
+                }
+
+            }
 
 
 

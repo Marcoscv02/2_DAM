@@ -73,17 +73,26 @@ public class EstructuraWebSwing extends JFrame {
         gbc.gridheight = 2;
         add(aside, gbc);
 
+
         //SECTION
         JPanel section = new JPanel(new GridBagLayout());
         section.setBackground(rojo);
         GridBagConstraints gbcSection = new GridBagConstraints();
+        section.setBorder(new MatteBorder(-130,0,0,0, Color.getColor(null, rojo))); // Borde blanco de 2 píxeles
+
+        JLabel sectionLabel = new JLabel("<section>");
+        sectionLabel.setFont(new Font("Arial", Font.BOLD, 30)); // Cambiar tamaño de la fuente
+        sectionLabel.setForeground(Color.white);
+        section.add(sectionLabel); // Agregar JLabel al panel
+
+
         gbcSection.fill = GridBagConstraints.BOTH;
         gbcSection.weightx = 1;
         gbcSection.weighty = 1;
 
         // HEADER2
         JPanel header2 = new JPanel();
-        header2.setBorder(new MatteBorder(0,0,10,0, Color.WHITE)); // Borde blanco de 2 píxeles
+        header2.setBorder(new MatteBorder(50,10,10,10, Color.getColor(null, rojo))); // Borde blanco de 2 píxeles
         header2.setBackground(amarillo);
         // Crear JLabel y aplicar el cambio de fuente
         JLabel header2Label = new JLabel("<header>");
@@ -95,12 +104,12 @@ public class EstructuraWebSwing extends JFrame {
         gbcSection.gridy = 0;
         gbcSection.gridwidth = 1;
         gbcSection.gridheight = 1;
-        gbcSection.weighty = 0.1;
+        gbcSection.weighty = 1;
         section.add(header2, gbcSection);
 
         // ARTICLE
         JPanel article = new JPanel();
-        article.setBorder(new MatteBorder(0,0,10,0, Color.WHITE)); // Borde blanco de 2 píxeles
+        article.setBorder(new MatteBorder(0,10,10,10, Color.getColor(null, rojo))); // Borde blanco de 2 píxeles
         article.setBackground(amarillo);
         // Crear JLabel y aplicar el cambio de fuente
         JLabel articleLabel = new JLabel("<article>");
@@ -116,6 +125,7 @@ public class EstructuraWebSwing extends JFrame {
 
         // FOOTER2
         JPanel footer2 = new JPanel();
+        footer2.setBorder(new MatteBorder(0,10,10,10, Color.getColor(null, rojo))); // Borde blanco de 2 píxeles
         footer2.setBackground(amarillo);
         // Crear JLabel y aplicar el cambio de fuente
         JLabel footer2Label = new JLabel("<footer>");
