@@ -1,0 +1,27 @@
+#contenedor{
+    display: grid;
+    grid-template-columns: auto auto auto; /* Tres columnas de igual tamaño */
+    border: 1px solid black;
+    width: 100%;
+    height: 900px;
+}
+
+#contenedor2{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 900px;
+}
+
+
+
+.d1{
+    background-color: blue;
+}
+.d2{
+    background-color: white;
+}
+.d3{
+    background-color: red;
+}
