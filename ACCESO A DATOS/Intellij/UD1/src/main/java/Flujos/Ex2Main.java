@@ -1,80 +1,103 @@
 package Flujos;
 
+
 import javax.swing.*;
 import java.io.*;
 import java.util.ArrayList;
 
 public class Ex2Main {
-
-    private static ArrayList <Ex2Persona> personas= new ArrayList<>();
+    // Nombre del archivo para guardar/cargar los datos
+    public static final String archivo = "personas.dat";
 
     //Metodo para inserir un estudiante
     public static void añadirPersona(){
-        //Pide los nombres de las personas
-        String nombre = (String) JOptionPane.showInputDialog(null, "Nombre persona 1 ",
-                "Introduce nombre persona 1", JOptionPane.QUESTION_MESSAGE);
+        //Pide nombre de la persona
+        String nombre = (String) JOptionPane.showInputDialog(null, "Nombre persona 1 ", "Introduce nombre persona 1", JOptionPane.QUESTION_MESSAGE);
 
-        //Pide la edad de las personas
-        int edad = Integer.parseInt(JOptionPane.showInputDialog(null, "edad persona 1 ",
-                "Introduce edad persona 1", JOptionPane.QUESTION_MESSAGE));
+        //Pide la edad la persona
+        int edad = Integer.parseInt(JOptionPane.showInputDialog(null, "edad persona 1 ", "Introduce edad persona 1", JOptionPane.QUESTION_MESSAGE));
 
-        //Creación objetos persona
-        Ex2Persona pers1= new Ex2Persona(nombre, edad);
+        //Creación objeto persona
+        Ex2Persona pers= new Ex2Persona(nombre, edad);
 
         // Serialización
-        try {
-
-            FileOutputStream fileOut = new FileOutputStream("persona.ser");
-            ObjectOutputStream out = new ObjectOutputStream(fileOut);
-            out.writeObject(pers1);
-            out.close();
-            fileOut.close();
-            System.out.println("Objeto serializado guardado en persona.ser");
-
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(archivo))) {
+            oos.writeObject(pers);
+            JOptionPane.showMessageDialog(null, "persona guardada correctamente");
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            JOptionPane.showMessageDialog(null, "Error al guardar la persona: " + e.getMessage());
         }
     }
 
-    //Método para mostrar todos los estudiantes
-    public static void mostrarPersonas(){
-        //Deserialización
-        try {
-            FileInputStream fileIn=new FileInputStream("persona.ser");
-            ObjectInputStream in= new ObjectInputStream(fileIn);
-            personas = (ArrayList<Ex2Persona>) in.readObject();
-            if (personas.isEmpty()){
-                JOptionPane.showMessageDialog(null, "No existen personas en el archivo",
-                        null, JOptionPane.INFORMATION_MESSAGE);
-            }else{
+    // Método para mostrar todas las personas
+    public static void mostrarPersonas() {
 
-                for (int i = 0; i < personas.size(); i++) {
-
-                }
-
+        //LLama al método cargar personas para tener todos los objetos de tipo persona en un array
+        cargarPersonas();
+        //Si el Array esta vacío muestra un mensaje diciendolo
+        if (personas.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "No hay personas registradas.",
+                    "Mostrar Personas", JOptionPane.INFORMATION_MESSAGE);
+            //Sinó imprime cada persona por consola
+        } else {
+            StringBuilder mensaje= null;
+            for (Ex2Persona persona : personas) {
+                mensaje.append(persona.toString()+"\n");
             }
-
-
-
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
+            JOptionPane.showMessageDialog(null, "Alumnos:\n"+mensaje,
+                    "Mostrar Personas", JOptionPane.INFORMATION_MESSAGE);
         }
     }
-    //Método para mostrar un estudiante en concreto
-    private static void mostrarpersona(){
 
+    // Método para cargar las personas desde un archivo (deserialización)
+    public static ArrayList<Ex2Persona> cargarPersonas() {
+        // Lista para almacenar las personas en memoria
+        ArrayList<Ex2Persona> personas = new ArrayList<>();
+
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(archivo))) {
+            // Se genera un bucle en el que se leen del archivo todos los objetos de tipo persona y se meten en un array
+            while (true) {
+                try {
+                    Ex2Persona pers = (Ex2Persona) in.readObject();
+                    personas.add(pers);
+                } catch (EOFException e) {
+                    break; // Fin del archivo
+                }
+            }
+        } catch (FileNotFoundException e) {
+            // Si el archivo no existe, se muestra un mensaje de error
+            JOptionPane.showMessageDialog(null, "No existen datos en el fichero: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        } catch (IOException | ClassNotFoundException e) {
+            JOptionPane.showMessageDialog(null, "Error al cargar los datos: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        return personas;
+    }
+
+    //Método para mostrar un estudiante en concreto
+    public static void buscarPersona() {
+        // Cargar las personas desde el archivo
+        cargarPersonas();
+        String nombreBuscar = JOptionPane.showInputDialog(null, "Introduce el nombre de la persona a buscar:",
+                "Buscar Persona", JOptionPane.QUESTION_MESSAGE);
+        //Se inicia la variable encontrada a False por defecto, y se convertira en true si se encuentra el nombre
+        boolean encontrada = false;
+        // Buscar la persona en la lista
+        for (Ex2Persona persona : personas) {
+            if (persona.getNombre().equals(nombreBuscar)) {
+                JOptionPane.showMessageDialog(null, "Persona encontrada:\n" + persona.toString(),
+                        "Buscar Persona", JOptionPane.INFORMATION_MESSAGE);
+                encontrada = true;
+                break;
+            }
+        }
+        // Mostrar mensaje si no se encuentra la persona
+        if (!encontrada) {
+            JOptionPane.showMessageDialog(null, "No se encontró ninguna persona con ese nombre.",
+                    "Buscar Persona", JOptionPane.INFORMATION_MESSAGE);
+        }
     }
 
     public static void main(String[] args) {
-
-        System.out.println("1. Introducir estudiante: ");
-        System.out.println("2. Mostrar estudiantes: ");
-        System.out.println("3. Mostrar un estudiante: ");
-        System.out.println("4. Salir");
 
         JOptionPane.showMessageDialog(null,
                 "1. Introducir estudiante: \n" +
@@ -90,27 +113,17 @@ public class Ex2Main {
             case 1:
                 añadirPersona();
                 main(null);
-
             case 2:
+                mostrarPersonas();
                 main(null);
-
             case 3:
+                buscarPersona();
                 main(null);
-
             case 4:
-                break;
-
+                System.exit(0);
             default:
-                System.out.println("Debe elegir un número entre 1 y 4");
-
          JOptionPane.showMessageDialog(null, "Debe elegir un número entre 1 y 4",
                         null, JOptionPane.INFORMATION_MESSAGE);
-
         }
-
-
-
     }
-
-
 }

@@ -10,6 +10,7 @@ public class Ejer1 {
 
     public static void main(String[] args) throws IOException {
 
+
         Scanner scanner= new Scanner(System.in);
 
         System.out.println("Introduce nombre del archivo");

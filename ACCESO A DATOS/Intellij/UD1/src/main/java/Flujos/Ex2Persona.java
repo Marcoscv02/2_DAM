@@ -29,9 +29,8 @@ public class Ex2Persona implements Serializable {
 
     @Override
     public String toString() {
-        return "FlujosEx2Persona{" +
+        return "Alumno:" +
                 "nombre='" + nombre + '\'' +
-                ", edad=" + edad +
-                '}';
+                ", edad=" + edad;
     }
 }
