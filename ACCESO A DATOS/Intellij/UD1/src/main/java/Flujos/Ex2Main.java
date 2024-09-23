@@ -6,6 +6,8 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class Ex2Main {
+    // Lista para almacenar las personas en memoria
+    public static ArrayList<Ex2Persona> personas = new ArrayList<>();
     // Nombre del archivo para guardar/cargar los datos
     public static final String archivo = "personas.dat";
 
@@ -51,8 +53,6 @@ public class Ex2Main {
 
     // Método para cargar las personas desde un archivo (deserialización)
     public static ArrayList<Ex2Persona> cargarPersonas() {
-        // Lista para almacenar las personas en memoria
-        ArrayList<Ex2Persona> personas = new ArrayList<>();
 
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(archivo))) {
             // Se genera un bucle en el que se leen del archivo todos los objetos de tipo persona y se meten en un array
