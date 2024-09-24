@@ -8,9 +8,9 @@ import java.net.URL;
 public class Ex4 {
     public static void main(String[] args) throws Exception {
 
-        Object[] platoFavorito = {"importar paj web", "importar imagen", "seleccion"};
+        Object[] option = {"importar paj web", "importar imagen", "seleccion"};
         String s = (String)JOptionPane.showInputDialog(null, "seleccione una opcion ",
-                "Introduce tu plato favorito", JOptionPane.PLAIN_MESSAGE, null, platoFavorito, "seleccion");
+                "Introduce tu plato favorito", JOptionPane.PLAIN_MESSAGE, null, option, "seleccion");
 
         if (s.equals("importar paj web")){
 

@@ -1,5 +1,4 @@
 package org.example;
-
 /**
  * Clase principal que contiene el método main para calcular el número mínimo de saltos
  * necesarios para subir escaleras en carreras verticales.

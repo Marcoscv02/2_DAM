@@ -1,0 +1,2 @@
+this is a file to be opened in Java.
+This is de second line of the file.
