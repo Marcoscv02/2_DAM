@@ -1,0 +1,18 @@
+#contenedor{
+    width: 60%;
+    height: 300px;
+    margin: auto;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: row;
+}
+#d1{
+    background-color: rgb(238, 246, 127);
+    border: 1px solid black;
+    width: 50%;
+}
+#d2{
+    background-color: rgb(171, 244, 244);
+    border: 1px solid black;
+    width: 50%;
+}

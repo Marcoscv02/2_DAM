@@ -1,0 +1,23 @@
+#contenedor{
+    width: 60%;
+    height: 300px;
+    margin: auto;
+    margin-top: 150px;
+    float: left;
+}
+#d1{
+    background-color: rgb(238, 246, 127);
+    border: 1px solid black;
+    float: left;
+    width: 49.5%;
+    height: 100%;
+}
+#d2{
+    background-color: rgb(171, 244, 244);
+    border: 1px solid black;
+    float: right;
+    width: 49.4%;
+    height: 100%;
+
+
+}
