@@ -4,7 +4,7 @@ import java.io.RandomAccessFile;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Ejerc6 {
+public class    Ejerc6 {
     public static void main(String[] args) {
         try (RandomAccessFile raf = new RandomAccessFile("datos.bin", "rw")) {
             // Escribir 10 enteros en el archivo
