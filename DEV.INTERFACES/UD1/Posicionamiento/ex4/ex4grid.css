@@ -1,0 +1,24 @@
+#contenedor{
+    width: 100%;
+    height: 800px;
+    display: grid;
+    grid-template-rows: auto auto;
+}
+#up{
+    margin-top: 20px;
+    margin: auto;
+    width: 97%;
+    height: 94%;
+    background-color: orange;
+}
+
+#down{
+    margin: auto;
+    margin-bottom: 20px;
+    width: 97%;
+    height: 94%;
+    background-color:cornflowerblue;
+}
+
+
+
