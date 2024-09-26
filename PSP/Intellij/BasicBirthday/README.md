@@ -45,3 +45,5 @@ Execute the program from the command line.
 If the classes have been created run the following command from the projey folder:
 
 java -cp target/classes org.example.BirthdayStdin
+
+java -cp jarPath  nombreclase
