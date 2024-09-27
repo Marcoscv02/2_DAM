@@ -14,8 +14,7 @@ public class Ex2 {
         File selectFile= jfc.getSelectedFile();
 
         //Se declaran fileReader y BufferedReader
-        var fr= new FileReader(selectFile);
-        var br= new BufferedReader(fr);
+        var br= new BufferedReader(new FileReader(selectFile));
 
         //Se inicia el contador de lineas a 0
         int cont=0;
@@ -24,15 +23,23 @@ public class Ex2 {
         }
         // Cerrar el primer FileReader
         br.close();
-        fr.close();
 
         // Segundo FileReader para contar caracteres
         var fr2 = new FileReader(selectFile);
-        int contChar = 0;
+        int contChar = 0; //Contador caracteres
+        int contSpaces=0; //Contador espacios
+        int i; //Valor de fr2.read
+        char c ; //Valor de fr2.read casteado a caracter
 
-        while (fr2.read() != -1) {
+        while ((i=fr2.read())!= -1) {
             contChar++;
+            c= (char) i;
+
+            if(c==' '){
+                contSpaces++;
+            }
         }
+        //Se cierra el segundo FileReader
         fr2.close();
 
         System.out.println("***DATOS DE ARCHIVO***");
@@ -42,6 +49,7 @@ public class Ex2 {
         System.out.println("Fecha última modificación: "+ new Date(selectFile.lastModified()));
         System.out.println("Num lineas: "+cont);
         System.out.println("Num de caracteres: "+contChar);
+        System.out.println("Num de espacios: "+contSpaces);
 
     }
 }

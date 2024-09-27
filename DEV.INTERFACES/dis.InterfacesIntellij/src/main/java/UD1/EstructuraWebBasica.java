@@ -1,13 +1,12 @@
+package UD1;
+
 import javax.swing.*;
-import javax.swing.border.Border;
-import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
 import java.awt.*;
 
-public class EstructuraWebSwing extends JFrame {
+public class EstructuraWebBasica extends JFrame {
 
-    public EstructuraWebSwing() {
+    public EstructuraWebBasica() {
         // Configuración de la ventana principal
         setTitle("Estructura Web Básica");
         setSize(800, 600);
@@ -84,7 +83,6 @@ public class EstructuraWebSwing extends JFrame {
         sectionLabel.setFont(new Font("Arial", Font.BOLD, 30)); // Cambiar tamaño de la fuente
         sectionLabel.setForeground(Color.white);
         section.add(sectionLabel); // Agregar JLabel al panel
-
 
         gbcSection.fill = GridBagConstraints.BOTH;
         gbcSection.weightx = 1;
@@ -166,6 +164,6 @@ public class EstructuraWebSwing extends JFrame {
     }
 
     public static void main(String[] args) {
-        new EstructuraWebSwing();
+        new EstructuraWebBasica();
     }
 }

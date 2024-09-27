@@ -1,65 +1,77 @@
 #contenedor{
     width: 100%;
-    height: 800px;
+    height: 900px;
     display: grid;
     grid-template-columns: auto auto;
 }
+*{
+    box-sizing: border-box;
+}
 
-
+/* Col izquierda */
 #izq{
     display: grid;
     grid-template-rows: auto auto;
 }
+/* Izquierda arriba */
 #iup{
     background-color: aquamarine; 
     margin: 2%;
  }
-
-
+/* Izquierda abajo */
  #idown{
      margin: 2%;
      margin-top: 0px;
      display: grid;
      grid-template-columns: auto auto;
  }
-
+/* col izquierda 2 */
  #idowni{
     display: grid;
-    grid-template-rows: auto auto;
+    grid-template-rows: 48% 48%;
 
  }
  #i1{
     background-color: red;
     width: 100%;
     height: 100%;
+    margin: 5px 0% 0px 0%;
  }
+ 
  #i2{
     background-color:orange;
     width: 100%;
     height: 100%;
+    margin: 20px 0% 0px 0px;
  }
 
-
-
+/* Col der 2 */
  #idownd{
     background-color: magenta;
-    width: 100%;
     height: 100%;
- }
-
+    margin: 5px 0% 0px 5%; }
+/* Col derecha */
 #der{
     display: grid;
-    grid-template-rows: 30% 70%;
+    grid-template-rows: 30% 50% 20%;
     
 }
+/* Derecha arribaa */
 #dup{
     background-color: green; 
     margin: 2%;
  }
- #ddown{
+ /* Derecha madio */
+ #dmidle{
      background-color:darkblue;
      margin: 2%;
      margin-top: 0px;
+     margin-bottom: 0%;   
  }
+ /* Derecha abajo */
+ #ddown{
+    background-color:peru;
+    margin: 2%;
+}
 
 
