@@ -3,6 +3,7 @@
     height: 800px;
     display: grid;
     grid-template-rows: auto auto;
+    border: 3px dotted black;
 }
 #up{
     margin-top: 20px;

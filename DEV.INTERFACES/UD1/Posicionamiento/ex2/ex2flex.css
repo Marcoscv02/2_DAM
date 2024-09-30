@@ -3,8 +3,10 @@
     height: 300px;
     margin: auto;
     margin-top: 150px;
+    padding: 1%;
     display: flex;
     flex-direction: row;
+    border: 2px dotted brown;
 }
 #d1{
     background-color: rgb(238, 246, 127);
@@ -13,6 +15,6 @@
 }
 #d2{
     background-color: rgb(171, 244, 244);
-    border: 1px solid black;
+    border: 1px solid brown;
     width: 50%;
 }

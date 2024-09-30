@@ -1,4 +1,4 @@
-package Flujos;
+package Java.IO.Flujos;
 
 
 import javax.swing.*;

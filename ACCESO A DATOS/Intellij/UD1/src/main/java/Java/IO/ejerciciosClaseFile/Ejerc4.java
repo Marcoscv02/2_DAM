@@ -1,4 +1,4 @@
-package ejerciciosClaseFile;
+package Java.IO.ejerciciosClaseFile;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;

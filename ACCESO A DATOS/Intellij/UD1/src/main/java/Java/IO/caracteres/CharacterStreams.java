@@ -1,4 +1,4 @@
-package caracteres;
+package Java.IO.caracteres;
 
 import java.io.IOException;
 

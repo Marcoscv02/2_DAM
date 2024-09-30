@@ -3,6 +3,7 @@
     height: 750px;
     float: inline-start;
     margin-top: 2%;
+    border: 3px dotted black;
 }
 
 #up{

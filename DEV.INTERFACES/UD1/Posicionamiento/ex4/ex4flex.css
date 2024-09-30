@@ -3,6 +3,7 @@
     height: 800px;
     display: flex;
     flex-direction: column;
+    border: 3px dotted black;
 }
 
 

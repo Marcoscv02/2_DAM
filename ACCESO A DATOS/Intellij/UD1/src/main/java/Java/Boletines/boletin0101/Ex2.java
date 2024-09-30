@@ -1,4 +1,4 @@
-package boletin0101;
+package Java.Boletines.boletin0101;
 
 import javax.swing.*;
 import java.io.*;
@@ -24,9 +24,9 @@ public class Ex2 {
         // Cerrar el primer FileReader
         br.close();
 
-        // Segundo FileReader para contar caracteres
+        // Segundo FileReader para contar Java.IO.caracteres
         var fr2 = new FileReader(selectFile);
-        int contChar = 0; //Contador caracteres
+        int contChar = 0; //Contador Java.IO.caracteres
         int contSpaces=0; //Contador espacios
         int i; //Valor de fr2.read
         char c ; //Valor de fr2.read casteado a caracter
@@ -48,7 +48,7 @@ public class Ex2 {
         System.out.println("Longitud del archivo: "+selectFile.getTotalSpace());
         System.out.println("Fecha última modificación: "+ new Date(selectFile.lastModified()));
         System.out.println("Num lineas: "+cont);
-        System.out.println("Num de caracteres: "+contChar);
+        System.out.println("Num de Java.IO.caracteres: "+contChar);
         System.out.println("Num de espacios: "+contSpaces);
 
     }
