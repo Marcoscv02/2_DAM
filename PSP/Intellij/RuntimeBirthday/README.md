@@ -20,6 +20,6 @@ The following tasks are required to complete the exercise:
     - Capture and display a message in the standard output informing the user whether the execution of the Birthday argument program was successful or not.
 
 ### Execute Jar
-java -cp `jarPath`  `className`
+java -cp `jarPath`  `className` (of original File)
 
-java -cp .\src\main\resources\BasicBirthday-1.0-SNAPSHOT.jar org.example.main  
+java -cp .\src\main\resources\BasicBirthday-1.0-SNAPSHOT.jar org.example.BirthdayArgs  
