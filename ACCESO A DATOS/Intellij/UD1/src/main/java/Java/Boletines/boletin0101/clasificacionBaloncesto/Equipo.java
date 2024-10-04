@@ -2,9 +2,9 @@ package Java.Boletines.boletin0101.clasificacionBaloncesto;
 
 import java.util.Objects;
 
-public class Equipo {
+public class Equipo implements Comparable<Equipo>{
     String nombre, ciudad;
-    int victorias, derrotas, puntFavor, untContra, partidosJugados;
+     private int victorias, derrotas, puntFavor, untContra, partidosJugados;
 
     //Constructor por defecto
     public Equipo() {
