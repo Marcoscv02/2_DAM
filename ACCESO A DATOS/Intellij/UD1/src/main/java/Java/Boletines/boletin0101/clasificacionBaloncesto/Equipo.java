@@ -2,9 +2,9 @@ package Java.Boletines.boletin0101.clasificacionBaloncesto;
 
 import java.util.Objects;
 
-public class Equipo implements Comparable<Equipo>{
+public class Equipo implements Comparable<Equipo> {
     String nombre, ciudad;
-     private int victorias, derrotas, puntFavor, untContra, partidosJugados;
+     private int victorias, derrotas, puntFavor, puntContra, partidosJugados;
 
     //Constructor por defecto
     public Equipo() {
@@ -14,14 +14,13 @@ public class Equipo implements Comparable<Equipo>{
         this.nombre = nombre;
     }
     //Costructor
-    public Equipo(String nombre, String ciudad, int victorias, int derrotas, int puntFavor, int untContra, int partidosJugados) {
+    public Equipo(String nombre, String ciudad, int victorias, int derrotas, int puntFavor, int puntContra, int partidosJugados) {
         this.nombre = nombre;
         this.ciudad = ciudad;
         this.victorias = victorias;
         this.derrotas = derrotas;
         this.puntFavor = puntFavor;
-        this.untContra = untContra;
-        this.partidosJugados = partidosJugados;
+        this.puntContra = puntContra;
     }
 
     //Getters y Setters
@@ -65,23 +64,27 @@ public class Equipo implements Comparable<Equipo>{
         this.puntFavor = puntFavor;
     }
 
-    public int getUntContra() {
-        return untContra;
+    public int getPuntContra() {
+        return puntContra;
     }
 
-    public void setUntContra(int untContra) {
-        this.untContra = untContra;
+    public void setPuntContra(int puntContra) {
+        this.puntContra = puntContra;
     }
 
-    public int getPartidosJugados() {
-        return partidosJugados;
+    //métodos derivados
+    public int getPartidosJugados(){
+        return victorias+derrotas;
+    }
+    public int getPuntos(){
+        return victorias*2;//Se asume que cada victoria suma 2 puntos
+    }
+    public int getdifPuntos(){
+        return puntFavor-puntContra;
     }
 
-    public void setPartidosJugados(int partidosJugados) {
-        this.partidosJugados = partidosJugados;
-    }
 
-    //Equals y HashCode
+    //Equals y HashCode(Se asume que dos equipos son el mismo si tienen el mismo nombre y pertenecen a la misma ciudad)
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -103,7 +106,15 @@ public class Equipo implements Comparable<Equipo>{
                 ", victorias=" + victorias +
                 ", derrotas=" + derrotas +
                 ", puntFavor=" + puntFavor +
-                ", untContra=" + untContra +
-                ", partidosJugados=" + partidosJugados;
+                ", untContra=" + puntContra;
+    }
+    //Se sobreescribe el metodo de la interfaz Comparable
+    @Override
+    public int compareTo(Equipo otro) {
+        int puntosComparacion = Integer.compare(otro.getPuntos(), this.getPuntos());
+        if (puntosComparacion == 0) {
+            return Integer.compare(otro.getdifPuntos(), this.getdifPuntos());
+        }
+        return puntosComparacion;
     }
 }

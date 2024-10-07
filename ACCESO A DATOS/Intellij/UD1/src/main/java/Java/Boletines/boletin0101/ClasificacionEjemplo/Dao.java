@@ -13,10 +13,19 @@ import java.util.List;
  */
 public interface Dao <T, K> {
 
+    // Devuelve un objeto de tipo T utilizando la clave primaria K.
+    // Si no se encuentra el objeto, puede devolver null.
     T get(K id);
-    List<T> getAll();
-    void save(T obxecto);
-    void delete(T obx);
-    void update(T obx);
 
+    // Devuelve una lista de todos los objetos de tipo T en la base de datos.
+    List<T> getAll();
+
+    // Guarda un nuevo objeto de tipo T en la base de datos.
+    void save(T obxecto);
+
+    // Elimina un objeto de tipo T de la base de datos.
+    void delete(T obx);
+
+    // Actualiza un objeto de tipo T existente en la base de datos.
+    void update(T obx);
 }
