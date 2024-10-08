@@ -3,6 +3,8 @@ package Java.Boletines.boletin0101.clasificacionBaloncesto;
 import java.util.List;
 
 public class ClasificacionFileDao implements Dao<Clasificacion,String>{
+    String ruta="Clasificiacion.dat";
+
     @Override
     public Clasificacion get(String id) {
         return null;
@@ -14,8 +16,10 @@ public class ClasificacionFileDao implements Dao<Clasificacion,String>{
     }
 
     @Override
-    public boolean save(Clasificacion obxecto) {
-        return false;
+    public boolean save(Clasificacion clasificacion) {
+        EquipoFileDao equipoFileDAO = new EquipoFileDao(ruta + clasificacion.getCompeticion() + ".dat");
+        clasificacion.getEquipos().forEach(equipoFileDAO::save);
+        return true;
     }
 
     @Override

@@ -1,8 +1,9 @@
 package Java.Boletines.boletin0101.clasificacionBaloncesto;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Equipo implements Comparable<Equipo> {
+public class Equipo implements Comparable<Equipo>, Serializable {
     String nombre, ciudad;
      private int victorias, derrotas, puntFavor, puntContra, partidosJugados;
 
