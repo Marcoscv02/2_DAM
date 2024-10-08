@@ -8,8 +8,8 @@ public class Ex3Documento {
     File archivo;
 
     //Constructor que recoje un nombre de archivo y crea un objetode tipo File
-    public Ex3Documento(String nombreArchivo){
-        File archivo= new File(nombreArchivo);
+    public Ex3Documento(String nombreArchivo) {
+        File archivo = new File(nombreArchivo);
     }
 
     //Constructor que recoje un objeto de tipo file
@@ -27,7 +27,7 @@ public class Ex3Documento {
     //Metodo para leer el Archivo y meterlo en un StringBuilder
     public StringBuilder readFile() throws IOException {
         //Declaracion de variables del método
-        StringBuilder sb= new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         FileReader fr = new FileReader(String.valueOf(new FileInputStream(archivo)));
 
         //Si el archivo existe lee el archivo y lo mete en un stringbuilder, si no existe manda un mensaje
@@ -37,21 +37,8 @@ public class Ex3Documento {
                 sb.append(letra);
             }
             return sb;
-        }else {
+        } else {
             return new StringBuilder("archivo no encontrado");
-        }
-    }
-
-    public  String readFileNIO () {
-        StringBuilder sb= new StringBuilder();
-
-        if (!existe()) return null;
-
-        try {
-            return Files.readString(archivo.toPath().forEach(sb::append));
-            return sb.toString();
-        }catch (IOException e){
-            throw new RuntimeException(e);
         }
     }
 }

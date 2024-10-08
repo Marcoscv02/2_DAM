@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.Scanner;
 
 public class CopiaArchivo {
@@ -24,7 +25,7 @@ public class CopiaArchivo {
 
         //Copiar el archivo
         try {
-            Files.copy(pathIntput,pathOutput);
+            Files.copy(pathIntput,pathOutput, StandardCopyOption.REPLACE_EXISTING);
             System.out.println("Archivo copiado a "+outputPath);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -32,7 +33,7 @@ public class CopiaArchivo {
 
         //Mover el archivo
         try {
-            Files.move(pathIntput, pathMove);
+            Files.move(pathIntput, pathMove, StandardCopyOption.REPLACE_EXISTING);
             System.out.println("Archivo movido a "+movePath);
         } catch (IOException e) {
             throw new RuntimeException(e);

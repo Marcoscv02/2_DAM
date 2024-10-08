@@ -31,7 +31,7 @@ public class EquipoFileDao implements Dao<Equipo,String>{
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return equipos;
+
     }
 
     @Override
