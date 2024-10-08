@@ -10,7 +10,7 @@ public class Ex4 {
 
         Object[] option = {"importar paj web", "importar imagen", "seleccion"};
         String s = (String)JOptionPane.showInputDialog(null, "seleccione una opcion ",
-                "Introduce tu plato favorito", JOptionPane.PLAIN_MESSAGE, null, option, "seleccion");
+                "Elección", JOptionPane.PLAIN_MESSAGE, null, option, "seleccion");
 
         if (s.equals("importar paj web")){
 

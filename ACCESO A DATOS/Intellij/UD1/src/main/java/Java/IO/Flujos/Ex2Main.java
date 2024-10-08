@@ -31,10 +31,10 @@ public class Ex2Main {
         }
     }
 
-    // Método para mostrar todas las personas
+    // Metodo para mostrar todas las personas
     public static void mostrarPersonas() {
 
-        //LLama al método cargar personas para tener todos los objetos de tipo persona en un array
+        //LLama al metodo cargar personas para tener todos los objetos de tipo persona en un array
         cargarPersonas();
         //Si el Array esta vacío muestra un mensaje diciendolo
         if (personas.isEmpty()) {
