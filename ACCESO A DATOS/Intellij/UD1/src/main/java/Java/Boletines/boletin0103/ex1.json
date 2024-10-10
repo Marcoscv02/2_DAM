@@ -1,0 +1,40 @@
+{
+  "equipos":[
+    {
+      "nombre": "Real Madrid",
+      "jugados": 4,
+      "victorias": 4,
+      "derrotas": 0,
+      "favor": 374,
+      "contra": 311,
+      "diferencia": 63
+    },
+    {
+      "nombre": "Baskonia",
+      "jugados": 4,
+      "victorias": 3,
+      "derrotas": 1,
+      "favor": 346,
+      "contra": 320,
+      "diferencia": 26
+    },
+    {
+      "nombre": "Basquet Girona",
+      "jugados": 4,
+      "victorias": 3,
+      "derrotas": 1,
+      "favor": 353,
+      "contra": 333,
+      "diferencia": 20
+    },
+    {
+      "nombre": "UCAM Murcia",
+      "jugados": 4,
+      "victorias": 3,
+      "derrotas": 1,
+      "favor": 340,
+      "contra": 322,
+      "diferencia": 18
+    }
+  ]
+}
