@@ -1,9 +1,7 @@
-package Java.Boletines.boletin0103.JSonExamples;
+package Java.JSON.JSonExamples;
 
 import jakarta.json.bind.Jsonb;
 import jakarta.json.bind.JsonbBuilder;
-
-import java.io.Serializable;
 
 public class JsonBExemplo {
 

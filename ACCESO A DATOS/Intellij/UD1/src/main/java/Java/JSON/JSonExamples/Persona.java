@@ -1,4 +1,4 @@
-package Java.Boletines.boletin0103.JSonExamples;
+package Java.JSON.JSonExamples;
 
 import java.io.Serializable;
 
