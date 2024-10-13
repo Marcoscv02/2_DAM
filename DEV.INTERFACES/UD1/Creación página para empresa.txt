@@ -1,0 +1,6 @@
+Creación página para empresa
+
+Empresa reparaciones(repara de todo cosas pequeñas)
+-web da a conocer todos los servicios de forma clara
+formulario de contacto orientado a contacto con cliente(email, móvil) a través de cita
+diseño blanco e azul

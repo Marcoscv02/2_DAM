@@ -10,12 +10,9 @@ public class Equipo implements Comparable<Equipo>, Serializable {
     //Constructor por defecto
     public Equipo() {
     }
-    //Constructor de nombre
-    public Equipo(String nombre) {
-        this.nombre = nombre;
-    }
+
     //Costructor
-    public Equipo(String nombre, String ciudad, int victorias, int derrotas, int puntFavor, int puntContra, int partidosJugados) {
+    public Equipo(String nombre, String ciudad, int victorias, int derrotas, int puntFavor, int puntContra) {
         this.nombre = nombre;
         this.ciudad = ciudad;
         this.victorias = victorias;
@@ -107,15 +104,22 @@ public class Equipo implements Comparable<Equipo>, Serializable {
                 ", victorias=" + victorias +
                 ", derrotas=" + derrotas +
                 ", puntFavor=" + puntFavor +
-                ", untContra=" + puntContra;
+                ", untContra=" + puntContra+
+                ", partidos jugados="+getPartidosJugados()+
+                ",diferencia de puntos="+getdifPuntos();
     }
+
+
     //Se sobreescribe el metodo de la interfaz Comparable
     @Override
     public int compareTo(Equipo otro) {
-        int puntosComparacion = Integer.compare(otro.getPuntos(), this.getPuntos());
-        if (puntosComparacion == 0) {
-            return Integer.compare(otro.getdifPuntos(), this.getdifPuntos());
+        int puntosComparacionthis = this.puntFavor-this.puntContra;
+        int puntosComparacionotro= otro.getPuntFavor()-otro.getPuntContra();
+        if(otro.getVictorias()<this.getVictorias() || puntosComparacionthis<puntosComparacionotro){
+            return 1;
+        } else if (otro.getVictorias()>this.getVictorias() || puntosComparacionthis>puntosComparacionotro) {
+            return -1;
         }
-        return puntosComparacion;
+        return 0;
     }
 }

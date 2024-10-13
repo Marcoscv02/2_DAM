@@ -1,15 +1,14 @@
 package Java.Boletines.boletin0101.clasificacionBaloncesto;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
-import static java.lang.System.in;
 
 public class EquipoFileDao implements Dao<Equipo,String>{
-    private final File f;
+    private File f;
+    Clasificacion clas =new Clasificacion("Liga ACB");
 
-    //Se crea un metodo que pase como parámetro la ruta del archivo de los equipos
+    //Se crea un Constructor que pase como parámetro la ruta del archivo de los equipos
     public EquipoFileDao(String ruta){
         this.f=new File(ruta);
     }
@@ -18,8 +17,8 @@ public class EquipoFileDao implements Dao<Equipo,String>{
     // con el introducido como parametro se devuelve ese equipo
     @Override
     public Equipo get(String nombre) {
-        List<Equipo>equipos=getAll();
-        for (Equipo e: equipos){
+        List<Equipo>clasificacion=getAll();
+        for (Equipo e: clasificacion){
             if (e.getNombre().equalsIgnoreCase(nombre)){
                 return e;
             }
@@ -30,25 +29,26 @@ public class EquipoFileDao implements Dao<Equipo,String>{
     //Accede al archivo con todos los equipos y los mete en unArraylist
     @Override
     public List<Equipo> getAll() {
-        List<Equipo> equipos = new ArrayList<>();
+        List<Equipo> clasificacion = new ArrayList<>();
         if (f.exists()) {
             try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f))) {
-                while (true) {
-                    equipos.add((Equipo) ois.readObject());
+                while (ois.readObject()!=null) {
+                    clasificacion.add((Equipo) ois.readObject());
                 }
-            } catch (EOFException e) {
-                // Fin del archivo
             } catch (IOException | ClassNotFoundException e) {
                 System.out.println("Error de lectura del archivo.");
+                System.out.println(e.getMessage());
             }
         }
-        return equipos;
+        Collections.sort(clasificacion);
+        return clasificacion;
     }
 
     @Override
     public boolean save(Equipo obxecto) {
-        List<Equipo>equipos= getAll();
-        equipos.add(obxecto);
+        List<Equipo>clasificacion= getAll();
+        obxecto= clas.addEquipo();
+        clasificacion.add(obxecto);
 
         if (f.exists()){
             try (ObjectOutputStream oos= new ObjectOutputStream(new FileOutputStream(f))){
@@ -57,6 +57,7 @@ public class EquipoFileDao implements Dao<Equipo,String>{
 
             } catch (IOException e) {
                 System.out.println("Error al guardar el equipo");
+                System.out.println(e.getMessage());
             }
         }
         return false;
@@ -65,12 +66,12 @@ public class EquipoFileDao implements Dao<Equipo,String>{
     //Borra el objeto dentro de la lista si coincide con el introducido como parámetro
     @Override
     public boolean delete(Equipo obx) {
-        List<Equipo>equipos=getAll();
+        List<Equipo>clasificacion=getAll();
         if (f.exists()){
-            for (Equipo e: equipos){
+            for (Equipo e: clasificacion){
                 if (e.equals(obx)){
-                    equipos.remove(obx);
-                    saveAll(equipos);
+                    clasificacion.remove(obx);
+                    saveAll(clasificacion);
                     return true;
                 }
             }
@@ -87,13 +88,13 @@ public class EquipoFileDao implements Dao<Equipo,String>{
     //Borra el objeto cuyo nombre coincida con el id introducido como parámetro
     @Override
     public boolean deleteById(String id) {
-        List<Equipo>equipos=getAll();
+        List<Equipo>Clasificacion=getAll();
 
         if (f.exists()){
-            for (Equipo e:equipos){
+            for (Equipo e:Clasificacion){
                 if (e.getNombre().equalsIgnoreCase(id)){
-                    equipos.remove(e);
-                    saveAll(equipos);
+                    Clasificacion.remove(e);
+                    saveAll(Clasificacion);
                 }
             }
             return true;
@@ -115,4 +116,5 @@ public class EquipoFileDao implements Dao<Equipo,String>{
             equipos.add(e);
         }
     }
+
 }

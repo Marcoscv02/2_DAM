@@ -1,15 +1,12 @@
-package Java.Boletines.boletin0103.ex3;
+/*package Java.Boletines.boletin0103.ex3;
 
 import jakarta.json.bind.Jsonb;
 import jakarta.json.bind.JsonbBuilder;
 import jakarta.json.bind.JsonbConfig;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -44,3 +41,4 @@ public class Main {
         System.out.println("JSon guardado en"+f.getAbsolutePath());
     }
 }
+*/

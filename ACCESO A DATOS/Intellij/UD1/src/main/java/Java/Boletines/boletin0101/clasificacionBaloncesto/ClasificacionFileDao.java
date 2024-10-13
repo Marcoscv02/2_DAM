@@ -1,9 +1,11 @@
 package Java.Boletines.boletin0101.clasificacionBaloncesto;
 
+import java.io.File;
 import java.util.List;
 
 public class ClasificacionFileDao implements Dao<Clasificacion,String>{
-    String ruta="Clasificiacion.dat";
+    final String ruta="Clasificiacion.dat";
+    File fClasificacion= new File(ruta);
 
     @Override
     public Clasificacion get(String id) {
@@ -12,14 +14,12 @@ public class ClasificacionFileDao implements Dao<Clasificacion,String>{
 
     @Override
     public List<Clasificacion> getAll() {
-        return List.of();
+        return null;
     }
 
     @Override
     public boolean save(Clasificacion clasificacion) {
-        EquipoFileDao equipoFileDAO = new EquipoFileDao(ruta + clasificacion.getCompeticion() + ".dat");
-        clasificacion.getEquipos().forEach(equipoFileDAO::save);
-        return true;
+        return false;
     }
 
     @Override
@@ -38,7 +38,7 @@ public class ClasificacionFileDao implements Dao<Clasificacion,String>{
     }
 
     @Override
-    public void update(Clasificacion obx) {
-
+    public void update(Clasificacion clasificacion) {
+        save(clasificacion);
     }
 }

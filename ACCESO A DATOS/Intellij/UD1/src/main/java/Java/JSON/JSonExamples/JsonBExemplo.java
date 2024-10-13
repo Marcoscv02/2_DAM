@@ -1,4 +1,4 @@
-package Java.JSON.JSonExamples;
+/*package Java.JSON.JSonExamples;
 
 import jakarta.json.bind.Jsonb;
 import jakarta.json.bind.JsonbBuilder;
@@ -19,4 +19,4 @@ public class JsonBExemplo {
         System.out.println("JSON Resultante (JSON-B):");
         System.out.println(strJson);
     }
-}
+}*/
