@@ -1,4 +1,4 @@
-/*package Java.JSON.JSonExamples;
+package Java.JSON.JSonExamples;
 
 import jakarta.json.*;
 import java.io.StringWriter;
@@ -24,4 +24,4 @@ public class JSonPExemplo {
         System.out.println("JSON Resultante (JSON-P):");
         System.out.println(strJson);
     }
-}*/
+}
