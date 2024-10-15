@@ -17,3 +17,8 @@ Number of O: 18
 Number of U: 7
 
 Total number: of vowels: 109
+
+**Comando para iniciar programa:**
+```bash
+java -cp target/classes/ org.example.CountVoWels
+```

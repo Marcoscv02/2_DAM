@@ -14,6 +14,7 @@ public class GsonDemo {
         // Serializacion de un entero
         gson.toJson(256, out); // por pantalla
         out.println(); // salto de línea.
+        
         // Serialización
         gson.toJson("<html>", out); // por pantalla.
         out.println(); // salto de línea

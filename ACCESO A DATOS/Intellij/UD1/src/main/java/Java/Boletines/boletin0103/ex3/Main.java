@@ -1,4 +1,4 @@
-/*package Java.Boletines.boletin0103.ex3;
+package Java.Boletines.boletin0103.ex3;
 
 import jakarta.json.bind.Jsonb;
 import jakarta.json.bind.JsonbBuilder;
@@ -41,4 +41,3 @@ public class Main {
         System.out.println("JSon guardado en"+f.getAbsolutePath());
     }
 }
-*/
