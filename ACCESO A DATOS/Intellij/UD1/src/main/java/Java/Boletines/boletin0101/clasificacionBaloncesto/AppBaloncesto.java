@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class AppBaloncesto{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        EquipoFileDao equipoFileDao= new EquipoFileDao("ClasificacionBaloncesto.txt");
+        ClasificacionFileDao equipoFileDao= new ClasificacionFileDao("ClasificacionBaloncesto.txt");
         List<Equipo>equipos= new ArrayList<>();
 
         boolean salir = false;
@@ -16,7 +16,7 @@ public class AppBaloncesto{
             System.out.println("\n--- Menú ---");
             System.out.println("1. Añadir equipo");
             System.out.println("2. Mostrar clasificación(Para realizar esta acción se requiere cargarla previamente)");
-            System.out.println("3. Guardar clasificación");
+            System.out.println("3. Guardar clasificación (Se debe guardar la clasificación antes de salir del programa)");
             System.out.println("4. Cargar clasificación");
             System.out.println("5. Salir");
             System.out.print("Elige una opción: ");
@@ -25,7 +25,7 @@ public class AppBaloncesto{
             sc.nextLine();  // Limpiar buffer
 
             switch (opcion) {
-                case 1 -> {
+                case 1 -> {//Añadir equipo
                     System.out.println("Introduce nombre del equipo");
                     String eName= sc.nextLine();
                     System.out.println("Introduce la ciudad a la que pertenece el equipo");
@@ -44,24 +44,24 @@ public class AppBaloncesto{
                     equipoFileDao.save(equipo);
 
                 }
-                case 2 -> {
+                case 2 -> {//Mostrar Clasificacion
                     for (Equipo e:equipos){
                         System.out.println(e.toString());
                     }
                 }
-                case 3 -> {
+                case 3 -> {//Guardar Clasificacion
                     equipoFileDao.saveAll(equipos);
                     if (equipoFileDao.saveAll(equipos)==true){
                         System.out.println("Equipos guardados con exito");
                     }else System.out.println("Error al guardar los equipos");
                 }
-                case 4 -> {
+                case 4 -> {//Cargar Clasificacion
                     equipos=equipoFileDao.getAll();
                     if (equipos!=null){
                         System.out.println("Clasificación cargada con éxito! \n Ahora ya se puede mostrar");
                     }else System.out.println("No existen equipos");
                 }
-                case 5 -> {
+                case 5 -> {//Salir
                     System.out.println("Saliendo del programa...");
                     salir = true;
                 }
