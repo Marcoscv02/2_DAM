@@ -1,14 +1,19 @@
 package Java.Boletines.boletin0101.clasificacionBaloncesto;
 
 import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 public class ClasificacionFileDao implements Dao<Clasificacion,String>{
-    final String ruta="Clasificiacion.dat";
-    File fClasificacion= new File(ruta);
+    private final Path ruta;
+
+    public ClasificacionFileDao(String ruta) {
+        this.ruta = Paths.get(ruta);
+    }
 
     @Override
-    public Clasificacion get(String id) {
+    public Clasificacion get(String ruta) {
         return null;
     }
 
@@ -19,7 +24,9 @@ public class ClasificacionFileDao implements Dao<Clasificacion,String>{
 
     @Override
     public boolean save(Clasificacion clasificacion) {
-        return false;
+        EquipoFileDao equipoFileDAO = new EquipoFileDao(ruta.resolve(clasificacion.getCompeticion() + ".dat").toString());
+        clasificacion.getEquipos().forEach(equipoFileDAO::save);
+        return true;
     }
 
     @Override
