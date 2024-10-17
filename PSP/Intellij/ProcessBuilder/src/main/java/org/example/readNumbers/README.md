@@ -16,5 +16,5 @@ Finalmente, cree otro programa que inicie los dos programas creados anteriorment
 
 **Comando para iniciar programa:**
 ```bash
-java -cp target/classes/ org.example.CountVoWels
+java -cp target/classes/ org.example.readnumbers.PrincipalProgram
 ```
