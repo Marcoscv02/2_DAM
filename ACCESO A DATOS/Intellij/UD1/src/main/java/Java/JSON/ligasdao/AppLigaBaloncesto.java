@@ -5,6 +5,7 @@
  */
 package Java.JSON.ligasdao;
 
+import java.nio.file.Paths;
 import java.util.*;
 
 //import org.apache.pdfbox.pdmodel.PDDocument;
@@ -35,7 +36,7 @@ public class AppLigaBaloncesto {
         Equipo e6 = new Equipo("Obradoiro", 26, 1, 2834, 1560);
 
 
-        // Creo clasificación:
+//        // Creo clasificación:
         Clasificacion clasificacion = new Clasificacion();
         clasificacion.addEquipos(new TreeSet<>(List.of(e1, e2, e3, e4, e5, e6)));
 
@@ -43,8 +44,11 @@ public class AppLigaBaloncesto {
         clasificacionfutbol.addEquipos(new TreeSet<>(List.of(e1, e2, e3, e4, e5, e6)));
 
 
+        EquipoFileDAO equipoFileDAO = EquipoFileDAO.getInstance("equipos.dat");
+
+
         // Creo DAO de clasificación:
-        Dao<Clasificacion, String> daoClasificacion = ClasificacionDAOFactoy.getClasificacionDAO("file");
+        Dao<Clasificacion, String> daoClasificacion = ClasificacionDAOFactoy.getClasificacionDAO("json");
 
         daoClasificacion.save(clasificacionfutbol);
 
@@ -52,11 +56,11 @@ public class AppLigaBaloncesto {
         daoClasificacion.save(clasificacion);
 
         // Leer la clasificación de un fichero:
-        Clasificacion clasificacion2 = daoClasificacion.get("Liga ACB");
+        Clasificacion clasificacion2 = daoClasificacion.get("Liga ACB"); // Liga ACB.json
 
         System.out.println(clasificacion2);
 
-        Clasificacion clasificacionf = daoClasificacion.get("Liga futbol");
+        Clasificacion clasificacionf = daoClasificacion.get("Liga futbol"); // Liga futbol.json
         System.out.println(clasificacionf);
 
 

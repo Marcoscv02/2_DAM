@@ -21,5 +21,5 @@ ping www.iessanclemente.net
 ```
 **Comando para iniciar programa:**
 ```bash
-java -cp target/classes/ org.example.LaunchProcessPing
+java -cp target/classes/ org.example.launchProcessPing.LaunchProcessPing
 ```
