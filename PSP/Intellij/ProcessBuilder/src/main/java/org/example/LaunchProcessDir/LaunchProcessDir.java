@@ -1,4 +1,4 @@
-package org.example;
+package org.example.LaunchProcessDir;
 
 public class LaunchProcessDir {
     public static void main(String[] args) {

@@ -1,0 +1,21 @@
+package org.example.readNumbers;
+
+import java.util.Scanner;
+
+public class Program2 {
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        double suma=0;
+
+        System.out.println("Cantidad de numeros que se desea realizar suma y cuadrado");
+        int nums= sc.nextInt();
+        for (int i = 0; i < nums; i++) {
+            System.out.print("introduzca número "+(i+1)+":");
+            int num = sc.nextInt();
+            double num2=Math.pow(num,2);
+            System.out.println();//Salto de linea
+            suma+=num2;
+        }
+        System.out.println("La suma del cuadrado de los números introducidos es: "+suma);
+    }
+}

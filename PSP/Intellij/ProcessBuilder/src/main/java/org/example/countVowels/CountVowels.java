@@ -14,24 +14,24 @@ public class CountVowels {
 
         String inputFile = args[0];
         char vocal = args[1].charAt(0);  // Vocal en Recibida del archivo
-        char vocalMayus = Character.toUpperCase(vocal); // Se transforman todas las vocales a MAYÚSCULA
+        char vocalMayus = Character.toUpperCase(vocal); // vocal en mayuscula
+        char vocalMinus = Character.toLowerCase(vocal); // vocal en minúscula
         String resultFile = args[2];
 
         //Contar ocurrencias de la vocal
         int count = 0;
         try (BufferedReader reader = Files.newBufferedReader(Paths.get(inputFile))) {
             int c;
-            while ((c = reader.read()) != -1) {
-                if (c == vocalMayus) {
+            while ((c = reader.read())!= -1) {
+                char a= (char) c;
+                if (a == vocalMayus|| a== vocalMinus) {
                     count++;
                 }
             }
         }
-        System.out.println("Cantidad de la vocal '" + vocalMayus + "' encontrada: " + count);  // Depuración
         // Escribir el resultado en el archivo de salida
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(resultFile))) {
             writer.write(Integer.toString(count));
-            System.out.println("Resultado escrito en: " + resultFile);  // Depuración
         }
     }
 }

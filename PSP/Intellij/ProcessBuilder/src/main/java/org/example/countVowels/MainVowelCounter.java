@@ -37,9 +37,6 @@ public class MainVowelCounter {
         // Mostrar el total de vocales
         System.out.println("Total de vocales en el archivo: " + totalVocales);
 
-        // Eliminar archivos temporales
-        for (File resultFile : resultFiles) {
-            resultFile.delete();
-        }
+
     }
 }
