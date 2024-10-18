@@ -7,15 +7,17 @@ public class Program2 {
         Scanner sc= new Scanner(System.in);
         double suma=0;
 
-        System.out.println("Cantidad de numeros que se desea realizar suma y cuadrado");
+        //Primer parámetro
         int nums= sc.nextInt();
+
         for (int i = 0; i < nums; i++) {
-            System.out.print("introduzca número "+(i+1)+":");
+            //Parámetros restantes
             int num = sc.nextInt();
-            double num2=Math.pow(num,2);
+            int num2= (int) Math.pow(num,2);
             System.out.println();//Salto de linea
             suma+=num2;
         }
-        System.out.println("La suma del cuadrado de los números introducidos es: "+suma);
+        //Salida resultado de la operación
+        System.out.println(suma);
     }
 }

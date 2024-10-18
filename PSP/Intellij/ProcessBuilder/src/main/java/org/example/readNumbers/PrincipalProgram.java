@@ -4,60 +4,89 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 public class PrincipalProgram {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("Introduzca la cantidad de números que se van a procesar");
+            int n = scanner.nextInt();
 
-        // Lanzar el primer proceso: SumaCuadrado (Program1)
-        Process proceso1 = new ProcessBuilder("java", "-cp", "target/classes", "org.example.readNumbers.Program1").start();
+            // Crear un StringBuilder para construir una cadena con la entrada del usuario
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.append(n).append("\n");
 
-        // Inicializamos un objeto Scanner para leer desde la entrada estándar (teclado)
-        Scanner scanner = new Scanner(System.in);
+            // Leer los n números del usuario y agregarlos al StringBuilder
+            for (int i = 0; i < n; i++) {
+                System.out.println("Introduzca número " + (i + 1));
+                int num = scanner.nextInt();
+                stringBuilder.append(num).append("\n");
+            }
 
-        // Leer la cantidad de números que se van a procesar
-        int n = scanner.nextInt();
+            // Convertir el contenido del StringBuilder en un String para enviar como entrada a otros programas
+            String input = stringBuilder.toString();
 
-        // Crear un StringBuilder para construir una cadena con la entrada del usuario
-        StringBuilder inputBuilder = new StringBuilder();
-        inputBuilder.append(n).append("\n");  // Añadir el número de valores que serán leídos
+            // PRIMER PROCESO
+            Process proceso1 = new ProcessBuilder("java", "-cp", "target/classes", "org.example.readNumbers.Program1").start();
+            OutputStream outputStream1 = proceso1.getOutputStream();
+            outputStream1.write(input.getBytes(StandardCharsets.UTF_8));  // Enviar la cadena como bytes
+            outputStream1.flush();
+            outputStream1.close();
 
-        // Leer los n números del usuario y agregarlos al StringBuilder
-        for (int i = 0; i < n; i++) {
-            int num = scanner.nextInt();
-            inputBuilder.append(num).append("\n");  // Cada número se añade a la cadena seguido de un salto de línea
+            // Leer el resultado que devuelve el proceso1 (Program1)
+            BufferedReader reader1 = new BufferedReader(new InputStreamReader(proceso1.getInputStream()));
+            String resultado1 = reader1.readLine();
+            reader1.close();
+
+            // Lectura de errores
+            BufferedReader processError1 = new BufferedReader(new InputStreamReader(proceso1.getErrorStream()));
+            StringBuilder error1Builder = new StringBuilder();
+            String errorLine;
+            while ((errorLine = processError1.readLine()) != null) {
+                error1Builder.append(errorLine).append("\n");
+            }
+            processError1.close();
+            String error1 = error1Builder.toString();
+
+            // SEGUNDO PROCESO
+            Process proceso2 = new ProcessBuilder("java", "-cp", "target/classes", "org.example.readNumbers.Program2").start();
+            OutputStream outputStream2 = proceso2.getOutputStream();
+            outputStream2.write(input.getBytes(StandardCharsets.UTF_8));
+            outputStream2.flush();
+            outputStream2.close();
+
+            // Leer el resultado que devuelve el proceso2 (Program2)
+            BufferedReader reader2 = new BufferedReader(new InputStreamReader(proceso2.getInputStream()));
+            String resultado2 = reader2.readLine();
+            reader2.close();
+
+            // Lectura de errores
+            BufferedReader processError2 = new BufferedReader(new InputStreamReader(proceso2.getErrorStream()));
+            StringBuilder error2Builder = new StringBuilder();
+            while ((errorLine = processError2.readLine()) != null) {
+                error2Builder.append(errorLine).append("\n");
+            }
+            processError2.close();
+            String error2 = error2Builder.toString();
+
+            // Mostrar los resultados de ambos programas en la salida estándar
+            if (error1.isEmpty()) {
+                System.out.println("Resultado de SumaCuadrado: " + resultado1);
+            } else {
+                System.err.println("Error en SumaCuadrado: " + error1);
+            }
+
+            if (error2.isEmpty()) {
+                System.out.println("Resultado de CuadradoYSuma: " + resultado2);
+            } else {
+                System.err.println("Error en CuadradoYSuma: " + error2);
+            }
+
+        } catch (IOException e) {
+            System.err.println("Ocurrió un error de entrada/salida: " + e.getMessage());
+        } catch (Exception e) {
+            System.err.println("Ocurrió un error: " + e.getMessage());
         }
-
-        // Convertir el contenido del StringBuilder en un String para enviar como entrada a otros programas
-        String input = inputBuilder.toString();
-
-
-        // Obtener el OutputStream del proceso1 para enviarle la entrada (los números) desde este programa principal
-        OutputStream outputStream1 = proceso1.getOutputStream();
-        outputStream1.write(input.getBytes());  // Escribir los números en el proceso
-        outputStream1.flush();  // Asegurarse de que los datos sean enviados
-        outputStream1.close();  // Cerrar el OutputStream porque ya no enviaremos más datos
-
-        // Leer el resultado que devuelve el proceso1 (Program1) usando un BufferedReader
-        BufferedReader reader1 = new BufferedReader(new InputStreamReader(proceso1.getInputStream()));
-        String resultado1 = reader1.readLine();  // Leer la primera línea de la salida del proceso1 (el resultado)
-
-        // Lanzar el segundo proceso: CuadradoYSuma (Program2)
-        Process proceso2 = new ProcessBuilder("java", "-cp", "target/classes", "org.example.readNumbers.Program2").start();
-
-        // Obtener el OutputStream del proceso2 para enviarle los números
-        OutputStream outputStream2 = proceso2.getOutputStream();
-        outputStream2.write(input.getBytes());  // Escribir los mismos números que antes
-        outputStream2.flush();  // Asegurarse de que los datos sean enviados
-        outputStream2.close();  // Cerrar el OutputStream cuando terminamos de enviar los datos
-
-        // Leer el resultado que devuelve el proceso2 (Program2) usando un BufferedReader
-        BufferedReader reader2 = new BufferedReader(new InputStreamReader(proceso2.getInputStream()));
-        String resultado2 = reader2.readLine();  // Leer la primera línea de la salida del proceso2 (el resultado)
-
-        // Mostrar los resultados de ambos programas en la salida estándar
-        System.out.println("Resultado de SumaCuadrado: " + resultado1);
-        System.out.println("Resultado de CuadradoYSuma: " + resultado2);
     }
 }
-
