@@ -1,0 +1,12 @@
+{
+  "tipoPregunta": "MULTIPLE_CHOICE",
+  "dificultad": "MEDIUM",
+  "categoria": {
+    "nombre": "Historia"
+  },
+  "pregunta": "En que año empezo la segunda guerra mundial",
+  "correcta": "1939",
+  "incorrecta": [
+    "1940, 1933, 1945"
+  ]
+}

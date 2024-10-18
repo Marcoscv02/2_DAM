@@ -1,12 +1,19 @@
 package Java.Boletines.boletin0103.trivialGson;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Pregunta {
-    private String pregunta;
+
     private TipoPregunta tipoPregunta;
     private Dificultad dificultad;
     private Categoria categoria;
+    private String pregunta;
+    private String correcta;
+    private List<String>incorrecta;
+
+    public Pregunta() {
+    }
 
     public Pregunta(String pregunta, TipoPregunta tipoPregunta, Dificultad dificultad, Categoria categoria) {
         this.pregunta = pregunta;
@@ -46,6 +53,30 @@ public class Pregunta {
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
+
+    public String getCorrecta() {
+        return correcta;
+    }
+
+    public void setCorrecta(String correcta) {
+        this.correcta = correcta;
+    }
+
+    public List<String> getIncorrecta() {
+        return incorrecta;
+    }
+
+    public Pregunta setIncorrecta(List<String> incorrecta) {
+        this.incorrecta = incorrecta;
+        return this;
+    }
+
+    public void addIncorrectas(String incorrecta1){
+        if (incorrecta==null){
+            incorrecta.add(incorrecta1);
+        }
+    }
+
 
     @Override
     public boolean equals(Object o) {
