@@ -1,8 +1,10 @@
 package Java.Boletines.boletin0103.trivialGson;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Pregunta {
+public class Pregunta implements Comparable<Pregunta>, Serializable {
+    private long idPregunta;
     private String pregunta;
     private TipoPregunta tipoPregunta;
     private Dificultad dificultad;
@@ -68,5 +70,10 @@ public class Pregunta {
                 ", dificultad=" + dificultad +
                 ", categoria=" + categoria +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Pregunta o) {
+        return 0;
     }
 }
