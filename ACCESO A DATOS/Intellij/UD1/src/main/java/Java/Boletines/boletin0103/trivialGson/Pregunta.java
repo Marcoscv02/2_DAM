@@ -1,14 +1,19 @@
 package Java.Boletines.boletin0103.trivialGson;
 
-import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
-public class Pregunta implements Comparable<Pregunta>, Serializable {
-    private long idPregunta;
-    private String pregunta;
+public class Pregunta {
+
     private TipoPregunta tipoPregunta;
     private Dificultad dificultad;
     private Categoria categoria;
+    private String pregunta;
+    private String correcta;
+    private List<String>incorrecta;
+
+    public Pregunta() {
+    }
 
     public Pregunta(String pregunta, TipoPregunta tipoPregunta, Dificultad dificultad, Categoria categoria) {
         this.pregunta = pregunta;
@@ -49,6 +54,30 @@ public class Pregunta implements Comparable<Pregunta>, Serializable {
         this.categoria = categoria;
     }
 
+    public String getCorrecta() {
+        return correcta;
+    }
+
+    public void setCorrecta(String correcta) {
+        this.correcta = correcta;
+    }
+
+    public List<String> getIncorrecta() {
+        return incorrecta;
+    }
+
+    public Pregunta setIncorrecta(List<String> incorrecta) {
+        this.incorrecta = incorrecta;
+        return this;
+    }
+
+    public void addIncorrectas(String incorrecta1){
+        if (incorrecta==null){
+            incorrecta.add(incorrecta1);
+        }
+    }
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -70,10 +99,5 @@ public class Pregunta implements Comparable<Pregunta>, Serializable {
                 ", dificultad=" + dificultad +
                 ", categoria=" + categoria +
                 '}';
-    }
-
-    @Override
-    public int compareTo(Pregunta o) {
-        return 0;
     }
 }
