@@ -20,6 +20,22 @@ public final class Opcion {
         this.correcta = correcta;
     }
 
+    public String getEnunciado() {
+        return enunciado;
+    }
+
+    public void setEnunciado(String enunciado) {
+        this.enunciado = enunciado;
+    }
+
+    public Boolean isCorrecta() {
+        return correcta;
+    }
+
+    public void setCorrecta(Boolean correcta) {
+        this.correcta = correcta;
+    }
+
     @Override
     public String toString() {
         if (correcta==true){

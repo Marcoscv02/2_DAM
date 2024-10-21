@@ -12,3 +12,5 @@ public enum TipoPregunta {
         return tipoPregunta;
     }
 }
+
+

@@ -1,24 +1,25 @@
-package Java.Boletines.boletin0103.trivialGson;
+package Java.Boletines.boletin0103.modeloTrivial;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class PreguntaMC extends Pregunta implements Predicate<Integer> {
+public class PreguntaMultiple extends Pregunta implements Predicate<Integer> {
 
     private List<Opcion> opciones;
 
-    public PreguntaMC() {
-        setTipoPregunta(TipoPregunta.MULTIPLE_CHOICE);
+    public PreguntaMultiple() {
+        setTipoPregunta(TipoPregunta.MULTIPLE);
         opciones = new java.util.ArrayList<>();
     }
 
-    public PreguntaMC(String pregunta) {
-        setTipoPregunta(TipoPregunta.MULTIPLE_CHOICE);
+    public PreguntaMultiple(String pregunta) {
+        super(pregunta);
+        setTipoPregunta(TipoPregunta.MULTIPLE);
         opciones = new java.util.ArrayList<>();
     }
 
-    public PreguntaMC(List<Opcion> opciones) {
+    public PreguntaMultiple(List<Opcion> opciones) {
         this.opciones = opciones;
     }
 
@@ -31,7 +32,7 @@ public class PreguntaMC extends Pregunta implements Predicate<Integer> {
         return this;
     }
 
-    public PreguntaMC addOpcion(Opcion opcion) {
+    public PreguntaMultiple addOpcion(Opcion opcion) {
         if (opciones == null) {
             opciones = new java.util.ArrayList<>();
         }
@@ -39,7 +40,7 @@ public class PreguntaMC extends Pregunta implements Predicate<Integer> {
         return this;
     }
 
-    public PreguntaMC addOpciones(List<Opcion> opciones) {
+    public PreguntaMultiple addOpciones(List<Opcion> opciones) {
         if (this.opciones == null) {
             this.opciones = new java.util.ArrayList<>();
         }
@@ -89,5 +90,4 @@ public class PreguntaMC extends Pregunta implements Predicate<Integer> {
                 && opciones.get(numeroMarcado).isCorrecta();
     }
 }
-
 

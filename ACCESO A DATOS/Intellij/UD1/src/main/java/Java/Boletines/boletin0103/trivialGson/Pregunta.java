@@ -1,9 +1,12 @@
 package Java.Boletines.boletin0103.trivialGson;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 
-public class Pregunta {
+public class Pregunta implements Serializable, Comparable<Pregunta> {
+
+    public static final String TABULACION = "  ";
 
     private TipoPregunta tipoPregunta;
     private Dificultad dificultad;
@@ -82,7 +85,9 @@ public class Pregunta {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Pregunta pregunta1)) return false;
-        return Objects.equals(pregunta, pregunta1.pregunta) && tipoPregunta == pregunta1.tipoPregunta && dificultad == pregunta1.dificultad && Objects.equals(categoria, pregunta1.categoria);
+        return Objects.equals(pregunta, pregunta1.pregunta) &&
+                tipoPregunta == pregunta1.tipoPregunta &&
+                dificultad == pregunta1.dificultad && Objects.equals(categoria, pregunta1.categoria);
     }
 
     @Override
@@ -99,5 +104,11 @@ public class Pregunta {
                 ", dificultad=" + dificultad +
                 ", categoria=" + categoria +
                 '}';
+    }
+
+    //Método compareto
+    @Override
+    public int compareTo(Pregunta o) {
+        return this.pregunta.compareToIgnoreCase(o.pregunta);
     }
 }

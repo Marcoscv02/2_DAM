@@ -15,22 +15,37 @@ header {
     grid-template-rows: 60% 60%;
     align-items: center;
     height: 300px;
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
+    background-image: url('imagenes/fondoHeader.png'); 
+    background-size: cover; /* Para que la imagen cubra todo el header */
+    background-position: center; /* Centra la imagen */
+    height: 300px; /* Puedes ajustar la altura del header */
+    
 }
 
+/*Elementos de la fila principal*/
 header div{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Tres columnas de tamaño igual */
     width: 90%;
     margin: auto;
+}
+.elemento-izquierda {
+    justify-self: start; /* Alinea a la izquierda */
+}
+
+.elemento-centro {
+    justify-self: center; /* Alinea en el centro */
+}
+
+.elemento-derecha {
+    justify-self: end; /* Alinea a la derecha */
 }
 
 #logo {
     width: 50px;
     height: 50px;
-    background-color: black;
-    border-radius: 50%;
+    background-image: url('imagenes/logo.png'); 
+    background-size: cover;
     margin-right: 20%;
     margin-top: 75px;
 }
@@ -42,37 +57,67 @@ h1 {
     margin-right: 29%;
 }
 
-#search-bar {
-    width: 400px;
-    height: 50px;
-    margin-top: 75px;
+/*BUSCADOR*/
+.search-container {
+    display: flex;
+    border: 2px solid #332d21; /* Borde azul */
+    border-radius: 25px; /* Bordes redondeados */
+    overflow: hidden; /* Esconde el desbordamiento */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.search-input {
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado */
+    font-size: 16px; /* Tamaño de fuente */
+    outline: none; /* Sin contorno al hacer clic */
+    width: 100%; /* Ancho del cuadro de texto */
+}
+
+.search-button {
+    background-color: #332d21; /* Color del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado */
+    cursor: pointer; /* Cambia el cursor al pasar */
+    font-size: 16px; /* Tamaño de fuente */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.search-button:hover {
+    background-color: blanchedalmond; /* Color al pasar el ratón */
+    color: black;
 }
 
 
-/* Navegación */
+/* BARRA NAVEGACION */
 nav {
     width: 60%;
     margin: auto;
-    background-color: #ffffff ;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #ffffff;
 }
 
 nav a {
     text-decoration: none;
+    font-weight: bold;
     color: #333;
     padding: 10px 15px;
     font-size: 14px;
+    border-radius: 20PX;
+    transition: background-color 0.3s;
 }
 
 nav a:hover {
-    background-color: #c5a360;
+    background-color: #332d21;
+    border-radius: 20PX;
+    color: white;
 }
 
 /* Contenido principal */
 main {
     padding: 20px;
+    background-color: blanchedalmond;
 }
 
 section {
@@ -82,7 +127,6 @@ section {
 
 section div {
     width: 30%;
-    background-color: black;
     color: white;
     font-size: 24px;
     display: flex;
@@ -91,10 +135,47 @@ section div {
     height: 150px;
     margin: 20px;
 }
-section.rebajas{}
 
-section.ropa {
-    width: 80%;
-    justify-content: center;
-    margin: auto;
+/* SECCION DE REBAJAS */
+.Rebajas {
+    display: flex; /* Utiliza flexbox para alinear el contenido */
+    align-items: center; /* Alinea verticalmente */
+    border-radius: 25px; /* Bordes redondeados */
+    transition: background-color 0.3s;
+}
+.Rebajas div{
+    background-color:#332d21;
+    border-radius: 25px;
+
+
+}
+.Rebajas div:hover{
+    background-color:#F0B94D;
+    color: white;
+    border-radius: 25px;
+}
+
+.Rebajas img:hover{
+    background-color:#F0B94D;
+    color: white;
+    border-radius: 25px;
+}
+
+.rebajas-texto {
+    color: black; /* Color del texto */
+    font-size: 24px; /* Tamaño del texto */
+    flex: 1; /* Permite que el texto ocupe el espacio necesario */
+    margin-right: 20px; /* Espacio entre el texto y la imagen */
+}
+
+.rebajas-imagen {
+    flex: 0 0 auto; /* La imagen no se expande ni se contrae */
+    
+}
+
+section img {
+    width: 100%; /* Asegura que la imagen ocupe el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 25px;
+
 }

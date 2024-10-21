@@ -1,5 +1,8 @@
 package Java.Boletines.boletin0101.ClasificacionEjemplo;
 
+import com.google.gson.*;
+
+import java.lang.reflect.Type;
 import java.util.List;
 
 public class AppXestionAlumnos {
@@ -18,7 +21,5 @@ public class AppXestionAlumnos {
         for (Alumno a : alumnos){
             System.out.println("a = " + a);
         }
-
-
     }
 }

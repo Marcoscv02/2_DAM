@@ -1,6 +1,8 @@
 package Java.Boletines.boletin0103.trivialGson;
 
-public class PreguntaTF extends Pregunta{ //Pregunta True/False
+import java.util.function.Predicate;
+
+public class PreguntaTF extends Pregunta implements Predicate<Integer> { //Pregunta True/False
 
     private Boolean respuesta;
 
@@ -27,5 +29,10 @@ public class PreguntaTF extends Pregunta{ //Pregunta True/False
                 "categoria: "+getCategoria()+
                 "respuesta: " + respuesta +
                 '}';
+    }
+
+    @Override
+    public boolean test(Integer integer) {
+        return false;
     }
 }

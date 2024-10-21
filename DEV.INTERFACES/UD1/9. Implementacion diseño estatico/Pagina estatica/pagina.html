@@ -12,11 +12,14 @@
     <header>
         <div>
            
-            <span id="logo"></span> <!-- Logo circular -->
+            <span id="logo" class="elemento-izquierda"></span> <!-- Logo circular -->
             
-            <h1>OnSecondThought</h1> <!-- Título -->
+            <h1 class="elemento-centro">OnSecondThought</h1> <!-- Título -->
             
-            <input type="text" name="barradebusqueda" id="search-bar"> <!-- Barra de búsqueda, carrito y perfil -->
+            <div class="search-container" class="elemento-derecha">
+                <input type="text" class="search-input" placeholder="Buscar...">
+                <button class="search-button">Buscar</button>
+            </div>
             
         </div>
             <!-- Menú de navegación -->
@@ -37,9 +40,30 @@
     <!-- Sección principal con los productos -->
     <main>
         <section class="Rebajas">
-            <div><img src="Pagina estatica\imagenes\00108304806-e1.webp" alt="pantalon"></div>
-            <div>Rebajas</div>
-            <div>Rebajas</div>
+            <div>
+                <div class="rebajas-texto">
+                    <p>¡No te pierdas nuestras rebajas en Pantalones!</p>
+                </div>
+                <div class="rebajas-imagen">
+                    <img src="imagenes/pantalonRebaja.png" alt="pantalon">
+                </div>
+            </div>
+            <div>
+                <div class="rebajas-texto">
+                    <p>¡No te pierdas nuestras rebajas en faldas!</p>
+                </div>
+                <div class="rebajas-imagen">
+                    <img src="imagenes/faldaRebajas.png" alt="pantalon">
+                </div>
+            </div>
+            <div>
+                <div class="rebajas-texto">
+                    <p>¡No te pierdas nuestras rebajas en sudaderas!</p>
+                </div>
+                <div class="rebajas-imagen">
+                    <img src="imagenes/SudaderaRebajas.png" alt="pantalon">
+                </div>
+            </div>
         </section>
 
         <section class="ropa">
