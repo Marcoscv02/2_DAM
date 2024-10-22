@@ -14,7 +14,6 @@ public class Program2 {
             //Parámetros restantes
             int num = sc.nextInt();
             int num2= (int) Math.pow(num,2);
-            System.out.println();//Salto de linea
             suma+=num2;
         }
         //Salida resultado de la operación

@@ -12,7 +12,6 @@ public class Program1 {
         for (int i = 0; i < nums; i++) {
             //Parámetros restantes
             int num = sc.nextInt();
-            System.out.println();//Salto de linea
             suma+=num;
         }
 

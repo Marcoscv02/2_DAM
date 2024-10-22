@@ -6,7 +6,7 @@ import java.util.*;
 public class MainVowelCounter {
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        String inputFile = "FileData.txt";
+        String inputFile = "src/main/resources/FileData.txt";
         String[] vocales = {"a", "e", "i", "o", "u"}; //Array de vocales
         List<Process> processes = new ArrayList<>(); //Array de procesos que se van a ejecutar para cada vocal
         List<File> resultFiles = new ArrayList<>(); //Array de archivos que se generan en la clase "Countvowels"

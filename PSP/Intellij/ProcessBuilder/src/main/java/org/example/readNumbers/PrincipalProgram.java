@@ -1,10 +1,6 @@
 package org.example.readNumbers;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.nio.charset.StandardCharsets;
+import java.io.*;
 import java.util.Scanner;
 
 public class PrincipalProgram {
@@ -26,49 +22,64 @@ public class PrincipalProgram {
 
             // Convertir el contenido del StringBuilder en un String para enviar como entrada a otros programas
             String input = stringBuilder.toString();
+            System.out.println("Esto es el intput"+input);
+
+
 
             // PRIMER PROCESO
             Process proceso1 = new ProcessBuilder("java", "-cp", "target/classes", "org.example.readNumbers.Program1").start();
-            OutputStream outputStream1 = proceso1.getOutputStream();
-            outputStream1.write(input.getBytes(StandardCharsets.UTF_8));  // Enviar la cadena como bytes
-            outputStream1.flush();
-            outputStream1.close();
+            try(BufferedWriter bw= new BufferedWriter(new OutputStreamWriter(proceso1.getOutputStream(),"UTF-8"))) {
+                bw.write(input);
+                bw.flush();
+            }
+            // Esperar a que el proceso 1 termine
+            proceso1.waitFor();
 
             // Leer el resultado que devuelve el proceso1 (Program1)
-            BufferedReader reader1 = new BufferedReader(new InputStreamReader(proceso1.getInputStream()));
-            String resultado1 = reader1.readLine();
-            reader1.close();
-
-            // Lectura de errores
-            BufferedReader processError1 = new BufferedReader(new InputStreamReader(proceso1.getErrorStream()));
-            StringBuilder error1Builder = new StringBuilder();
-            String errorLine;
-            while ((errorLine = processError1.readLine()) != null) {
-                error1Builder.append(errorLine).append("\n");
+            String resultado1;
+            try (BufferedReader reader1 = new BufferedReader(new InputStreamReader(proceso1.getInputStream()))) {
+                resultado1 = reader1.readLine();
             }
-            processError1.close();
+
+
+            // Lectura de errores del proceso 1
+            StringBuilder error1Builder = new StringBuilder();
+            try (BufferedReader processError1 = new BufferedReader(new InputStreamReader(proceso1.getErrorStream()))) {
+                String errorLine;
+                while ((errorLine = processError1.readLine()) != null) {
+                    error1Builder.append(errorLine).append("\n");
+                }
+            }
             String error1 = error1Builder.toString();
+
+
 
             // SEGUNDO PROCESO
             Process proceso2 = new ProcessBuilder("java", "-cp", "target/classes", "org.example.readNumbers.Program2").start();
-            OutputStream outputStream2 = proceso2.getOutputStream();
-            outputStream2.write(input.getBytes(StandardCharsets.UTF_8));
-            outputStream2.flush();
-            outputStream2.close();
+            try(BufferedWriter bw1= new BufferedWriter(new OutputStreamWriter(proceso2.getOutputStream(), "UTF-8"))) {
+                bw1.write(input);
+                bw1.flush();
+            }
+            // Esperar a que el proceso 1 termine
+            proceso2.waitFor();
 
             // Leer el resultado que devuelve el proceso2 (Program2)
-            BufferedReader reader2 = new BufferedReader(new InputStreamReader(proceso2.getInputStream()));
-            String resultado2 = reader2.readLine();
-            reader2.close();
-
-            // Lectura de errores
-            BufferedReader processError2 = new BufferedReader(new InputStreamReader(proceso2.getErrorStream()));
-            StringBuilder error2Builder = new StringBuilder();
-            while ((errorLine = processError2.readLine()) != null) {
-                error2Builder.append(errorLine).append("\n");
+            String resultado2;
+            try (BufferedReader reader2 = new BufferedReader(new InputStreamReader(proceso2.getInputStream()))) {
+                resultado2 = reader2.readLine();
             }
-            processError2.close();
+
+            // Lectura de errores del proceso 2
+            StringBuilder error2Builder = new StringBuilder();
+            try (BufferedReader processError2 = new BufferedReader(new InputStreamReader(proceso2.getErrorStream()))) {
+                String errorLine;
+                while ((errorLine = processError2.readLine()) != null) {
+                    error2Builder.append(errorLine).append("\n");
+                }
+            }
             String error2 = error2Builder.toString();
+
+
 
             // Mostrar los resultados de ambos programas en la salida estándar
             if (error1.isEmpty()) {
