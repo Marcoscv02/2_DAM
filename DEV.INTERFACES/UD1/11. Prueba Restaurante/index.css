@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
+
+
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+
+}
+
+/* HEADER */
+header {
+    display: grid;
+    grid-template-rows: 60% 60%;
+    align-items: center;
+    height: 300px;
+    background-image: url('images/fondoheader.png'); 
+    background-size: cover; /* Para que la imagen cubra todo el header */
+    background-position: center; /* Centra la imagen */
+    height: 600px; /* Puedes ajustar la altura del header */
+    
+}
+
+/*Elementos de la fila principal*/
+header div{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Tres columnas de tamaño igual */
+    width: 90%;
+    margin: auto;
+}
+.elemento-izquierda {
+    justify-self: start; /* Alinea a la izquierda */
+}
+
+.elemento-centro {
+    justify-self: center; /* Alinea en el centro */
+}
+
+.elemento-derecha {
+    justify-self: end; /* Alinea a la derecha */
+}
+
+#logo {
+    width: 50px;
+    height: 50px;
+    background-image: url('imagenes/logo.png'); 
+    background-size: cover;
+    margin-right: 20%;
+    margin-top: 75px;
+}
+
+h1 {
+    font-family:'Times New Roman', Times, serif;
+    text-align: center;
+    font-size: 60px;
+    margin-right: 29%;
+}
+
+/*BUSCADOR*/
+.search-container {
+    display: flex;
+    border: 2px solid #332d21; /* Borde azul */
+    border-radius: 25px; /* Bordes redondeados */
+    overflow: hidden; /* Esconde el desbordamiento */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.search-input {
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado */
+    font-size: 16px; /* Tamaño de fuente */
+    outline: none; /* Sin contorno al hacer clic */
+    width: 100%; /* Ancho del cuadro de texto */
+}
+
+.search-button {
+    background-color: #332d21; /* Color del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado */
+    cursor: pointer; /* Cambia el cursor al pasar */
+    font-size: 16px; /* Tamaño de fuente */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.search-button:hover {
+    background-color: blanchedalmond; /* Color al pasar el ratón */
+    color: black;
+}
+
+
+/* BARRA NAVEGACION */
+nav {
+    width: 30%;
+    margin: auto;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+    padding: 10px 15px;
+    font-size: 20px;
+    border-radius: 20PX;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #332d21;
+    border-radius: 20PX;
+    color: white;
+}
+
+
+/* Main temporal(borrar cando se acabe de facer o footer) */
+#aa{
+    height: 1000px;
+}
+
+
+
+
+
+
+
+/* FOOTER */
+.footer_a{
+    background-color: black;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+
+}
+.footer_a:hover{
+    background-color: #C5A46D;
+}
+#footerIconos{
+    display: flex;
+    justify-content: center;
+}
+#footer{
+    background-color: #F5F3E7;
+}
+#facebookImg{
+    width: 30px;
+    height: 30px;
+
+}
+#instagramImg{
+    width: 20px;
+    height: 20px;
+
+}
+#telegramImg{
+    width: 20px;
+    height: 20px;
+    margin-right: 2px;
+
+}
+#footerBloquesIzquierda{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-right-style: solid;
+    border-right-color: aliceblue;
+    margin-left: 300px;
+    
+}
+#footerBloques{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-content: center;
+}
+#footerBloqueDereita{
+    margin: auto;
+}
+footer {
+    background-color: #000;
+    color: #333;
+    font-family: Arial, sans-serif;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+}
+
+.footer-section h4 {
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+
+.footer-section ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.payment-icons {
+    width: 150px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    row-gap: 20px;
+}
+
+#pagosSeguros{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#footerMastercard {
+    width: 48px;
+    height: 30px;
+    display: flex;
+    justify-self: center;
+}
+#footerVisa{
+    width: 48px;
+    height: 30px;
+    display: flex;
+    justify-self: center;
+}
+#footerPaypal{
+    width: 48px;
+    height: 35px;
+    display: flex;
+    justify-self: center;
+}
+#footerApplepay{
+    width: 48px;
+    height: 35px;
+    display: flex;
+    justify-self: center;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 20px auto 0;
+}
+
+.languages {
+    flex: 1;
+}
+
+.languages h4 {
+    margin-bottom: 10px;
+}
+
+.language-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.language-icons img {
+    width: 30px;
+}
+
+.logo-section {
+    text-align: center;
+}
+
+.logo-section img {
+    width: 150px;
+    margin-top: 10px;
+}
+
+
+@media (max-width:800px) {
+    .footer-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+}
