@@ -5,18 +5,18 @@ import com.google.gson.*;
 import java.lang.reflect.Type;
 
 public class PersonaTypeAdapter  implements JsonSerializer<Persona>, JsonDeserializer<Persona> {
+
     @Override
-    public Persona deserialize(Persona persona, Type type, JsonDeserializationContext context) throws JsonParseException {
+    public JsonElement serialize(Persona persona, Type type, JsonSerializationContext jsonSerializationContext) {
         JsonObject jsObject= new JsonObject();
 
         jsObject.add("name",persona.nombre);
         jsObject.add("age",persona.edad);
 
-        return jsObject;
-    }
+        return jsObject;    }
 
     @Override
-    public JsonElement serialize(Persona persona, Type type, JsonSerializationContext jsonSerializationContext) {
+    public Persona deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
         return null;
     }
 }

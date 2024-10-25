@@ -8,7 +8,7 @@ public class Main {
         Thread t1= new Thread(ir);
         Thread t2= new Thread(ir);
         Thread t3= new Thread(ir, "T3"); //Asignar un nombre distinto ao fio
-        Thread t4= new Thread(
+        Thread t4= new Thread(//Creación con Clase Anónima
                 new Runnable() {
                     @Override
                     public void run() {
