@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OnSecondThought</title>
+    <title>The Amsterdam Bridge</title>
     <link rel="stylesheet" type="text/css" href= "index.css">
+    <link rel="icon" href="images/Logoeditado.png">
 </head>
 <body>
 
@@ -12,7 +13,9 @@
     <header>
         <div>
            
-            <span id="logo" class="elemento-izquierda"></span> <!-- Logo circular -->
+            <div class="logo-section">
+                <img src="images/Logoeditado.png" alt="Logo">
+            </div> <!-- Logo -->
             
             <h1 class="elemento-centro">The Amsterdam Bridge</h1> <!-- Título -->
             
@@ -23,25 +26,55 @@
             
         </div>
             <!-- Menú de navegación -->
-        <nav>
-            <a href="#">Menu</a>
-            <a href="#">Reserva</a>
-            <a href="#">Horario</a>
-            <a href="#">Fotos</a>
-            <a href="#">Ubicación</a>
-        </nav>
+            <nav>
+                <a href="#">Menu</a>
+                <a href="#">Reserva</a>
+                <a href="#">Horario</a>
+                <a href="#">Fotos</a>
+                <a href="#">Ubicación</a>
+                <div class="dropdown">
+                    <a href="#" id="idioma">Idioma</a>
+                    <div class="dropdown-content">
+                        <a href="#">Inglés</a>
+                        <a href="#">Español</a>
+                    </div>
+                </div>
+            </nav>
 
     </header>
 
 
 
-    <!--  -->
-    <main>
-        <div id="aa">
 
+
+
+
+
+
+    <!-- MAIN -->
+    <main>
+        <div id="menu">
+            <h4>Menu</h4>
+            <div id="platos">
+                <div class="plato"></div>
+                <div class="plato"></div>
+                <div class="plato"></div>
+                <div class="plato"></div>
+                <div class="plato"></div>
+            </div>
         </div>
 
     </main>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -67,7 +100,7 @@
             <div class="footer-section">
                 <h4>AYUDA Y CONSEJOS</h4>
                 <ul>
-                    <li><a href="#">recetas Rápidas</a></li>
+                    <li><a href="#">Recetas Rápidas</a></li>
                     <li><a href="#">Guías de compra</a></li>
                     <li><a href="#">Cocina como un buen Holandes</a></li>
                 </ul>
@@ -88,9 +121,10 @@
 
         <div class="footer-bottom">
             <div class="logo-section">
-                <img src="" alt="Logo">
+                <img src="images/Logoeditado.png" alt="Logo">
             </div>
         </div>
+
         <div id="footerIconos">
             <a href="http://facebook.com" id="facebook" class="footer_a">
                 <img class="footerIconoImg" id="facebookImg" src="images/footer/facebook-logo.png" alt="facebook">
