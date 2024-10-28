@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Amsterdam Bridge</title>
     <link rel="stylesheet" type="text/css" href= "index.css">
-    <link rel="icon" href="images/Logoeditado.png">
+    <link rel="stylesheet" href="pruebaBody.css">
+    <link rel="icon" href="images/Logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
 
     <!-- HEADER -->
     <header>
         <div>
-           
             <div class="logo-section">
                 <img src="images/Logoeditado.png" alt="Logo">
             </div> <!-- Logo -->
@@ -27,11 +29,11 @@
         </div>
             <!-- Menú de navegación -->
             <nav>
-                <a href="#">Menu</a>
+                <a href="#menu">Menu</a>
                 <a href="#">Reserva</a>
-                <a href="#">Horario</a>
-                <a href="#">Fotos</a>
-                <a href="#">Ubicación</a>
+                <a href="#horario">Horario</a> 
+                <a href="#ubicacion">Ubicación</a>
+                <a href="#carrousel">Fotos</a>
                 <div class="dropdown">
                     <a href="#" id="idioma">Idioma</a>
                     <div class="dropdown-content">
@@ -47,33 +49,165 @@
 
 
 
-
-
-
-
     <!-- MAIN -->
     <main>
+        <!-- MENÚ -->
         <div id="menu">
-            <h4>Menu</h4>
-            <div id="platos">
-                <div class="plato"></div>
-                <div class="plato"></div>
-                <div class="plato"></div>
-                <div class="plato"></div>
-                <div class="plato"></div>
+            <h3>Menu</h3>
+            <menu id="platos">
+                <div class="plato">
+                    <span>
+                        <h4>Menu 1</h4>
+                        <p>"Lasagna Holandesa con Sabores de la Tierra: Celebramos los productos locales con esta lasaña, elaborada con pasta fresca, ragú de ternera de pastoreo y verduras de temporada de nuestros huertos. Toques de queso Gouda ahumado y hierbas silvestres le confieren un sabor único y auténtico." </p>
+                    </span>
+                    <span>
+                        <img src="images/menu/menu1.jpg" alt="menu1">
+                    </span>
+                </div>
+
+                <div class="plato">
+                    <span>
+                        <img src="images/menu/menu2.jpg" alt="menu2">
+                    </span>
+                    <span>
+                        <h4>Menu 2</h4>
+                        <p>Stamppot con albóndiga
+
+                            Un clásico holandés reconceptualizado en un plato de alta cocina. Puré de patatas cremoso con col rizada, coronado con una jugosa albóndiga de ternera y una salsa de carne reducida. Una experiencia culinaria que te transportará a los sabores tradicionales de Holanda. </p>
+                    </span>
+                </div>
+
+                <div class="plato">
+                    <span>
+                        <h4>Menu 3</h4>
+                        <p>Un bife de lomo holandes de calidad excepcional, cocinado a la perfección y acompañado de una salsa de chimichurri fresca y picante. Una experiencia culinaria que te transportará a los sabores de la Holanda profunda. </p>
+                    </span>
+                    <span>
+                        <img src="images/menu/menu3alternativa.png" alt="menu3">
+                    </span>
+                </div>
+
+                <div class="plato">
+                    <span>
+                        <img src="images/menu/menu4.jpg" alt="menu4">
+                    </span>
+                    <span>
+                        <h4>Menu 4</h4>
+                        <p>Haring Crudo Reimaginado: Un homenaje a nuestro mar del Norte. Filetes de arenque curados en sal, aderezados con eneldo fresco y mostaza antigua, sobre una cama de remolacha encurtida y puré de patata ahumado. Una explosión de sabores marinos y terrosos que rinde tributo a nuestras raíces. </p>
+                    </span>
+                </div>
+
+                <div class="plato">
+                    <span>
+                        <h4>Menu 5</h4>
+                        <p>Ostras del Norte con Toque Holandés: Un viaje culinario a las frías aguas del Mar del Norte. Frescas ostras, cultivadas en nuestras costas, adornadas con las mejores algas marinas de la región y una perla de caviar holandés. Un bocado intenso y refrescante que captura la esencia del mar.</p>
+                    </span>
+                    <span>
+                        <img src="images/menu/menu5.jpg" alt="">
+                    </span>
+                </div>
+            </menu>
+        </div>
+        <!-- HORARIO -->
+        <div id="horario">
+        <h3>Horario de Atención</h3>
+        <table id="horario">
+            <thead>
+                <tr>
+                    <th>Día</th>
+                    <th>Apertura</th>
+                    <th>Cierre</th>
+                </tr>
+            </thead>
+            <tbody >
+                <tr>
+                    <td>Lunes - Viernes</td>
+                    <td>12:00 pm</td>
+                    <td>10:00 pm</td>
+                </tr>
+                <tr>
+                    <td>Sábado</td>
+                    <td>10:00 am</td>
+                    <td>11:00 pm</td>
+                </tr>
+                <tr>
+                    <td>Domingo</td>
+                    <td>11:00 am</td>
+                    <td>9:00 pm</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        <!-- UBICACION -->
+         <div id="ubicacion">
+            <h3>Ubicación</h3>
+            <div class="localizacion">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d87549.5360884894!2d4.821242635791571!3d52.344482119167104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sgl!2ses!4v1729952997887!5m2!1sgl!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
 
+        <!-- CARROUSEL IMAGENES -->
+        <div id="carrousel">
+            <h3>Fotos</h3>
+            <div id="carouselMainPage" class="carousel slide w-100 m-5 mx-auto" data-bs-ride="carousel">
+            <div class="carousel-indicators d-none">
+                <button type="button" data-bs-target="#carouselMainPage" data-bs-slide-to="0" class="active" aria-current="true"
+                aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselMainPage" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselMainPage" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselMainPage" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselMainPage" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#carouselMainPage" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                <button type="button" data-bs-target="#carouselMainPage" data-bs-slide-to="6" aria-label="Slide 7"></button>
+            </div>
+            <div class="carousel-inner">
+                <!-- PRIMERA IMAGEN -->
+                <div class="carousel-item active">
+                <div class="image-wrapper">
+                    <img src="images/fotos/foto1.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-caption mb-4">
+                    <h5>Elegancia</h5>
+                    <p>Disfrute de un ambiente elegante y lujoso mientra saborea los mejores platos de Amsterdam</p>
+                </div>
+                </div>
+                <!-- SEGUNDA IMAGEN -->
+                <div class="carousel-item ">
+                <div class="image-wrapper">
+                    <img src="images/fotos/foto2.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-caption mb-4">
+                    <h5>Estilo</h5>
+                    <p>En The Amsterdam Bridge sabemos que los pequeños detalles marcan la diferencia</p>
+                </div>
+                </div>
+                <!-- TERCERA IMAGEN -->
+                <div class="carousel-item">
+                <div class="image-wrapper">
+                    <img src="images/fotos/foto3.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-caption mb-4">
+                    <h5>Calidad</h5>
+                    <p>Nustros clientes son nuestro mayor tesoro, por eso les ofrecemos platos de la mejor calidad</p>
+                </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselMainPage" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselMainPage" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+            </div>
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+    
     </main>
-
-
-
-
-
-
-
-
-
 
 
 
