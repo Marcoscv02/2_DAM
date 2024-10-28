@@ -12,20 +12,16 @@ public class PersonaTypeAdapter  implements JsonSerializer<Persona>, JsonDeseria
         JsonObject jsObject= new JsonObject();
         jsObject.addProperty("name",persona.getNombre());
         jsObject.addProperty("age",persona.getEdad());
-        jsObject.addProperty ("adress",persona.getCalle()+" ("+persona.getCidade()+")");
+        jsObject.addProperty ("address",persona.getCalle()+" ("+persona.getCidade()+")");
         return jsObject;
-    }
-    public JsonElement serializeDireccion(Direccion direccion, Type type, JsonSerializationContext jsonSerializationContext){
-        JsonObject jsObject= new JsonObject();
-        jsObject.
     }
 
     @Override
     public Persona deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
         JsonObject jsObject= jsonElement.getAsJsonObject();
         Persona p= new Persona(jsObject.get("name").getAsString(), jsObject.get("age").getAsInt());
-        String [] direccion= jsObject.get("adress").getAsString(). split("\\(");
-        p.setDireccion(new Direccion(direccion[0],direccion[1].substring(0,direccion[1].length()-2)));
-        return null;
+        String [] direccion= jsObject.get("address").getAsString(). split("\\(|\\)");
+        p.setDireccion(new Direccion(direccion[0],direccion[1]));
+        return p;
     }
 }
