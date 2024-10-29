@@ -30,6 +30,8 @@
             <!-- Menú de navegación -->
             <nav>
                 <div><a href="index.html">Volver</a></div>
+                <div><a href="#presentacion">presentacion</a></div>
+                <div><a href="#valor">Valores</a></div>
                 <div class="dropdown">
                     <a href="#" id="idioma">Idioma</a>
                     <div class="dropdown-content">
@@ -41,42 +43,37 @@
 
     </header>
 
-    <div class="container">
-        <h1>Reserva tu Mesa</h1>
-        <form id="reservaForm" action="/reservar" method="POST">
-            <label for="nombre">Nombre Completo</label>
-            <input type="text" id="nombre" name="nombre" required>
-    
-            <label for="telefono">Teléfono</label>
-            <input type="tel" id="telefono" name="telefono" required>
-    
-            <label for="email">Correo Electrónico</label>
-            <input type="email" id="email" name="email" required>
-    
-            <label for="personas">Número de Personas</label>
-            <select id="personas" name="personas" required>
-                <option value="1">1 persona</option>
-                <option value="2">2 personas</option>
-                <option value="3">3 personas</option>
-                <option value="4">4 personas</option>
-                <option value="5">5 personas</option>
-                <option value="6">6 personas</option>
-                <option value="7">7 personas</option>
-                <option value="8">8 personas</option>
-            </select>
-    
-            <label for="fecha">Fecha de la Reserva</label>
-            <input type="date" id="fecha" name="fecha" required>
-    
-            <label for="hora">Hora de la Reserva</label>
-            <input type="time" id="hora" name="hora" required>
-    
-            <label for="comentarios">Comentarios Adicionales</label>
-            <textarea id="comentarios" name="comentarios" rows="4" placeholder="¿Alguna solicitud especial?"></textarea>
-    
-            <button type="submit">Reservar</button>
-        </form>
-    </div>
+
+    <!-- PRESENTACIÓN -->
+    <section id="presentacion">
+        <div class="historia">
+            <div>
+                <img src="images/Quienes somos/presentacion.jpg" alt="presentacion">
+            </div>
+            <div class="texto">
+                <div id="presentacion">
+                    <h3>Quienes somos:</h3>
+                    <p>
+                        Ubicado en el corazón de Amsterdam, The Amsterdam Bridge es un restaurante que combina la esencia de la cocina tradicional holandesa con técnicas de alta gastronomía contemporánea. En un ambiente sofisticado y de estilo burgués, ofrecemos a nuestros comensales una experiencia única, donde los sabores y el arte culinario de los Países Bajos se elevan a su máxima expresión.
+                    </p>
+                    <p>
+                        Cada plato en The Amsterdam Bridge es una celebración de los ingredientes más selectos de la región, elaborados con pasión y creatividad por nuestros chefs. Nuestro menú captura la riqueza de la cocina holandesa tradicional, realzada con un toque moderno, y maridada con una cuidadosa selección de vinos europeos y cervezas artesanales.
+                    </p>
+                </div>
+                <div id="historia">
+                    <h3>Un Viaje al Pasado</h3>
+                    <p>La historia de "De Hollandsche Tafel" comienza con una profunda pasión por preservar y honrar la cocina tradicional de los Países Bajos, combinando las recetas más clásicas con una refinada técnica culinaria. Inspirado en las raíces holandesas de nuestra fundadora, Amélie Van der Meer, este restaurante nació de un deseo de compartir el auténtico espíritu de la comida holandesa con un toque de alta cocina. Amélie creció en un pequeño pueblo al norte de Ámsterdam, donde su abuela le enseñó los secretos de la cocina holandesa casera, desde los suculentos estofados y ahumados hasta los exquisitos postres tradicionales.</p>
+                    <p>Años más tarde, Amélie estudió en las escuelas de gastronomía más prestigiosas de Europa, combinando los sabores tradicionales con técnicas modernas. Su sueño siempre fue abrir un lugar donde la tradición holandesa se encontrara con la alta cocina y la sofisticación. Con este espíritu, "De Hollandsche Tafel" abrió sus puertas, y hoy se ha convertido en un referente de la cocina holandesa de alta gama.</p>
+                    <p> Nuestros platos rinden homenaje a la herencia cultural de los Países Bajos, con un enfoque en ingredientes locales y sostenibles que resaltan la autenticidad de cada receta. Desde los famosos arenques ahumados y el ragú de ternera hasta nuestras reinterpretaciones de los clásicos poffertjes y stroopwafels, cada plato cuenta una historia que invita a los comensales a un viaje culinario a través de la historia y el alma de Holanda.</p>
+                    <p>The Amsterdam Bridge es un lugar donde los sabores del pasado se encuentran con la innovación del presente, brindando una experiencia única, elegante y profundamente arraigada en la tradición holandesa.</p>
+                </div>
+            </div>
+        </div>
+        <div class="valores">
+
+        </div>
+    </section>
+
 
         <!-- FOOTER -->
     <footer id="footer">
@@ -84,8 +81,8 @@
             <div class="footer-section">
                 <h4>ACERCA DE NOSOTROS</h4>
                 <ul>
-                    <li><a href="presentacion.html">Nuestra Historia </a></li>
-                    <li><a href="presentacion.html">Nuestros Valores</a></li>
+                    <li><a href="#">Nuestra Historia </a></li>
+                    <li><a href="#">Nuestros Valores</a></li>
                 </ul>
             </div>
     
