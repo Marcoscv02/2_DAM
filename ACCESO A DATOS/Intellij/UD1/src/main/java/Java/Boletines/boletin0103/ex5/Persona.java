@@ -6,12 +6,13 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Persona {
-    String nombre;
-    int edad;
-    Direccion direccion;
-    List<Persona>amigos= new ArrayList<>();
+    private String nombre;
+    private int edad;
+    private Direccion direccion;
+    private List<Persona>amigos= new ArrayList<>();
 
     public Persona() {
     }
@@ -19,6 +20,12 @@ public class Persona {
     public Persona(String nombre, int edad) {
         this.nombre = nombre;
         this.edad = edad;
+    }
+
+    public Persona(String nombre, int edad, Direccion direccion) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.direccion = direccion;
     }
 
     public Persona(String nombre, int edad, Direccion direccion, List<Persona> amigos) {
@@ -70,6 +77,8 @@ public class Persona {
 
     @Override
     public String toString() {
-        return  nombre + " (" + edad + ")";
+        return  nombre + " (" + edad + ") "+ direccion + System.lineSeparator() +
+                "amigos: " + amigos.stream().map(Persona::getNombre)
+                .collect(Collectors.joining(", "));
     }
 }

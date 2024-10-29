@@ -12,10 +12,10 @@ public class Main {
         List<Persona>amigos= new ArrayList<>();
 
         // Creacion de los amigos
-        Persona persona1 = new Persona("Juan", 25, d, amigos);
-        Persona persona2 = new Persona("Ana", 30, d, amigos);
-        Persona persona3 = new Persona("Luis", 28, d, amigos);
-        Persona persona4 = new Persona("Maria", 35, d, amigos);
+        Persona persona1 = new Persona("Juan", 25, d);
+        Persona persona2 = new Persona("Ana", 30, d);
+        Persona persona3 = new Persona("Luis", 28, d);
+        Persona persona4 = new Persona("Maria", 35, d);
 
         //Añadir los amigos al arrayList
         amigos.add(persona1);

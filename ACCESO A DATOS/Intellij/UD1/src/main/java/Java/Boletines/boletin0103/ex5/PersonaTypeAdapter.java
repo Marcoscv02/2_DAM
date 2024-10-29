@@ -11,12 +11,24 @@ import java.util.List;
 public class PersonaTypeAdapter  implements JsonSerializer<Persona>, JsonDeserializer<Persona> {
 
     @Override
-    public JsonElement serialize(Persona persona, Type type, JsonSerializationContext jsonSerializationContext) {
+    public JsonElement serialize(Persona persona, Type type, JsonSerializationContext contexto) {
         JsonObject jsObject= new JsonObject();
         jsObject.addProperty("name",persona.getNombre());
         jsObject.addProperty("age",persona.getEdad());
         jsObject.addProperty ("address",persona.getCalle()+" ("+persona.getCidade()+")");
-        jsObject.addProperty("friends", persona.getAmigos().toString());
+
+        List<Persona> amigos = persona.getAmigos();
+
+        JsonArray a = new JsonArray();
+
+        for (Persona p: amigos){
+            a.add(contexto.serialize(p));
+      //      System.out.println("p = " + p);
+        }
+
+        jsObject.add("friends", a);
+
+
         return jsObject;
     }
 
@@ -29,7 +41,7 @@ public class PersonaTypeAdapter  implements JsonSerializer<Persona>, JsonDeseria
         //Se le asigna a los elementos de la cadena los índices en el array
         p.setDireccion(new Direccion(direccion[0],direccion[1]));
         //Se recojen los amigos del json y se meten en un array
-        JsonArray amigosArray= jsObject.getAsJsonArray("friens");
+        JsonArray amigosArray= jsObject.getAsJsonArray("friends");
         if (amigosArray != null) {
             List<Persona> amigos= new ArrayList<>();
             for (JsonElement amigoElement : amigosArray){
