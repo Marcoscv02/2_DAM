@@ -53,7 +53,7 @@ button:hover {
 
 
 /* ESTILOS PRESENTACION */
-.historia{
+.principal{
     display: flex;
     flex-direction: row;
     background-color: #F5F3E7;
@@ -61,12 +61,11 @@ button:hover {
     border-radius: 10px;
     margin: auto;
     margin-top: 50px;
-    margin-bottom: 50px;
     text-align: center;
 }
 
 
-.historia img{
+.principal img{
     height: 95%;
     margin-top: 5%;
     border-radius: 10px;
@@ -79,7 +78,7 @@ button:hover {
     flex-direction: column;
 }
 .texto h3{
-    font-size: 3vw;
+    font-size: 2vw;
     font-family: 'Times New Roman', Times, serif;
     margin-bottom: 30px;
 }
