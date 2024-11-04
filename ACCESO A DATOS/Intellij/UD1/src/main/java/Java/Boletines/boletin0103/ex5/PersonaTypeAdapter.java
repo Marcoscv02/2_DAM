@@ -16,11 +16,9 @@ public class PersonaTypeAdapter  implements JsonSerializer<Persona>, JsonDeseria
         jsObject.addProperty("name",persona.getNombre());
         jsObject.addProperty("age",persona.getEdad());
         jsObject.addProperty ("address",persona.getCalle()+" ("+persona.getCidade()+")");
-
+        //Serializar array de amigos
         List<Persona> amigos = persona.getAmigos();
-
         JsonArray a = new JsonArray();
-
         for (Persona p: amigos){
             a.add(contexto.serialize(p));
       //      System.out.println("p = " + p);

@@ -13,6 +13,7 @@ public class Persona {
     private int edad;
     private Direccion direccion;
     private List<Persona>amigos= new ArrayList<>();
+    private List<String>hobbies= new ArrayList<>();
 
     public Persona() {
     }
@@ -75,10 +76,20 @@ public class Persona {
         this.amigos = amigos;
     }
 
+    public List<String> getHobbies() {
+        return hobbies;
+    }
+
+    public void setHobbies(List<String> hobbies) {
+        this.hobbies = hobbies;
+    }
+
     @Override
     public String toString() {
         return  nombre + " (" + edad + ") "+ direccion + System.lineSeparator() +
                 "amigos: " + amigos.stream().map(Persona::getNombre)
-                .collect(Collectors.joining(", "));
+                .collect(Collectors.joining(", "))+
+                ", hobbies=" + hobbies;
     }
+
 }
