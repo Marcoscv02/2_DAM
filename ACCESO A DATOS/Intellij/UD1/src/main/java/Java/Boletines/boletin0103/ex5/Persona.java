@@ -36,6 +36,14 @@ public class Persona {
         this.amigos = amigos;
     }
 
+    public Persona(String nombre, int edad, Direccion direccion, List<Persona> amigos, List<String> hobbies) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.direccion = direccion;
+        this.amigos = amigos;
+        this.hobbies = hobbies;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -87,9 +95,8 @@ public class Persona {
     @Override
     public String toString() {
         return  nombre + " (" + edad + ") "+ direccion + System.lineSeparator() +
-                "amigos: " + amigos.stream().map(Persona::getNombre)
-                .collect(Collectors.joining(", "))+
-                ", hobbies=" + hobbies;
+                "amigos: " + amigos.stream().map(Persona::getNombre).collect(Collectors.joining(", "))+
+                ", "+System.lineSeparator()+"hobbies=" + hobbies;
     }
 
 }
