@@ -55,6 +55,21 @@ button:hover {
 /* ESTILOS PRESENTACION */
 .principal{
     display: flex;
+    flex-direction: column;
+    background-color: #F5F3E7;
+    width: 90%;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+}
+.principal video{
+    width: 85%;
+    height: 85%;
+    margin-top: 5%;
+}
+.principal1{
+    display: flex;
     flex-direction: row;
     background-color: #F5F3E7;
     width: 90%;
@@ -64,12 +79,12 @@ button:hover {
     text-align: center;
 }
 
-
-.principal img{
+.principal1 img{
     height: 95%;
     margin-top: 5%;
     border-radius: 10px;
 }
+
 
 .texto{
     margin: 5%;
