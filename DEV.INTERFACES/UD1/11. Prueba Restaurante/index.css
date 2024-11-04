@@ -32,7 +32,7 @@ header div{
     justify-self: center; /* Alinea en el centro */
     font-family:'Times New Roman', Times, serif;
     text-align: center;
-    font-size: 4vw;
+    font-size: 75px;
     margin-right: 29%;
     position: relative;
 }
@@ -431,7 +431,7 @@ iframe{
         flex-direction: column;        
     }
     nav a {
-        font-size: 3vw;
+        font-size: 13px;
         padding: 5px;
     }
     .dropdown, .search-container{
