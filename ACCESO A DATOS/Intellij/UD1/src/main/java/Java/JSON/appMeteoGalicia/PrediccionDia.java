@@ -1,28 +1,43 @@
 package Java.JSON.appMeteoGalicia;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class PrediccionDia {
-    private LocalDate dataPredicion;
-    private int nivelAviso,tMax, tMin, uvMaz;
+
+    private LocalDate dataPredicion; // Guádala para que la ponga mejor como LocalDate
+    private int nivelAviso;
+    private int temperaturaMaxima;
+    private int temperaturaMinima;
+    private int uvMaximo;
     private List<VariableFranxa> listaVariableFranxa;
 
-    // Constructores
     public PrediccionDia() {
+        listaVariableFranxa = new ArrayList<>();
     }
 
-    public PrediccionDia(LocalDate dataPredicion, int nivelAviso, int tMax, int tMin, int uvMaz, List<VariableFranxa> listaVariableFranxa) {
+    public PrediccionDia(String dataPredicion) {
+        this.dataPredicion = LocalDateTime.parse(dataPredicion).toLocalDate();
+        listaVariableFranxa = new ArrayList<>();
+    }
+
+    public PrediccionDia(LocalDate dataPredicion) {
+        this.dataPredicion = dataPredicion;
+        listaVariableFranxa = new ArrayList<>();
+    }
+
+
+    public PrediccionDia(LocalDate dataPredicion, int nivelAviso, int tMax, int tMin, int uvMaz) {
         this.dataPredicion = dataPredicion;
         this.nivelAviso = nivelAviso;
-        this.tMax = tMax;
-        this.tMin = tMin;
-        this.uvMaz = uvMaz;
-        this.listaVariableFranxa = listaVariableFranxa;
+        this.temperaturaMaxima = tMax;
+        this.temperaturaMinima = tMin;
+        this.uvMaximo = uvMaz;
     }
 
-    //Getters y Setters
     public LocalDate getDataPredicion() {
         return dataPredicion;
     }
@@ -39,28 +54,28 @@ public class PrediccionDia {
         this.nivelAviso = nivelAviso;
     }
 
-    public int gettMax() {
-        return tMax;
+    public int getTemperaturaMaxima() {
+        return temperaturaMaxima;
     }
 
-    public void settMax(int tMax) {
-        this.tMax = tMax;
+    public void setTemperaturaMaxima(int temperaturaMaxima) {
+        this.temperaturaMaxima = temperaturaMaxima;
     }
 
-    public int gettMin() {
-        return tMin;
+    public int getTemperaturaMinima() {
+        return temperaturaMinima;
     }
 
-    public void settMin(int tMin) {
-        this.tMin = tMin;
+    public void setTemperaturaMinima(int temperaturaMinima) {
+        this.temperaturaMinima = temperaturaMinima;
     }
 
-    public int getUvMaz() {
-        return uvMaz;
+    public int getUvMaximo() {
+        return uvMaximo;
     }
 
-    public void setUvMaz(int uvMaz) {
-        this.uvMaz = uvMaz;
+    public void setUvMaximo(int uvMaximo) {
+        this.uvMaximo = uvMaximo;
     }
 
     public List<VariableFranxa> getListaVariableFranxa() {
@@ -71,28 +86,18 @@ public class PrediccionDia {
         this.listaVariableFranxa = listaVariableFranxa;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        PrediccionDia that = (PrediccionDia) o;
-        return nivelAviso == that.nivelAviso && tMax == that.tMax && tMin == that.tMin && uvMaz == that.uvMaz && Objects.equals(dataPredicion, that.dataPredicion) && Objects.equals(listaVariableFranxa, that.listaVariableFranxa);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(dataPredicion, nivelAviso, tMax, tMin, uvMaz, listaVariableFranxa);
+    public void addVariableFranxa(VariableFranxa variableFranxa){
+        listaVariableFranxa.add(variableFranxa);
     }
 
     @Override
     public String toString() {
-        return "PrediccionDia{" +
-                "dataPredicion=" + dataPredicion +
-                ", nivelAviso=" + nivelAviso +
-                ", tMax=" + tMax +
-                ", tMin=" + tMin +
-                ", uvMaz=" + uvMaz +
-                ", listaVariableFranxa=" + listaVariableFranxa +
-                '}';
+        return dataPredicion +
+                " (aviso: " + nivelAviso + ") " +
+                ", Máxima: " + temperaturaMaxima +
+                ", Mínima: " + temperaturaMinima +
+                ", Índice ultravioleta máx: " + uvMaximo +
+                " " + listaVariableFranxa.stream().collect(StringBuilder::new,
+                (sb, vf) -> sb.append(vf).append(System.lineSeparator()), StringBuilder::append);
     }
 }

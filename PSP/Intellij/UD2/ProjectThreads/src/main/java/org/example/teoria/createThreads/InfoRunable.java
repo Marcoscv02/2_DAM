@@ -1,4 +1,4 @@
-package org.example.createThreads;
+package org.example.teoria.createThreads;
 
 public class InfoRunable implements Runnable{
     @Override

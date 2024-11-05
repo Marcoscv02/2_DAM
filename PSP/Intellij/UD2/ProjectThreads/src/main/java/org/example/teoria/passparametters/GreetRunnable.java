@@ -1,4 +1,4 @@
-package org.example.passparametters;
+package org.example.teoria.passparametters;
 
 public class GreetRunnable implements Runnable {
     private String name;

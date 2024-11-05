@@ -1,4 +1,4 @@
-package org.example.callable;
+package org.example.teoria.callable;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
@@ -17,7 +17,7 @@ public class Main {
             //Se genera hilo
             Thread th= new Thread(ft);
             th.start();
-            String msg= (String) ft.get();
+            String msg= ft.get().toString(); //se obtiene el return del hilo
             System.out.println(msg);
         }
     }

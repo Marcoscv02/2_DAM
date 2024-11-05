@@ -1,4 +1,4 @@
-package org.example.callable;
+package org.example.teoria.callable;
 
 import java.util.concurrent.Callable;
 

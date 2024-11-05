@@ -1,22 +1,25 @@
 package Java.JSON.appMeteoGalicia;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class Prediccion {
+
+    public static final String BARRA = "--------------------------------------------------";
+
     private Concello concello;
-    private List<PrediccionDia>listaPrediccionDia;
+    private List<PrediccionDia> listaPredDiaConcello;
 
-    //Constructores
     public Prediccion() {
+        listaPredDiaConcello = new ArrayList<>();
     }
 
-    public Prediccion(Concello concello, List<PrediccionDia> listaPrediccionDia) {
+    public Prediccion(Concello concello) {
         this.concello = concello;
-        this.listaPrediccionDia = listaPrediccionDia;
+        listaPredDiaConcello = new ArrayList<>();
     }
 
-    //getters y Setters
     public Concello getConcello() {
         return concello;
     }
@@ -25,12 +28,16 @@ public class Prediccion {
         this.concello = concello;
     }
 
-    public List<PrediccionDia> getListaPrediccionDia() {
-        return listaPrediccionDia;
+    public List<PrediccionDia> getListaPredDiaConcello() {
+        return listaPredDiaConcello;
     }
 
-    public void setListaPrediccionDia(List<PrediccionDia> listaPrediccionDia) {
-        this.listaPrediccionDia = listaPrediccionDia;
+    public void setListaPredDiaConcello(List<PrediccionDia> listaPredDiaConcello) {
+        this.listaPredDiaConcello = listaPredDiaConcello;
+    }
+
+    public void addPredDiaConcello(PrediccionDia predDia){
+        listaPredDiaConcello.add(predDia);
     }
 
     @Override
@@ -38,19 +45,21 @@ public class Prediccion {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Prediccion that = (Prediccion) o;
-        return Objects.equals(concello, that.concello) && Objects.equals(listaPrediccionDia, that.listaPrediccionDia);
+        return Objects.equals(concello, that.concello);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(concello, listaPrediccionDia);
+        return Objects.hashCode(concello);
     }
 
     @Override
     public String toString() {
-        return "Prediccion{" +
-                "concello=" + concello +
-                ", listaPrediccionDia=" + listaPrediccionDia +
-                '}';
+        return concello + System.lineSeparator() + BARRA + System.lineSeparator()
+                + listaPredDiaConcello.stream().collect(StringBuilder::new,
+                (sb, pd) -> sb.append(pd).append(System.lineSeparator())
+                        .append(BARRA).append(System.lineSeparator()), StringBuilder::append);
     }
+
+
 }

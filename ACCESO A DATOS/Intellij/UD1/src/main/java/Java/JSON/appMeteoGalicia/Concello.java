@@ -1,56 +1,40 @@
 package Java.JSON.appMeteoGalicia;
 
-import java.util.Objects;
-
 public class Concello {
-    private int idConcello;
-    private String nombre;
 
-    //Constructores
+    private String nome;
+    private Integer idConcello;
+
     public Concello() {
     }
 
-    public Concello(int idConcello, String nombre) {
-        this.idConcello = idConcello;
-        this.nombre = nombre;
+    public Concello(String nome) {
+        this.nome = nome;
     }
 
+    public Concello(String nome, Integer idConcello) {
+        this.nome = nome;
+        this.idConcello = idConcello;
+    }
 
-    //Getter/Setter
-    public int getIdConcello() {
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Integer getIdConcello() {
         return idConcello;
     }
 
-    public void setIdConcello(int idConcello) {
+    public void setIdConcello(Integer idConcello) {
         this.idConcello = idConcello;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Concello concello = (Concello) o;
-        return idConcello == concello.idConcello && Objects.equals(nombre, concello.nombre);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(idConcello, nombre);
     }
 
     @Override
     public String toString() {
-        return "Concello{" +
-                "idConcello=" + idConcello +
-                ", nombre='" + nombre + '\'' +
-                '}';
+        return nome + " [" +idConcello + ']';
     }
 }

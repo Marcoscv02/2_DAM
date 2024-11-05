@@ -1,4 +1,4 @@
-package org.example.passparametters;
+package org.example.teoria.passparametters;
 
 public class main {
     private static int NUM_THREADS=7;

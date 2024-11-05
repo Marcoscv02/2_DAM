@@ -1,4 +1,4 @@
-package org.example.createThreads;
+package org.example.teoria.createThreads;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
