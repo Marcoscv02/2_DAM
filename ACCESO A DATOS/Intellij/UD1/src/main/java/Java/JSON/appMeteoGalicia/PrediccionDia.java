@@ -9,10 +9,7 @@ import java.util.stream.Collectors;
 public class PrediccionDia {
 
     private LocalDate dataPredicion; // Guádala para que la ponga mejor como LocalDate
-    private int nivelAviso;
-    private int temperaturaMaxima;
-    private int temperaturaMinima;
-    private int uvMaximo;
+    private int nivelAviso, temperaturaMaxima, temperaturaMinima, uvMaximo;
     private List<VariableFranxa> listaVariableFranxa;
 
     public PrediccionDia() {

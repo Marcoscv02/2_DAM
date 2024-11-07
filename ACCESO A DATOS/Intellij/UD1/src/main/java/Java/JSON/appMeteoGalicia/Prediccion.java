@@ -20,6 +20,11 @@ public class Prediccion {
         listaPredDiaConcello = new ArrayList<>();
     }
 
+    public Prediccion(Concello concello, List<PrediccionDia> listaPredDiaConcello) {
+        this.concello = concello;
+        this.listaPredDiaConcello = listaPredDiaConcello;
+    }
+
     public Concello getConcello() {
         return concello;
     }

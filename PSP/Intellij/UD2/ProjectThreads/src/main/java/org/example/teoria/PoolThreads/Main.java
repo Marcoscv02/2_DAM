@@ -11,7 +11,7 @@ public class Main {
         ExecutorService pool= Executors.newFixedThreadPool(NUM_THREADS);
 
         for (int i = 0; i < NUM_THREADS; i++) {
-            Runnable rt= new RunnableThreads(names[i]);
+            Runnable rt= new RunnableThreads (names[i]);
             pool.execute(rt);//Se utiliza para iniciar el pool
         }
         //En los pools de sebe indicar explicitamente el cierre de la ejecucion
