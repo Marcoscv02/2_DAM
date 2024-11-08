@@ -35,7 +35,7 @@ public class PrediccionAdapter implements JsonDeserializer<Prediccion> {
                 List<PrediccionDia>prediccionDiaList= new ArrayList<>();
 
                 //Se hace un foreach sobre el jsonArray y se van añadiendo los elementos al arrayList Java
-                for (JsonElement prediccionElement:prediccionesJson){
+                for (JsonElement prediccionElement : prediccionesJson){
                     PrediccionDia pd =context.deserialize(prediccionElement, PrediccionDia.class);
                     prediccionDiaList.add(pd);
                 }

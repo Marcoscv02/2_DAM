@@ -7,10 +7,16 @@
 body {
     font-family: Arial, sans-serif;
     font-size: 1vw;
-
+    background-color: blanchedalmond;
+    box-sizing: border-box;
 }
 
-/* Header */
+
+
+
+
+
+/* HEADER */
 header {
     display: grid;
     grid-template-rows: 60% 60%;
@@ -49,7 +55,6 @@ header div{
 }
 h1 {
     font-family: "Shadows Into Light";
-    text-align: center;
     font-size: 3vw;
     margin-right: 29%;
 }
@@ -87,8 +92,8 @@ h1 {
 
 /* BARRA NAVEGACION */
 nav {
-    width: 70%;  
-    margin: 10% 30% 0px 15%;
+    width: 80%;  
+    margin: 10% 10% 0px 10%;
     position: absolute;
     display: flex;
     justify-content: space-between;
@@ -96,7 +101,7 @@ nav {
     flex-wrap: nowrap; /* Evita que los elementos se envuelvan en múltiples líneas */
 }
 nav div {
-    width: 7.6%;
+    width: 8%;
 }
 nav a {
     text-align: center;
@@ -119,10 +124,41 @@ nav a:hover{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 /* MAIN*/
+#cabeceraMain{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    
+}
+a{
+    text-decoration: none;
+}
+a:visited{
+    text-decoration: none;
+}
+#carrito{
+    font-size: 2vw;
+    text-align: end;
+}
+#flecha{
+    font-size: 2vw;
+    text-align: start;
+    color: black;
+}
 main {
     padding: 20px;
-    background-color: blanchedalmond;
     font-size: 1vw;
     text-align: center;
 }
@@ -239,3 +275,136 @@ section div {
 .image-container:hover .overlay-text {
     opacity: 1; /* El texto aparece */
 }
+
+
+
+
+
+
+
+/* PRENDA */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: grid;
+    width: 90%;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.product-gallery {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.product-gallery img {
+    width: 50%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product-info {
+    padding: 10px;
+}
+
+.rating {
+    color: #FFD700;
+    margin-top: 5px;
+}
+
+.price {
+    font-size: 24px;
+    color: #333;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.payment {
+    margin-top: 15px;
+}
+
+.klarna-btn {
+    background-color: #F0F0F0;
+    padding: 10px;
+    border: 1px solid #CCC;
+    cursor: pointer;
+    width: 100%;
+}
+
+.colors {
+    margin-top: 20px;
+}
+
+.color-options{
+    margin-left: 41%;
+}
+
+.colors .color-options {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.active {
+    border: 2px solid #333;
+}
+
+.color.black { background-color: #000; }
+.color.brown { background-color: #8B4513; }
+.color.gray { background-color: #A9A9A9;}
+.active { border: 2px solid #333; }
+
+.sizes {
+    margin-top: 20px;
+}
+
+.size-options button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: 1px solid #CCC;
+    cursor: pointer;
+    background-color: #FFF;
+}
+
+.size-options button:hover {
+    background-color: #EEE;
+}
+
+.add-to-cart {
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+    background-color: #CCC;
+    border: none;
+    cursor: not-allowed;
+    color: #FFF;
+    font-weight: bold;
+}
+
+.description {
+    margin-top: 20px;
+}
+
+.description h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.description ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+

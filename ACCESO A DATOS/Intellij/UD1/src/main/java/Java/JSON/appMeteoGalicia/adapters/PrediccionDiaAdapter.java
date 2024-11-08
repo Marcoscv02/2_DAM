@@ -25,10 +25,18 @@ public class PrediccionDiaAdapter implements JsonDeserializer<PrediccionDia> {
             prediccionDia.setNivelAviso(jsPrediccionDia.get("nivelAviso").getAsInt());
         }
 
+        for (VariableMeteo v : VariableMeteo.values()){
+            if (jsPrediccionDia.has(v.getNome())){
+                prediccionDia.addVariableFranxa(getVariableFranxa (v, jsPrediccionDia.get(v.getNome()).getAsJsonObject()));
+            }
+        }
+
+
         return prediccionDia;
     }
 
-    private VariableFranxa getVariableFranxa(VariableMeteo v, JsonObject varFranxaJsonObject){
-        return null;
+    private VariableFranxa getVariableFranxa(VariableMeteo v, JsonObject obj){
+
+        return new VariableFranxa(v, obj.get("manha").getAsInt(),obj.get("tarde").getAsInt(),obj.get("noite").getAsInt());
     }
 }
