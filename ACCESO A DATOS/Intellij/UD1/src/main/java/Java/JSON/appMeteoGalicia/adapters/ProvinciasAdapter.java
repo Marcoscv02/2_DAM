@@ -9,18 +9,18 @@ import java.io.IOException;
 
 public class ProvinciasAdapter extends TypeAdapter<Provincia> {
     @Override
-    public void write(JsonWriter jw, Provincia provincia) throws IOException {
+    public void write(JsonWriter w, Provincia provincia) throws IOException {
 
     }
 
     @Override
-    public Provincia read(JsonReader jr) throws IOException {
+    public Provincia read(JsonReader r) throws IOException {
         //Iniciar objeto
-        jr.beginObject();
+        r.beginObject();
 
 
         //Finalizar Objeto
-        jr.endObject();
+        r.endObject();
         return null;
     }
 }

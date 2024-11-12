@@ -24,7 +24,7 @@ public class Main {
         ResultSet rs= st.executeQuery("Select * From Especie");
 
         while (rs.next()){
-            System.out.println("Especie "+rs.getInt(1)+" "+rs.getString(2)+" "+rs.getDouble(3));
+            System.out.println("Especie: "+rs.getInt(1)+" "+rs.getString(2)+" "+rs.getDouble(3));
         }
     }
 }

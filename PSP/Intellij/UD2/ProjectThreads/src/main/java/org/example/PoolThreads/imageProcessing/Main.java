@@ -25,7 +25,6 @@ public class Main {
             }
         } else {
             System.out.println("No se encontraron archivos en la carpeta 'originals'.");
-            return;
         }
 
         //Se crea el execuotrService

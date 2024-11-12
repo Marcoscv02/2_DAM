@@ -17,7 +17,7 @@ public class Provincia {
 
     public Provincia(String nome, List<Concello> concello) {
         this.nome = nome;
-        this.concello = new ArrayList<>();
+        this.concellos = new ArrayList<>();
     }
 
 
