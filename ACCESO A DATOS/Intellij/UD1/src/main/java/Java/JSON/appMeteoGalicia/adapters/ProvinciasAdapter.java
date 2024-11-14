@@ -17,7 +17,7 @@ public class ProvinciasAdapter extends TypeAdapter<Provincia> {
     public Provincia read(JsonReader r) throws IOException {
         //Iniciar objeto
         r.beginObject();
-
+        
 
         //Finalizar Objeto
         r.endObject();
