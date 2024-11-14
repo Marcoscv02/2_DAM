@@ -10,10 +10,13 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.net.Proxy;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,39 +41,47 @@ public class ConcellosaAdapter extends TypeAdapter<List<Concello>> {
         return concellos;
     }
 
-    private Concello getConcello(JsonReader r) throws IOException{
+    public Concello getConcello(JsonReader r) throws IOException{
         String nombre = null;
         Integer id = null;
 
         r.beginObject();
         while (r.hasNext()){
 
-            switch (r.nextName()){
-                case "nombre":
-                    nombre=r.nextString();
-                    break;
-                case "id":
-                    id=r.nextInt();
-                    break;
-                default:
-                    r.skipValue();
-                    break;
+            if (r.peek()==JsonToken.NAME){
+                switch (r.nextName()){
+                    case "id":
+                        id=r.nextInt();
+                        break;
+                    case "nombre":
+                        nombre=r.nextString();
+                        break;
+                    default:
+                        r.skipValue();
+                        break;
+                }
             }
         }
         r.endObject();
 
         Concello c = new Concello(nombre, id);
 
-        return (c!=null)? c: null;
+        return c;
     }
 
-    public static void main(String[] args) throws IOException {
-        Type tipo = new  TypeToken<List <Concello>>(){}.getType();
-        Gson g= new GsonBuilder()
+
+    public static void main(String[] args) {
+        Type tipo=new TypeToken<List<Concello>>(){}.getType();
+        Gson g = new GsonBuilder()
+                .setPrettyPrinting()
                 .registerTypeAdapter(tipo,new ConcellosaAdapter())
                 .create();
+        Path ficheiroJson=Path.of("src/main/java/Java/JSON/appMeteoGalicia/json/concellos.json");
+        try(BufferedReader br=new BufferedReader(new FileReader(ficheiroJson.toFile()))){
+            ArrayList<Concello> concellos=g.fromJson(br,tipo);
+            System.out.println(concellos.toString());
+        }catch (IOException e){
 
-        List<Concello>concellos= g.fromJson(Files.newBufferedReader(Paths.get("Concellos.json")), tipo);
-        concellos.forEach(System.out::println);
+        }
     }
 }

@@ -5,7 +5,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Actividad2 {
-    public static void main(String[] args) {
+
+    public JFrame  getventana2(){
+
         // Crear la ventana (JFrame)
         JFrame ventana = new JFrame("Ventana con multiples botones");
         ventana.setSize(400, 200); // Tamaño de la ventana
@@ -14,13 +16,7 @@ public class Actividad2 {
         // Crear un panel para agregar el botón
         JPanel panel = new JPanel();
         ventana.add(panel); // Agregar el panel a la ventana
-        colocarComponentes(panel); // Método para colocar el botón en el panel
 
-        // Hacer visible la ventana
-        ventana.setVisible(true);
-    }
-
-    private static void colocarComponentes(JPanel panel) {
         panel.setLayout(null); // Sin layout para posicionar el botón manualmente
 
         // Crear el botón
@@ -50,7 +46,18 @@ public class Actividad2 {
                 JOptionPane.showMessageDialog(null, "Cancelado");
             }
         });
+
+        // Hacer visible la ventana
+        ventana.setVisible(true);
+
+        return ventana;
     }
+
+    public static void main(String[] args) {
+        Actividad2 ac2=new Actividad2();
+         ac2.getventana2();
+    }
+
 
 
 }

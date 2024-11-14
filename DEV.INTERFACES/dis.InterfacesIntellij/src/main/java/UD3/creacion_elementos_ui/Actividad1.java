@@ -8,7 +8,8 @@ import java.awt.event.ActionListener;
 
 public class Actividad1 {
 
-    public static void main(String[] args) {
+    public JFrame getVentana1(){
+
         // Crear la ventana (JFrame)
         JFrame ventana = new JFrame("Ventana Básica");
         ventana.setSize(400, 200); // Tamaño de la ventana
@@ -17,13 +18,7 @@ public class Actividad1 {
         // Crear un panel para agregar el botón
         JPanel panel = new JPanel();
         ventana.add(panel); // Agregar el panel a la ventana
-        colocarComponentes(panel); // Método para colocar el botón en el panel
 
-        // Hacer visible la ventana
-        ventana.setVisible(true);
-    }
-
-    private static void colocarComponentes(JPanel panel) {
         panel.setLayout(null); // Sin layout para posicionar el botón manualmente
 
         // Crear el botón
@@ -38,6 +33,16 @@ public class Actividad1 {
                 System.out.println("¡Botón presionado!"); // Mensaje en la consola
             }
         });
+
+        // Hacer visible la ventana
+        ventana.setVisible(true);
+
+        return ventana;
+    }
+
+    public static void main(String[] args) {
+        Actividad1 ac1= new Actividad1();
+        ac1.getVentana1();
     }
 }
 

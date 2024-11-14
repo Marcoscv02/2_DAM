@@ -5,7 +5,6 @@ import java.util.List;
 
 public class Provincia {
     private String nome;
-    private Integer idProvincia;
     private List<Concello>concellos;
 
     public Provincia() {
@@ -30,14 +29,6 @@ public class Provincia {
         this.nome = nome;
     }
 
-    public Integer getIdProvincia() {
-        return idProvincia;
-    }
-
-    public void setIdProvincia(Integer idProvincia) {
-        this.idProvincia = idProvincia;
-    }
-
     public List<Concello> getConcello() {
         return concellos;
     }
@@ -51,7 +42,6 @@ public class Provincia {
 
     @Override
     public String toString() {
-        return "["+idProvincia+
-                "] "+nome+": "+concellos;
+        return nome+": "+concellos;
     }
 }

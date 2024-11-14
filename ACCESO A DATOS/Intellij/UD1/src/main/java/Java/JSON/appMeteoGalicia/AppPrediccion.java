@@ -2,16 +2,43 @@ package Java.JSON.appMeteoGalicia;
 
 import Java.JSON.appMeteoGalicia.adapters.PrediccionAdapter;
 import Java.JSON.appMeteoGalicia.adapters.PrediccionDiaAdapter;
+import Java.JSON.appMeteoGalicia.adapters.ProvinciasAdapter;
 import com.google.gson.*;
+import com.google.gson.reflect.TypeToken;
+
 import java.io.*;
+import java.lang.reflect.Type;
 import java.net.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class AppPrediccion {
 
     public static void main(String[] args){
+        Path concellos= Paths.get("src/main/java/Java/JSON/appMeteoGalicia/json/concellosprovincia.json");
+        Type tipo = new TypeToken<List<Provincia>>(){}.getType();
+        List<Provincia>provincias= new ArrayList<>();
+
+        try (var is= new BufferedReader(new InputStreamReader(Files.newInputStream(concellos)))){
+            Gson gson= new GsonBuilder()
+                    .registerTypeAdapter(tipo, new ProvinciasAdapter())
+                    .setPrettyPrinting()
+                    .create();
+
+            provincias=gson.fromJson(is,tipo);
+            System.out.println(provincias.toString());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
         Scanner sc= new Scanner(System.in);
         System.out.println("Introduce Id concello:");
         String id= String.valueOf(sc.nextInt());

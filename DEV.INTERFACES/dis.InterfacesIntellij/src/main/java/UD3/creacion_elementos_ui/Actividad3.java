@@ -5,7 +5,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Actividad3 {
-    public static void main(String[] args) {
+
+    public  JFrame getVentana3(){
+
         // Crear la ventana (JFrame)
         JFrame ventana = new JFrame("Ventana con campo de texto");
         ventana.setSize(400, 200); // Tamaño de la ventana
@@ -14,13 +16,7 @@ public class Actividad3 {
         // Crear un panel para agregar el botón
         JPanel panel = new JPanel();
         ventana.add(panel); // Agregar el panel a la ventana
-        colocarComponentes(panel); // Método para colocar el botón en el panel
 
-        // Hacer visible la ventana
-        ventana.setVisible(true);
-    }
-
-    private static void colocarComponentes(JPanel panel) {
         panel.setLayout(null); // Sin layout para posicionar el botón manualmente
 
         // Crear el campo de texto
@@ -44,7 +40,16 @@ public class Actividad3 {
                 JOptionPane.showMessageDialog(null, "Nombre: "+nombre);
             }
         });
+        // Hacer visible la ventana
+        ventana.setVisible(true);
+
+        return ventana;
     }
 
+    public static void main(String[] args) {
+        Actividad3 ac3= new Actividad3();
+
+        ac3.getVentana3();
+    }
 
 }
