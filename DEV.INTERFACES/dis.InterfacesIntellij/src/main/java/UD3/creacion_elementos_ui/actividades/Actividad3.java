@@ -1,4 +1,4 @@
-package UD3.creacion_elementos_ui;
+package UD3.creacion_elementos_ui.actividades;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

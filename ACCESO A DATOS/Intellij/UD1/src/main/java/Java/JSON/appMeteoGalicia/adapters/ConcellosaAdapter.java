@@ -64,9 +64,7 @@ public class ConcellosaAdapter extends TypeAdapter<List<Concello>> {
         }
         r.endObject();
 
-        Concello c = new Concello(nombre, id);
-
-        return c;
+        return new Concello(nombre, id);
     }
 
 

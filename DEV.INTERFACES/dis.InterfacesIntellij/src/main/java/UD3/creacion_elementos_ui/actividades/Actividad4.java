@@ -1,4 +1,4 @@
-package UD3.creacion_elementos_ui;
+package UD3.creacion_elementos_ui.actividades;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -11,7 +11,7 @@ public class Actividad4 {
     public JFrame getventana4(){
         // Crear la ventana (JFrame)
         JFrame ventana = new JFrame("Ventana con multiples botones");
-        ventana.setSize(400, 200); // Tamaño de la ventana
+        ventana.setSize(400, 300); // Tamaño de la ventana
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Acción al cerrar la ventana
 
         // Crear un panel para agregar el botón

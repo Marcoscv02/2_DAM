@@ -42,18 +42,21 @@ public class ProvinciasAdapter extends TypeAdapter<List<Provincia>> {
 
     private Provincia getProvincia(JsonReader jr) throws IOException {
         String nombre= jr.nextName();   
-        ArrayList<Concello>concellos=new ArrayList<>();
+        ArrayList<Concello>concellos = new ArrayList<>();
 
         if (jr.peek()==JsonToken.BEGIN_ARRAY){
             ConcellosaAdapter ca= new ConcellosaAdapter();
             jr.beginArray();
 
             while (jr.hasNext()){
-                concellos.add(ca.getConcello(jr));
+                Concello c = ca.getConcello(jr);
+                concellos.add(c);
             }
             jr.endArray();
         }
+
         Provincia p= new Provincia(nombre,concellos);
+
 
         return p;
     }
@@ -68,7 +71,7 @@ public class ProvinciasAdapter extends TypeAdapter<List<Provincia>> {
         Path ficheiroJson=Path.of("src/main/java/Java/JSON/appMeteoGalicia/json/concellosprovincia.json");
         try(BufferedReader br=new BufferedReader(new FileReader(ficheiroJson.toFile()))){
             ArrayList<Provincia> provincias=g.fromJson(br,tipo);
-            System.out.println(provincias.toString());
+            provincias.forEach(System.out::println);
         }catch (IOException e){
             System.out.println("Error de lectura de datos: "+e.getMessage());
         }

@@ -14,9 +14,9 @@ public class Provincia {
         this.nome = nome;
     }
 
-    public Provincia(String nome, List<Concello> concello) {
+    public Provincia(String nome, List<Concello> concellos) {
         this.nome = nome;
-        this.concellos = new ArrayList<>();
+        this.concellos = concellos;
     }
 
 
@@ -42,6 +42,8 @@ public class Provincia {
 
     @Override
     public String toString() {
-        return nome+": "+concellos;
+        StringBuilder sb = new StringBuilder(nome).append(System.lineSeparator());
+        concellos.forEach(sb::append);
+        return sb.toString();
     }
 }
