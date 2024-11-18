@@ -22,12 +22,6 @@ public enum VariableMeteo {
         return Arrays.stream(VariableMeteo.values()).
                 filter(v -> nome.equalsIgnoreCase(v.getNome()))
                 .findFirst().orElse(null);
-
-//        for(VariableMeteo v : VariableMeteo.values()){
-//            if(nome.equalsIgnoreCase(v.getNome()))
-//                return v;
-//        }
-//        return null;
     }
 
     @Override
