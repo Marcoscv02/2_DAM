@@ -15,7 +15,7 @@ public class PrediccionDiaAdapter implements JsonDeserializer<PrediccionDia> {
         JsonObject jsPrediccionDia= element.getAsJsonObject();
 
         PrediccionDia prediccionDia= new PrediccionDia();
-        // Obtenemos la fecha de la predicción llamando al método deserialize de la clase JsonDeserializationContext
+        // Obtenemos la fecha de la predicción llamando al metodo deserialize de la clase JsonDeserializationContext
         prediccionDia.setDataPredicion(context.deserialize(jsPrediccionDia.get("dataPredicion"), LocalDate.class));
         prediccionDia.setTemperaturaMaxima(jsPrediccionDia.get("tMax").getAsInt());
         prediccionDia.setTemperaturaMinima(jsPrediccionDia.get("tMin").getAsInt());
