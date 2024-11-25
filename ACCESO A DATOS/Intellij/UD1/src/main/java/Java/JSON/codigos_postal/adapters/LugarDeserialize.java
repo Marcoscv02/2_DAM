@@ -12,8 +12,7 @@ import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class LugarDeserialize implements JsonDeserializer<Lugar> {
 
@@ -31,21 +30,5 @@ public class LugarDeserialize implements JsonDeserializer<Lugar> {
         lugar.setLatitud(jsLugar.get("latitude").getAsDouble());
 
         return lugar;
-    }
-
-    public static void main(String[] args) {
-        Path cp= Paths.get("src/main/java/Java/JSON/codigos_postal/JSON/formato.json");
-
-        try (var is= new BufferedReader(new InputStreamReader(Files.newInputStream(cp)))) {
-            Gson g = new GsonBuilder()
-                    .setPrettyPrinting()
-                    .registerTypeAdapter(Lugar.class, new LugarDeserialize())
-                    .create();
-
-            System.out.println(g.fromJson(is,Lugar.class));
-        }catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
     }
 }
