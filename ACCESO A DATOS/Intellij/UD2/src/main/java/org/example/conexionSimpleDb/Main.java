@@ -13,14 +13,6 @@ public class Main {
 
         Statement st= con.createStatement();
 
-//        st.execute("DROP TABLE IF EXISTS Animal");
-//
-//        st.execute("CREATE TABLE Animal ("
-//                + "idAnimal INTEGER PRIMARY KEY, "
-//                + "idEspecie integer REFERENCES Especie (idEspecie), "
-//                + "nome VARCHAR(255),"
-//                + "dataNacemento TIMESTAMP)");
-
         ResultSet rs= st.executeQuery("Select * From Especie");
 
         while (rs.next()){
