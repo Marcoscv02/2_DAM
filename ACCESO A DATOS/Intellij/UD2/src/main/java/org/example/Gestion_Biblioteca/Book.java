@@ -31,7 +31,6 @@ public class Book implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    //Constructores
     public Book() {
     }
 
@@ -71,8 +70,6 @@ public class Book implements Serializable {
         this.available = available;
         this.portada = portada;
     }
-
-    //Getters y Setters
 
     public Integer getIdBook() {
         return idBook;

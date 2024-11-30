@@ -3,7 +3,7 @@
  * Realizado con fines educativos.
  * Puede modificarlo siempre que no lo haga con fines comerciales.
  */
-package com.pepinho.programacion.biblioteca.model;
+package org.example.Gestion_Biblioteca;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
