@@ -1,8 +1,7 @@
 package org.example.Gestion_Biblioteca.controller;
 
-import org.example.Gestion_Biblioteca.Book;
-import com.pepinho.programacion.biblioteca.model.BookDAO;
-import com.pepinho.programacion.biblioteca.model.DAO;
+import org.example.Gestion_Biblioteca.model.Book;
+import org.example.Gestion_Biblioteca.model.DAO;
 import org.example.Gestion_Biblioteca.vista.IBookView;
 
 /**

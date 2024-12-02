@@ -3,7 +3,7 @@
  * Realizado con fines educativos.
  * Puede modificarlo siempre que no lo haga con fines comerciales.
  */
-package org.example.Gestion_Biblioteca;
+package org.example.Gestion_Biblioteca.model;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -26,7 +26,6 @@ public class Book implements Serializable {
     private Integer ano;
     private Boolean available;
     private byte[] portada;
-
     private String[] contido;
 
     private static final long serialVersionUID = 1L;
@@ -125,14 +124,14 @@ public class Book implements Serializable {
         return this;
     }
 
-    public byte[] getCover() {
+    public byte[] getPortada() {
         return portada;
     }
 
-    public Book setCover(byte[] portada) {
+    public void setPortada(byte[] portada) {
         this.portada = portada;
-        return this;
     }
+
 
     /**
      * Asigna la portada con flujos, leyendo los bytes.
@@ -146,10 +145,9 @@ public class Book implements Serializable {
         try (BufferedInputStream bi = new BufferedInputStream(Files.newInputStream(p));
              ByteArrayOutputStream outputStream = new ByteArrayOutputStream()) {
 
-            byte[] buffer = new byte[4096];
             int bytesLidos;
-            while ((bytesLidos = bi.read(buffer)) > 0) {
-                outputStream.write(buffer, 0, bytesLidos);
+            while ((bytesLidos = bi.read()) > 0) {
+                outputStream.write(bytesLidos);
             }
 
             portada = outputStream.toByteArray();
@@ -161,14 +159,16 @@ public class Book implements Serializable {
         return this;
     }
 
+
+
     /**
      * Asigna la portada con Java NIO, leyendo los bytes.
      *
-     * @param file
+     * @param rutaString
      */
-    public Book setPortada(String file) {
+    public Book setPortada(String rutaString) {
         try {
-            Path ruta = Paths.get(file);
+            Path ruta = Paths.get(rutaString);
             portada = Files.readAllBytes(ruta);
         } catch (IOException ex) {
             System.err.println("Error de E/S: " + ex.getMessage());

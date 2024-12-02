@@ -1,6 +1,5 @@
-package org.example.Gestion_Biblioteca;
+package org.example.Gestion_Biblioteca.model;
 
-import java.sql.Connection;
 import java.util.Objects;
 
 /**

@@ -1,4 +1,4 @@
-package org.example.Gestion_Biblioteca;
+package org.example.Gestion_Biblioteca.model;
 
 //CLASE PARA GESTIONAR LA BASE DE DATOS
 
@@ -12,8 +12,8 @@ public class BibliotecaConnectionMaganer {
     // Logger para registrar eventos (información, errores, etc.).
     private static final Logger log = LoggerFactory.getLogger(BibliotecaConnectionMaganer.class);
     // URL de conexión a la base de datos. Contiene la ubicación del archivo de la base de datos H2.
-    public static final String URL = "jdbc:h2:E:\\98 - Bases de datos\\h2\\biblioteca2"
-            + ";DB_CLOSE_ON_EXIT=TRUE;DATABASE_TO_UPPER=FALSE;FILE_LOCK=NO";
+    public static final String URL = "jdbc:h2:C:\\Users\\a24marcoscv\\Documents\\2_DAM\\ACCESO A DATOS\\UD2\\db\\biblioteca\\biblioteca2.mv.db"
+            + ";IFEXISTS=TRUE;DB_CLOSE_ON_EXIT=TRUE;DATABASE_TO_UPPER=FALSE;FILE_LOCK=NO";
     // Nombre del driver JDBC para la base de datos H2.
     public static final String DRIVER = "org.h2.Driver";
     // Instancia única de la clase (patrón Singleton).
