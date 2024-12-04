@@ -13,6 +13,7 @@ public class Actividades {
         ventana.setSize(400, 200); // Tamaño de la ventana
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Acción al cerrar la ventana
 
+
         // Crear un panel para agregar el botón
         JPanel panel = new JPanel();
         ventana.add(panel); // Agregar el panel a la ventana

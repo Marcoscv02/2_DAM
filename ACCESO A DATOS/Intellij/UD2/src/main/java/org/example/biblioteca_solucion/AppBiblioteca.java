@@ -10,7 +10,6 @@ import org.example.biblioteca_solucion.model.BookDAO;
 import org.example.biblioteca_solucion.model.DAO;
 import org.example.biblioteca_solucion.view.BookView;
 import org.example.biblioteca_solucion.view.IBookView;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -46,70 +45,6 @@ public class AppBiblioteca {
         IBookView bookView =  new BookView(bookControler); // new BookViewCutre(bookControler); // new BookView(bookControler);
 
         bookView.setVisible(true);
-
-
-
-//
-//        Connection con = bibliotecaConnection.getConnection();
-//
-//        try(PreparedStatement ps = con.prepareStatement("UPDATE Book SET PORTADA=? WHERE ISBN=?");
-//            InputStream fi = Files.newInputStream(Path.of("E:\\elsentidodeunfinal.jpg"));){
-//            ps.setBinaryStream(1, getFromURL());
-//            ps.setString(2, "9780307959474");
-//            int insertadas = ps.executeUpdate();
-//            if(insertadas==0)
-//                System.out.println("Non insertou a imaxe");
-//        } catch (SQLException | IOException e) {
-//            System.out.println("Erro ó insertar a imaxe: " + e.getMessage());
-//        }
-
-        // Ejemplo de cómo emplear supportsResultSetType y supportsResultSetConcurrency
-        // para comprobar si el driver soporta el tipo de ResultSet que queremos emplear
-
-
-//        Scanner sc = new Scanner(System.in);
-//        System.out.println("Introduzca el título del libro a buscar: ");
-//        String titulo = sc.nextLine();
-
-//        if(con!=null){
-//            try(PreparedStatement ps = con.prepareStatement("INSERT INTO PUBLIC.Book (isbn, title, author, ano, " +
-//                    "available) VALUES (?, ?, ?, ?, ?);")){
-//                ps.setString(1, "9780307959474");
-//                ps.setString(2, "El Sentido de un Final");
-//                ps.setString(3, "Julian Barnes");
-//                ps.setInt(4, 2011);
-//                ps.setBoolean(5, true);
-//                int insertadas = ps.executeUpdate();
-//                System.out.println("insertadas " + insertadas);
-//
-//            } catch (SQLException e) {
-//                System.err.println(e.getMessage());
-//            }
-//        }
-
-//        if (con != null) {
-//            try (Statement st = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
-//                    ResultSet.CONCUR_UPDATABLE);
-//                 ResultSet rs = st.executeQuery("SELECT * FROM Book");) {
-//
-//
-//                while (rs.next()) {
-//                    System.out.printf("%d - %s%n", rs.getInt("idBook"), rs.getString("title"));
-//                }
-//
-//
-//            } catch (SQLException ex) {
-//                System.out.println("Error al obtener libro: " + ex.getMessage());
-//            }
-//        }
-
-
-//
-//        BookDAO bookDAO = new BookDAO(bibliotecaConnection.getConnection());
-//
-//
-//
-//        new BibliotecaViewDAO("Biblioteca", bookDAO);
     }
 
     public static void admiteRetencion(Connection conn) throws SQLException {
@@ -145,8 +80,6 @@ public class AppBiblioteca {
 
         if (conn != null) {
             System.out.println("Conexión establecida");
-        } else {
-            System.out.println("Conexión no establecida");
         }
     }
 

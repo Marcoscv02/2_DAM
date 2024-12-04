@@ -20,6 +20,7 @@ public class calculator {
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventana.setSize(630, 650);
         ventana.setLayout(null);
+        ventana.setLocationRelativeTo(null); // Centrar la ventana
 
 
         //TextField superior
