@@ -13,6 +13,8 @@ public class Graphics {
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventana.setSize(800, 600);
         ventana.setLayout(new BorderLayout());
+        ventana.setLocationRelativeTo(null); // Centrar la ventana
+
 
         // Crear el área de texto con un JScrollPane
         JTextArea textArea = new JTextArea();

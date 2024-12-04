@@ -18,6 +18,8 @@ public class Indice {
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventana.setSize(600, 300);
         ventana.setLayout(null);
+        ventana.setLocationRelativeTo(null); // Centrar la ventana
+
 
         // Crear una etiqueta
         JLabel etiqueta = new JLabel("Seleccione la ventana que desea abrir:");
