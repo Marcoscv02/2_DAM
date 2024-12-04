@@ -12,7 +12,7 @@ public class BookDao implements DAO<Book>{
     @Override
     public Book get(int id) {
         Book book= new Book();
-        try(var ps= connection.prepareStatement("SELECT * FROM Book WHERE id = ?")){
+        try(var ps= connection.prepareStatement("SELECT * FROM Book WHERE idBook = ?")){
             ps.setInt(1,id);
 
             try (ResultSet rs= ps.executeQuery()){
@@ -69,15 +69,15 @@ public class BookDao implements DAO<Book>{
     @Override
     public void save(Book book) {
         try (var ps=connection.prepareStatement(
-                "INSERT INTO Book (idBook, isbn, titulo, autor, anho, disponible, portada) VALUES (?,?,?,?,?,?,?)")
+                "INSERT INTO Book (isbn, titulo, autor, anho, disponible, portada) VALUES (?,?,?,?,?,?)")
         ){
-            ps.setInt(1,book.getIdBook());
-            ps.setString(2, book.getIsbn());
-            ps.setString(3, book.getTitle());
-            ps.setString(4, book.getAuthor());
-            ps.setInt(5, book.getYear());
-            ps.setBoolean(6,book.isAvailable());
-            ps.setBytes(7,book.getPortada());
+
+            ps.setString(1, book.getIsbn());
+            ps.setString(2, book.getTitle());
+            ps.setString(3, book.getAuthor());
+            ps.setInt(4, book.getYear());
+            ps.setBoolean(5,book.isAvailable());
+            ps.setBytes(6,book.getPortada());
 
             int rows= ps.executeUpdate();//Devuelve el numero de columnas afectadas
 

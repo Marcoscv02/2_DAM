@@ -12,7 +12,7 @@ public class BibliotecaConnectionMaganer {
     // Logger para registrar eventos (información, errores, etc.).
     private static final Logger log = LoggerFactory.getLogger(BibliotecaConnectionMaganer.class);
     // URL de conexión a la base de datos. Contiene la ubicación del archivo de la base de datos H2.
-    public static final String URL = "jdbc:h2:C:\\Users\\a24marcoscv\\Documents\\2_DAM\\ACCESO A DATOS\\UD2\\db\\biblioteca\\biblioteca2.mv.db"
+    public static final String URL = "jdbc:h2:C:\\Users\\a24marcoscv\\Documents\\2_DAM\\ACCESO A DATOS\\UD2\\db\\biblioteca\\biblioteca2"
             + ";IFEXISTS=TRUE;DB_CLOSE_ON_EXIT=TRUE;DATABASE_TO_UPPER=FALSE;FILE_LOCK=NO";
     // Nombre del driver JDBC para la base de datos H2.
     public static final String DRIVER = "org.h2.Driver";
