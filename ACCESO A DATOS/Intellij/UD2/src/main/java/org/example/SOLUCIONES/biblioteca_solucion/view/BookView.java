@@ -1,7 +1,7 @@
-package org.example.biblioteca_solucion.view;
+package org.example.SOLUCIONES.biblioteca_solucion.view;
 
 
-import org.example.biblioteca_solucion.controller.IBookController;
+import org.example.SOLUCIONES.biblioteca_solucion.controller.IBookController;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;

@@ -1,7 +1,7 @@
 
-package org.example.biblioteca_solucion;
+package org.example.SOLUCIONES.biblioteca_solucion;
 
-import org.example.biblioteca_solucion.model.*;
+import org.example.SOLUCIONES.biblioteca_solucion.model.*;
 
 
 import java.io.IOException;

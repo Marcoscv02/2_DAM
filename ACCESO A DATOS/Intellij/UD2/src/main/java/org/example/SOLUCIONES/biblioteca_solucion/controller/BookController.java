@@ -1,9 +1,9 @@
-package org.example.biblioteca_solucion.controller;
+package org.example.SOLUCIONES.biblioteca_solucion.controller;
 
 
-import org.example.biblioteca_solucion.model.Book;
-import org.example.biblioteca_solucion.model.DAO;
-import org.example.biblioteca_solucion.view.IBookView;
+import org.example.SOLUCIONES.biblioteca_solucion.model.DAO;
+import org.example.SOLUCIONES.biblioteca_solucion.model.Book;
+import org.example.SOLUCIONES.biblioteca_solucion.view.IBookView;
 
 import java.util.List;
 

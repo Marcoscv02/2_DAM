@@ -1,8 +1,8 @@
 
-package org.example.biblioteca_solucion;
+package org.example.SOLUCIONES.biblioteca_solucion;
 
 
-import org.example.biblioteca_solucion.model.BibliotecaConnectionMaganer;
+import org.example.SOLUCIONES.biblioteca_solucion.model.BibliotecaConnectionMaganer;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,7 +14,7 @@ import java.sql.SQLException;
 
 public class AppInsertBatch {
 
-    public static final String RUTA = "E:\\98 - Bases de datos\\biblioteca\\bookscovers\\";
+    public static final String RUTA = "C:\\Users\\a24marcoscv\\Documents\\2_DAM\\ACCESO A DATOS\\DB\\biblioteca\\bookscovers";
 
     public static InputStream getCover(String archivo) {
         try {

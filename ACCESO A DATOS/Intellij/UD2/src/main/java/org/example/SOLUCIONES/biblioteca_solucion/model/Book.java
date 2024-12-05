@@ -3,7 +3,7 @@
  * Realizado con fines educativos.
  * Puede modificarlo siempre que no lo haga con fines comerciales.
  */
-package org.example.biblioteca_solucion.model;
+package org.example.SOLUCIONES.biblioteca_solucion.model;
 
 import javax.imageio.ImageIO;
 import java.awt.*;

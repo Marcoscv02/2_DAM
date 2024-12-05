@@ -1,4 +1,4 @@
-package org.example.biblioteca_solucion.model;
+package org.example.SOLUCIONES.biblioteca_solucion.model;
 
 import java.util.List;
 

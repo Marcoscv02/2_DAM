@@ -1,15 +1,15 @@
-package org.example.biblioteca_solucion;
+package org.example.SOLUCIONES.biblioteca_solucion;
 
 
 
-import org.example.biblioteca_solucion.controller.BookController;
-import org.example.biblioteca_solucion.controller.IBookController;
-import org.example.biblioteca_solucion.model.BibliotecaConnectionMaganer;
-import org.example.biblioteca_solucion.model.Book;
-import org.example.biblioteca_solucion.model.BookDAO;
-import org.example.biblioteca_solucion.model.DAO;
-import org.example.biblioteca_solucion.view.BookView;
-import org.example.biblioteca_solucion.view.IBookView;
+import org.example.SOLUCIONES.biblioteca_solucion.controller.BookController;
+import org.example.SOLUCIONES.biblioteca_solucion.controller.IBookController;
+import org.example.SOLUCIONES.biblioteca_solucion.model.BibliotecaConnectionMaganer;
+import org.example.SOLUCIONES.biblioteca_solucion.model.Book;
+import org.example.SOLUCIONES.biblioteca_solucion.model.BookDAO;
+import org.example.SOLUCIONES.biblioteca_solucion.model.DAO;
+import org.example.SOLUCIONES.biblioteca_solucion.view.BookView;
+import org.example.SOLUCIONES.biblioteca_solucion.view.IBookView;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;

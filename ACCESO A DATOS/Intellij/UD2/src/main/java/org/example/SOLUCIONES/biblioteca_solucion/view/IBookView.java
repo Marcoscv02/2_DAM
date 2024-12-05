@@ -1,4 +1,4 @@
-package org.example.biblioteca_solucion.view;
+package org.example.SOLUCIONES.biblioteca_solucion.view;
 
 public interface IBookView {
 
