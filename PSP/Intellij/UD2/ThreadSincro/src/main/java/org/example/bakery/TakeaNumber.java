@@ -1,32 +1,32 @@
 package org.example.bakery;
 
 public class TakeaNumber {
-    private boolean disponible= true;
-    private int numero;
+    private int numTicket = 1;
+    private int numBaker = 1;
 
 
     public TakeaNumber() {
     }
 
-    synchronized public int sacarNumero() throws InterruptedException {
-        while (disponible==false){
-            wait();
-        }
-        disponible=false;
-        numero++;
+    synchronized public int sacarNumero(int idCliente) throws InterruptedException {
+        numTicket++;
+        System.out.println("Cliente "+idCliente+ " toma ticket "+ numTicket);
         notifyAll();
-        return numero;
+        return numTicket;
     }
     synchronized  public int  consumirNum() throws InterruptedException {
-        while (disponible==true){
+        while (numTicket==1){
+            System.out.println("Empleado en espera (no hay clientes a los que atender)");
             wait();
         }
-        disponible=true;
+        numBaker++;
         notifyAll();
-        return numero;
+        return numBaker;
     }
 
     public int getNumeroCliente (){
-        return numero;
+        return numTicket;
     }
+    public int getNumBaker (){ return numBaker;}
+
 }

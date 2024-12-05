@@ -11,14 +11,15 @@ public class Baker implements Runnable{
 
     @Override
     public void run() {
-        while (tk.getNumeroCliente()<101){
+        while (tk.getNumBaker()<100){
             try {
-                int cliente= tk.consumirNum();
-                System.out.println("El panadero está atendiendo al cliente "+cliente);
                 sleep((long) (Math.random()*1000));
+                tk.consumirNum();
+                System.out.println("El panadero está atendiendo al cliente "+tk.getNumBaker());
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
         }
+        System.out.println("Panadero ha acabado su turno");
     }
 }

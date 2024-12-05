@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Bakery {
-    public static void main(String[] args) {
+    public static final int NUM_CLIENTES=100;
+    public static void main(String[] args) throws InterruptedException {
+        System.out.println("Se inicia la simulacion");
+
         //Se crea objeto de clase comun
         TakeaNumber tk= new TakeaNumber();
 
@@ -12,13 +15,9 @@ public class Bakery {
         Thread panadero= new Thread(new Baker(tk));
         panadero.start();
 
-        //se crea lista de clientes
 
-        int i=tk.getNumeroCliente();
-
-        while (i<100){
-            Thread t= new Thread(new Client(tk));
-
+        for (int i = 0; i < NUM_CLIENTES; i++) {
+            Thread t= new Thread(new Client(i,tk));
             t.start();
         }
 
