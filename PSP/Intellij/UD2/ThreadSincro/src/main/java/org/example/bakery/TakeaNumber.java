@@ -24,9 +24,6 @@ public class TakeaNumber {
         return numBaker;
     }
 
-    public int getNumeroCliente (){
-        return numTicket;
-    }
     public int getNumBaker (){ return numBaker;}
 
 }

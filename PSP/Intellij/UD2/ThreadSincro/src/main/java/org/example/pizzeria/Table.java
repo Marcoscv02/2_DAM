@@ -1,12 +1,10 @@
 package org.example.pizzeria;
 
-import org.example.Teoria.Producer_Consumer.Pizza;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class Table {
-    private Queue<Pizza> bandeja= new LinkedList<>(); //Se utiliza la interfaz Queue para poder utilizar posteriormente el metodo poll()
+    private LinkedList<Pizza> bandeja= new LinkedList<>(); //Se utiliza la interfaz Queue para poder utilizar posteriormente el metodo poll()
     Pizza pizza= new Pizza();
     private int capacidadMaxima=5;
     private int pizzasCocinadas=0;

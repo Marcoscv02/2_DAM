@@ -1,4 +1,4 @@
-package org.example.Teoria.Producer_Consumer;
+package org.example.pizzeria;
 
 public class Pizza {
     private int id;

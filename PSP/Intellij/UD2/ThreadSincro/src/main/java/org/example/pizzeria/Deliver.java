@@ -1,7 +1,5 @@
 package org.example.pizzeria;
 
-import org.example.Teoria.Producer_Consumer.Pizza;
-
 import java.text.DecimalFormat;
 
 import static java.lang.Thread.sleep;
