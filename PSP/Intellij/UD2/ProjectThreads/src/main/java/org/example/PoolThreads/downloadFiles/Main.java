@@ -3,6 +3,7 @@ package org.example.PoolThreads.downloadFiles;
 import java.io.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,7 +11,7 @@ public class Main {
         File animalsUrls = new File("src/main/resources/animals-urls.txt");
 
         // Se inicializa un contador para numerar cada imagen descargada
-        int numImage = 1;
+        AtomicInteger numImage = new AtomicInteger(1);
 
         // Se intenta abrir el archivo y leer su contenido línea por línea
         try (var br = new BufferedReader(new FileReader(animalsUrls));
@@ -22,14 +23,13 @@ public class Main {
 
             // Se leen las URLs una por una y se ejecuta una tarea de descarga para cada URL
             while ((url = br.readLine()) != null) {
-                // Se crea una tarea Runnable que descargará el archivo de la URL especificada
-                Runnable task = new DownloadFile(url, numImage);
+
+                int numImagenActual= numImage.getAndIncrement();
 
                 // Se envía la tarea al pool de threads para su ejecución
-                pool.execute(task);
+                pool.execute(new DownloadFile(url, numImagenActual));
 
-                // Se incrementa el contador de imágenes
-                numImage++;
+
             }
 
             //Cierra el pollThreads al terminar

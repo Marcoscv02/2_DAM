@@ -8,6 +8,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import static java.lang.Thread.sleep;
 
@@ -21,20 +22,25 @@ public class Main {
         if (!file.exists()){
             file.mkdir();
         }
-        int contador=1;
+        AtomicInteger contadorATomic= new AtomicInteger(1);
         try (BufferedReader br= new BufferedReader(new FileReader(file));
              ExecutorService pool= Executors.newFixedThreadPool(10)){
-            String linea;
 
+            String linea;
             while ((linea=br.readLine())!=null){
                 URI uri= new URI(linea);
                 URL url= uri.toURL();
 
+                int contador= contadorATomic.getAndIncrement();
                 pool.execute(new DownLoadFile(url,contador));
 
                 System.out.println("imagen "+contador+" entregada");
+
                 sleep(500);
             }
+
+            //Cerrar pool
+            pool.shutdownNow();
 
         } catch (FileNotFoundException e) {
             System.out.println("Archivo no encontrado en la ruta ");
