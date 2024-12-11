@@ -1,9 +1,0 @@
-2024-12-05 09:16:40.990770+01:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "Filosofo" not found (this database is empty); SQL statement:
-SELECT idFilosofo, nome, apelidos, idade, dataNacemento FROM Filosofo [42104-232]
-2024-12-05 09:26:32.562436+01:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "Filosofo" not found (this database is empty); SQL statement:
-SELECT idFilosofo, nome, apelidos, idade, dataNacemento FROM Filosofo [42104-232]
-2024-12-05 09:32:19.160889+01:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "Filosofo" not found (this database is empty); SQL statement:
-SELECT idFilosofo, nome, apelidos, idade, dataNacemento FROM Filosofo [42104-232]

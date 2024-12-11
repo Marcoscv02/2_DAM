@@ -17,7 +17,7 @@ public class GsonJokeManager {
         gson = new GsonBuilder()
                 .registerTypeAdapter(Chiste.class, new JsonDeserializer<Chiste>() {
                     @Override
-                    public Chiste deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
+                    public Chiste deserialize(JsonElement element, Type type, JsonDeserializationContext context) throws JsonParseException {
                         return null;
                     }
                 })
