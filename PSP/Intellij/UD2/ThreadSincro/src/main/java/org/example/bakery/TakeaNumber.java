@@ -9,9 +9,9 @@ public class TakeaNumber {
     }
 
     synchronized public int sacarNumero(int idCliente) throws InterruptedException {
-        numTicket++;
         System.out.println("Cliente "+idCliente+ " toma ticket "+ numTicket);
         notifyAll();
+        numTicket++;
         return numTicket;
     }
     synchronized  public int  consumirNum() throws InterruptedException {
