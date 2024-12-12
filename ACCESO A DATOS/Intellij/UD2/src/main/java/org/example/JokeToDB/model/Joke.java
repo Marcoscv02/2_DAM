@@ -1,4 +1,4 @@
-package Java.JSON.JokesApp.model;
+package org.example.JokeToDB.model;
 
 import java.util.ArrayList;
 import java.util.List;

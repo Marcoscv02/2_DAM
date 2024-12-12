@@ -155,7 +155,7 @@ public class FilosofosDAO {
 //        }
 
 //        ff.updateFilosofo(f);
-        ff.deleteFilosofo(13);
+//        ff.deleteFilosofo(13);
 
 
 

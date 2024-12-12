@@ -1,4 +1,4 @@
-package Java.JSON.JokesApp.model;
+package org.example.JokeToDB.model;
 
 public enum Flag {
     NSFW("nsfw"),

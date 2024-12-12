@@ -1,0 +1,28 @@
+{
+  "post code": "36570",
+  "country": "Spain",
+  "country abbreviation": "ES",
+  "places": [
+    {
+      "place name": "Manduas (San Tirso)",
+      "longitude": "-8.2333",
+      "state": "Galicia",
+      "state abbreviation": "GA",
+      "latitude": "42.7"
+    },
+    {
+      "place name": "Chapa (San Cibrao)",
+      "longitude": "-8.2333",
+      "state": "Galicia",
+      "state abbreviation": "GA",
+      "latitude": "42.7"
+    },
+    {
+      "place name": "A Bandeira",
+      "longitude": "-8.2333",
+      "state": "Galicia",
+      "state abbreviation": "GA",
+      "latitude": "42.7"
+    }
+  ]
+}
