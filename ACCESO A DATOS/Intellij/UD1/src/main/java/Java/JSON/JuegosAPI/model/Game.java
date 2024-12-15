@@ -10,6 +10,7 @@ public class Game {
     private String descripcion;
     private String url;
     private String genero;
+    private Platform plataforma;
     private LocalDate fechaRealizacion;
     private List<Image>imagenes;
 
@@ -17,22 +18,24 @@ public class Game {
     public Game() {
     }
     //Constructor sin imagenes
-    public Game(int id, String titulo, String descripcion, String url, String genero, LocalDate fechaRealizacion) {
+    public Game(int id, String titulo, String descripcion, String url, String genero, Platform plataforma, LocalDate fechaRealizacion) {
         this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.url = url;
         this.genero = genero;
+        this.plataforma = plataforma;
         this.fechaRealizacion = fechaRealizacion;
     }
     //Constructor completo
-    public Game(int id, String titulo, Image miniatura, String descripcion, String url, String genero, LocalDate fechaRealizacion, List<Image> imagenes) {
+    public Game(int id, String titulo, Image miniatura, String descripcion, String url, String genero, Platform plataforma, LocalDate fechaRealizacion, List<Image> imagenes) {
         this.id = id;
         this.titulo = titulo;
         this.miniatura = miniatura;
         this.descripcion = descripcion;
         this.url = url;
         this.genero = genero;
+        this.plataforma = plataforma;
         this.fechaRealizacion = fechaRealizacion;
         this.imagenes = imagenes;
     }
@@ -83,6 +86,14 @@ public class Game {
 
     public void setGenero(String genero) {
         this.genero = genero;
+    }
+
+    public Platform getPlataforma() {
+        return plataforma;
+    }
+
+    public void setPlataforma(Platform plataforma) {
+        this.plataforma = plataforma;
     }
 
     public LocalDate getFechaRealizacion() {

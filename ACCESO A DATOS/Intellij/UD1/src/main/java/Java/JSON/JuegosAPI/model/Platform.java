@@ -15,7 +15,7 @@ public enum Platform {
         return nombre;
     }
 
-    public Platform getPlatorm (String nombre) {
+    public static Platform getPlatorm (String nombre) {
         for (Platform p: Platform.values()){
             if (p.getNombre().equals(nombre));
             return p;

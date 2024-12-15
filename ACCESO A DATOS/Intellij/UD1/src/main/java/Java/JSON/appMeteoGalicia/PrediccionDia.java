@@ -12,6 +12,8 @@ public class PrediccionDia {
     private int nivelAviso, temperaturaMaxima, temperaturaMinima, uvMaximo;
     private List<VariableFranxa> listaVariableFranxa;
 
+
+
     public PrediccionDia() {
         listaVariableFranxa = new ArrayList<>();
     }
