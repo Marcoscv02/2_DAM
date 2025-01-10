@@ -1,8 +1,8 @@
-package org.example.EjercPrueba;
+package marcos.EjercPrueba;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;
-import org.example.EjercPrueba.entities.Pelicula;
+import marcos.EjercPrueba.entities.Pelicula;
 
 
 public class Main {
@@ -12,7 +12,8 @@ public class Main {
         Pelicula pelicula3= new Pelicula("Titanic", (short) 1992);
 
         var emf = Persistence.createEntityManagerFactory("jpa-hibernate-h2");
-        EntityManager em = emf.createEntityManager();
+
+        EntityManager em= EntityManagerUtil.getEntityManager();
 
         em.getTransaction().begin();
 
@@ -21,5 +22,6 @@ public class Main {
         em.persist(pelicula3);
 
         em.getTransaction().commit();
+
     }
 }

@@ -1,4 +1,4 @@
-package org.example.EjercPrueba.entities;
+package marcos.EjercPrueba.entities;
 
 import jakarta.persistence.*;
 
@@ -13,6 +13,9 @@ public class Pelicula implements Serializable {
     private Long idPelicula;
     private String titulo;
     private short ano;
+
+    @ManyToOne
+    private Director director;
 
     private  transient LocalDate fechaEstreno;
 

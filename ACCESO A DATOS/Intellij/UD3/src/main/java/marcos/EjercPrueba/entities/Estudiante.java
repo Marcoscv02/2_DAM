@@ -1,4 +1,4 @@
-package org.example.EjercPrueba.entities;
+package marcos.EjercPrueba.entities;
 
 import jakarta.persistence.*;
 import jakarta.persistence.GenerationType;
