@@ -26,6 +26,7 @@ public class Book implements Serializable {
     private Integer ano;
     private Boolean available;
     private byte[] portada;
+
     private String[] contido;
 
     private static final long serialVersionUID = 1L;
