@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class BibliotecaJpaManager {
 
-    public static final String BIBLIOTECA_H2 = "bibliotecaH2";
+    public static final String BIBLIOTECA_H2 = "jpa-biblioteca-h2";
     public static final String BIBLIOTECA_POSTGRES = "bibliotecaPostgres";
 
 

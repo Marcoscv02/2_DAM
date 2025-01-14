@@ -8,6 +8,7 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -18,13 +19,13 @@ public class Book implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idBook;
-    private String isbn;
-    private String title;
-    private String author;
-    private Integer ano;
-    private Boolean available;
-    private byte[] portada;
+    @Column(name = "idBook")private Integer idBook;
+    @Column(name = "isbn") private String isbn;
+    @Column(name = "title") private String title;
+    @Column(name = "author") private String author;
+    @Column(name = "ano") private Integer ano;
+    @Column(name = "available") private Boolean available;
+    @Column(name = "portada") private byte[] portada;
     @Transient
     private String[] contido;
 
