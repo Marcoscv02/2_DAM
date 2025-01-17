@@ -1,4 +1,6 @@
-package marcos.Jokes;
+package marcos.Jokes.DAO;
+
+import marcos.Jokes.entities.Chiste;
 
 import java.io.Writer;
 

@@ -4,6 +4,9 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
+import marcos.Jokes.entities.Chiste;
+import marcos.Jokes.entities.Flag;
+import marcos.Jokes.entities.TipoChiste;
 
 import java.lang.reflect.Type;
 

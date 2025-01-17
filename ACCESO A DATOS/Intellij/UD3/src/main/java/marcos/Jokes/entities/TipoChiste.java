@@ -1,4 +1,4 @@
-package marcos.Jokes;
+package marcos.Jokes.entities;
 
 /**
  * Created by Pepinho on 21/10/15.

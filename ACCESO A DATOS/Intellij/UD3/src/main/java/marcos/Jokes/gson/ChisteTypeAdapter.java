@@ -4,10 +4,10 @@ import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
-import com.pepinho.ad.joke.Categoria;
-import com.pepinho.ad.joke.Chiste;
-import com.pepinho.ad.joke.Flag;
-import com.pepinho.ad.joke.TipoChiste;
+import marcos.Jokes.entities.Chiste;
+import marcos.Jokes.entities.Flag;
+import marcos.Jokes.entities.TipoChiste;
+
 
 import java.io.IOException;
 

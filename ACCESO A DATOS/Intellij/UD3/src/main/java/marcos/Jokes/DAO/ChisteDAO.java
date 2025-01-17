@@ -1,7 +1,10 @@
-package marcos.Jokes.gson;
+package marcos.Jokes.DAO;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import marcos.Jokes.entities.Chiste;
+import marcos.Jokes.gson.ChisteTypeAdapter;
+import marcos.Jokes.gson.IChisteDAO;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -20,8 +23,8 @@ import java.util.Objects;
  * La API de chistes utilizada es:
  * <a href="https://v2.jokeapi.dev/joke/">...</a>
  *
- * @see IChisteDAO
- * @see IChisteDAO
+ * @see marcos.Jokes.gson.IChisteDAO
+ * @see marcos.Jokes.gson.IChisteDAO
  * @see Chiste
  * @see Gson
  * @see GsonBuilder

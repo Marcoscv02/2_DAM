@@ -1,5 +1,7 @@
 package marcos.Jokes.gson;
 
+import marcos.Jokes.entities.Chiste;
+
 import java.io.Writer;
 
 public interface IChisteDAO {

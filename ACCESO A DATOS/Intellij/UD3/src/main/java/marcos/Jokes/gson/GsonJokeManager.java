@@ -1,9 +1,7 @@
 package marcos.Jokes.gson;
 
 import com.google.gson.*;
-import com.pepinho.ad.joke.Chiste;
-
-import java.lang.reflect.Type;
+import marcos.Jokes.entities.Chiste;
 
 public class GsonJokeManager {
 

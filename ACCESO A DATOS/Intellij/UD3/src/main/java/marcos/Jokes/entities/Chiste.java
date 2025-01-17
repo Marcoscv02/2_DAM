@@ -1,4 +1,4 @@
-package marcos.Jokes;
+package marcos.Jokes.entities;
 
 import java.util.ArrayList;
 import java.util.List;
