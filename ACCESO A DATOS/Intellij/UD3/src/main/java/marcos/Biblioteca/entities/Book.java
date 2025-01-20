@@ -26,7 +26,7 @@ public class Book implements Serializable {
     @Column(name = "ano") private Integer ano;
     @Column(name = "available") private Boolean available;
     @Column(name = "portada") private byte[] portada;
-    @Transient
+    @Basic(fetch = FetchType.LAZY)
     private String[] contido;
 
     private static final long serialVersionUID = 1L;

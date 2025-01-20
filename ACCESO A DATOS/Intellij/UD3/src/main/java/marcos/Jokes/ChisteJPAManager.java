@@ -8,15 +8,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class ChisteJpaManager {
+public class ChisteJPAManager {
 
-    public static final String BIBLIOTECA_H2 = "chistesH2";
-    public static final String BIBLIOTECA_POSTGRES = "chistesPostgres";
+    public static final String CHISTES_H2 = "jpa-biblioteca-h2";
+    public static final String CHISTES_POSTGRES = "chistesPostgres";
+    public static final String CHISTES_SQLITE = "jpa-jokes-sqlite";
 
 
     private static final Map<String, EntityManagerFactory> instancies = new HashMap<>();
 
-    private ChisteJpaManager() {
+    private ChisteJPAManager() {
     }
 
     private static boolean isEntityManagerFactoryClosed(String unidadPersistencia) {
@@ -26,7 +27,7 @@ public class ChisteJpaManager {
 
     public static EntityManagerFactory getEntityManagerFactory(String unidadPersistencia) {
         if (isEntityManagerFactoryClosed(unidadPersistencia)) {
-            synchronized (ChisteJpaManager.class) {
+            synchronized (ChisteJPAManager.class) {
                 if (isEntityManagerFactoryClosed(unidadPersistencia)) {
                     try {
                         instancies.put(unidadPersistencia, Persistence.createEntityManagerFactory(unidadPersistencia));
@@ -38,11 +39,6 @@ public class ChisteJpaManager {
             }
         }
         return instancies.get(unidadPersistencia);
-    }
-
-
-    public static EntityManager getEntityManager(String persistenceUnitName) {
-        return getEntityManagerFactory(persistenceUnitName).createEntityManager();
     }
 
 

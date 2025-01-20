@@ -24,7 +24,6 @@ import java.util.Objects;
  * <a href="https://v2.jokeapi.dev/joke/">...</a>
  *
  * @see marcos.Jokes.gson.IChisteDAO
- * @see marcos.Jokes.gson.IChisteDAO
  * @see Chiste
  * @see Gson
  * @see GsonBuilder

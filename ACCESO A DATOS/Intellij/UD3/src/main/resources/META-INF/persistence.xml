@@ -28,16 +28,22 @@
             <!--Mostrar y formatear sentencias Sql-->
             <property name="hibernate.show_sql"   value="true" />
             <property name="hibernate.format_sql" value="true" />
+
+            <!-- Exclusión de clases no listadas -->
+            <property name="hibernate.archive.exclude_unlisted_classes" value="true" />
         </properties>
     </persistence-unit>
 
 
-    <!--Unidad de Persistencia para EJECICIO BIBLIOTECA-->
+    <!--Unidad de Persistencia para EJECICIO BIBLIOTECA H2-->
     <persistence-unit name="jpa-biblioteca-h2">
         <description>
-            Unidad de persistncia para jakarta persistencia en ejercicio biblioteca
+            Unidad de persistncia para jakarta persistencia en ejercicio biblioteca con h2
         </description>
         <provider> org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <class>src/main/java/marcos/Jokes/entities/Chiste.java</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
 
         <properties>
             <!--Driver y url a base de  datos -->
@@ -57,6 +63,44 @@
             <!--Mostrar y formatear sentencias Sql-->
             <property name="hibernate.show_sql"   value="true" />
             <property name="hibernate.format_sql" value="true" />
+
+            <!-- Exclusión de clases no listadas -->
+            <property name="hibernate.archive.exclude_unlisted_classes" value="true" />
         </properties>
+    </persistence-unit>
+
+    <!--Unidad de Persistencia para EJECICIO BIBLIOTECA SQLite-->
+    <persistence-unit name="jpa-jokes-sqlite">
+        <description>
+            Unidad de persistncia para jakarta persistencia en ejercicio biblioteca con sqlite
+        </description>
+        <provider> org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <class>src/main/java/marcos/Jokes/entities/Chiste.java</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            <!--Driver y url a base de  datos -->
+            <property name="jakarta.persistence.jdbc.driver" value="org.sqlite.JDBC" />
+            <property name="jakarta.persistence.jdbc.url"    value="jdbc:sqlite:C:\Users\a24marcoscv\Documents\2_DAM\ACCESO A DATOS\DB\jokes\JokesSqlite" />
+
+            <!--Sin usuario y contraseña para base de datos-->
+            <property name="jakarta.persistence.jdbc.user"   value="" />
+            <property name="jakarta.persistence.jdbc.password" value="" />
+
+            <!--Esta propiedad genera el esquema de la base de datos  -->
+            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create" />
+
+            <!--Dialecto de SGBD para optimizar-->
+            <property name="hibernate.dialect"    value="org.hibernate.community.dialect.SQLiteDialect" />
+
+            <!--Mostrar y formatear sentencias Sql-->
+            <property name="hibernate.show_sql"   value="true" />
+            <property name="hibernate.format_sql" value="true" />
+
+            <!-- Exclusión de clases no listadas -->
+            <property name="hibernate.archive.exclude_unlisted_classes" value="true" />
+        </properties>
+        
     </persistence-unit>
 </persistence>

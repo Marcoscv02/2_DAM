@@ -11,22 +11,6 @@ import marcos.Jokes.entities.TipoChiste;
 
 import java.io.IOException;
 
-/*
-Formato de JSON:
-{
-  "id": 1,
-  "category": "Programming",
-  "type": "single",
-  "joke": "Chuck Norris can write multithreaded applications with a single thread.",
-  "flags": {
-    "nsfw": false,
-    "religious": false,
-    "political": false,
-    "racist": false,
-    "sexist": false
-  },
-  "lang": "en"
- */
 
 /**
  * Created by Pepinho on 21/10/15.
@@ -111,6 +95,11 @@ public class ChisteTypeAdapter extends TypeAdapter<Chiste> {
         return chiste;
     }
 
+    /**
+     * Método que deserializa las banderas
+     * @param reader
+     * @param chiste
+     */
     private void readFlags(JsonReader reader, Chiste chiste) throws IOException {
         if(reader.peek()!=JsonToken.BEGIN_OBJECT)
             return;

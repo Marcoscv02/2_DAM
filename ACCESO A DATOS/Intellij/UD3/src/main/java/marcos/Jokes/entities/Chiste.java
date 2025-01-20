@@ -1,17 +1,19 @@
 package marcos.Jokes.entities;
 
+import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 /**
- * Created by Pepinho on 21/10/15.
- * <p>
  * Clase que representa un chiste.
  * Atributos: id de tipo int, categoria de tipo Categoria, idiomade tipo Lenguaje, tipo de TipoChiste,
  *  List<Flag> banderas, String chiste, String respuesta.
  */
+@Entity
 public class Chiste {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private Categoria categoria;
     private TipoChiste tipo;
