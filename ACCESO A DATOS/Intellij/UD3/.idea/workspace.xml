@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="98acd74b-177b-4e61-839b-48337694a33b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Biblioteca/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Biblioteca/BibliotecaJpaManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Biblioteca/DAOS/BookDaoFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Biblioteca/DAOS/DAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Biblioteca/EntityManagerUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Biblioteca/entities/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Biblioteca/entities/Contido.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Biblioteca/entities/Foto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/EjercPrueba/EntityManagerUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/EjercPrueba/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/EjercPrueba/entities/Director.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/EjercPrueba/entities/Estudiante.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/EjercPrueba/entities/Pelicula.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Jokes/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Jokes/ChisteJPAManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Jokes/DAO/ChisteDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Jokes/DAO/IChisteDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Jokes/entities/Categoria.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Jokes/entities/Chiste.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Jokes/entities/Flag.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Jokes/entities/Lenguaje.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Jokes/entities/TipoChiste.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Jokes/gson/ChisteDeserializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Jokes/gson/ChisteSerializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Jokes/gson/ChisteTypeAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Jokes/gson/GsonJokeManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Jokes/gson/IChisteDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Jokes/gson/format/gsonFormat.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2rNtuFWbuJVcpSp1otao0AAzUxo" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.App.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/a24marcoscv/Documents/2_DAM/PSP/Intellij/UD3/NetworkInterfaces&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/a24marcoscv/Documents/2_DAM/PSP/Intellij/UD3/src/main/java/org/example/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="98acd74b-177b-4e61-839b-48337694a33b" name="Changes" comment="" />
+      <created>1736411582707</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1736411582707</updated>
+    </task>
+    <servers />
+  </component>
+</project>

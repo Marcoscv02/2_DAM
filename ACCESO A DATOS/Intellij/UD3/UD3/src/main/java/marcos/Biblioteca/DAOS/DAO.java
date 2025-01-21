@@ -3,7 +3,6 @@ package marcos.Biblioteca.DAOS;
 import java.util.List;
 
 /**
- *
  * @author Marcos
  * @param <T> Tipo de dato del objeto
  */

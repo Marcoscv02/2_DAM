@@ -1,8 +1,14 @@
 package marcos.exercise2;
 
-import java.io.*;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import marcos.exercise2.adapters.ArticleAdapter;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.URI;
 import java.net.URL;
 import java.util.Scanner;
 
@@ -13,7 +19,7 @@ import java.util.Scanner;
 public class FetchBlogArticle {
 
     // URL base del API que proporciona publicaciones de blog de muestra
-    private static final String APIURL = "https://www.slingacademy.com/article/sample-blog-posts-public-rest-api-for-practice/";
+    private static final String APIURL = "https://api.slingacademy.com/v1/sample-data/blog-posts/";
 
     /**
      * Método principal que solicita al usuario que ingrese el ID del artículo de blog,
@@ -29,89 +35,67 @@ public class FetchBlogArticle {
         String articleId = scanner.nextLine();
 
         // Construye la URL completa al concatenar el ID del artículo a la URL base del API
-        String fullUrl = APIURL + "?id=" + articleId;
+        String fullUrl = APIURL + articleId;
+
+        // Configurar Gson con el adaptador personalizado para Article
+        GsonBuilder gsonBuilder = new GsonBuilder()
+                .setPrettyPrinting()
+                .registerTypeAdapter(Article.class, new ArticleAdapter());
+        Gson gson = gsonBuilder.create();
 
         try {
-            // Crear un objeto URI desde la URL y abrir una conexión HTTP
-            URI uri = new URI(fullUrl);
-            URL url = uri.toURL();
+            // Realiza la solicitud HTTP GET
+            URL url = new URL(fullUrl);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-
-            // Establecer el método de solicitud a GET
             connection.setRequestMethod("GET");
 
-            // Verificar el código de respuesta para asegurarse de que la solicitud fue exitosa
+            // Verifica el código de respuesta
             int responseCode = connection.getResponseCode();
             if (responseCode == HttpURLConnection.HTTP_OK) {
-                BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-                String inputLine;
+                // Lee la respuesta
+                BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
                 StringBuilder response = new StringBuilder();
-
-                // Leer la respuesta línea por línea y agregarla al StringBuilder
-                while ((inputLine = in.readLine()) != null) {
-                    response.append(inputLine);
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    response.append(line);
                 }
-                in.close();
+                reader.close();
 
-                // Crear un archivo HTML desde la respuesta JSON obtenida
-                createHtmlFile(response.toString());
+                // Convierte el JSON de la respuesta al objeto Article
+                String jsonResponse = response.toString();
+                Article article = gson.fromJson(jsonResponse, Article.class);
+
+                // Muestra los detalles del artículo
+                System.out.println("Artículo obtenido:");
+                System.out.println(article);
+
+                // Guardar el contenido como un archivo HTML
+                saveAsHtml(article);
             } else {
-                System.out.println("No se pudo obtener el artículo del blog. Código de respuesta HTTP: " + responseCode);
+                System.out.println("Error: No se pudo obtener el artículo. Código de respuesta: " + responseCode);
             }
+
         } catch (Exception e) {
-            // Manejar excepciones y mostrar un mensaje de error
             System.out.println("Ocurrió un error: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
     /**
-     * Crea un archivo HTML a partir de la respuesta JSON dada.
+     * Guarda el contenido del artículo como un archivo HTML.
      *
-     * @param jsonResponse La respuesta JSON obtenida del API del blog
+     * @param article Objeto Article que contiene los datos del blog.
      */
-    private static void createHtmlFile(String jsonResponse) {
-        try {
-            // Básica parsificación (para propósitos demostrativos, supone una estructura específica de JSON)
-            String title = extractValue(jsonResponse, "title");
-            String content = extractValue(jsonResponse, "content");
-
-            // Crear el contenido HTML utilizando los valores extraídos
-            String htmlContent =
-                    "<html>\n" +
-                    "<head><title>" + title + "</title></head>\n" +
-                    "<body>\n" +
-                    "<h1>" + title + "</h1>\n" +
-                    "<p>" + content + "</p>\n" +
-                    "</body>\n" +
-                    "</html>";
-
-            // Escribir el contenido HTML en un archivo llamado "article.html"
-            FileWriter writer = new FileWriter("article.html");
-            writer.write(htmlContent);
-            writer.close();
-
-            System.out.println("Archivo HTML 'article.html' creado exitosamente.");
-        } catch (IOException e) {
-            // Manejar excepciones durante la creación del archivo
-            System.out.println("Ocurrió un error al crear el archivo HTML: " + e.getMessage());
+    private static void saveAsHtml(Article article) {
+        String htmlFileName = "article-" + article.getId() + ".html";
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(htmlFileName))) {
+            writer.write("<html><head><title>" + article.getTittle() + "</title></head><body>");
+            writer.write("<h1>" + article.getTittle() + "</h1>");
+            writer.write("<p>" + article.getContentText() + "</p>");
+            writer.write("</body></html>");
+            System.out.println("El artículo se ha guardado como " + htmlFileName);
+        } catch (Exception e) {
+            System.out.println("Error al guardar el archivo HTML: " + e.getMessage());
         }
-    }
-
-    /**
-     * Extrae el valor de una clave específica de un string JSON.
-     *
-     * Nota: Esta es una implementación simple que supone que la estructura JSON sigue un patrón predecible.
-     * Para una solución robusta, considere utilizar una biblioteca de parsificación JSON como Jackson o Gson.
-     *
-     * @param json La cadena JSON
-     * @param key La clave cuyo valor se necesita extraer
-     * @return El valor asociado con la clave especificada
-     */
-    private static String extractValue(String json, String key) {
-        // Extracción simple del valor del JSON (no robusta; reemplácela con una biblioteca JSON para producción)
-        String keyPattern = "\"" + key + "\":\"";
-        int startIndex = json.indexOf(keyPattern) + keyPattern.length();
-        int endIndex = json.indexOf("\"", startIndex);
-        return json.substring(startIndex, endIndex);
     }
 }
