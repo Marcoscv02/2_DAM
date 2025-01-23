@@ -6,6 +6,14 @@ The server should encrypt the message and return the encrypted message to the cl
 
 ---
 
+Queremos crear una aplicación cliente-servidor para cifrar mensajes utilizando el cifrado Polybius.
+
+El cliente debe enviar un mensaje para cifrar al servidor.
+
+El servidor debe cifrar el mensaje y devolver el mensaje cifrado al cliente.
+
+---
+
 To encrypt using the polybius cipher use the following table:
 ![img.png](img.png)
 

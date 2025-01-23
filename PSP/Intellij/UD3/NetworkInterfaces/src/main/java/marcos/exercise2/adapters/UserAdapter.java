@@ -17,10 +17,9 @@ public class UserAdapter extends TypeAdapter <User>{
 
     @Override
     public User read(JsonReader reader) throws IOException {
-        System.out.println("Ha llegado a metodo read de");
+        System.out.println("Ha llegado a metodo read de user");
         if (reader.peek()!= JsonToken.NULL){
             User user= new User();
-
 
             reader.beginObject();
             StringBuilder userName= new StringBuilder();
@@ -34,7 +33,8 @@ public class UserAdapter extends TypeAdapter <User>{
                     userName.append(reader.nextString());
                     break;
                 default:
-                    reader.skipValue();                    break;
+                    reader.skipValue();
+                    break;
             }
             user.setName(userName.toString());
             reader.endObject();

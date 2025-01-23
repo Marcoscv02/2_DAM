@@ -3,18 +3,32 @@ package marcos.psp;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
+import java.net.Socket;
 import java.util.Date;
+
 public class DateServer {
     public static void main(String[] args) throws IOException {
-        try (var listener = new ServerSocket(57777)) {
+        // Crea un ServerSocket en el puerto 57777
+        try (ServerSocket listener = new ServerSocket(57778)) //ServerSocket autocloseable
+        {
             System.out.println("The date server is running...");
+
+            // Bucle infinito para mantener el servidor en ejecución
             while (true) {
-                try (var socket = listener.accept()) {
-                    var out = new PrintWriter(socket.getOutputStream(), true);
-                    out.println(new Date().toString());
+                // Espera y acepta una conexión de cliente
+
+                try {
+                    Socket socket = listener.accept();//socket autocloseable
+                    System.out.println("cliente connected to server");
+                    Thread serverThread= new Thread(new DateServerWorker(socket));
+                    serverThread.start();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
                 }
             }
         }
+        // El ServerSocket se cierra automáticamente al final de este bloque try
     }
 }
+
 

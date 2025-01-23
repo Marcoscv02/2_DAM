@@ -72,7 +72,7 @@ public class FetchBlogArticle {
                 readerJson.append(line);
             }
 
-            user = gson.fromJson(br, User.class);
+            user = gson.fromJson(readerJson.toString(), User.class);
 
         } catch (URISyntaxException | IOException e) {
             throw new RuntimeException(e);
