@@ -11,41 +11,40 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class ArticleAdapter extends TypeAdapter {
+public class ArticleAdapter extends TypeAdapter<Article> {
     @Override
-    public void write(JsonWriter jsonWriter, Object o) throws IOException {
+    public void write(JsonWriter jsonWriter, Article a) throws IOException {
 
     }
 
     @Override
-    public Object read(JsonReader reader) throws IOException {
+    public Article read(JsonReader reader) throws IOException {
+        System.out.println("Llegada a metodo read articulo");
         Article article= new Article();
-
-        reader.beginObject();
-        if (reader.peek()!= JsonToken.NULL) {
+        if (reader.peek()!=JsonToken.NULL) {
             reader.beginObject();
 
-            while (reader.peek() != JsonToken.END_OBJECT) {
+            while (reader.hasNext()) {
                 String name = reader.nextName();
-                switch (name){
+                switch (name) {
                     case "success":
-                        boolean error= reader.nextBoolean();
-                        if(error){
+                        boolean correcto = reader.nextBoolean();
+                        if (correcto == false) {
                             return null;
                         }
                         break;
                     case "blog":
-                        article=readArticle(reader,article);
+                        article = readArticle(reader, article);
                         break;
                     default:
                         reader.skipValue();
                         break;
                 }
             }
+            reader.endObject();
+            return article;
         }
-        reader.endObject();
-
-        return article;
+        return null;
     }
 
     public Article readArticle(JsonReader reader, Article article) throws IOException{
@@ -53,7 +52,7 @@ public class ArticleAdapter extends TypeAdapter {
         if (reader.peek()!= JsonToken.NULL){
             reader.beginObject();
 
-            while (reader.peek()!= JsonToken.END_OBJECT){
+            while (reader.hasNext()){
                 String name= reader.nextName();
 
                 switch (name){
@@ -89,21 +88,22 @@ public class ArticleAdapter extends TypeAdapter {
                     case "user_id":
                         article.setUserId(reader.nextLong());
                         break;
+                    default:
+                        reader.skipValue();
+                        break;
                 }
             }
 
             reader.endObject();
+            return article;
         }
 
-        return article;
+        return null;
     }
 
-    DateTimeFormatter dtFormatter= DateTimeFormatter.ofPattern("yy-MM-dd hh:mm:ss.SSSS");
+    DateTimeFormatter dtFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.n");
     public LocalDateTime dateConverter(JsonReader reader) throws IOException {
-        reader.beginObject();
         String data = reader.nextString().replace('T',' ');
-        LocalDateTime localDateTime= LocalDateTime.parse(data,dtFormatter);
-        reader.endObject();
-        return localDateTime;
+        return LocalDateTime.parse(data,dtFormatter);
     }
 }

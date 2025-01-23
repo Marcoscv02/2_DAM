@@ -1,0 +1,22 @@
+{
+  "success": true,
+  "message": "fetched sample user whoose id is 1",
+  "user": {
+    "first_name": "Kayla",
+    "last_name": "Lopez",
+    "email": "kayla.lopez.1@slingacademy.com",
+    "phone": "+1-971-533-4552x1542",
+    "street": "3388 Roger Wells Apt. 010",
+    "state": "Vermont",
+    "country": "Jordan",
+    "longitude": 112.16014,
+    "id": 1,
+    "gender": "female",
+    "date_of_birth": "2002-04-25T00:00:00",
+    "job": "Herbalist",
+    "city": "Humphreyfurt",
+    "zipcode": "79574",
+    "latitude": 13.032103,
+    "profile_picture": "https://api.slingacademy.com/public/sample-users/1.png"
+  }
+}
