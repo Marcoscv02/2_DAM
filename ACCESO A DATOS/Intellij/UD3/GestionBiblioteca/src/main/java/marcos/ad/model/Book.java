@@ -3,9 +3,12 @@ package marcos.ad.model;
 import jakarta.persistence.*;
 import marcos.ad.model.converters.CategotiaConverter;
 
+import java.math.BigInteger;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 
+@Access(AccessType.FIELD)
 @Entity
 public class Book {
     @Id
@@ -80,7 +83,13 @@ public class Book {
         this.fechaPub = fechaPub;
     }
 
+    @Access(AccessType.PROPERTY)
     public LocalDate getFechaPub_now() {
+        // Convertir Calendar a LocalDate
+        LocalDate localDatePub = fechaPub.toInstant().atZone(java.time.ZoneId.systemDefault()).toLocalDate();
+
+        // Calcular la diferencia en días entre fechaPub y la fecha actual
+        //fechaPub_now= ChronoUnit.DAYS.between((long)fechaPub, LocalDate.now());
         return fechaPub_now;
     }
 
@@ -89,6 +98,15 @@ public class Book {
     }
 
     public String getIsbn10() {
+         isbn10 = isbn.substring(3, isbn.length() - 1);
+        System.out.println(isbn10);
+        BigInteger sum = BigInteger.ZERO;
+        for (int i = 0; i < isbn10.length(); i++) {
+            int digit = Character.getNumericValue(isbn10.charAt(i));
+            sum = sum.add(BigInteger.valueOf(digit).multiply(BigInteger.valueOf(10 - i)));
+        }
+        BigInteger remainder = sum.mod(BigInteger.valueOf(11));
+        BigInteger controlDigit = BigInteger.valueOf(11).subtract(remainder);
 
         return isbn10;
     }
@@ -99,14 +117,8 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
-                "idBook=" + idBook +
-                ", titulo='" + titulo + '\'' +
-                ", autor='" + autor + '\'' +
-                ", isbn='" + isbn + '\'' +
-                ", fechaPub=" + fechaPub +
-                ", fechaPub_now=" + fechaPub_now +
-                ", isbn10='" + isbn10 + '\'' +
-                '}';
+        return "Book: " +
+                "["+ idBook +"] "+"isbn:"+ isbn +"\t titulo:"+titulo+"\t"+autor + ", \t fechaPub:" + fechaPub +
+                " PublicationDay to now:" + fechaPub_now +" isbn(10): " + isbn10;
     }
 }
