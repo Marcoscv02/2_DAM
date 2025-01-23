@@ -1,30 +1,33 @@
-package marcos.acdatos.ejer5_03;
+package marcos.acdatos.ejer5_03.model;
 
 import jakarta.persistence.*;
-import marcos.acdatos.ejer5_03.pakages.EstadoCivilConverter;
-import marcos.acdatos.ejer5_03.pakages.SexoConverter;
+import marcos.acdatos.ejer5_03.converters.EstadoCivilConverter;
+import marcos.acdatos.ejer5_03.converters.SexoConverter;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 @Entity()
 @Table(name = "persona")
+@Access(AccessType.FIELD)
 public class Persona {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long idPersona;
-    String nombre;
-    String apellidos;
-
-    @Transient private Integer edad;
-
-    LocalDate fechaNac;
-
+    @GeneratedValue(strategy = GenerationType.TABLE)
+    private Long idPersona;
+    @Transient
+    private String nombre;
+    @Transient
+    private String apellidos;
+    @Transient
+    private Integer edad;
+    private LocalDate fechaNac;
     @Convert(converter = SexoConverter.class)
-    Sexoooooo sexo;
+    private Sexoooooo sexo;
     @Convert(converter = EstadoCivilConverter.class)
-    EstadoCivil estadoCivil;
+    private EstadoCivil estadoCivil;
     @Lob
-    Byte[] foto;
+    @Basic(fetch = FetchType.LAZY)
+    private Byte[] foto;
 
     public Persona() {
     }
@@ -62,6 +65,16 @@ public class Persona {
 
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
+    }
+
+    @Access(AccessType.PROPERTY)
+    @Column(name = "nombrecompleto")
+    public String getNombreCompleto(){
+        return nombre+apellidos;
+    }
+    public void  setNombreCompleto(String nombre, String apellidos){
+        this.nombre=nombre;
+        this.apellidos=apellidos;
     }
 
     public Integer getEdad() {
@@ -102,5 +115,13 @@ public class Persona {
 
     public void setFoto(Byte[] foto) {
         this.foto = foto;
+    }
+
+    @Override
+    public String toString() {
+        return nombre+" = ["+idPersona+"], "+apellidos+", "+fechaNac+" ("+edad+"), "+sexo+", "+estadoCivil;
+
+
+
     }
 }

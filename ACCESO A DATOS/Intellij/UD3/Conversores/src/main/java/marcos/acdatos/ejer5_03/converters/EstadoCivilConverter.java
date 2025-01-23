@@ -1,8 +1,8 @@
-package marcos.acdatos.ejer5_03.pakages;
+package marcos.acdatos.ejer5_03.converters;
 
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
-import marcos.acdatos.ejer5_03.EstadoCivil;
+import marcos.acdatos.ejer5_03.model.EstadoCivil;
 
 @Converter
 public class EstadoCivilConverter implements AttributeConverter <EstadoCivil, String> {

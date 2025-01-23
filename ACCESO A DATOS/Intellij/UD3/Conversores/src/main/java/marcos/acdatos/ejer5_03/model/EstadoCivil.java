@@ -1,4 +1,4 @@
-package marcos.acdatos.ejer5_03;
+package marcos.acdatos.ejer5_03.model;
 
 public enum EstadoCivil {
     SOLTERO ("Soltero"),

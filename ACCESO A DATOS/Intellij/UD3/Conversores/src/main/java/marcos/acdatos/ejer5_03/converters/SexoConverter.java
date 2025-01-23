@@ -1,8 +1,8 @@
-package marcos.acdatos.ejer5_03.pakages;
+package marcos.acdatos.ejer5_03.converters;
 
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
-import marcos.acdatos.ejer5_03.Sexoooooo;
+import marcos.acdatos.ejer5_03.model.Sexoooooo;
 
 @Converter
 public class SexoConverter implements AttributeConverter<Sexoooooo, String> {
