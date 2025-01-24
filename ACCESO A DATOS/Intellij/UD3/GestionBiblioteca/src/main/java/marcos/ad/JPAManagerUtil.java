@@ -9,11 +9,7 @@ public class JPAManagerUtil {
     public static EntityManagerFactory instance;
 
     public static boolean isentityManagerClosed (){
-        if (instance==null||!instance.isOpen()){
-            return true;
-        }
-
-        return false;
+        return instance==null||!instance.isOpen();
     }
 
     public static EntityManagerFactory getInstance(String udPersistencia){
@@ -24,6 +20,6 @@ public class JPAManagerUtil {
                 }
             }
         }
-        return null;
+        return instance;
     }
 }

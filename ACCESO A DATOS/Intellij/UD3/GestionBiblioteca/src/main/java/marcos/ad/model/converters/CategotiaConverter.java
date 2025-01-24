@@ -9,7 +9,7 @@ public class CategotiaConverter implements AttributeConverter<Categoria,String> 
     @Override
     public String convertToDatabaseColumn(Categoria categoria) {
 
-        return categoria.getCodigo();
+        return (categoria!=null) ? categoria.getCodigo() : null;
     }
 
     @Override

@@ -11,6 +11,8 @@
         <provider> org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <properties>
+            <!-- Exclusión de clases no listadas -->
+            <property name="hibernate.archive.exclude_unlisted_classes" value="true" />
             <!--Driver y url a base de  datos -->
             <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver" />
             <property name="jakarta.persistence.jdbc.url"    value="jdbc:h2:C:\Users\a24marcoscv\Documents\2_DAM\ACCESO A DATOS\DB\JPA-hibernate\gestionBiblioteca;DATABASE_TO_UPPER=FALSE" />

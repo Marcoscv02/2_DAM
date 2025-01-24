@@ -9,6 +9,7 @@ import java.util.Calendar;
 public class App {
     public static void main(String[] args) {
         var emf= JPAManagerUtil.getInstance(JPAManagerUtil.UNIDAD_PERSISTENCIA);
+        assert emf != null;
         var em=emf.createEntityManager();
 
         Calendar c= Calendar.getInstance();

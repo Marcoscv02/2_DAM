@@ -28,7 +28,7 @@ public class Book {
     private Calendar fechaPub;
 
     @Transient
-    private LocalDate fechaPub_now;
+    private long numeroDias;
 
     @Transient
     private String isbn10;
@@ -83,18 +83,16 @@ public class Book {
         this.fechaPub = fechaPub;
     }
 
-    @Access(AccessType.PROPERTY)
-    public LocalDate getFechaPub_now() {
+    @PostLoad
+    @PostUpdate
+    @PrePersist
+    public void getFechaPub_now() {
         // Convertir Calendar a LocalDate
         LocalDate localDatePub = fechaPub.toInstant().atZone(java.time.ZoneId.systemDefault()).toLocalDate();
 
         // Calcular la diferencia en días entre fechaPub y la fecha actual
-        //fechaPub_now= ChronoUnit.DAYS.between((long)fechaPub, LocalDate.now());
-        return fechaPub_now;
-    }
 
-    public void setFechaPub_now(LocalDate fechaPub_now) {
-        this.fechaPub_now = fechaPub_now;
+        numeroDias = ChronoUnit.DAYS.between(localDatePub, LocalDate.now());
     }
 
     public String getIsbn10() {
@@ -119,6 +117,7 @@ public class Book {
     public String toString() {
         return "Book: " +
                 "["+ idBook +"] "+"isbn:"+ isbn +"\t titulo:"+titulo+"\t"+autor + ", \t fechaPub:" + fechaPub +
-                " PublicationDay to now:" + fechaPub_now +" isbn(10): " + isbn10;
+                " PublicationDay to now:" + numeroDias +" isbn(10): " + isbn10;
     }
+
 }
