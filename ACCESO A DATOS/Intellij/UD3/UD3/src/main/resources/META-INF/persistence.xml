@@ -101,4 +101,37 @@
         </properties>
         
     </persistence-unit>
+
+    <!--Unidad de Persistencia para EJERCICIO EQUIPOS H2-->
+    <persistence-unit name="jpa-equipos-h2">
+        <description>
+            Unidad de persistncia para jakarta persistencia en ejercicio biblioteca con sqlite
+        </description>
+        <provider> org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <class>marcos.equipo_entrenador.model.entrenador.Entrenador</class>
+        <class>marcos.equipo_entrenador.model.equipo.Equipo</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            <!--Driver y url a base de  datos -->
+            <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver" />
+            <property name="jakarta.persistence.jdbc.url"    value="jdbc:h2:C:\Users\a24marcoscv\Documents\2_DAM\ACCESO A DATOS\DB\JPA-hibernate\equipos ;DATABASE_TO_UPPER=FALSE" />
+
+            <!--Sin usuario y contraseña para base de datos-->
+            <property name="jakarta.persistence.jdbc.user"   value="" />
+            <property name="jakarta.persistence.jdbc.password" value="" />
+
+            <!--Esta propiedad genera el esquema de la base de datos  -->
+            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create" />
+
+            <!--Dialecto de SGBD para optimizar-->
+            <property name="hibernate.dialect"    value="org.hibernate.community.dialect.SQLiteDialect" />
+
+            <!--Mostrar y formatear sentencias Sql-->
+            <property name="hibernate.show_sql"   value="true" />
+            <property name="hibernate.format_sql" value="true" />
+        </properties>
+
+    </persistence-unit>
 </persistence>

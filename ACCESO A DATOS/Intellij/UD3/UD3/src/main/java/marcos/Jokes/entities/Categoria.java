@@ -40,22 +40,6 @@ public enum Categoria {
         }
         return null;
     }
-//    public static Categoria getCategoria(String nombre) {
-//        return Arrays.stream(values())
-//                .filter(c -> c.getNombre().equals(nombre))
-//                .findFirst()
-//                .orElse(null);
-//    }
 
-    /**
-     * Sobreescribe el método toString() para que devuelva el nombre de la categoría.
-     *
-     * @return Nombre de la categoría
-     * @see Enum#toString()
-     */
-    @Override
-    public String toString() {
-        return nombre;
-    }
 
 }
