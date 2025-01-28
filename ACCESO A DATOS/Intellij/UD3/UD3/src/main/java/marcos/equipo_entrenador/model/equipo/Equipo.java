@@ -1,8 +1,8 @@
 package marcos.equipo_entrenador.model.equipo;
 
 import jakarta.persistence.*;
-import marcos.equipo_entrenador.model.converters.ConferenciaConverter;
-import marcos.equipo_entrenador.model.converters.DivisionConverter;
+import marcos.equipo_entrenador.model.equipo.converters.ConferenciaConverter;
+import marcos.equipo_entrenador.model.equipo.converters.DivisionConverter;
 import marcos.equipo_entrenador.model.entrenador.Entrenador;
 
 @Entity

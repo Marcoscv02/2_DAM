@@ -1,4 +1,4 @@
-package marcos.equipo_entrenador.model.converters;
+package marcos.equipo_entrenador.model.equipo.converters;
 
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
