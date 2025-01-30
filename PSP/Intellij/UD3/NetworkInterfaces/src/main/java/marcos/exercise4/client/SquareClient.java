@@ -1,7 +1,5 @@
 package marcos.exercise4.client;
 
-import marcos.exercise4.server.SquareServerWorker;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -43,7 +41,6 @@ public class SquareClient {
 
 
                 //Scanner inThread= new Scanner();
-                var br= new BufferedReader(new InputStreamReader(SquareClientWorker))
 
             }
         } catch (IOException e) {

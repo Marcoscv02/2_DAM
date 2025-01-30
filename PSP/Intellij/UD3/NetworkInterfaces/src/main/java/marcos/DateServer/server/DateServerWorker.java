@@ -6,7 +6,7 @@ import java.net.Socket;
 import java.util.Date;
 
 public class DateServerWorker implements Runnable{
-    private Socket clientsocket;
+    private final Socket clientsocket;
 
     public DateServerWorker(Socket clientsocket) {
         this.clientsocket = clientsocket;
