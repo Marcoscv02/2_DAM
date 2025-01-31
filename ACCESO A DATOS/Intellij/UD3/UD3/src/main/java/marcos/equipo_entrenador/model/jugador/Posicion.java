@@ -1,5 +1,6 @@
 package marcos.equipo_entrenador.model.jugador;
 
+
 public enum Posicion {
     BASE("G"),
     ESCOLTA("C"),
@@ -13,9 +14,17 @@ public enum Posicion {
         this.codigo = codigo;
     }
 
-//    public static Posicion getPosicion(String codigo){
-//        if (codigo!=null){
-//            for ()
-//        }
-//    }
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public static Posicion getPosicion(String codigo){
+        if (codigo!=null){
+            for (Posicion p: Posicion.values()){
+                if (p.codigo.equalsIgnoreCase(codigo)) return p;
+            }
+        }
+        System.out.println("No se han encontrado coincidencias de posición en método getPosición");
+        return null;
+    }
 }

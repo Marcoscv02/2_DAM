@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import marcos.equipo_entrenador.model.equipo.converters.ConferenciaConverter;
 import marcos.equipo_entrenador.model.equipo.converters.DivisionConverter;
 import marcos.equipo_entrenador.model.entrenador.Entrenador;
+import marcos.equipo_entrenador.model.jugador.Jugador;
+
+import java.util.List;
 
 @Entity
 public class Equipo {
@@ -23,6 +26,9 @@ public class Equipo {
     @OneToOne
     @JoinColumn(name = "idEntrenador")
     private Entrenador entrenador;
+
+    @OneToMany(mappedBy = "equipo")
+    private List<Jugador> jugadores;
 
     public Entrenador getEntrenador() {
         return entrenador;

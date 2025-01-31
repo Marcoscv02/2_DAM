@@ -111,6 +111,7 @@
 
         <class>marcos.equipo_entrenador.model.entrenador.Entrenador</class>
         <class>marcos.equipo_entrenador.model.equipo.Equipo</class>
+        <class>marcos.equipo_entrenador.model.jugador.Jugador</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
 
         <properties>

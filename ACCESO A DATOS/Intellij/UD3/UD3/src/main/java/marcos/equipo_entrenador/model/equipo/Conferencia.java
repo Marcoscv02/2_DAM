@@ -1,6 +1,5 @@
 package marcos.equipo_entrenador.model.equipo;
 
-import jakarta.persistence.Converter;
 
 public enum Conferencia {
     ESTE ("EAST"),
