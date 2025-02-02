@@ -5,29 +5,21 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.util.HashMap;
 
 public class ServerWorker implements Runnable{
-    private Socket clientSocket;
+    private int lives; //Numero de vidas
+    private boolean play;//Variable que indica si el jugador está e cun juego
+    private int secretNumber; //Número Aleatorio generado por el servidor
+    private int intento; //Numero intento
+
+
+
+    private final Socket clientSocket;
 
     public ServerWorker(Socket socket) {
         this.clientSocket = socket;
     }
 
-    //Mapa con los codigos de comunicacion y el mensaje que transmite
-    HashMap<Integer, String> codigos= new HashMap<>(){{
-        put(10,"Number game server is ready to receive request from the client in port:");
-        put(11, "BIE. Exiting to the game...");
-        put(15, "Server is ready again after a communication error");
-        put(20, "PLAY. Start a new game");
-        put(25, "LOW. Number guessed is lower than secret number");
-        put(35, "HIGH. Number guessed is higher than secret number");
-        put(40, "INFO. Help about the game");
-        put(50, "WIN. ¡¡You win!!");
-        put(70, "LOSE. You have not more Lives");
-        put(80, "ERR. Input command is not allowed currently");
-        put(90, "UNKNOWN. Input command is incorrect");
-    }};
 
     @Override
     public void run() {
@@ -43,73 +35,63 @@ public class ServerWorker implements Runnable{
                 String userInput= reader.readLine();
 
                 //Separación por palabras
-                String [] palabras= userInput.split("");
+                String [] palabras= userInput.split(" ");
 
-                //Número Aleatorio generado por el servidor
-                int secretNumber=0;
-
-                //Numero de vidas
-                int lives=0;
-
-                //Numero intento
-                int intento=0;
 
                 //Conversion de la segunda palabra a entero ya que es un número (Se usara para new y num)
                 int userNumber= Integer.parseInt(palabras[2]);
 
-                //Variable que indica si el jugador está e cun juego
-                boolean play=false;
 
                 switch (userInput){
                     case "new":
                         //El jugador no puede estar dentro de un juego para ejecutar este comando
                         if (!play){
                             play=true;
-                            userNumber = lives;
-                            out.println(codigos.get(20)+"You have "+lives+" Attemps");
+                            lives=userNumber;
+                            out.println(20); //Inicio de juego
                             secretNumber= (int) (Math.random()*20);
                             break;
-                        }else out.println(codigos.get(80));
+                        }else out.println(80);//Error
 
                     case "num":
                         //El jugador debe estar jugando para poder ejecutar este comando
                         if (play){
 
-                            userNumber=intento;
+                            intento=userNumber;
                             if(secretNumber!=intento){ //Jugador falla número
 
                                 lives--;
 
                                 if (intento>secretNumber){ //Si escribe un número mayor que el número secreto
-                                    out.println(codigos.get(35)+", you have "+lives+" lives");
+                                    out.println(35);
 
                                 } else if (lives==0) { //Si el usuario se queda con 0 vidas
-                                    out.println(codigos.get(70));
+                                   out.println(70);
                                     play=false;
 
 
-                                } else out.println(codigos.get(25)+", you have "+lives+" lives"); //Si escribe un número menor que el número secreto
+                                } else out.println(25); //Si escribe un número menor que el número secreto
 
                             }else {//jugador acierta el número
-                                codigos.get(50);
+                                out.println(50);;
                                 play=false;
                             }
 
-                        }else out.println(codigos.get(80));
+                        }else out.println(80);;
 
                         break;
 
                     case "help":
-                        out.println(codigos.get(40));
+                        out.println(40);;
                         break;
 
                     case "quit":
-                        out.println("11.");
+                        out.println(11);;
                         System.exit(0);
                         break;
 
                     default:
-                        out.println(codigos.get(90));
+                        out.println(90);;
                 }
             }
         } catch (IOException e) {

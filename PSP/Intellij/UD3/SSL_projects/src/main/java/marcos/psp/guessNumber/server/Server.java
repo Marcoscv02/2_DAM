@@ -3,10 +3,8 @@ package marcos.psp.guessNumber.server;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.HashMap;
 
 public class Server {
     public static final int PORT=60000;
@@ -19,11 +17,21 @@ public class Server {
             while (true){
 
                 //Acepta las peticiones de conexión con el socket del cliente
-                try (Socket clientSocket= serverSocket.accept();){
+                try (
+                        Socket clientSocket= serverSocket.accept();
+                        BufferedReader br= new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))
+                ){
                     //Envía mensaje al cliente de que ha aceptado la petición y están conectados
                     System.out.println("Petición de cliente aceptada");
 
+                    System.out.println("Recibido "+br.readLine());
                     Thread thread= new Thread(new ServerWorker(clientSocket));
+                    thread.start();
+
+                    if (br.readLine().equalsIgnoreCase("quit")) {
+                        System.out.println("Apagando servidor");
+                        System.exit(0); //Apagar servidor si se escribe quit
+                    }
 
                 }
             }
