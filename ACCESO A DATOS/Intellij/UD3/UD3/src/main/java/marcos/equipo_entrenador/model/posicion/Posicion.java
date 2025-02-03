@@ -1,6 +1,10 @@
 package marcos.equipo_entrenador.model.posicion;
 
 import jakarta.persistence.*;
+import jdk.jfr.Name;
+import marcos.equipo_entrenador.model.jugador.Jugador;
+
+import java.util.List;
 
 @Entity
 public class Posicion {
@@ -13,5 +17,15 @@ public class Posicion {
     private String abreviatura;
     private String descripcion;
 
-    @
+    @ManyToMany(mappedBy = "posiciones")
+    List<Jugador> jugadores;
+
+    public Posicion() {
+    }
+
+    public Posicion(String nombre, String abreviatura, String descripcion) {
+        this.nombre = nombre;
+        this.abreviatura = abreviatura;
+        this.descripcion = descripcion;
+    }
 }

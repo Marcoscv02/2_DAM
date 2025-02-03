@@ -3,6 +3,9 @@ package marcos.equipo_entrenador.model.jugador;
 import jakarta.persistence.*;
 import marcos.equipo_entrenador.model.equipo.Equipo;
 import marcos.equipo_entrenador.model.jugador.converters.PosicionConverter;
+import marcos.equipo_entrenador.model.posicion.Posicion;
+
+import java.util.List;
 
 @Entity
 public class Jugador {
@@ -18,8 +21,8 @@ public class Jugador {
     private Integer anhoDraft;
     private Short numeroDraft;
     private Short rondaDraft;
-    @Convert(converter = PosicionConverter.class)
-    private Posicion posicion;
+//    @Convert(converter = PosicionConverter.class)
+//    private Posicion posicion;
     private String pais;
     private String colegio;
     @Lob
@@ -30,11 +33,20 @@ public class Jugador {
     @JoinColumn(name = "idEquipo")
     private Equipo equipo;
 
+    @ManyToMany
+    @JoinTable(//Lado propietario
+            name = "Jugador_Posicion",
+            joinColumns = @JoinColumn(name = "idJugador"),
+            inverseJoinColumns = @JoinColumn(name = "idPosicion")
+    )
+    private List<Posicion> posiciones;
+
+
     //constructores
     public Jugador() {
     }
 
-    public Jugador(String nombre, String apellido, Double altura, Double peso, Short numero, Integer anhoDraft, Short numeroDraft, Short rondaDraft, Posicion posicion, String pais, String colegio) {
+    public Jugador(String nombre, String apellido, Double altura, Double peso, Short numero, Integer anhoDraft, Short numeroDraft, Short rondaDraft, String pais, String colegio) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.altura = altura;
@@ -43,12 +55,12 @@ public class Jugador {
         this.anhoDraft = anhoDraft;
         this.numeroDraft = numeroDraft;
         this.rondaDraft = rondaDraft;
-        this.posicion = posicion;
+        //this.posicion = posicion;
         this.pais = pais;
         this.colegio = colegio;
     }
 
-    public Jugador(String nombre, String apellido, Double altura, Double peso, Short numero, Integer anhoDraft, Short numeroDraft, Short rondaDraft, Posicion posicion, String pais, String colegio, Byte[] foto) {
+    public Jugador(String nombre, String apellido, Double altura, Double peso, Short numero, Integer anhoDraft, Short numeroDraft, Short rondaDraft, String pais, String colegio, Byte[] foto) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.altura = altura;
@@ -57,13 +69,13 @@ public class Jugador {
         this.anhoDraft = anhoDraft;
         this.numeroDraft = numeroDraft;
         this.rondaDraft = rondaDraft;
-        this.posicion = posicion;
+        //this.posicion = posicion;
         this.pais = pais;
         this.colegio = colegio;
         this.foto = foto;
     }
 
-    public Jugador(String nombre, String apellido, Double altura, Double peso, Short numero, Integer anhoDraft, Short numeroDraft, Short rondaDraft, Posicion posicion, String pais, String colegio, Byte[] foto, Equipo equipo) {
+    public Jugador(String nombre, String apellido, Double altura, Double peso, Short numero, Integer anhoDraft, Short numeroDraft, Short rondaDraft, String pais, String colegio, Byte[] foto, Equipo equipo) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.altura = altura;
@@ -72,7 +84,7 @@ public class Jugador {
         this.anhoDraft = anhoDraft;
         this.numeroDraft = numeroDraft;
         this.rondaDraft = rondaDraft;
-        this.posicion = posicion;
+        //this.posicion = posicion;
         this.pais = pais;
         this.colegio = colegio;
         this.foto = foto;
@@ -153,13 +165,13 @@ public class Jugador {
         this.rondaDraft = rondaDraft;
     }
 
-    public Posicion getPosicion() {
-        return posicion;
-    }
+//    public Posicion getPosicion() {
+//        return posicion;
+//    }
 
-    public void setPosicion(Posicion posicion) {
-        this.posicion = posicion;
-    }
+//    public void setPosicion(Posicion posicion) {
+//        this.posicion = posicion;
+//    }
 
     public String getPais() {
         return pais;
@@ -198,6 +210,6 @@ public class Jugador {
         return "Jugador:\n" +
                 "[" + idJugador +"] nombre:" + nombre + apellido +" (altura:" + altura +", peso=" + peso +")\n"+
                 ", numero:" + numero +"\t Draft:( anho:" + anhoDraft + ", numero=" + numeroDraft + ", ronda:" + rondaDraft +")\n"+
-                "Datos de interés[ posicion:"+ posicion+", pais:"+ pais +", colegio:" + colegio +", equipo=" + equipo +"]";
+                "Datos de interés[ pais:"+ pais +", colegio:" + colegio +", equipo=" + equipo +"]";
     }
 }
