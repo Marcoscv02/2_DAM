@@ -14,7 +14,7 @@ public class encryptProgram {
         //se desplazan todos los caracteres 3 posiciones hacia la derecha
         for (char c:caracteres1){
 
-            int caracterNum= (int)c;
+            int caracterNum= c;
             caracterNum+=3;
             sb.append((char) caracterNum);
 
@@ -40,6 +40,6 @@ public class encryptProgram {
         }
 
         //Salida de la palabra encriptada
-        System.out.println(sbFinal.toString());
+        System.out.println(sbFinal);
     }
 }
