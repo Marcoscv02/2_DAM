@@ -1,43 +1,39 @@
 package marcos.psp.guessNumber.server;
 
-import java.io.BufferedReader;
+import javax.net.ssl.SSLServerSocket;
+import javax.net.ssl.SSLServerSocketFactory;
+import javax.net.ssl.SSLSocket;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.ServerSocket;
-import java.net.Socket;
 
 public class Server {
     public static final int PORT=60000;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        SSLSocket clientSocket = null;
+
+        //Properties can be specified by code
+        System.setProperty("javax.net.ssl.keyStore", "ServerKeys.jks");
+        System.setProperty("javax.net.ssl.keyStorePassword", "12345678");
 
 
-        try(ServerSocket serverSocket= new ServerSocket(PORT)) {
-            System.out.println("Servidor esperando clientes");
-            while (true){
+        SSLServerSocketFactory sslServerSocketFactory = (SSLServerSocketFactory) SSLServerSocketFactory.getDefault();
+        SSLServerSocket serverSocket = (SSLServerSocket) sslServerSocketFactory.createServerSocket(PORT);
 
-                //Acepta las peticiones de conexión con el socket del cliente
-                try (
-                        Socket clientSocket= serverSocket.accept();
-                        BufferedReader br= new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))
-                ){
-                    //Envía mensaje al cliente de que ha aceptado la petición y están conectados
-                    System.out.println("Petición de cliente aceptada");
+        System.out.println("Number game server is ready to receive request from the client in port:"+PORT);
 
-                    System.out.println("Recibido "+br.readLine());
-                    Thread thread= new Thread(new ServerWorker(clientSocket));
-                    thread.start();
+        while (true){
 
-                    if (br.readLine().equalsIgnoreCase("quit")) {
-                        System.out.println("Apagando servidor");
-                        System.exit(0); //Apagar servidor si se escribe quit
-                    }
+            //Acepta las peticiones de conexión con el socket del cliente
+            clientSocket= (SSLSocket) serverSocket.accept();
 
-                }
-            }
-        } catch (IOException e) {
-            System.out.println("Error en tiempo de ejecución");
-            throw new RuntimeException(e);
+            //Envía mensaje al cliente de que ha aceptado la petición y están conectados
+            System.out.println("Petición de cliente aceptada");
+
+            //System.out.println("Recibido "+br.readLine());
+            Thread thread= new Thread(new ServerWorker(clientSocket));
+            thread.start();
         }
+
+
     }
 }

@@ -12,7 +12,7 @@ public class SSLServer {
 
         //Properties can be specified by code
         System.setProperty("javax.net.ssl.keyStore", "ServerKeys.jks");
-        System.setProperty("javax.net.ssl.keyStorePassword", "12345678");
+        System.setProperty("javax.net.ssl.keyStorePassword", "abc123.");
         //Initialisation of the SSL ServerSocket
         int port = 60000;
         SSLServerSocketFactory sslServerSocketFactory = (SSLServerSocketFactory)
