@@ -30,7 +30,7 @@ public class encryptProgram {
             char c= caracteres2[index];
 
             if (caracteres2[index] >= (caracteres2.length/2)){
-                int caracterNum2= (int)c;
+                int caracterNum2= c;
                 caracterNum2-=1;
                 sbFinal.append((char)caracterNum2);
             }else {
