@@ -48,7 +48,6 @@ public class Task implements Runnable {
 
 
         //COMPROBAR MÚLTIPLO DE 11
-
         int sumaPares=0;
         int sumaImpares=0;
 
