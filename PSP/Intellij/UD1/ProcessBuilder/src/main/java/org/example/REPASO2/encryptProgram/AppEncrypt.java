@@ -17,7 +17,7 @@ public class AppEncrypt {
         var br= new BufferedReader(new InputStreamReader(process.getInputStream()));
         var bw= new BufferedWriter(new OutputStreamWriter(process.getOutputStream()));
 
-        bw.write(word); //Envia la palabra que se va a encriptar
+        bw.write(word+"\n"); //Envia la palabra que se va a encriptar
         bw.flush();
         String encryptWord= br.readLine();//Recibe la palabra encriptada
 

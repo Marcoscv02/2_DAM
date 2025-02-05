@@ -1,7 +1,5 @@
 package org.example.REPASO2.encryptProgram;
 
-import java.io.BufferedWriter;
-import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Encryptation {
@@ -14,9 +12,8 @@ public class Encryptation {
         StringBuilder sb= new StringBuilder();
 
         for (char c: caracteres){ //Avanzar las letrs 3 posiciones a la derecha
-            int charNum= c;
-            charNum+=3;
-            sb.append((char) charNum);
+
+            sb.append((char) (c+3));
         }
 
         String reverse= String.valueOf(sb.reverse());
@@ -25,14 +22,10 @@ public class Encryptation {
         StringBuilder sb2 = new StringBuilder();
 
         for (int i = 0; i < caracteres2.length; i++) {
-
             char c = caracteres2[i];
+            if ( i > caracteres2.length / 2){
 
-            if ( c > caracteres2.length/2){
-                int charNum2 = c;
-                charNum2-=1;
-                sb2.append((char) charNum2);
-
+                sb2.append((char) (c-1));
             }else sb2.append(c);
         }
 
