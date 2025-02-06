@@ -13,7 +13,7 @@ public class Server {
 
         //Properties can be specified by code
         System.setProperty("javax.net.ssl.keyStore", "ServerKeys.jks");
-        System.setProperty("javax.net.ssl.keyStorePassword", "12345678");
+        System.setProperty("javax.net.ssl.keyStorePassword", "abc123.");
 
 
         SSLServerSocketFactory sslServerSocketFactory = (SSLServerSocketFactory) SSLServerSocketFactory.getDefault();
@@ -29,7 +29,7 @@ public class Server {
             //Envía mensaje al cliente de que ha aceptado la petición y están conectados
             System.out.println("Petición de cliente aceptada");
 
-            //System.out.println("Recibido "+br.readLine());
+            //Envía la información al hilo a través del socket
             Thread thread= new Thread(new ServerWorker(clientSocket));
             thread.start();
         }

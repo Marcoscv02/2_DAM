@@ -21,7 +21,6 @@ public class EvenApp {
                 .start();
 
 
-
         try (
                 //Recibe datos de la clase
                 var br= new BufferedReader(new InputStreamReader(process.getInputStream()));
