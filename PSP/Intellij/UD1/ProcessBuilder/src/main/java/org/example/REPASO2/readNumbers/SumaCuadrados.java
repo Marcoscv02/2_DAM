@@ -10,7 +10,7 @@ public class SumaCuadrados {
         int resultado=0;
         for (int i = 0; i < numOperandos; i++) {
             int num= sc.nextInt();
-            resultado+= (int) Math.pow(2,resultado);
+            resultado+= (int) Math.pow(2,num);
         }
 
         System.out.println(resultado);

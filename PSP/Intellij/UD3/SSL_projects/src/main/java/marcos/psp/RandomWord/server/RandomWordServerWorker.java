@@ -4,6 +4,10 @@ import java.io.*;
 import java.net.*;
 
 public class RandomWordServerWorker implements Runnable{
+    String [] comando;
+    String orden;
+    String num;
+
     private  final Socket clientSocket;
 
     public RandomWordServerWorker(Socket clientSocket) {
@@ -14,41 +18,46 @@ public class RandomWordServerWorker implements Runnable{
     public void run() {
 
 
-        try (var br= new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-             var bw= new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()))){
-
-            //Abre la conecion con la api
-            URLConnection url= new URI("https://random-word-api.herokuapp.com/word?length=").toURL().openConnection();
+        try (var reader= new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+             var writter= new PrintWriter(clientSocket.getOutputStream(), true)){
 
             while (true){
-                String userInput= br.readLine();
+                String userInput= reader.readLine();
 
-                String[] comando= userInput.split(" ");
-                String orden= comando[0];
+                comando= userInput.split(" ");
+                orden= comando[0];
+                num= comando[1];
 
                 switch (orden){
                     case "end":
                         System.exit(0);
                         break;
+
                     case "word":
-                        String num= comando[1];
-                        num.
+                        //Abre la conecion con la api
+                        URLConnection url= new URI("https://random-word-api.herokuapp.com/word?length="+num).toURL().openConnection();
+
+                        BufferedReader urlReader= new BufferedReader(new InputStreamReader(url.getInputStream()));
+                        String word = urlReader.readLine();
+
+                        writter.println(word);
                         break;
+
                     default:
+                        writter.println("No se detecta el comando especificado");
                         break;
                 }
 
-
-
-
-                var urlReader= new BufferedReader(new InputStreamReader(url.getInputStream()));
-                String apiWord= urlReader.readLine();
             }
 
-        } catch (IOException e) {
+        } catch (IOException | URISyntaxException e) {
             throw new RuntimeException(e);
-        } catch (URISyntaxException e) {
-            throw new RuntimeException(e);
+        } finally {
+            try {
+                clientSocket.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }

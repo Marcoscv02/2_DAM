@@ -15,12 +15,9 @@ public class RandomWordServer {
         System.setProperty("javax.net.ssl.keyStorePassword", "abc123.");
 
         SSLServerSocketFactory factory= (SSLServerSocketFactory) SSLServerSocketFactory.getDefault();
-        SSLServerSocket serverSocket= (SSLServerSocket) factory.createServerSocket();
+        SSLServerSocket serverSocket= (SSLServerSocket) factory.createServerSocket(PORT);
 
         System.out.println("Number game server is ready to receive a client");
-
-        clientSocket= (SSLSocket) serverSocket.accept(); //Acepta la peticion del cliente
-        System.out.println("client petition has been accepted");
 
         while (true){
             //Acepta las peticiones de conexión con el cliente

@@ -15,13 +15,12 @@ public class CheckNumbers {
     public static void main(String[] args) throws ExecutionException, InterruptedException, IOException {
         Scanner sc= new Scanner(System.in);
 
-        System.out.println("Introduce el nombre del archivo en que se guardaran los resultados dentro de resources" );
+
         String fileName= sc.nextLine();
         String fullPath= PATH+fileName;
 
         ExecutorService pool= Executors.newFixedThreadPool(20);
 
-        System.out.println("Introduce el numero en el que comenzará la secuencia");
         int firstNum= sc.nextInt();
 
         List<FutureTask<Integer>> tasks= new ArrayList<>();
