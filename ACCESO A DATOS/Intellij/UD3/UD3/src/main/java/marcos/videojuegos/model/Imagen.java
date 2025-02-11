@@ -7,11 +7,12 @@ public class Imagen {
     @Id
     private Long IdImagen;
     private String urlImage;
+    @Lob
     private Byte[] image;
 
     @ManyToOne
     @JoinColumn(name = "imagenes")
-    private Long idJuego;
+    private Juego juego;
 
     public Imagen() {
     }
@@ -22,11 +23,11 @@ public class Imagen {
         this.image = image;
     }
 
-    public Imagen(Long idImagen, String urlImage, Byte[] image, Long idJuego) {
+    public Imagen(Long idImagen, String urlImage, Byte[] image, Juego idJuego) {
         IdImagen = idImagen;
         this.urlImage = urlImage;
         this.image = image;
-        this.idJuego = idJuego;
+        this.juego = idJuego;
     }
 
     public Long getIdImagen() {
@@ -53,11 +54,11 @@ public class Imagen {
         this.image = image;
     }
 
-    public Long getIdJuego() {
-        return idJuego;
+    public Juego getJuego() {
+        return juego;
     }
 
-    public void setIdJuego(Long idJuego) {
-        this.idJuego = idJuego;
+    public void setJuego(Juego juego) {
+        this.juego = juego;
     }
 }

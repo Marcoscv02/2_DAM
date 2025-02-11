@@ -13,8 +13,8 @@ public class RequisitosSistema {
     private String Procesador;
 
     @MapsId
-    @OneToOne
-    @JoinColumn(name = "idJuego");
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "idJuego")
     private Juego juego;
 
     public RequisitosSistema() {

@@ -144,13 +144,16 @@
         </description>
         <provider> org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-
+        <class>marcos.videojuegos.model.Genero</class>
+        <class>marcos.videojuegos.model.Imagen</class>
+        <class>marcos.videojuegos.model.Juego</class>
+        <class>marcos.videojuegos.model.RequisitosSistema</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
 
         <properties>
             <!--Driver y url a base de  datos -->
             <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver" />
-            <property name="jakarta.persistence.jdbc.url"    value="jdbc:h2:C:\Users\a24marcoscv\Documents\2_DAM\ACCESO A DATOS\DB\JPA-hibernate\equipos;DATABASE_TO_UPPER=FALSE" />
+            <property name="jakarta.persistence.jdbc.url"    value="jdbc:h2:C:\Users\a24marcoscv\Documents\2_DAM\ACCESO A DATOS\DB\JPA-hibernate\videojuegos;DATABASE_TO_UPPER=FALSE" />
 
             <!--Sin usuario y contraseña para base de datos-->
             <property name="jakarta.persistence.jdbc.user"   value="" />
