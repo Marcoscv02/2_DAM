@@ -1,16 +1,16 @@
 package org.example.REPASO.downloadFilesUrl;
 
-import java.awt.image.BufferedImage;
-import java.io.BufferedInputStream;
-import java.io.IOException;
+
+import java.io.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URLConnection;
-import java.util.concurrent.Callable;
 
-public class DownLoadFile implements Callable<byte[]> {
+
+public class DownLoadFile implements Runnable {
     private  int numImage;
     private String url;
+    private String outputPath = "src/main/resultsUrls";
 
     public DownLoadFile(int numImage, String url) throws URISyntaxException, IOException {
         this.numImage = numImage;
@@ -18,17 +18,28 @@ public class DownLoadFile implements Callable<byte[]> {
     }
 
 
-
     @Override
-    public byte[] call() throws Exception {
-        URLConnection urlImage= new URI(url).toURL().openConnection();
+    public void run() {
+        File directorio= new File(outputPath);
+        if (!directorio.exists()) directorio.mkdirs();
 
-        var imageReader = new BufferedInputStream(urlImage.getInputStream());
-        
-        int byteLeido;
-        while (imageReader.read()!=null){
+        try {
 
+            URLConnection con= new URI(url).toURL().openConnection();
+
+            try(BufferedInputStream reader= new BufferedInputStream(con.getInputStream());
+                FileOutputStream writter= new FileOutputStream(directorio+"/animal"+numImage+".png")){
+
+                int byteLeido;
+                while ((byteLeido= reader.read())!=-1) {
+                    writter.write(byteLeido);
+                }
+
+            }
+        } catch (IOException | URISyntaxException e) {
+            throw new RuntimeException(e);
         }
-        return new byte[0];
+
+
     }
 }

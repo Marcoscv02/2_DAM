@@ -1,0 +1,23 @@
+{
+  "searches": [
+    {
+      "tags": [],
+      "query": "https://www.google.com/search?&q={{query}}",
+      "name": "Google",
+      "encode": true
+    },
+    {
+      "tags": [],
+      "query": "https://translate.google.es/?hl=gl&sl=en&tl=es&op=translate",
+      "name": "Translate",
+      "encode": true
+    },
+    {
+      "name": "Youtube",
+      "query": "https://www.youtube.com/",
+      "tags": [],
+      "encode": true
+    }
+  ],
+  "useIframe": true
+}
