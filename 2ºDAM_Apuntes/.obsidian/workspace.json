@@ -28,15 +28,29 @@
               "type": "markdown",
               "state": {
                 "file": "Acceso a Datos/UD3/5. Relaciones JPA.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
               "title": "5. Relaciones JPA"
             }
+          },
+          {
+            "id": "7997342334011e59",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "6. Objetos Embebidos.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "6. Objetos Embebidos"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -230,15 +244,20 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "58a5fb6010b98332",
+  "active": "7997342334011e59",
   "lastOpenFiles": [
-    "Acceso a Datos/UD3/4. Mapeo de entidades.md",
+    "Pasted image 20250212173304.png",
+    "Pasted image 20250212173040.png",
+    "Pasted image 20250212173025.png",
+    "Pasted image 20250212173004.png",
     "Acceso a Datos/UD3/5. Relaciones JPA.md",
+    "6. Objetos Embebidos.md",
+    "Acceso a Datos/UD3/4. Mapeo de entidades.md",
+    "Acceso a Datos/UD3/1. Jakarta Persistence API.md",
+    "Acceso a Datos/UD3/2. JPA vs Hibernate.md",
+    "Acceso a Datos/UD3/3. Gestión de entidades con EntityManager.md",
     "Acceso a Datos/UD1/JSON/4. GSON Creación de instancias Gson.md",
     "Acceso a Datos/UD4",
-    "Acceso a Datos/UD3/3. Gestión de entidades con EntityManager.md",
-    "Acceso a Datos/UD3/2. JPA vs Hibernate.md",
-    "Acceso a Datos/UD3/1. Jakarta Persistence API.md",
     "Acceso a Datos/UD3",
     "Acceso a Datos/UD2/3. Procesamiento de Sentencias SQL/2. CONEXIÓN A BD.md",
     "Acceso a Datos/UD2/3. Procesamiento de Sentencias SQL/4. RESULTSET.md",
@@ -263,7 +282,6 @@
     "Acceso a Datos/UD1/images",
     "Acceso a Datos/UD1/images/Pasted image 20250211204115.png",
     "Acceso a Datos/UD1/images/Pasted image 20250211205820.png",
-    "Pasted image 20250211205755.png",
     "Acceso a Datos/UD1/JSON/7. GSON JsonReader.md",
     "Acceso a Datos/UD1/JSON/0. Introducción a JSON.md",
     "Acceso a Datos/UD1/JSON/1. Bibliotecas JSON para JAVA.md",
@@ -273,7 +291,6 @@
     "Acceso a Datos/UD1/JSON/6. GSON TypeAdapter.md",
     "Excalidraw/Drawing 2025-02-11 20.01.45.excalidraw.md",
     "Excalidraw",
-    "Acceso a Datos/UD1/images/Pasted image 20250211193945.png",
     "Acceso a Datos/UD1/JSON"
   ]
 }

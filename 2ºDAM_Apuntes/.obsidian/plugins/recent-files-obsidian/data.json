@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "6. Objetos Embebidos",
+      "path": "6. Objetos Embebidos.md"
+    },
+    {
       "basename": "5. Relaciones JPA",
       "path": "Acceso a Datos/UD3/5. Relaciones JPA.md"
     },
@@ -9,20 +13,20 @@
       "path": "Acceso a Datos/UD3/4. Mapeo de entidades.md"
     },
     {
-      "basename": "4. GSON Creación de instancias Gson",
-      "path": "Acceso a Datos/UD1/JSON/4. GSON Creación de instancias Gson.md"
-    },
-    {
-      "basename": "3. Gestión de entidades con EntityManager",
-      "path": "Acceso a Datos/UD3/3. Gestión de entidades con EntityManager.md"
+      "basename": "1. Jakarta Persistence API",
+      "path": "Acceso a Datos/UD3/1. Jakarta Persistence API.md"
     },
     {
       "basename": "2. JPA vs Hibernate",
       "path": "Acceso a Datos/UD3/2. JPA vs Hibernate.md"
     },
     {
-      "basename": "1. Jakarta Persistence API",
-      "path": "Acceso a Datos/UD3/1. Jakarta Persistence API.md"
+      "basename": "3. Gestión de entidades con EntityManager",
+      "path": "Acceso a Datos/UD3/3. Gestión de entidades con EntityManager.md"
+    },
+    {
+      "basename": "4. GSON Creación de instancias Gson",
+      "path": "Acceso a Datos/UD1/JSON/4. GSON Creación de instancias Gson.md"
     },
     {
       "basename": "2. CONEXIÓN A BD",
