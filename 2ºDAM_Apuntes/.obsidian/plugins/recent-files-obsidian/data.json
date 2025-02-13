@@ -2,15 +2,23 @@
   "recentFiles": [
     {
       "basename": "1. Programación de Comunicación en Redes",
-      "path": "1. Programación de Comunicación en Redes.md"
-    },
-    {
-      "basename": "3. Thread synchronization and communication",
-      "path": "Programación de Servicios y procesos/UD2/3. Thread synchronization and communication.md"
+      "path": "Programación de Servicios y procesos/UD3/1. Programación de Comunicación en Redes.md"
     },
     {
       "basename": "2. Threads Pools",
       "path": "Programación de Servicios y procesos/UD2/2. Threads Pools.md"
+    },
+    {
+      "basename": "OpenSSL connection from Git bash command line",
+      "path": "Programación de Servicios y procesos/UD4/RESOURCES/OpenSSL connection from Git bash command line.md"
+    },
+    {
+      "basename": "Telnet connection -Putty",
+      "path": "Programación de Servicios y procesos/UD4/RESOURCES/Telnet connection -Putty.md"
+    },
+    {
+      "basename": "3. Thread synchronization and communication",
+      "path": "Programación de Servicios y procesos/UD2/3. Thread synchronization and communication.md"
     },
     {
       "basename": "1. Threads Programming",
