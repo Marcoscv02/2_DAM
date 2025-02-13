@@ -60,5 +60,14 @@
       ],
       "key": "M"
     }
+  ],
+  "quickadd:choice:f97836ff-a2d6-4969-8d56-d50e977d9397": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "B"
+    }
   ]
 }

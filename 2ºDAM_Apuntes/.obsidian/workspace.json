@@ -4,53 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "eb4dff32faabc481",
+        "id": "3b1bec228d1c72bb",
         "type": "tabs",
         "children": [
           {
-            "id": "c794636f57bb11d1",
+            "id": "529f1bda9c77c6c0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Acceso a Datos/UD3/4. Mapeo de entidades.md",
+                "file": "Programación de Servicios y procesos/UD2/3. Thread synchronization and communication.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "4. Mapeo de entidades"
+              "title": "3. Thread synchronization and communication"
             }
           },
           {
-            "id": "0e781da924578f55",
+            "id": "79d5c80ee248afd8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Acceso a Datos/UD3/5. Relaciones JPA.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "5. Relaciones JPA"
-            }
-          },
-          {
-            "id": "7997342334011e59",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "6. Objetos Embebidos.md",
+                "file": "1. Programación de Comunicación en Redes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "6. Objetos Embebidos"
+              "title": "1. Programación de Comunicación en Redes"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -244,14 +230,39 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "7997342334011e59",
+  "active": "79d5c80ee248afd8",
   "lastOpenFiles": [
-    "Pasted image 20250212173304.png",
-    "Pasted image 20250212173040.png",
-    "Pasted image 20250212173025.png",
-    "Pasted image 20250212173004.png",
+    "Programación de Servicios y procesos/UD2/3. Thread synchronization and communication.md",
+    "1. Programación de Comunicación en Redes.md",
+    "Programación de Servicios y procesos/UD2/2. Threads Pools.md",
+    "Programación de Servicios y procesos/UD2/1. Threads Programming.md",
+    "Programación de Servicios y procesos/images/Pasted image 20250213110725.png",
+    "Programación de Servicios y procesos/UD1/3. ProgrammingProcess.md",
+    "Programación de Servicios y procesos/UD1/5.  Process IO Management en Java.md",
+    "Programación de Servicios y procesos/images/Pasted image 20250213104817.png",
+    "Programación de Servicios y procesos/images/Pasted image 20250213104752.png",
+    "Programación de Servicios y procesos/UD4",
+    "Programación de Servicios y procesos/UD3",
+    "Programación de Servicios y procesos/UD2",
+    "Programación de Servicios y procesos/UD1/2. JavaRuntimeClass.md",
+    "Programación de Servicios y procesos/UD1/4. ProcessManagement in Java.md",
+    "Programación de Servicios y procesos/UD1/1. Windows Processes.md",
+    "Programación de Servicios y procesos/images/Pasted image 20250213104230.png",
+    "Programación de Servicios y procesos/images/Pasted image 20250213104219.png",
+    "boldhtml.md",
+    "Nueva carpeta",
+    "Programación de Servicios y procesos/images/Pasted image 20250213100130.png",
+    "Programación de Servicios y procesos/images",
+    "Programación de Servicios y procesos/images/Pasted image 20250213100307.png",
+    "Programación de Servicios y procesos/images/Pasted image 20250213100249.png",
+    "Programación de Servicios y procesos/images/Pasted image 20250213100234.png",
+    "Programación de Servicios y procesos/images/Pasted image 20250213100216.png",
+    "ProgrammingProcess 119ba0652446808cbb14ff472bf0e096.md",
+    "Acceso a Datos/UD3/6. Objetos Embebidos.md",
+    "Programación de Servicios y procesos/UD1",
+    "Programación de Servicios y procesos",
     "Acceso a Datos/UD3/5. Relaciones JPA.md",
-    "6. Objetos Embebidos.md",
+    "Acceso a Datos/UD3/images",
     "Acceso a Datos/UD3/4. Mapeo de entidades.md",
     "Acceso a Datos/UD3/1. Jakarta Persistence API.md",
     "Acceso a Datos/UD3/2. JPA vs Hibernate.md",
@@ -263,34 +274,9 @@
     "Acceso a Datos/UD2/3. Procesamiento de Sentencias SQL/4. RESULTSET.md",
     "Acceso a Datos/UD3/Apuntes Hibermate (seminario).md",
     "Acceso a Datos/UD4/Introducción a Spring MVC (seminario).md",
-    "Acceso a Datos/UD4",
-    "Acceso a Datos/UD3",
     "Acceso a Datos/UD2/3. Procesamiento de Sentencias SQL/3. MANEJO DE EXCEPCIONES EN SQL.md",
-    "Acceso a Datos/UD2/images/Pasted image 20250211214710.png",
-    "Acceso a Datos/UD2/images/Pasted image 20250211214548.png",
     "Acceso a Datos/UD2/3. Procesamiento de Sentencias SQL/1. PROCESAMIENTO DE SENTENCAS SQL.md",
-    "Acceso a Datos/UD2/images",
-    "Acceso a Datos/UD2/images/Pasted image 20250211212911.png",
-    "Acceso a Datos/UD2/3. Procesamiento de Sentencias SQL",
     "Acceso a Datos/UD2/2. PostgreSQL - Características y Operadores.md",
-    "Acceso a Datos/UD2/1. JDBC Introducción a las bases de datos relacionales.md",
-    "Acceso a Datos/UD1/images/Pasted image 20250211210451.png",
-    "Acceso a Datos/UD1/Java.IO.md",
-    "Acceso a Datos/UD2",
-    "![[Pasted.md",
-    "Acceso a Datos/UD1/images/Pasted image 20250211205739.png",
-    "Acceso a Datos/UD1/images",
-    "Acceso a Datos/UD1/images/Pasted image 20250211204115.png",
-    "Acceso a Datos/UD1/images/Pasted image 20250211205820.png",
-    "Acceso a Datos/UD1/JSON/7. GSON JsonReader.md",
-    "Acceso a Datos/UD1/JSON/0. Introducción a JSON.md",
-    "Acceso a Datos/UD1/JSON/1. Bibliotecas JSON para JAVA.md",
-    "Acceso a Datos/UD1/JSON/2. JSON con el API JavaScript de Java.md",
-    "Acceso a Datos/UD1/JSON/3. GSON Introducción.md",
-    "Acceso a Datos/UD1/JSON/5. GSON Creación y lectura de objetos JSON.md",
-    "Acceso a Datos/UD1/JSON/6. GSON TypeAdapter.md",
-    "Excalidraw/Drawing 2025-02-11 20.01.45.excalidraw.md",
-    "Excalidraw",
-    "Acceso a Datos/UD1/JSON"
+    "Acceso a Datos/UD2/1. JDBC Introducción a las bases de datos relacionales.md"
   ]
 }
