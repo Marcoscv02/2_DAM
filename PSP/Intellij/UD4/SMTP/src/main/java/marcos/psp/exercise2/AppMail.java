@@ -6,11 +6,9 @@ import jakarta.mail.Session;
 import jakarta.mail.Transport;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 import java.util.Objects;
 import java.util.Properties;
 
@@ -19,7 +17,6 @@ public class AppMail {
 
         String sender = "cdelaisla88@gmail.com";
         String receiver="a24marcoscv@yopmail.com";
-
 
 
         //Obtiene el archivo de propiedades y las carga
