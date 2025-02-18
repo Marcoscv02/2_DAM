@@ -395,17 +395,8 @@ Este apartado describe la configuración y requerimientos para utilizar el servi
 > Asegúrate de utilizar los métodos de autenticación y configuración recomendados para evitar vulnerabilidades en el envío de correos electrónicos.
 
 ---
-
-## Sending Email with Attachments
-
+## Enviar  de un Html con Archivos  Adjuntos
 _(Envío de correos electrónicos con archivos adjuntos)_
-
-En muchos casos es necesario enviar correos con archivos adjuntos. En **Jakarta Mail** (anteriormente JavaMail), esto se logra utilizando el objeto `MimeMultipart`. La API cumple con el estándar **Multipurpose Internet Mail Extensions (MIME)**, lo que permite crear correos electrónicos que contengan partes de distintos tipos (texto, HTML, imágenes, video, etc.) y gestionar los adjuntos de forma sencilla.
-
-> 📎 **Estructura de un correo con adjuntos:**  
-> 	Un mensaje consta de un encabezado y un cuerpo. El cuerpo debe ser de tipo `Multipart` para poder contener los adjuntos. Este objeto `Multipart` agrupa múltiples partes, donde cada parte se representa mediante un objeto de tipo `BodyPart`. La subclase `MimeBodyPart` se utiliza para asignar un archivo como contenido.
-
-#### Ejemplo Práctico de Envío con Adjuntos
 
 1. **Crear la parte del mensaje (HTML o texto):**
 	```java
@@ -441,14 +432,7 @@ En muchos casos es necesario enviar correos con archivos adjuntos. En **Jakarta 
 > El objeto `Message` contiene un `MimeMultipart`, el cual a su vez contiene múltiples `MimeBodyPart(s)`. Para enviar varios adjuntos, se pueden agregar más instancias de `MimeBodyPart` al `MimeMultipart`.
 
 ---
-
-## Inserting Images into Email for Sending Using Content ID
-
-_(Inserción de imágenes en correos electrónicos utilizando Content ID)_
-
-Las imágenes embebidas, conocidas como **adjuntos en línea** (inline attachments), permiten que el destinatario visualice la imagen directamente dentro del contenido del correo, sin necesidad de descargarla manualmente. Para ello, el mensaje debe estar en formato HTML y se utiliza el encabezado `Content-ID` para referenciar la imagen.
-
-### Pasos y Ejemplo para Incrustar una Imagen con Content ID
+## Incrustar una Imagen con Content ID
 
 1. **Generar un Content ID único:**
     ```java
@@ -490,7 +474,7 @@ Las imágenes embebidas, conocidas como **adjuntos en línea** (inline attachmen
 
 ---
 
-## Inserting Images into Email for Sending Using Base64 Encoding
+## Insertar una Imagen Usando Codificación Base 64
 
 _(Inserción de imágenes en correos electrónicos utilizando codificación Base64)_
 

@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "1. Threads Programming",
+      "path": "Programación de Servicios y procesos/UD2/1. Threads Programming.md"
+    },
+    {
       "basename": "NETWORK SERVICES",
       "path": "Programación de Servicios y procesos/UD4/NETWORK SERVICES.md"
     },
@@ -51,10 +55,6 @@
     {
       "basename": "3. Thread synchronization and communication",
       "path": "Programación de Servicios y procesos/UD2/3. Thread synchronization and communication.md"
-    },
-    {
-      "basename": "1. Threads Programming",
-      "path": "Programación de Servicios y procesos/UD2/1. Threads Programming.md"
     },
     {
       "basename": "3. ProgrammingProcess",
