@@ -476,10 +476,7 @@ _(Envío de correos electrónicos con archivos adjuntos)_
 
 ## Insertar una Imagen Usando Codificación Base 64
 
-_(Inserción de imágenes en correos electrónicos utilizando codificación Base64)_
-
-La inserción de imágenes de forma inline mediante codificación Base64 es un método alternativo y, en muchos casos, más sencillo. En este enfoque, la imagen se convierte a una cadena de texto en Base64 y se incrusta directamente en el HTML mediante una etiqueta `<img>`.
-
+La inserción de imágenes de forma inline mediante codificación Base64 **es un método alternativo y, en muchos casos, más sencillo**. En este enfoque, la imagen se convierte a una cadena de texto en Base64 y se incrusta directamente en el HTML mediante una etiqueta `<img>`.
 ### ¿Qué es Base64?
 
 Base64 es un esquema de codificación que convierte datos binarios en un formato de texto, permitiendo que se transmitan sin corrupción de datos. El proceso:
@@ -492,7 +489,7 @@ En Java, la clase `Base64` (disponible en el paquete `java.util`) proporciona m�
 
 ### Ejemplo para Convertir una Imagen a Base64
 
-5. **Leer la imagen y convertirla a un arreglo de bytes:**
+1. **Leer la imagen y convertirla a un arreglo de bytes:**
     ```java
 	File file = new File("/ruta/a/la/imagen");
 	FileInputStream imageInFile = new FileInputStream(file);
@@ -500,12 +497,12 @@ En Java, la clase `Base64` (disponible en el paquete `java.util`) proporciona m�
 	imageInFile.read(imageData);
 	```
     
-6. **Codificar la imagen a una cadena Base64:**
+2. **Codificar la imagen a una cadena Base64:**
     ```java
 	String imageB64 = Base64.getEncoder().encodeToString(imageData);
 	```
     
-7. **Insertar la imagen en el HTML utilizando la cadena Base64:**
+3. **Insertar la imagen en el HTML utilizando la cadena Base64:**
     ```html
 	<img src="data:image/png;base64, imageB64" />
 	```
