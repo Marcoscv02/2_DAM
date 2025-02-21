@@ -1,6 +1,5 @@
-package marcos.elementosEmbebidos;
+package marcos.pelis_series;
 
-import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 

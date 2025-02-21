@@ -1,4 +1,4 @@
-package marcos.elementosEmbebidos.model;
+package marcos.pelis_series.model;
 
 import jakarta.persistence.Access;
 import jakarta.persistence.AccessType;

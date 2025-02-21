@@ -219,8 +219,8 @@
         </description>
         <provider> org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-        <class>marcos.elementosEmbebidos.model.Pelicula</class>
-        <class>marcos.elementosEmbebidos.model.Serie</class>
+        <class>marcos.pelis_series.model.Pelicula</class>
+        <class>marcos.pelis_series.model.Serie</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
 
         <properties>

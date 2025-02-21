@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "937d499927536884",
+        "id": "0d2442ea94e43306",
         "type": "tabs",
         "children": [
           {
-            "id": "fd95abf7406f1500",
+            "id": "0baf4d132989c387",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programación de Servicios y procesos/UD4/SMTP.md",
-                "mode": "preview",
+                "file": "Acceso a Datos/UD3/6. Objetos Embebidos.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SMTP"
+              "title": "6. Objetos Embebidos"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Programación de Servicios y procesos/UD4/SMTP.md",
+                "file": "Acceso a Datos/UD3/6. Objetos Embebidos.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Esquema de SMTP"
+              "title": "Esquema de 6. Objetos Embebidos"
             }
           },
           {
@@ -216,18 +216,19 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "fd95abf7406f1500",
+  "active": "0baf4d132989c387",
   "lastOpenFiles": [
-    "Sin título.md",
-    "Programación de Servicios y procesos/UD4/SMTP.md",
+    "Acceso a Datos/UD3/07. Mapeo de colecciones..md",
     "Acceso a Datos/UD3/6. Objetos Embebidos.md",
+    "Acceso a Datos/UD3/4. Mapeo de entidades.md",
+    "Programación de Servicios y procesos/UD4/SMTP.md",
+    "Sin título.md",
     "Acceso a Datos/UD3/10.Paginacion de Consultas.md",
     "Acceso a Datos/UD3/images/Pasted image 20250220092740.png",
     "Acceso a Datos/UD3/08. Consultas en JPA.md",
     "Acceso a Datos/UD3/9. JPQL..md",
     "Programación de Servicios y procesos/images/Pasted image 20250218112557.png",
     "Programación de Servicios y procesos/images/Pasted image 20250218111415.png",
-    "Acceso a Datos/UD3/07. Mapeo de colecciones..md",
     "Programación de Servicios y procesos/UD4/RESOURCES/OpenSSL connection from Git bash command line.md",
     "Programación de Servicios y procesos/UD3/1. Programación de Comunicación en Redes.md",
     "Acceso a Datos/UD4/Introducción a Spring MVC (seminario).md",
@@ -259,7 +260,6 @@
     "Programación de Servicios y procesos/UD1",
     "Programación de Servicios y procesos",
     "Acceso a Datos/UD3/images",
-    "Acceso a Datos/UD3/4. Mapeo de entidades.md",
     "Acceso a Datos/UD3/1. Jakarta Persistence API.md",
     "Acceso a Datos/UD3/2. JPA vs Hibernate.md",
     "Acceso a Datos/UD3/3. Gestión de entidades con EntityManager.md",

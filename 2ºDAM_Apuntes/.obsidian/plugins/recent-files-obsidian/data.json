@@ -1,12 +1,20 @@
 {
   "recentFiles": [
     {
-      "basename": "SMTP",
-      "path": "Programación de Servicios y procesos/UD4/SMTP.md"
-    },
-    {
       "basename": "6. Objetos Embebidos",
       "path": "Acceso a Datos/UD3/6. Objetos Embebidos.md"
+    },
+    {
+      "basename": "07. Mapeo de colecciones.",
+      "path": "Acceso a Datos/UD3/07. Mapeo de colecciones..md"
+    },
+    {
+      "basename": "4. Mapeo de entidades",
+      "path": "Acceso a Datos/UD3/4. Mapeo de entidades.md"
+    },
+    {
+      "basename": "SMTP",
+      "path": "Programación de Servicios y procesos/UD4/SMTP.md"
     },
     {
       "basename": "10.Paginacion de Consultas",
@@ -27,10 +35,6 @@
     {
       "basename": "Pasted image 20250218112557",
       "path": "Programación de Servicios y procesos/images/Pasted image 20250218112557.png"
-    },
-    {
-      "basename": "07. Mapeo de colecciones.",
-      "path": "Acceso a Datos/UD3/07. Mapeo de colecciones..md"
     },
     {
       "basename": "OpenSSL connection from Git bash command line",
@@ -99,10 +103,6 @@
     {
       "basename": "Pasted image 20250212173004",
       "path": "Acceso a Datos/UD3/images/Pasted image 20250212173004.png"
-    },
-    {
-      "basename": "4. Mapeo de entidades",
-      "path": "Acceso a Datos/UD3/4. Mapeo de entidades.md"
     },
     {
       "basename": "1. Jakarta Persistence API",

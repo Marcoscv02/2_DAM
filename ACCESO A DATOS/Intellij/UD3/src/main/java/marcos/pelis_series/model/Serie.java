@@ -1,4 +1,4 @@
-package marcos.elementosEmbebidos.model;
+package marcos.pelis_series.model;
 
 import jakarta.persistence.*;
 
@@ -12,6 +12,7 @@ public class Serie {
     private Long idSerie;
     @Embedded
     private InfoContenido informacion;
+    @Temporal(TemporalType.DATE)
     private LocalDate fechaEdtreno;
     private Integer temporadas;
     private Integer capitulos;
