@@ -1,6 +1,8 @@
-package marcos.pelis_series.model;
+package marcos.embebidos_clavesCompuestas.model;
 
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Pelicula {
@@ -9,13 +11,16 @@ public class Pelicula {
     private Long idPelicula;
     @Embedded
     private InfoContenido informacion;
+    @OneToMany(mappedBy = "pelicula")
+    List<Calificacion>calificaciones;
 
     public Pelicula() {
     }
 
-    public Pelicula(Long idPelicula, InfoContenido informacion) {
+    public Pelicula(Long idPelicula, InfoContenido informacion, List<Calificacion> calificaciones) {
         this.idPelicula = idPelicula;
         this.informacion = informacion;
+        this.calificaciones = calificaciones;
     }
 
     public Long getIdPelicula() {
@@ -32,6 +37,14 @@ public class Pelicula {
 
     public void setInformacion(InfoContenido informacion) {
         this.informacion = informacion;
+    }
+
+    public List<Calificacion> getCalificaciones() {
+        return calificaciones;
+    }
+
+    public void setCalificaciones(List<Calificacion> calificaciones) {
+        this.calificaciones = calificaciones;
     }
 
     @Override

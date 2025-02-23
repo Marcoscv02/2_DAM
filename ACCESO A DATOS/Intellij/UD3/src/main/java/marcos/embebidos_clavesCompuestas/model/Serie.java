@@ -1,4 +1,4 @@
-package marcos.pelis_series.model;
+package marcos.embebidos_clavesCompuestas.model;
 
 import jakarta.persistence.*;
 

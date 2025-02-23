@@ -1,4 +1,4 @@
-package marcos.pelis_series.model;
+package marcos.embebidos_clavesCompuestas.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
@@ -6,6 +6,7 @@ import jakarta.persistence.Embeddable;
 import java.io.Serializable;
 import java.util.Objects;
 
+//Clave compuesta entre Usuario y película (Será la clave primaria de la entidad calificación)
 @Embeddable
 public class ClaveUsuarioPelicula implements Serializable {
     @Column(name = "idUsuario")
@@ -37,6 +38,8 @@ public class ClaveUsuarioPelicula implements Serializable {
         this.idPelicula = idPelicula;
     }
 
+
+//Una clave siempre debe tener los métodos equals y hashCode para asegurarse de que nunca es repetida;
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

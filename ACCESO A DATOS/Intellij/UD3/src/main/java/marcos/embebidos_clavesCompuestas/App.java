@@ -1,4 +1,4 @@
-package marcos.pelis_series;
+package marcos.embebidos_clavesCompuestas;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;

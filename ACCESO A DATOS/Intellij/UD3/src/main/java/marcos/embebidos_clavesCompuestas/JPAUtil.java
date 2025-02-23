@@ -1,10 +1,10 @@
-package marcos.pelis_series;
+package marcos.embebidos_clavesCompuestas;
 
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
 public class JPAUtil {
-    public static final String PESISTENCE_H2 = "jpa-embebidos-h2";
+    public static final String PESISTENCE_H2 = "jpa-peliculas-h2";
 
     public static EntityManagerFactory instance;
 

@@ -1,4 +1,4 @@
-package marcos.pelis_series.model;
+package marcos.embebidos_clavesCompuestas.model;
 
 import jakarta.persistence.*;
 
@@ -15,17 +15,20 @@ public class Usuario {
     private String password;
     @Temporal(TemporalType.DATE)
     private LocalDate fechaRegistro;
+    @OneToMany(mappedBy = "usuario")
     private List <Calificacion> calificaciones;
+
 
     public Usuario() {
     }
 
-    public Usuario(Long idUsuario, String nombre, String email, String password, LocalDate fechaRegistro) {
+    public Usuario(Long idUsuario, String nombre, String email, String password, LocalDate fechaRegistro, List<Calificacion> calificaciones) {
         this.idUsuario = idUsuario;
         this.nombre = nombre;
         this.email = email;
         this.password = password;
         this.fechaRegistro = fechaRegistro;
+        this.calificaciones = calificaciones;
     }
 
     public Long getIdUsuario() {
@@ -66,5 +69,13 @@ public class Usuario {
 
     public void setFechaRegistro(LocalDate fechaRegistro) {
         this.fechaRegistro = fechaRegistro;
+    }
+
+    public List<Calificacion> getCalificaciones() {
+        return calificaciones;
+    }
+
+    public void setCalificaciones(List<Calificacion> calificaciones) {
+        this.calificaciones = calificaciones;
     }
 }
