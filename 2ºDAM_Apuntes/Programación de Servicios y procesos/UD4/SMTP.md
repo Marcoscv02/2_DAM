@@ -177,7 +177,7 @@ Elementos básicos de **Angus Mail** que se necesitan conocer para construir y e
     
     - `setFrom(Address address)`: Establece el campo "From".
     - `setRecipients(Message.RecipientType type, String addresses)`: Define el tipo de destinatario y las direcciones. Los tipos de destinatario definidos son:
-        - `TO` (destinatario principal)
+	        - `TO` (destinatario principal)
         - `CC` (copia)
         - `BCC` (copia oculta)
     - `setSubject(String subject)`: Define el asunto del correo.
