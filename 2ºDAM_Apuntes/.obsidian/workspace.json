@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "Programación de Servicios y procesos/UD4/FTP.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
@@ -35,8 +35,7 @@
               "title": "SMTP"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -167,13 +166,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Programación de Servicios y procesos/UD4/SMTP.md",
+                "file": "Programación de Servicios y procesos/UD4/FTP.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Esquema de SMTP"
+              "title": "Esquema de FTP"
             }
           },
           {
@@ -231,10 +230,10 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "db3e7917b723a71a",
+  "active": "fab2ab3eb5b1b1c8",
   "lastOpenFiles": [
-    "Programación de Servicios y procesos/UD4/FTP.md",
     "Programación de Servicios y procesos/UD4/SMTP.md",
+    "Programación de Servicios y procesos/UD4/FTP.md",
     "Acceso a Datos/UD3/08. Consultas en JPA.md",
     "Acceso a Datos/UD3/07. Mapeo de colecciones..md",
     "Acceso a Datos/UD3/10.Paginacion de Consultas.md",
