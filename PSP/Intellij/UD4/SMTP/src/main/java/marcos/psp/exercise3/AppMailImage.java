@@ -17,7 +17,7 @@ public class AppMailImage {
             receptors = new InternetAddress[]{
                     new InternetAddress("a24Marcoscv@outlook.com"),
                     new InternetAddress("a24marcoscv@yopmail.com"),
-                    new InternetAddress("a24marcoscv@iessanlemente.net")
+                    new InternetAddress("a24marcoscv@iessanclemente.net")
 
             };
         } catch (AddressException e) {
@@ -49,6 +49,7 @@ public class AppMailImage {
             try{
                 //Aquí se crea el objeto mensaje y se declaran los receptores a quienes va dirigido
                 MimeMessage mensaje= new MimeMessage(session);
+                mensaje.setFrom(new InternetAddress(user));
                 mensaje.setRecipients(Message.RecipientType.TO,receptors);
 
                 //Aqui se añade la primera parte del mensaje de texto que precederá a la imagen

@@ -4,8 +4,10 @@ import jakarta.mail.*;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeBodyPart;
 import jakarta.mail.internet.MimeMessage;
+import jakarta.mail.internet.MimeMultipart;
 
 import java.io.*;
+import java.util.Base64;
 import java.util.Properties;
 
 public class Code64MailApp {
@@ -30,45 +32,72 @@ public class Code64MailApp {
                 return new PasswordAuthentication(user, password);
             }
         });
-
-
         try{//Se crea el objeto mensaje y se introduce como parámetro la sesión
             MimeMessage mensaje= new MimeMessage(session);
-
-            //Se envia el mensaje normal a la cuenta de outloook
-            mensaje.setRecipients(Message.RecipientType.TO, "a24Marcoscv@outlook.com");
-            //Se envia copia oculta a las cuentas de yopmail y gmail
+            mensaje.setFrom(new InternetAddress(user));
+            //Se envia copia oculta a las cuentas de yopmail y outloook
             mensaje.setRecipients(Message.RecipientType.BCC, InternetAddress.parse(
-                    "a24marcoscv@yopmail.com, a24marcoscv@iessanlemente.net"
+                    "a24marcoscv@yopmail.com, a24Marcoscv@outlook.com"
                     ));
+            mensaje.setSubject("Learning about transport");
 
+
+            //Convertir la imagen en un array de byte para convertir posteriormente a base 64
+            File file= new File("src/main/resources/exercise4/transports.png");
+            FileInputStream fis= new FileInputStream(file);
+            byte[] imageData = new byte[(int) file.length()];
+            fis.read(imageData);
+            String base64Image = Base64.getEncoder().encodeToString(imageData);
+
+            //Primera parte de html
             MimeBodyPart text1= new MimeBodyPart();
             String html1 = "<h1>Hello Everione!</h1><br>"+
-                    "<p>Lets's talk about when we use 'the' with transport</p><br>";
+                    "<p>Lets's talk about when we use 'the' with transport</p>"+
+                    "<img src=\"data:image/png;base64," + base64Image + "\"/>";
             text1.setContent(html1, "text/html");
 
+            //Imagen
             MimeBodyPart imagen= new MimeBodyPart();
             imagen.attachFile("src/main/resources/exercise4/transports.png");
-            imagen.setContentID("<TransportImagen>");
+            imagen.setContentID("<TransportsImagen>");
             imagen.setDisposition(Part.INLINE);
 
+            //segundo html
             MimeBodyPart text2= new MimeBodyPart();
-            String html2= "<p>First, we often use the when we are talking about a form of transport as " +
-                    "a general idea.We usually do this with public transport (not with cars or bikes) and " +
-                    "we usually useverbs such as take, be on, get on and get off:</p><br>"+
+            String html2=
+                    "<p>First, we often use the when we are talking about a form of transport as a general idea." +
+                            "We usually do this with public transport (not with cars or bikes) and we usually " +
+                            "useverbs such as take, be on, get on and get off:</p>" +
+                            "<ul><li>We took the bus to school.</li>\n" +
+                            "<li>Julie's on the train at the moment.</li>\n" +
+                            "<li>She gets off the underground in central London.</li></ul>\n" +
+                            "In all of these examples, I'm not talking about a particular bus, train or plane but rather the system of transport as an idea.\n" +
+                            "However, we use 'no article' when we use a form of transport with by:\n" +
+                            "\n" +
+                            "<ul><li>We travelled by plane.</li>\n" +
+                            "<li>He goes to work by bus.</li>\n" +
+                            "<li>We went to Scotland by train.</li></ul>\n" +
+                            "Remember, we can't say <del>'by foot'</del> or <del>'by feet'</del> when we're talking about walking. We say 'on foot' (also no article)\n" +
+                            "\n" +
+                            "I hope that helps, and really good luck with your English!\n" +
+                            "\n" +
+                            "\n" +
+                            "Pam";;
+            text2.setContent(html2, "text/html");
 
-                    "<p>-  We took the bus to school.</p><br>" +
-                    "<p>-  Julie's on the train at the moment.</p><br>" +
-                    "<p>-  She gets off the underground in central London.</p><br>"+
+            //Multipart par unir todas las partes
+            MimeMultipart multipart= new MimeMultipart();
+            multipart.addBodyPart(text1);
+            multipart.addBodyPart(imagen);
+            multipart.addBodyPart(text2);
 
-                    "<p>In all of these examples, I'm not talking about a particular bus, train or plane but " +
-                    "rather the system of transport as an idea.</p><br>"
-                    ;
+            //Enviar mensaje
+            mensaje.setContent(multipart);
+            Transport.send(mensaje);
+            System.out.println("Mensaje con codificacion64 enviado con éxito");
 
         } catch (MessagingException | IOException e) {
             throw new RuntimeException(e);
         }
-
-
     }
 }

@@ -1,33 +1,33 @@
 <aside style="border: 2px solid purple; padding: 10px; border-radius: 5px;"> 
-Los <b>servicios de red</b> consisten en <u><span style="color:red">aplicaciones que utilizan protocolos para facilitar diversas funciones en un entorno de red</span></u>. Estos protocolos incluyen, pero no se limitan a, SSH, SMTP, DNS, Telnet, FTP, entre otros. A continuación se detallan algunos aspectos relevantes:
+Los <b>servicios de red</b> consisten en <span style="color: rgb(234, 169, 169)"><u>aplicaciones que utilizan protocolos para facilitar diversas funciones en un entorno de red</u></span>. Estos protocolos incluyen, pero no se limitan a, SSH, SMTP, DNS, Telnet, FTP, entre otros. A continuación se detallan algunos aspectos relevantes:
 </aside>
 
-- <span style="color:rgb(192, 0, 0)"><b>Acceso remoto interactivo:</b></span> 
+- <span style="color:  rgb(251, 131, 131)"><b>Acceso remoto interactivo:</b></span> 
     Permiten que usuarios y administradores accedan a sistemas de forma remota para ejecutar comandos, administrar configuraciones o realizar tareas de mantenimiento. Ejemplo: **SSH** (Secure Shell) para conexiones seguras.
     
-- <span style="color:rgb(192, 0, 0)"><b>Transferencia de archivos:</b></span>
+- <span style="color: rgb(251, 131, 131)"><b>Transferencia de archivos:</b></span>
     Protocolos como **FTP** (File Transfer Protocol) facilitan la transferencia de archivos entre equipos, ya sea en redes locales o a través de Internet.
     
     > 🔄 **Nota:** Algunos servicios de transferencia modernos utilizan variantes más seguras como SFTP o FTPS.
     
-- <span style="color:rgb(192, 0, 0)"><b>Funciones administrativas críticas:</b></span>  
+- <span style="color: rgb(251, 131, 131)"><b>Funciones administrativas críticas:</b></span>  
     Muchos servicios de red permiten realizar tareas esenciales para el funcionamiento de un sistema o red, como la administración remota de servidores, la resolución de nombres de dominio (DNS) o la supervisión del estado de los dispositivos.
     
-- <span style="color:rgb(192, 0, 0)"><b>Exposición a Internet:</b></span>  
+- <span style="color: rgb(251, 131, 131)"><b>Exposición a Internet:</b></span>  
     Aunque muchos de estos servicios se usan internamente, en ocasiones se exponen a Internet para respaldar funciones empresariales, como el envío de correos electrónicos, el acceso remoto a aplicaciones web o el soporte a usuarios externos.
     
     > ⚠️ **Precaución:** La exposición de estos servicios puede incrementar la superficie de ataque, por lo que se deben aplicar medidas de seguridad adecuadas, como cortafuegos, autenticación robusta y cifrado.
     
-- <span style="color:rgb(192, 0, 0)"><b>Configuraciones predeterminadas:</b></span>
+- <span style="color: rgb(251, 131, 131)"><b>Configuraciones predeterminadas:</b></span>
     Muchos equipos de red y servidores tienen habilitados ciertos servicios por defecto para facilitar la administración inicial. Esto puede incluir servicios de diagnóstico, transferencia de archivos o incluso servicios de administración remota. Es importante revisarlos y ajustarlos según las políticas de seguridad de la organización.
     
 
 ---
 
-# SMTP
+# 1. SMTP
 
 <aside style="border: 2px solid orange; padding: 10px; border-radius: 5px;"> 
-El <span style="color:blue"><b>Simple Mail Transfer Protocol (SMTP)</b></span> es un protocolo fundamental en la infraestructura del correo electrónico. <u><b>Se encarga de la transmisión de mensajes entre servidores de correo y desde los clientes de correo hacia estos servidores</b></u>. A continuación se explican sus características y funcionamiento en detalle:
+El <span style="color: rgb(251, 189, 131)"><b>Simple Mail Transfer Protocol (SMTP)</b></span> es un protocolo fundamental en la infraestructura del correo electrónico. <u><b>Se encarga de la transmisión de mensajes entre servidores de correo y desde los clientes de correo hacia estos servidores</b></u>. A continuación se explican sus características y funcionamiento en detalle:
 </aside>
 
 - **Servidor SMTP:**  
@@ -49,24 +49,24 @@ El <span style="color:blue"><b>Simple Mail Transfer Protocol (SMTP)</b></span> e
 
 ---
 
-## Comandos Básicos de SMTP
+## 1.1 Comandos Básicos de SMTP
 
 Los comandos SMTP son esenciales para la correcta comunicación entre el cliente y el servidor durante el proceso de envío de correos. Cada comando tiene una función específica que guía la transacción. A continuación, se describen en detalle:
 
-| **Comando**                                                    | **Función y Detalles**                                                                                                                                                                                                                                                                                                     | **Código de Respuesta Típico**                                                       | **Ejemplo / Notas**                                                                                    |
-| -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| <span style="color:rgb(129, 0, 214)"><b>HELO / EHLO</b></span> | - **Función:** Iniciar la conversación entre el cliente y el servidor.  <br>- **Descripción:** El cliente se identifica ante el servidor, enviando su nombre de dominio o dirección IP. Con EHLO, además, se negocian extensiones adicionales, lo que permite al servidor indicar las capacidades soportadas (como ESMTP). | N/A (inicio de sesión)                                                               | 😃 **Nota:** EHLO es la versión extendida y es preferida en configuraciones modernas.                  |
-| <span style="color:rgb(129, 0, 214)"><b>MAIL FROM</b></span>   | - **Función:** Especificar la dirección de correo del remitente.  <br>- **Descripción:** Indica que se va a iniciar una nueva transacción de envío de correo. El servidor, al recibir este comando, se prepara para recibir más información.                                                                               | **250 OK**                                                                           | 📧 El comando envía la dirección del remitente: `MAIL FROM:<usuario@ejemplo.com>`.                     |
-| <span style="color:rgb(129, 0, 214)"><b>RCPT TO</b></span>     | - **Función:** Definir la dirección del destinatario.  <br>- **Descripción:** Puede utilizarse varias veces en una misma sesión para enviar el mensaje a múltiples destinatarios. Cada destinatario se verifica de manera independiente.                                                                                   | **250 OK**                                                                           | 👥 Se pueden agregar varios destinatarios enviando múltiples comandos RCPT TO, uno por cada dirección. |
-| <span style="color:rgb(129, 0, 214)"><b>DATA</b></span>        | - **Función:** Iniciar la transferencia del contenido del mensaje.  <br>- **Descripción:** Después de emitir el comando DATA, el servidor responde con un código que indica que está listo para recibir el cuerpo del mensaje. El mensaje se termina con un punto (.) en una línea aislada para señalar su fin.            | **354 Start mail input; end with <CRLF>.<CRLF>** luego **250 OK** cuando es aceptado | 📝 Es crucial que el mensaje finalice correctamente para evitar errores en la transmisión.             |
-| <span style="color:rgb(129, 0, 214)"><b>QUIT</b></span>        | - **Función:** Finalizar la sesión SMTP de forma ordenada.  <br>- **Descripción:** Indica al servidor que cierre la conexión una vez completada la transacción.                                                                                                                                                            | **221 Service closing transmission channel**                                         | 🔚 Permite que el servidor libere recursos y cierre la conexión de manera controlada.                  |
-| <span style="color:rgb(129, 0, 214)"><b>RSET</b></span>        | - **Función:** Reiniciar la transacción actual.  <br>- **Descripción:** Se utiliza para abortar el envío de un correo en curso sin cerrar la conexión, reseteando el estado interno del servidor. Útil en casos de error, como la introducción de datos erróneos en algún comando.                                         | N/A (Reinicia el estado)                                                             | 🔄 Ideal para corregir errores sin necesidad de cerrar la sesión y reiniciar toda la conexión.         |
+| **Comando**                                           | **Función y Detalles**                                                                                                                                                                                                                                                                                                     | **Código de Respuesta Típico**                                                       | **Ejemplo / Notas**                                                                                    |
+| ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| <span style="color:#808000"><b>HELO / EHLO</b></span> | - **Función:** Iniciar la conversación entre el cliente y el servidor.  <br>- **Descripción:** El cliente se identifica ante el servidor, enviando su nombre de dominio o dirección IP. Con EHLO, además, se negocian extensiones adicionales, lo que permite al servidor indicar las capacidades soportadas (como ESMTP). | N/A (inicio de sesión)                                                               | 😃 **Nota:** EHLO es la versión extendida y es preferida en configuraciones modernas.                  |
+| <span style="color: #808000"><b>MAIL FROM</b></span>  | - **Función:** Especificar la dirección de correo del remitente.  <br>- **Descripción:** Indica que se va a iniciar una nueva transacción de envío de correo. El servidor, al recibir este comando, se prepara para recibir más información.                                                                               | **250 OK**                                                                           | 📧 El comando envía la dirección del remitente: `MAIL FROM:<usuario@ejemplo.com>`.                     |
+| <span style="color: #808000"><b>RCPT TO</b></span>    | - **Función:** Definir la dirección del destinatario.  <br>- **Descripción:** Puede utilizarse varias veces en una misma sesión para enviar el mensaje a múltiples destinatarios. Cada destinatario se verifica de manera independiente.                                                                                   | **250 OK**                                                                           | 👥 Se pueden agregar varios destinatarios enviando múltiples comandos RCPT TO, uno por cada dirección. |
+| <span style="color: #808000"><b>DATA</b></span>       | - **Función:** Iniciar la transferencia del contenido del mensaje.  <br>- **Descripción:** Después de emitir el comando DATA, el servidor responde con un código que indica que está listo para recibir el cuerpo del mensaje. El mensaje se termina con un punto (.) en una línea aislada para señalar su fin.            | **354 Start mail input; end with <CRLF>.<CRLF>** luego **250 OK** cuando es aceptado | 📝 Es crucial que el mensaje finalice correctamente para evitar errores en la transmisión.             |
+| <span style="color: #808000"><b>QUIT</b></span>       | - **Función:** Finalizar la sesión SMTP de forma ordenada.  <br>- **Descripción:** Indica al servidor que cierre la conexión una vez completada la transacción.                                                                                                                                                            | **221 Service closing transmission channel**                                         | 🔚 Permite que el servidor libere recursos y cierre la conexión de manera controlada.                  |
+| <span style="color: #808000"><b>RSET</b></span>       | - **Función:** Reiniciar la transacción actual.  <br>- **Descripción:** Se utiliza para abortar el envío de un correo en curso sin cerrar la conexión, reseteando el estado interno del servidor. Útil en casos de error, como la introducción de datos erróneos en algún comando.                                         | N/A (Reinicia el estado)                                                             | 🔄 Ideal para corregir errores sin necesidad de cerrar la sesión y reiniciar toda la conexión.         |
 
 > **Otros Comandos y Extensiones:**
 > - **AUTH:** Permite la autenticación de usuarios, asegurando que solo usuarios autorizados puedan enviar correos.
 > - **STARTTLS:** Inicia la encriptación de la sesión, protegiendo la transmisión de datos sensibles mediante TLS (Transport Layer Security).
 
-### Diagrama de Flujo de una Sesión SMTP
+### 1.1.1 Diagrama de Flujo de una Sesión SMTP
 
 ```mermaid
 sequenceDiagram
@@ -92,7 +92,7 @@ Este diagrama ilustra el proceso típico de envío de un correo mediante SMTP, m
 
 ---
 
-####  POP e IMAP vs SMTP
+### 1.1.2   POP e IMAP vs SMTP
 
 Si bien SMTP es el único protocolo utilizado para el envío de mensajes entre servidores de correo (o desde un cliente a un servidor), existen otros dos protocolos clave para la recepción de correos:
 
@@ -109,9 +109,9 @@ Si bien SMTP es el único protocolo utilizado para el envío de mensajes entre s
 ![[Pasted image 20250218112557.png]]
 
 ---
-#### Default Email Ports
+### 1.1.3 Default Email Ports
 <aside style="border: 2px solid orange; padding: 10px; border-radius: 5px;"> 
-Los <b>puertos de correo electrónico</b> son puntos finales de comunicación que <span style="color:orange"><u>definen cómo debe transmitirse un mensaje</u></span>, determinando si este se envía en texto plano o si se cifra para intercambiarlo de forma segura. Para establecer una conexión entre un cliente de correo electrónico y un servidor, se requiere conocer la dirección IP del servidor y un número de puerto. Estos atributos son asignados por la <b>IANA (Internet Assigned Numbers Authority)</b>.
+Los <b>puertos de correo electrónico</b> son puntos finales de comunicación que <span style="color:  rgb(251, 189, 131)"><u>definen cómo debe transmitirse un mensaje</u></span>, determinando si este se envía en texto plano o si se cifra para intercambiarlo de forma segura. Para establecer una conexión entre un cliente de correo electrónico y un servidor, se requiere conocer la dirección IP del servidor y un número de puerto. Estos atributos son asignados por la <b>IANA (Internet Assigned Numbers Authority)</b>.
 </aside>
 
 **<u>Cada protocolo utiliza sus propios números de puerto para conectar</u>** y, a su vez, **cada puerto soporta un tipo distinto de cifrado**. En el caso del protocolo SMTP, se tienen cuatro puertos principales, cada uno con un método de encriptación específico:
@@ -128,9 +128,9 @@ Los <b>puertos de correo electrónico</b> son puntos finales de comunicación qu
 
 ---
 
-## Java Mail API
+## 1.2 Java Mail API
 <aside style="border: 2px solid blue; padding: 10px; border-radius: 5px;"> 
-<b>JavaMail</b>, actualmente conocido como <span style="color:blue"><b>Jakarta Mail</b></span>, es una API que permite enviar y recibir correos electrónicos a través de los protocolos SMTP, POP3 e IMAP. Es la opción más popular y soporta tanto la autenticación TLS como SSL.
+<b>JavaMail</b>, actualmente conocido como <span style="color:  rgb(131, 161, 251)"><b>Jakarta Mail</b></span>, es una API que permite enviar y recibir correos electrónicos a través de los protocolos SMTP, POP3 e IMAP. Es la opción más popular y soporta tanto la autenticación TLS como SSL.
 </aside>
 <br>
 <aside style="border: 2px solid purple; padding: 10px; border-radius: 5px;"> 
@@ -153,7 +153,7 @@ Además, se destaca <b>Angus Mail</b>, un programa desarrollado por Eclipse que 
 
 ---
 
-### Classes and Methods
+### 1.2.1 Classes and Methods
 
 Elementos básicos de **Angus Mail** que se necesitan conocer para construir y enviar mensajes de correo electrónico.
 #### Session
@@ -196,7 +196,7 @@ Elementos básicos de **Angus Mail** que se necesitan conocer para construir y e
     Clase abstracta que utiliza el protocolo SMTP para enviar y transportar mensajes de correo electrónico.
     
 
-### Pasos para Enviar un Correo usando Angus Mail
+### 1.2.2 Pasos para Enviar un Correo usando Angus Mail
 
 1. **Configurar los detalles del servidor SMTP**  
     Se utilizan las propiedades de Java (`Properties`) para definir los parámetros del servidor.
@@ -221,13 +221,14 @@ flowchart TD
 ```
 ---
 
-## Properties
+## 1.3 Properties
+
 <aside style="border: 2px solid deeppink; padding: 10px; border-radius: 5px;"> 
 En las aplicaciones Java, las propiedades <b><u>se utilizan para almacenar parámetros simples en forma de pares clave-valor</u></b>, separados del código compilado. Los archivos de propiedades tienen la extensión <span style="color:rgb(255, 0, 0)">`.properties`</span> y son ideales para almacenar configuraciones, datos de internacionalización y localización.
 </aside>
 
 
-### Creación y Uso de un Archivo de Propiedades
+### 1.3.1 Creación y Uso de un Archivo de Propiedades
 
 Cada línea de un archivo `.properties` normalmente almacena una sola propiedad. Por ejemplo, un archivo para configurar un servidor SMTP puede tener el siguiente contenido:
 
@@ -241,7 +242,7 @@ mail.smtp.starttls.enable=true
 > **Ruta en un Proyecto Maven:**  
 > El archivo se ubica en: `src/main/resources`
 
-### Ejemplo de Creación de Propiedades en Código Java (<span style="color:rgb(255, 0, 0)">desaconsejado</span>)
+### 1.3.2 Ejemplo de Creación de Propiedades en Código Java (<span style="color: rgb(234, 169, 169)">desaconsejado</span>)
 
 ```java
 Properties prop = new Properties();
@@ -250,7 +251,7 @@ prop.put("mail.smtp.port", "587");
 prop.put("mail.smtp.auth", "true");
 prop.put("mail.smtp.starttls.enable", "true"); // TLS habilitado
 ```
-### Acceso a un Archivo de Propiedades en Java
+### 1.3.3 Acceso a un Archivo de Propiedades en Java
 
 ```java
 try (InputStream input = new FileInputStream("src/main/resources/smtp.properties")) {
@@ -275,7 +276,7 @@ try (InputStream input = new FileInputStream("src/main/resources/smtp.properties
 
 ---
 
-## Seguridad en la Transmisión de Correos
+## 1.4 Seguridad en la Transmisión de Correos
 
 La mayoría de los servidores SMTP requieren algún tipo de autenticación para evitar el envío de correos no autorizados. Como por ejemplo:
 
@@ -291,7 +292,7 @@ La mayoría de los servidores SMTP requieren algún tipo de autenticación para 
 
 Además, TLS es capaz de detectar mensajes faltantes o duplicados.
 
-### Uso de PasswordAuthentication
+### 1.4.1 Uso de PasswordAuthentication
 
 Para almacenar las credenciales del usuario se utiliza la clase `PasswordAuthentication`. Un ejemplo de implementación en un bloque anónimo de `Authenticator` es:
 
@@ -306,11 +307,11 @@ Session session = Session.getInstance(props, auth);
 
 ```
 ---
-## Mailslurper SMTP Server
+## 1.5 Mailslurper SMTP Server
 
 **MailSlurper** es un servidor de correo SMTP completamente gratuito y de código abierto, diseñado para pruebas durante el desarrollo de software. Es ideal para desarrolladores individuales o equipos pequeños que necesitan testear funcionalidades de correo sin el riesgo o la complejidad de configurar un servidor de correo completo.
 
-### Características de MailSlurper
+### 1.5.1 Características de MailSlurper
 
 - **Fácil configuración:** Se puede instalar y configurar rápidamente.
 - **Ideal para testing:** Permite probar el envío y recepción de correos sin afectar sistemas en producción.
@@ -375,7 +376,7 @@ public class SendEmailMailslurper {
 > 2. Se crea la sesión con autenticación.
 > 3. Se compone el mensaje con los campos **From**, **To**, **Subject** y el contenido del correo.
 > 4. Se envía el mensaje utilizando la clase `Transport`.
-# Gmail SMTP Server
+# 2. Gmail SMTP Server
 
 Este apartado describe la configuración y requerimientos para utilizar el servidor SMTP de Gmail.
 
@@ -394,7 +395,7 @@ Este apartado describe la configuración y requerimientos para utilizar el servi
 > Asegúrate de utilizar los métodos de autenticación y configuración recomendados para evitar vulnerabilidades en el envío de correos electrónicos.
 
 ---
-## Enviar  de un Html con Archivos  Adjuntos
+## 2.1 Enviar  de un Html con Archivos  Adjuntos
 _(Envío de correos electrónicos con archivos adjuntos)_
 
 1. **Crear la parte del mensaje (HTML o texto):**
@@ -431,7 +432,7 @@ _(Envío de correos electrónicos con archivos adjuntos)_
 > El objeto `Message` contiene un `MimeMultipart`, el cual a su vez contiene múltiples `MimeBodyPart(s)`. Para enviar varios adjuntos, se pueden agregar más instancias de `MimeBodyPart` al `MimeMultipart`.
 
 ---
-## Incrustar una Imagen con Content ID
+## 2.2 Incrustar una Imagen con Content ID
 
 1. **Generar un Content ID único:**
     ```java
@@ -473,10 +474,10 @@ _(Envío de correos electrónicos con archivos adjuntos)_
 
 ---
 
-## Insertar una Imagen Usando Codificación Base 64
+## 2.3 Insertar una Imagen Usando Codificación Base 64
 
 La inserción de imágenes de forma inline mediante codificación Base64 **es un método alternativo y, en muchos casos, más sencillo**. En este enfoque, la imagen se convierte a una cadena de texto en Base64 y se incrusta directamente en el HTML mediante una etiqueta `<img>`.
-### ¿Qué es Base64?
+### 2.3.1 ¿Qué es Base64?
 
 Base64 es un esquema de codificación que convierte datos binarios en un formato de texto, permitiendo que se transmitan sin corrupción de datos. El proceso:
 
@@ -486,13 +487,13 @@ Base64 es un esquema de codificación que convierte datos binarios en un formato
 
 En Java, la clase `Base64` (disponible en el paquete `java.util`) proporciona métodos para codificar y decodificar datos binarios en cadenas Base64.
 
-### Ejemplo para Convertir una Imagen a Base64
+### 2.3.2 Ejemplo para Convertir una Imagen a Base64
 
 1. **Leer la imagen y convertirla a un arreglo de bytes:**
     ```java
 	File file = new File("/ruta/a/la/imagen");
 	FileInputStream imageInFile = new FileInputStream(file);
-	byte imageData[] = new byte[(int) file.length()];
+	byte [] imageData= new byte[(int) file.length()];
 	imageInFile.read(imageData);
 	```
     
@@ -508,3 +509,204 @@ En Java, la clase `Base64` (disponible en el paquete `java.util`) proporciona m�
 
 > 🚫 **Advertencia:**  
 > Gmail y otros servicios similares **no soportan** imágenes en Base64 en correos HTML, ya que bloquean la visualización de estas cadenas codificadas por razones de seguridad y para prevenir spam.
+
+
+# 3. **Protocolo POP3 e IMAP en Java**
+
+Los protocolos <span style="color:rgb(250, 255, 173)">POP3</span> (<u>Post Office Protocol versión 3</u>) e <span style="color:rgb(250, 255, 173)">IMAP</span> (<u>Internet Message Access Protocol</u>) son estándares ampliamente utilizados para recibir correos electrónicos desde un servidor de correo. Aunque ambos permiten acceder a los correos, su funcionamiento y propósito difieren significativamente.
+
+Este documento proporciona una explicación detallada de estos protocolos y su implementación en Java mediante la biblioteca **Jakarta Mail**, abordando aspectos como:
+
+- Definiciones y diferencias entre POP3 e IMAP.
+    
+- Configuración de la conexión con un servidor de correo.
+    
+- Manejo de carpetas y mensajes.
+    
+- Métodos clave de las clases `Store`, `Folder` y `Message`.
+    
+- Ejemplos de implementación en Java.
+    
+- Búsqueda y gestión de correos.
+    
+
+---
+
+## 3.1 **Protocolo POP3**
+
+### 3.1.1 **Definición**
+
+POP3 permite descargar correos electrónicos desde un servidor y almacenarlos localmente. Su característica principal es que, por defecto, elimina los mensajes del servidor tras la descarga, aunque algunos clientes permiten configurar una opción para conservar una copia en el servidor.
+
+### 3.1.2 **Funcionamiento**
+
+1. Un cliente de correo se conecta al servidor POP3.
+    
+2. Descarga todos los mensajes almacenados en la bandeja de entrada.
+    
+3. El servidor elimina los mensajes descargados (a menos que se configure para conservarlos).
+    
+4. Los mensajes quedan disponibles en el dispositivo local para acceder sin conexión.
+    
+
+### 3.1.3 **Puertos POP3**
+
+|Puerto|Descripción|
+|---|---|
+|110|Puerto predeterminado, sin cifrado.|
+|995|Puerto seguro con cifrado TLS/SSL.|
+
+---
+
+## 3.2. **Protocolo IMAP**
+
+### 3.2.1 **Definición**
+
+IMAP es un protocolo más avanzado que permite acceder y gestionar correos directamente en el servidor sin necesidad de descargarlos permanentemente en el dispositivo local.
+
+### 3.2.2 **Funcionamiento**
+
+1. Un cliente de correo se conecta al servidor IMAP.
+    
+2. Consulta los correos electrónicos sin descargarlos automáticamente.
+    
+3. Permite organizar mensajes en carpetas y gestionar marcadores (flags).
+    
+4. Los mensajes permanecen en el servidor hasta que el usuario los elimine.
+    
+5. Soporta acceso simultáneo desde múltiples dispositivos.
+    
+
+### 3.2.3 **Puertos IMAP**
+
+|   |   |
+|---|---|
+|Puerto|Descripción|
+|143|Puerto predeterminado, sin cifrado.|
+|993|Puerto seguro con cifrado TLS/SSL.|
+
+---
+
+## 3.3 **Uso de POP3 e IMAP en Java con Jakarta Mail**
+
+Para manejar correos en Java, se emplea la biblioteca **Jakarta Mail**, la cual facilita la conexión con servidores de correo a través de POP3 o IMAP.
+
+### 3.3.1 **Estructura del Servidor de Correo**
+
+Los correos se organizan en una jerarquía de carpetas:
+
+```lua
+Usuario
+└── Store (Almacén de correos)
+    ├── INBOX (Bandeja de entrada)
+    ├── Sent (Enviados)
+    ├── Drafts (Borradores)
+    └── Carpetas personalizadas
+```
+
+### 3.3.2 **Clases principales de Jakarta Mail**
+
+|   |   |
+|---|---|
+|Clase|Descripción|
+|Store|Representa la conexión con el servidor de correo.|
+|Folder|Representa una carpeta de correos (ej. INBOX, SENT).|
+|Message|Representa un correo electrónico individual.|
+
+### 3.3.3 **Métodos clave de la clase Folder**
+
+|   |   |
+|---|---|
+|Método|Descripción|
+|`open(int mode)`|Abre la carpeta en modo `READ_ONLY` o `READ_WRITE`.|
+|`getMessages()`|Devuelve un array de mensajes en la carpeta.|
+|`search(SearchTerm term)`|Busca mensajes que cumplan un criterio.|
+|`close(boolean expunge)`|Cierra la carpeta, eliminando mensajes si `expunge = true`.|
+
+### 3.3.4  **Ejemplo de Código en Java**
+
+ 1. **Configurar la conexión**
+
+```java
+Properties prop = new Properties();
+prop.put("mail.store.protocol", "pop3");
+prop.put("mail.pop3.host", "outlook.office365.com");
+prop.put("mail.pop3.port", "995");
+prop.put("mail.pop3.ssl.enable", "true");
+Session session = Session.getDefaultInstance(prop);
+```
+
+ 2. **Conectar al servidor**
+
+```java
+Store store = session.getStore("pop3");
+store.connect("usuario@dominio.com", "contraseña");
+```
+
+ 3. **Acceder a la bandeja de entrada**
+
+```java
+Folder folder = store.getFolder("INBOX");
+folder.open(Folder.READ_ONLY);
+```
+
+ 4. **Recuperar y mostrar correos**
+
+```java
+Message[] messages = folder.getMessages();
+for (Message message : messages) {
+    System.out.println("Asunto: " + message.getSubject());
+    System.out.println("Contenido: " + message.getContent().toString());
+}
+```
+
+ 5. **Cerrar conexiones**
+
+```java
+folder.close(false);
+store.close();
+```
+
+---
+
+## 3.4 **Búsqueda de Correos con Jakarta Mail**
+
+La API Jakarta Mail permite buscar correos en la bandeja de entrada utilizando la función `search()` de la clase `Folder`.
+
+### 3.4.1 **Ejemplo de búsqueda**
+
+  1. **Definir un criterio de búsqueda**
+
+```java
+SearchTerm term = new SearchTerm() {
+    public boolean match(Message message) {
+        try {
+            return message.getSubject().contains("image");
+        } catch (MessagingException ex) {
+            ex.printStackTrace();
+        }
+        return false;
+    }
+};
+```
+
+ 1. **Ejecutar la búsqueda en la bandeja de entrada**
+
+```java
+Message[] foundMessages = folder.search(term);
+```
+
+Si no se encuentran coincidencias, `search()` devuelve un array vacío.
+
+---
+
+## 3.5 **Conclusión**
+
+- **POP3** es adecuado para dispositivos únicos y acceso sin conexión.
+    
+- **IMAP** permite mayor flexibilidad y acceso desde múltiples dispositivos.
+    
+- En **Java**, la biblioteca **Jakarta Mail** facilita la conexión, recuperación y búsqueda de correos.
+    
+
+Estos conceptos permiten implementar un cliente de correo en Java con **POP3 o IMAP**, adaptado a las necesidades del usuario.

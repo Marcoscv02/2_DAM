@@ -1,4 +1,4 @@
-# 1. FTP 
+ # 1. FTP 
 ## 1.1 INTRODUCTION
 
 <aside style="border: 2px solid purple; padding: 10px; border-radius: 5px;"> 
