@@ -17,6 +17,7 @@ public class MediaSong {
     @Temporal(TemporalType.DATE)
     @Column(name = "dataPublicacion")
     private LocalDate publicacion;
+    @Transient
     private MediaSong audio;
 
     @ManyToMany (mappedBy = "canciones")

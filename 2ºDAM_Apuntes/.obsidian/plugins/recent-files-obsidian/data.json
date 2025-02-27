@@ -5,6 +5,14 @@
       "path": "Programación de Servicios y procesos/UD4/FTP.md"
     },
     {
+      "basename": "10.Paginacion de Consultas",
+      "path": "Acceso a Datos/UD3/10.Paginacion de Consultas.md"
+    },
+    {
+      "basename": "11. Herencia",
+      "path": "Acceso a Datos/UD3/11. Herencia.md"
+    },
+    {
       "basename": "SMTP",
       "path": "Programación de Servicios y procesos/UD4/SMTP.md"
     },
@@ -15,10 +23,6 @@
     {
       "basename": "07. Mapeo de colecciones.",
       "path": "Acceso a Datos/UD3/07. Mapeo de colecciones..md"
-    },
-    {
-      "basename": "10.Paginacion de Consultas",
-      "path": "Acceso a Datos/UD3/10.Paginacion de Consultas.md"
     },
     {
       "basename": "9. JPQL.",
@@ -195,10 +199,6 @@
     {
       "basename": "5. GSON Creación y lectura de objetos JSON",
       "path": "Acceso a Datos/UD1/JSON/5. GSON Creación y lectura de objetos JSON.md"
-    },
-    {
-      "basename": "6. GSON TypeAdapter",
-      "path": "Acceso a Datos/UD1/JSON/6. GSON TypeAdapter.md"
     }
   ],
   "omittedPaths": [],

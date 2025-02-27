@@ -440,3 +440,234 @@ public class FtpFileUpload {
 
 
 # 2. SFTP
+## 2.1. Introducción
+
+**SSH** (Secure Shell) es un protocolo esencial que permite la comunicación segura a través de redes no confiables. Fue desarrollado en los años 90 para reemplazar protocolos remotos inseguros como **telnet** y **rsh**, ofreciendo canales de comunicación cifrados y autenticación robusta. Además de su uso principal para acceder a sistemas de forma remota, SSH ofrece otras funcionalidades que se amplían mediante herramientas como **SFTP** y **SCP**.
+
+---
+
+## 2.2. Protocolo SSH y SFTP
+
+### 2.1. Evolución de SSH
+
+- **Orígenes y desarrollo:**
+    
+    - Desarrollado en los años 90.
+    - Diseñado como reemplazo de protocolos inseguros (telnet, rsh).
+- **Versiones:**
+    
+    - **SSH-1:** Primera iteración, menos segura.
+    - **SSH-2:** Versión ampliamente utilizada actualmente por sus características mejoradas y estandarización.
+
+### 2.2. Funcionalidades principales
+
+- **Acceso remoto:**
+    
+    - Ejecución de comandos en un servidor remoto como si estuvieras presente físicamente.
+- **Transferencia de archivos:**
+    
+    - **SFTP (SSH File Transfer Protocol):** Permite transferir archivos de forma segura.
+    - **SCP (Secure Copy Protocol):** Otra opción para copiar archivos de forma segura.
+- **Túneles seguros (Port Forwarding):**
+    
+    - Permite el reenvío seguro de protocolos TCP, protegiendo el tráfico de aplicaciones.
+
+---
+
+## 2.3. La librería JSch en Java
+
+### 2.3.1. Descripción General
+
+**JSch (Java Secure Channel)** es una librería Java ampliamente utilizada para establecer conexiones SSH de manera segura. Con JSch, puedes:
+
+- Conectar a servidores remotos utilizando el protocolo SSH.
+- Ejecutar comandos de forma remota.
+- Transferir archivos (usando SFTP o SCP).
+- Administrar túneles seguros.
+
+### 2.3.2. Dependencia Maven
+
+Para integrar JSch en un proyecto Java basado en Maven, añade la siguiente dependencia en el archivo `pom.xml`:
+
+```xml
+<dependency>
+  <groupId>com.github.mwiede</groupId>
+  <artifactId>jsch</artifactId>
+  <version>0.2.23</version>
+</dependency>
+```
+
+---
+
+## 2.4. Ejemplo de Conexión SFTP Usando JSch
+
+A continuación se muestra un ejemplo de cómo conectar a un servidor SFTP y realizar operaciones de transferencia de archivos:
+
+### 2.4.1. Código de Ejemplo
+
+```java
+public class SFTPExample {
+  public static void main(String[] args) {
+    String host = "192.168.1.130";
+    String username = "xxxx";
+    String password = "yyyy";
+    String remoteFile = "file_xxx_remote.txt";
+    String localFile = "file_xxx.txt";
+    
+    JSch jsch = new JSch();
+    Session session = null;
+    
+    try {
+      // Establecer la sesión SSH
+      session = jsch.getSession(username, host, 22);
+      session.setPassword(password);
+      session.setConfig("StrictHostKeyChecking", "no");
+      session.connect();
+      
+      // Abrir canal SFTP
+      Channel channel = session.openChannel("sftp");
+      channel.connect();
+      
+      // Conversión a ChannelSftp para utilizar métodos SFTP
+      ChannelSftp sftpChannel = (ChannelSftp) channel;
+      
+      // Transferir archivo local a remoto
+      sftpChannel.put(localFile, remoteFile);
+      
+      // Desconexión del canal y la sesión
+      sftpChannel.disconnect();
+      session.disconnect();
+    } catch (SftpException | JSchException e) {
+      e.printStackTrace();
+    }
+  }
+}
+	
+```
+
+### 2.4.2. Operaciones Comunes
+
+- **Subir un archivo:**
+    
+    ```java
+    sftpChannel.put("path/to/local/file.txt", "path/to/remote/file.txt");
+	```
+    
+- **Descargar un archivo:**
+    
+	```java
+	sftpChannel.get("path/to/local/file.txt", "path/to/remote/file.txt");
+	
+	```
+    
+- **Listar contenido de un directorio:**
+    
+    ```java
+    Vector<ChannelSftp.LsEntry> files = sftpChannel.ls(".");
+	for (ChannelSftp.LsEntry entry : files) {
+	    System.out.println(entry.getLongname());
+	}
+	```
+    
+
+> **Nota:**  
+> El método `getLongname()` devuelve detalles adicionales como permisos, propietario, grupo y tamaño. Si solo se requiere el nombre del archivo, se puede utilizar `getFilename()`.
+
+### 2.4.3. Tabla Resumen de Operaciones
+
+|**Operación**|**Método**|**Descripción**|
+|---|---|---|
+|Subir un archivo|`put()`|Transfiere un archivo local a una ruta remota.|
+|Descargar un archivo|`get()`|Descarga un archivo remoto a una ruta local.|
+|Listar directorio|`ls()`|Devuelve un vector con entradas del directorio.|
+
+---
+
+## 2.5. Autenticación con Clave Pública en SSH
+
+### 2.5.1. Ventajas de la Autenticación con Clave Pública
+
+- **Seguridad:**  
+    La contraseña no se transmite por la red, reduciendo el riesgo de compromiso.
+    
+- **Comodidad:**  
+    Permite la conexión sin necesidad de ingresar la contraseña manualmente, ideal para automatizaciones.
+    
+
+### 2.5.2. Uso de PuTTYgen para Generar Claves SSH
+
+- **PuTTYgen:**  
+    Es una herramienta para generar pares de claves (pública y privada) para SSH.
+    
+- **Características:**
+    
+    - Genera claves en el formato propio de PuTTY (`.ppk`).
+    - Puede convertir claves a otros formatos (por ejemplo, OpenSSH).
+    - Se recomienda usar SSH-2 RSA con una longitud de 2048 bits.
+    - Es aconsejable proteger la clave privada con una passphrase.
+- **Pasos básicos:**
+    
+    1. Seleccionar el tipo de clave (SSH-2 RSA, 2048 bits).
+    2. Hacer clic en **Generate** y mover el ratón para generar entropía.
+    3. Una vez completada la generación, se muestra la clave pública.
+    4. Guardar al menos la clave privada haciendo clic en **Save private key**.
+    5. Copiar la clave pública al servidor remoto.
+
+### 2.5.3. Código de Ejemplo: Autenticación con Clave Pública
+
+```java
+public class PrivateKeySFTP {
+  public static void main(String[] args) {
+    String host = "192.168.1.130";
+    String username = "zzzzz";
+    int port = 22;
+    
+    JSch jsch = new JSch();
+    Session session = null;
+    String privateKeyPath = "src/main/resources/private_rsa_ssh2_v2.ppk";
+    
+    try {
+      // Añadir la identidad (clave privada)
+      jsch.addIdentity(privateKeyPath);
+      
+      // Obtener la sesión SSH
+      session = jsch.getSession(username, host, port);
+      session.setConfig("PreferredAuthentications", "publickey,keyboardinteractive,password");
+      
+      // Configuración adicional para omitir la comprobación de clave del host
+      java.util.Properties config = new java.util.Properties();
+      config.put("StrictHostKeyChecking", "no");
+      session.setConfig(config);
+      
+      // Conectar la sesión
+      session.connect();
+      System.out.println("Connected");
+    } catch (JSchException e) {
+      throw new RuntimeException("Failed to create JSch Session object.", e);
+    }
+  }
+}
+```
+
+---
+
+## 2.6. Conclusiones
+
+- **SSH** es un protocolo fundamental para comunicaciones seguras en redes no confiables, y su versión **SSH-2** es la más utilizada por sus mejoras en seguridad.
+- **SFTP** y **SCP** son extensiones que permiten la transferencia segura de archivos.
+- La librería **JSch** facilita la integración de SSH en aplicaciones Java, permitiendo tanto la autenticación por contraseña como por clave pública.
+- La **autenticación con clave pública** es preferida en muchos casos por su mayor seguridad y facilidad para la automatización.
+- Herramientas como **PuTTYgen** son esenciales para generar y gestionar pares de claves para SSH.
+
+---
+
+## 2.7. Notas Adicionales
+
+- **Seguridad Adicional:**  
+    Se recomienda siempre verificar la autenticidad del servidor (mediante la opción `StrictHostKeyChecking`) en entornos de producción para evitar ataques de tipo _man-in-the-middle_.
+    
+- **Uso en Automatización:**  
+    En procesos automatizados, es común omitir la passphrase en la clave privada, aunque se debe evaluar el riesgo en función del entorno.
+    
+- **Personalización de la Configuración:**  
+    JSch permite múltiples configuraciones avanzadas, como la priorización de métodos de autenticación y la configuración de túneles seguros, lo que puede ser muy útil en entornos complejos.
