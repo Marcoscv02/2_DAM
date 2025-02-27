@@ -385,12 +385,12 @@ public class FtpFileUpload {
 	 * @throws IOException
 	 * if any network or IO error occurred.
 	 */
-- 
+ 
 	 public static boolean uploadSingleFile(FTPClient ftpClient, String localFilePath, String remoteFilePath) throws IOException {
-- 
+ 
 		 File localFile = new File(localFilePath);
 		 InputStream inputStream = new FileInputStream(localFile);
-1. 
+
 		 try {
 			 ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
 			 return ftpClient.storeFile(remoteFilePath, inputStream);

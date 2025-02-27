@@ -5,6 +5,30 @@
       "path": "Programación de Servicios y procesos/UD4/FTP.md"
     },
     {
+      "basename": "Pareadigma de Programacion funcional",
+      "path": "JAVA/Pareadigma de Programacion funcional.md"
+    },
+    {
+      "basename": "Colecciones de Datos",
+      "path": "JAVA/Colecciones de Datos.md"
+    },
+    {
+      "basename": "Expresiones Lambda",
+      "path": "JAVA/Expresiones Lambda.md"
+    },
+    {
+      "basename": "Expresiones Regulares",
+      "path": "JAVA/Expresiones Regulares.md"
+    },
+    {
+      "basename": "Patrón Factory",
+      "path": "JAVA/Patrón Factory.md"
+    },
+    {
+      "basename": "patrones de Diseño",
+      "path": "JAVA/patrones de Diseño.md"
+    },
+    {
       "basename": "10.Paginacion de Consultas",
       "path": "Acceso a Datos/UD3/10.Paginacion de Consultas.md"
     },
@@ -175,30 +199,6 @@
     {
       "basename": "Pasted image 20250211205820",
       "path": "Acceso a Datos/UD1/images/Pasted image 20250211205820.png"
-    },
-    {
-      "basename": "7. GSON JsonReader",
-      "path": "Acceso a Datos/UD1/JSON/7. GSON JsonReader.md"
-    },
-    {
-      "basename": "0. Introducción a JSON",
-      "path": "Acceso a Datos/UD1/JSON/0. Introducción a JSON.md"
-    },
-    {
-      "basename": "1. Bibliotecas JSON para JAVA",
-      "path": "Acceso a Datos/UD1/JSON/1. Bibliotecas JSON para JAVA.md"
-    },
-    {
-      "basename": "2. JSON con el API JavaScript de Java",
-      "path": "Acceso a Datos/UD1/JSON/2. JSON con el API JavaScript de Java.md"
-    },
-    {
-      "basename": "3. GSON Introducción",
-      "path": "Acceso a Datos/UD1/JSON/3. GSON Introducción.md"
-    },
-    {
-      "basename": "5. GSON Creación y lectura de objetos JSON",
-      "path": "Acceso a Datos/UD1/JSON/5. GSON Creación y lectura de objetos JSON.md"
     }
   ],
   "omittedPaths": [],
