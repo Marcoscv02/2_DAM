@@ -1,6 +1,9 @@
 package marcos.psp.exercise8;
 
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.*;
@@ -10,7 +13,7 @@ import java.util.Scanner;
 
 public class WikiApp {
     public static void main(String[] args) {
-        //Crea un objeto escaner y obtener losd atos introducidos por el usuario;
+        //Crea un objeto escaner y obtener los datos introducidos por el usuario;
         Scanner sc= new Scanner(System.in);
 
         System.out.println("Introduce codigo del pais del que se desean obtener los artículos (ejemplo : ES, EN, US)");
@@ -35,24 +38,27 @@ public class WikiApp {
 
         StringBuilder fullUrlSb= new StringBuilder();
         fullUrlSb.append(genearalUrl);
-        fullUrlSb.append(countryCode+".wikipedia/all-access/");
-        fullUrlSb.append(date.getYear()+"/");
-        fullUrlSb.append(date.getMonth()+"/");
+        fullUrlSb.append(countryCode).append(".wikipedia/all-access/");
+        fullUrlSb.append(date.getYear()).append("/");
+        fullUrlSb.append(date.getMonth()).append("/");
         fullUrlSb.append(date.getDayOfMonth());
 
         String fullUrl = fullUrlSb.toString();
 
         System.out.println("Conectandose a la API");
+        String jsonResponse = fetchApi(fullUrl);
+        if (jsonResponse==null) System.out.println("No se pudieron obtener datos de la api");
 
+        JSONObject jsonObject;
 
-
+        jsonObject= new JSONObject(jsonResponse);
     }
 
     /**
      *  Metodo que accede al api a través de una url proporcionada y obtener los datos de la misma
      * @return String
     */
-    public String fetchApi (String url){
+    public  static String fetchApi (String url){
         StringBuilder result= new StringBuilder(); //Resultado
         HttpURLConnection connection=null; //Objeto de conexion
 
@@ -67,6 +73,7 @@ public class WikiApp {
                 return null;
             }
 
+            //Lee cada línea de la api y la agrega en un stringBuilder
             try (var reader= new BufferedReader(new InputStreamReader(connection.getInputStream()))){
                 String linea;
                 while ((linea=reader.readLine())!=null){
@@ -74,14 +81,27 @@ public class WikiApp {
                 }
             }
 
-
+            return result.toString();
 
         } catch (IOException e) {
+            System.out.println("Error en la conexion y lectura con la API: "+e.getMessage());
             throw new RuntimeException(e);
+        }finally {
+            //Se cierra la conexión para liberar recursos
+            if (connection!=null)  connection.disconnect();
         }
+    }
 
 
-        return "aa";
+    /**
+     * Subir el archivo al servidor FTP usando las credenciales proporcionadas
+     */
+    private static boolean uploadFileToserver (String server, int port, String user, String pass,
+                                               File localFile, String remoteFileName){
+
+
+
+        return false;
     }
 
 
