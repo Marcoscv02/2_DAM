@@ -2,7 +2,6 @@ package marcos.Peliculas.model;
 
 import jakarta.persistence.*;
 import marcos.Peliculas.model.relaciones.PeliculaPersonaxe;
-
 import java.time.LocalDate;
 import java.util.List;
 

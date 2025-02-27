@@ -2,7 +2,7 @@
 	correo: cdelaisla88@gmail.com
 	contraseña: marcosabc123.
 
-Contraseña de aplicaion: szkx epjm wrsw wqnx
+Contraseña de aplicaion: mxya pere gklc ptiz
 
 -Base 64:
 	usuario de correo codificado en base 64: Y2RlbGFpc2xhODhAZ21haWwuY29tCg==

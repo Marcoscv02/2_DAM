@@ -247,6 +247,7 @@
         </properties>
     </persistence-unit>
 
+
     <!--Unidad de Persistencia para EJERCICIO PELICULA MariaDB-->
     <persistence-unit name="jpa-peliculas-mariaDB">
         <description>
@@ -263,17 +264,53 @@
         <properties>
             <!--Driver y url a base de  datos -->
             <property name="jakarta.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver"/>
-            <property name="jakarta.persistence.jdbc.url"    value="jdbc:h2:C:\Users\Usuario\Documentos\DAM\2_DAM\2_DAM\ACCESO A DATOS\DB\JPA-hibernate\PeliculasMaraDB;DATABASE_TO_UPPER=FALSE" />
+            <property name="jakarta.persistence.jdbc.url"    value="jdbc:mariadb://dbalumnos.sanclemente.local:3312/Peliculas" />
 
             <!--Sin usuario y contraseña para base de datos-->
             <property name="jakarta.persistence.jdbc.user"   value="accesoadatos" />
             <property name="jakarta.persistence.jdbc.password" value="ad123.." />
 
             <!--Esta propiedad genera el esquema de la base de datos  -->
-            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create" />
+            <property name="jakarta.persistence.schema-generation.database.action" value="none" />
 
             <!--Dialecto de SGBD para optimizar-->
-            <property name="hibernate.dialect"    value="org.hibernate.dialect.H2Dialect" />
+            <property name="hibernate.dialect"    value="org.hibernate.dialect.MariaDBDialect" />
+
+            <!--Mostrar y formatear sentencias Sql-->
+            <property name="hibernate.show_sql"   value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.highlight_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+
+
+    <!--Unidad de Persistencia para EJERCICIO PELICULA SQLite-->
+    <persistence-unit name="jpa-peliculas-SQLite">
+        <description>
+            Unidad de persistencia para jakarta persistencia en ejercicio de objetos embebidos con SGBD SQLite
+        </description>
+        <provider> org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <class>marcos.embebidos_clavesCompuestas.model.Pelicula</class>
+        <class>marcos.embebidos_clavesCompuestas.model.Serie</class>
+        <class>marcos.embebidos_clavesCompuestas.model.Calificacion</class>
+        <class>marcos.embebidos_clavesCompuestas.model.Usuario</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            <!--Driver y url a base de  datos -->
+            <property name="jakarta.persistence.jdbc.driver" value="org.sqlite.JDBC"/>
+            <property name="jakarta.persistence.jdbc.url"    value="jdbc:sqlite:C:\Users\a24marcoscv\Documents\2_DAM\ACCESO A DATOS\DB\JPA-hibernate\peliculas" />
+
+            <!--Sin usuario y contraseña para base de datos-->
+            <property name="jakarta.persistence.jdbc.user"   value="accesoadatos" />
+            <property name="jakarta.persistence.jdbc.password" value="ad123.." />
+
+            <!--Esta propiedad genera el esquema de la base de datos  -->
+            <property name="jakarta.persistence.schema-generation.database.action" value="none" />
+
+            <!--Dialecto de SGBD para optimizar-->
+            <property name="hibernate.dialect"    value="org.hibernate.dialect.MariaDBDialect" />
 
             <!--Mostrar y formatear sentencias Sql-->
             <property name="hibernate.show_sql"   value="true" />

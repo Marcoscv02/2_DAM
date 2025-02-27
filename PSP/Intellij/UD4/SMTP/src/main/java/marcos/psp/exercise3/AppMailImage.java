@@ -49,14 +49,19 @@ public class AppMailImage {
             try{
                 //Aquí se crea el objeto mensaje y se declaran los receptores a quienes va dirigido
                 MimeMessage mensaje= new MimeMessage(session);
+                mensaje.setFrom(new InternetAddress(user));
+
                 mensaje.setRecipients(Message.RecipientType.TO,receptors);
+
+                mensaje.setSubject("Correo con imagen incrustada usando Content-ID");
 
                 //Aqui se añade la primera parte del mensaje de texto que precederá a la imagen
                 MimeBodyPart textpart1= new MimeBodyPart();
                 String htmlContent1 = "<h1>Hello everyone!</h1>" +
                         "<p>Today, we have another mini lesson about suffixes that talk about people. " +
                         "As you may know, 'suffixes' are little groups of letters that we put on the end " +
-                        "of other words.</p>";
+                        "of other words.</p>"+
+                        "<img src='cid:ProfesionalsImagen' style='width: 200px; height: 200px;'>";
                 textpart1.setContent(htmlContent1,"text/html");
 
 
@@ -100,7 +105,7 @@ public class AppMailImage {
 
                 //se añade el objeto multipart al mensaje y se envía
                 mensaje.setContent(multipart);
-                Transport.send(mensaje);
+                Transport.send(mensaje);//Entra aquí la excepción
 
                 System.out.println("Correo enviado exitosamente");
 

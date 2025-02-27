@@ -58,9 +58,6 @@ public class AppMailHtml {
             Transport.send(message);
             System.out.println("email sent");
 
-
-
-
         } catch (IOException ex) {
             ex.printStackTrace();
         } catch (MessagingException e) {
