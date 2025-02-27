@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programación de Servicios y procesos/UD4/FTP.md",
+                "file": "Programación de Servicios y procesos/UD4/SMTP.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "FTP"
+              "title": "SMTP"
             }
           },
           {
@@ -35,8 +35,7 @@
               "title": "FTP"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -231,7 +230,7 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "db3e7917b723a71a",
+  "active": "fab2ab3eb5b1b1c8",
   "lastOpenFiles": [
     "Programación de Servicios y procesos/UD4/SMTP.md",
     "Programación de Servicios y procesos/UD4/FTP.md",

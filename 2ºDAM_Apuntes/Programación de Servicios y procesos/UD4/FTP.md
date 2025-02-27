@@ -1,4 +1,4 @@
-# 1. FTP 
+ # 1. FTP 
 ## 1.1 INTRODUCTION
 
 <aside style="border: 2px solid purple; padding: 10px; border-radius: 5px;"> 
@@ -267,11 +267,75 @@ La descarga de archivos mediante FTP se puede realizar de dos formas con la clas
 
 **Ejemplo de código utilizando ambos métodos:**
 
-java
+```java
+import org.apache.commons.net.ftp.FTP;
+import org.apache.commons.net.ftp.FTPClient;
+import java.io.*;
+public class FtpFileDownload {
 
-CopiarEditar
-
-`// Conexión, autenticación y configuración inicial ftpClient.connect(server, port); ftpClient.login(user, pass); ftpClient.enterLocalPassiveMode(); ftpClient.setFileType(FTP.BINARY_FILE_TYPE);  // APROXIMACIÓN #1: Usando retrieveFile(String, OutputStream) String remoteFile1 = "/user/image.jpg"; File downloadFile1 = new File("image.jpg"); OutputStream outputStream1 = new BufferedOutputStream(new FileOutputStream(downloadFile1)); boolean success = ftpClient.retrieveFile(remoteFile1, outputStream1); outputStream1.close(); if (success) {     System.out.println("El archivo #1 se ha descargado correctamente."); }  // APROXIMACIÓN #2: Usando retrieveFileStream(String) String remoteFile2 = "/images.png"; File downloadFile2 = new File("images.png"); OutputStream outputStream2 = new BufferedOutputStream(new FileOutputStream(downloadFile2)); InputStream inputStream = ftpClient.retrieveFileStream(remoteFile2); byte[] bytesArray = new byte[4096]; int bytesRead; while ((bytesRead = inputStream.read(bytesArray)) != -1) {     outputStream2.write(bytesArray, 0, bytesRead); } success = ftpClient.completePendingCommand(); if (success) {     System.out.println("El archivo #2 se ha descargado correctamente."); } outputStream2.close(); inputStream.close();`
+	 public static void main(String[] args) {
+- 
+		 String server = "192.168.56.1";
+		 int port = 21;
+		 String user = "xxxxx";
+		 String pass = "xxxxx";
+		 FTPClient ftpClient = new FTPClient();
+1. 
+		 try {
+			 ftpClient.connect(server, port);
+			 ftpClient.login(user, pass);
+			 ftpClient.enterLocalPassiveMode();
+			 ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
+			 
+			 // APPROACH #1: using retrieveFile(String, OutputStream)
+			 String remoteFile1 = "/user/image.jpg";
+			 File downloadFile1 = new File("image.jpg");
+			 
+			 OutputStream outputStream1 = new BufferedOutputStream(new FileOutputStream(downloadFile1));
+			 boolean success = ftpClient.retrieveFile(remoteFile1, outputStream1);
+			 outputStream1.close();
+			 
+			 if (success) {
+				 System.out.println("File #1 has been downloaded successfully.");
+			 }
+			 
+			 // APPROACH #2: using InputStream retrieveFileStream(String)
+			 String remoteFile2 = "/images.png";
+			 File downloadFile2 = new File("images.png");
+			 OutputStream outputStream2 = new BufferedOutputStream(new FileOutputStream(downloadFile2));
+			 InputStream inputStream = ftpClient.retrieveFileStream(remoteFile2);
+			 byte[] bytesArray = new byte[4096];
+			 int bytesRead = -1;
+			 
+			 while ((bytesRead = inputStream.read(bytesArray)) != -1) {
+				 outputStream2.write(bytesArray, 0, bytesRead);
+			 }
+			 
+			 success = ftpClient.completePendingCommand();
+			 if (success) {
+				 System.out.println("File #2 has been downloaded successfully.");
+			 }
+			 outputStream2.close();
+			 inputStream.close();
+			 
+		} catch (IOException ex) {
+			 System.out.println("Error: " + ex.getMessage());
+			 ex.printStackTrace();
+			 
+		} finally {
+			try {
+				if (ftpClient.isConnected()) {
+					ftpClient.logout();
+					ftpClient.disconnect();
+				}
+				
+			} catch (IOException ex) {
+				 ex.printStackTrace();
+			}
+		 }
+	 }
+}
+```
 
 ---
 
@@ -281,34 +345,98 @@ La subida de archivos a un servidor FTP es un proceso sencillo que, al igual que
 
 **Pasos para subir un archivo:**
 
-1. **Preparación del entorno:**
+2. **Preparación del entorno:**
     
     - Conectar y autenticarse en el servidor FTP.
     - Cambiar a modo pasivo local (`enterLocalPassiveMode()`) para evitar problemas con firewalls.
     - Establecer el tipo de archivo a `FTP.BINARY_FILE_TYPE` para asegurar que la transferencia se realice en modo binario.
-2. **Proceso de subida:**
+3. **Proceso de subida:**
     
     - Crear un objeto `File` a partir de la ruta local del archivo.
     - Abrir un `InputStream` (por ejemplo, `FileInputStream`) para leer el contenido del archivo.
     - Llamar al método `storeFile()` pasando la ruta deseada en el servidor y el `InputStream`.
     - Cerrar el `InputStream` una vez completada la transferencia.
-3. **Finalización:**
+4. **Finalización:**
     
     - Verificar que la operación fue exitosa mediante el valor de retorno de `storeFile()`.
     - Realizar el cierre de la sesión con `logout()` y desconectar del servidor.
 
 **Ejemplo de código para la subida de un único archivo:**
 
-java
+```java
+import org.apache.commons.net.ftp.FTP;
+import org.apache.commons.net.ftp.FTPClient;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+public class FtpFileUpload {
 
-CopiarEditar
+	 /**
+	 * Upload a single file to the FTP server.
+	 *
+	 * @param ftpClient
+	 * an instance of org.apache.commons.net.ftp.FTPClient class.
+	 * @param localFilePath
+	 * Path of the file on local computer
+	 * @param remoteFilePath
+	 * Path of the file on remote the server
+	 * @return true if the file was uploaded successfully, false otherwise
+	 * @throws IOException
+	 * if any network or IO error occurred.
+	 */
+- 
+	 public static boolean uploadSingleFile(FTPClient ftpClient, String localFilePath, String remoteFilePath) throws IOException {
+- 
+		 File localFile = new File(localFilePath);
+		 InputStream inputStream = new FileInputStream(localFile);
+1. 
+		 try {
+			 ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
+			 return ftpClient.storeFile(remoteFilePath, inputStream);
+		} finally {
+			 inputStream.close();
+		}
+	}
+	
+		public static void main(String[] args) {
+			 String server = "192.168.56.1";
+			 int port = 21;
+			 String user = "xxxxx";
+			 String pass = "xxxxx";
+			 FTPClient ftpClient = new FTPClient();
+		
+		 try {
+			 // connect and login to the server
+			 ftpClient.connect(server, port);
+			 ftpClient.login(user, pass);
+	  
+			 // use local passive mode to pass firewall
+			 ftpClient.enterLocalPassiveMode();
+			 System.out.println("Connected");
+			 String remoteFilePath = "./file.xml";
+			 String localFilePath = "C:\\Users\\Name\\Downloads\\file.xml";
+			 Boolean res = uploadSingleFile(ftpClient,localFilePath,remoteFilePath);
+	  
+			 if (res){
+				 System.out.println("Upload successfully completed");
+			 }
+	 
+			 // log out and disconnect from the server
+			 ftpClient.logout();
+			 ftpClient.disconnect();
+			 System.out.println("Disconnected");
+	 
+		 } catch (IOException ex) {
+			 ex.printStackTrace();
+		 }
+	 }
+}
 
-`import org.apache.commons.net.ftp.FTP; import org.apache.commons.net.ftp.FTPClient; import java.io.File; import java.io.FileInputStream; import java.io.IOException; import java.io.InputStream;  public class FtpFileUpload {     /**      * Sube un único archivo al servidor FTP.      *      * @param ftpClient     instancia de FTPClient.      * @param localFilePath ruta del archivo en el sistema local.      * @param remoteFilePath ruta donde se almacenará el archivo en el servidor.      * @return true si la subida fue exitosa, false en caso contrario.      * @throws IOException si ocurre algún error de red o de E/S.      */     public static boolean uploadSingleFile(FTPClient ftpClient, String localFilePath, String remoteFilePath)             throws IOException {         File localFile = new File(localFilePath);         InputStream inputStream = new FileInputStream(localFile);         try {             ftpClient.setFileType(FTP.BINARY_FILE_TYPE);             return ftpClient.storeFile(remoteFilePath, inputStream);         } finally {             inputStream.close();         }     }      public static void main(String[] args) {         String server = "192.168.56.1";         int port = 21;         String user = "xxxxx";         String pass = "xxxxx";         FTPClient ftpClient = new FTPClient();          try {             // Conexión y autenticación             ftpClient.connect(server, port);             ftpClient.login(user, pass);             ftpClient.enterLocalPassiveMode();             System.out.println("Conectado al servidor FTP");              String remoteFilePath = "./file.xml";             String localFilePath = "C:\\Users\\Name\\Downloads\\file.xml";             boolean result = uploadSingleFile(ftpClient, localFilePath, remoteFilePath);             if (result) {                 System.out.println("El archivo se ha subido correctamente.");             }              // Cierre de sesión y desconexión             ftpClient.logout();             ftpClient.disconnect();             System.out.println("Desconectado del servidor FTP");         } catch (IOException ex) {             ex.printStackTrace();         }     } }`
+```
 
 > **Nota Importante:**  
 > Siempre se recomienda manejar las excepciones de E/S y asegurarse de cerrar correctamente los streams y conexiones para evitar pérdidas de recursos y posibles problemas de seguridad.
-
-
 
 
 # 2. SFTP
