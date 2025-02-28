@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "Apuntes AD",
+      "path": "Acceso a Datos/Apuntes AD.md"
+    },
+    {
+      "basename": "Introducción a Spring MVC (seminario)",
+      "path": "Acceso a Datos/UD4/Introducción a Spring MVC (seminario).md"
+    },
+    {
       "basename": "FTP",
       "path": "Programación de Servicios y procesos/UD4/FTP.md"
     },
@@ -75,10 +83,6 @@
     {
       "basename": "1. Programación de Comunicación en Redes",
       "path": "Programación de Servicios y procesos/UD3/1. Programación de Comunicación en Redes.md"
-    },
-    {
-      "basename": "Introducción a Spring MVC (seminario)",
-      "path": "Acceso a Datos/UD4/Introducción a Spring MVC (seminario).md"
     },
     {
       "basename": "5. Relaciones JPA",
@@ -195,10 +199,6 @@
     {
       "basename": "Pasted image 20250211204115",
       "path": "Acceso a Datos/UD1/images/Pasted image 20250211204115.png"
-    },
-    {
-      "basename": "Pasted image 20250211205820",
-      "path": "Acceso a Datos/UD1/images/Pasted image 20250211205820.png"
     }
   ],
   "omittedPaths": [],
