@@ -2,6 +2,7 @@ package marcos.psp.exercise8;
 
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
+import org.apache.commons.net.ftp.FTPReply;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -12,6 +13,11 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class WikiApp {
+    public static final String HOST = "192.168.56.1";
+    public static final int PORT = 21;
+    public static final String USER = "marcos";
+    public static final String PASSWORD = "marcos";
+
     public static void main(String[] args) {
         //Crea un objeto escaner y obtener los datos introducidos por el usuario;
         Scanner sc= new Scanner(System.in);
@@ -72,14 +78,14 @@ public class WikiApp {
             System.out.println("Error al escribir los datos en el archivo. "+e.getMessage());
             throw new RuntimeException(e);
         }
-        //System.out.println("(LOG) Contenido json: "+formattedJson);
 
         //Se envia archivo al metodo encargado de subir el archivo
         boolean isUploadOk = uploadFileToserver(jsonFile.getName());
 
-        jsonFile.delete();//Eliminar el archivo después de ser subido al servidor
-
         if (isUploadOk) System.out.println("Proceso realizadon con éxito");
+        else System.out.println("No se ha podido subir el archivo");
+
+        jsonFile.delete();//Eliminar el archivo después de ser subido al servidor
 
     }
 
@@ -123,48 +129,48 @@ public class WikiApp {
 
 
     /**
-     * Subir el archivo al servidor FTP usando las credenciales proporcionadas
+     * Metodo que muestra las respuestas del servidor
      */
-    private static boolean uploadFileToserver (String fileName){
-        int port = 21;
-        String server = "192.168.56.1";
-        String user = "marcos";
-        String password = "marcos";
+    private static void showServerReply(FTPClient ftpClient) {
+        String[] replies = ftpClient.getReplyStrings();
+        if (replies != null && replies.length > 0) {
+            for (String aReply : replies) {
+                System.out.println("SERVER: " + aReply);
+            }
+        }
+    }
 
-
-        FTPClient cliente= new FTPClient();
+    private static boolean uploadFileToserver(String fileName){
+        FTPClient cliente = new FTPClient();
+        boolean success = false;
 
         try {
-            cliente.connect(server,port);
-            cliente.login(user,password);
-            cliente.enterRemotePassiveMode();//Entrar en el modo pasivo para que el servidor no detecte problemas de seguridad
-            System.out.println("Conectado al servidor");
+            cliente.connect(HOST);
+            showServerReply(cliente);
+            cliente.login(USER, PASSWORD);
+            cliente.enterLocalPassiveMode();
+            showServerReply(cliente);
             cliente.setFileType(FTP.BINARY_FILE_TYPE);
+            showServerReply(cliente);
 
             File file= new File(fileName);
 
-            try(FileInputStream fis = new FileInputStream(file)){
-                boolean uploaded = cliente.storeFile(fileName,fis);
-
-                if (uploaded){
-                    System.out.println("Archvo subido correctamente al servidor");
-                    return true;
-                }
-                else{
-                    System.out.println("No se ha podido subir el archivo");
-                }
+            try (InputStream fileIS = new FileInputStream(file)){
+                success = cliente.storeFile(fileName, fileIS);
+                showServerReply(cliente);
             }
 
-            //Se hace logout y se desconecta del servidor
-            cliente.logout();
-            cliente.disconnect();
-
         } catch (IOException e) {
-            System.out.println("Error en subida de archivo. "+e.getMessage());
-            throw new RuntimeException(e);
+            System.out.println("Error en la subida del archivo" + e.getMessage());
+        }finally {
+            try {
+                cliente.logout();
+                cliente.disconnect();
+            } catch (IOException e) {
+                System.out.println("Error en la desconexión del servidor" + e.getMessage());
+            }
         }
-        return false;
+
+        return success;
     }
-
-
 }
