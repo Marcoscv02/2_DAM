@@ -1,4 +1,4 @@
-package marcos.psp.prueba1;
+package marcos.psp.sslExample;
 
 import javax.net.ssl.*;
 import java.io.*;

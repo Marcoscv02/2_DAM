@@ -1,11 +1,8 @@
-package marcos.psp.RandomWord.client;
-
-import marcos.psp.prueba1.SSLClient;
+package marcos.psp.exercise7.client;
 
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
 import java.io.*;
-import java.net.Socket;
 import java.util.Scanner;
 
 public class RandomWordClient {

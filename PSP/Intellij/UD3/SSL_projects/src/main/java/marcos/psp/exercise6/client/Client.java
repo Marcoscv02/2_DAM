@@ -1,9 +1,8 @@
-package marcos.psp.guessNumber.client;
+package marcos.psp.exercise6.client;
 
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
 import java.io.*;
-import java.net.Socket;
 import java.util.Scanner;
 
 public class Client {

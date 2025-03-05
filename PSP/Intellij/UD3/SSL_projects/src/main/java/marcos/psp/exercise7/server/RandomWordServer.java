@@ -1,4 +1,4 @@
-package marcos.psp.RandomWord.server;
+package marcos.psp.exercise7.server;
 
 import javax.net.ssl.SSLServerSocket;
 import javax.net.ssl.SSLServerSocketFactory;

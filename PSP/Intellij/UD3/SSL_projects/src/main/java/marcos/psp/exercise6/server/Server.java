@@ -1,4 +1,4 @@
-package marcos.psp.guessNumber.server;
+package marcos.psp.exercise6.server;
 
 import javax.net.ssl.SSLServerSocket;
 import javax.net.ssl.SSLServerSocketFactory;

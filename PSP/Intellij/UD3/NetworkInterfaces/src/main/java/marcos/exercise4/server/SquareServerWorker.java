@@ -30,10 +30,8 @@ public class SquareServerWorker implements Runnable {
                 int num= Integer.parseInt(intput);
                 int numCuadrado= (int) Math.pow(2,num);
 
-
                 //Envía la respuesta al cliente
                 out.println(numCuadrado);
-
             }
 
         } catch (IOException e) {

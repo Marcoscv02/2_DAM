@@ -27,16 +27,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Acceso a Datos/Apuntes AD.md",
+                "file": "Programación de Servicios y procesos/UD3/1. Programación de Comunicación en Redes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Apuntes AD"
+              "title": "1. Programación de Comunicación en Redes"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -167,13 +166,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Acceso a Datos/Apuntes AD.md",
+                "file": "Acceso a Datos/UD4/Introducción a Spring MVC (seminario).md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Esquema de Apuntes AD"
+              "title": "Esquema de Introducción a Spring MVC (seminario)"
             }
           },
           {
@@ -231,10 +230,11 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "58a5fb6010b98332",
+  "active": "1c4955deb4bc02cc",
   "lastOpenFiles": [
-    "Acceso a Datos/UD4/Introducción a Spring MVC (seminario).md",
+    "Programación de Servicios y procesos/UD3/1. Programación de Comunicación en Redes.md",
     "Acceso a Datos/Apuntes AD.md",
+    "Acceso a Datos/UD4/Introducción a Spring MVC (seminario).md",
     "Programación de Servicios y procesos/UD4/FTP.md",
     "JAVA/Pareadigma de Programacion funcional.md",
     "JAVA/Colecciones de Datos.md",
@@ -257,7 +257,6 @@
     "Programación de Servicios y procesos/images/Pasted image 20250218112557.png",
     "Programación de Servicios y procesos/images/Pasted image 20250218111415.png",
     "Programación de Servicios y procesos/UD4/RESOURCES/OpenSSL connection from Git bash command line.md",
-    "Programación de Servicios y procesos/UD3/1. Programación de Comunicación en Redes.md",
     "Acceso a Datos/UD3/5. Relaciones JPA.md",
     "Programación de Servicios y procesos/UD4/RESOURCES/Telnet connection -Putty.md",
     "Programación de Servicios y procesos/images/Pasted image 20250214085754.png",
