@@ -1,10 +1,10 @@
-package ad.maros.PruebaSpring;
+package marcos.ad.Ejercicios_Spring;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PruebaSpringApplicationTests {
+class EjerciciosSpringApplicationTests {
 
 	@Test
 	void contextLoads() {
