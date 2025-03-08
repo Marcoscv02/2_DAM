@@ -32,6 +32,7 @@ public class RandomServerWorkert implements Runnable{
                 switch (command){
                     case "quit":
                         writter.println("Cerrando programa...");
+                        writter.flush();
                         break;
 
                     case "word":

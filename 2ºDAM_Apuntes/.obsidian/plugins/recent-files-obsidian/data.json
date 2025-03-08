@@ -1,20 +1,44 @@
 {
   "recentFiles": [
     {
-      "basename": "Introducción a Spring MVC (seminario)",
-      "path": "Acceso a Datos/UD4/Introducción a Spring MVC (seminario).md"
+      "basename": "Expresiones Regulares",
+      "path": "JAVA/Expresiones Regulares.md"
+    },
+    {
+      "basename": "Formatos de Cadena",
+      "path": "JAVA/Formatos de Cadena.md"
+    },
+    {
+      "basename": "Expresiones Lambda",
+      "path": "JAVA/Expresiones Lambda.md"
+    },
+    {
+      "basename": "FTP",
+      "path": "Programación de Servicios y procesos/UD4/FTP.md"
+    },
+    {
+      "basename": "SMTP",
+      "path": "Programación de Servicios y procesos/UD4/SMTP.md"
+    },
+    {
+      "basename": "OpenSSL connection from Git bash command line",
+      "path": "Programación de Servicios y procesos/UD4/RESOURCES/OpenSSL connection from Git bash command line.md"
     },
     {
       "basename": "1. Programación de Comunicación en Redes",
       "path": "Programación de Servicios y procesos/UD3/1. Programación de Comunicación en Redes.md"
     },
     {
-      "basename": "Apuntes AD",
-      "path": "Acceso a Datos/Apuntes AD.md"
+      "basename": "1.Spring Boot",
+      "path": "Acceso a Datos/UD4/1.Spring Boot.md"
     },
     {
-      "basename": "FTP",
-      "path": "Programación de Servicios y procesos/UD4/FTP.md"
+      "basename": "Introducción a Spring MVC (seminario)",
+      "path": "Acceso a Datos/UD4/Introducción a Spring MVC (seminario).md"
+    },
+    {
+      "basename": "Apuntes AD",
+      "path": "Acceso a Datos/Apuntes AD.md"
     },
     {
       "basename": "Pareadigma de Programacion funcional",
@@ -23,14 +47,6 @@
     {
       "basename": "Colecciones de Datos",
       "path": "JAVA/Colecciones de Datos.md"
-    },
-    {
-      "basename": "Expresiones Lambda",
-      "path": "JAVA/Expresiones Lambda.md"
-    },
-    {
-      "basename": "Expresiones Regulares",
-      "path": "JAVA/Expresiones Regulares.md"
     },
     {
       "basename": "Patrón Factory",
@@ -47,10 +63,6 @@
     {
       "basename": "11. Herencia",
       "path": "Acceso a Datos/UD3/11. Herencia.md"
-    },
-    {
-      "basename": "SMTP",
-      "path": "Programación de Servicios y procesos/UD4/SMTP.md"
     },
     {
       "basename": "08. Consultas en JPA",
@@ -79,10 +91,6 @@
     {
       "basename": "Pasted image 20250218112557",
       "path": "Programación de Servicios y procesos/images/Pasted image 20250218112557.png"
-    },
-    {
-      "basename": "OpenSSL connection from Git bash command line",
-      "path": "Programación de Servicios y procesos/UD4/RESOURCES/OpenSSL connection from Git bash command line.md"
     },
     {
       "basename": "5. Relaciones JPA",
@@ -191,14 +199,6 @@
     {
       "basename": "Java.IO",
       "path": "Acceso a Datos/UD1/Java.IO.md"
-    },
-    {
-      "basename": "Pasted image 20250211205739",
-      "path": "Acceso a Datos/UD1/images/Pasted image 20250211205739.png"
-    },
-    {
-      "basename": "Pasted image 20250211204115",
-      "path": "Acceso a Datos/UD1/images/Pasted image 20250211204115.png"
     }
   ],
   "omittedPaths": [],

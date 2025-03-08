@@ -14,7 +14,6 @@ import java.util.Scanner;
 
 public class WikiApp {
     public static final String HOST = "192.168.56.1";
-    public static final int PORT = 21;
     public static final String USER = "marcos";
     public static final String PASSWORD = "marcos";
 

@@ -11,7 +11,7 @@ public class ReceiveMailsApp {
     public static void main(String[] args) {
         Properties props = new Properties();
 
-        try (InputStream inputStream= new FileInputStream("src/main/resources/smtp3.properties")){
+        try (InputStream inputStream= new FileInputStream("src/main/resources/pop3.properties")){
             props.load(inputStream);
 
         } catch (IOException e) {
@@ -19,8 +19,8 @@ public class ReceiveMailsApp {
             throw new RuntimeException(e);
         }
 
-        String user = props.getProperty("mail.smtp.user");
-        String password = props.getProperty("mail.smtp.password");
+        String user = props.getProperty("mail.pop3.user");
+        String password = props.getProperty("mail.pop3.password");
 
         Session session= Session.getDefaultInstance(props);
 
