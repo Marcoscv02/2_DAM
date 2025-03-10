@@ -53,14 +53,9 @@ public class Code64MailApp {
             MimeBodyPart text1= new MimeBodyPart();
             String html1 = "<h1>Hello Everione!</h1><br>"+
                     "<p>Lets's talk about when we use 'the' with transport</p>"+
-                    "<img src=\"data:image/png;base64," + base64Image + "\"/>";
+                    "<img src=\"data:image/png;base64," + base64Image + "\"/>"
+                    ;
             text1.setContent(html1, "text/html");
-
-            //Imagen
-            MimeBodyPart imagen= new MimeBodyPart();
-            imagen.attachFile("src/main/resources/exercise4/transports.png");
-            imagen.setContentID("<TransportsImagen>");
-            imagen.setDisposition(Part.INLINE);
 
             //segundo html
             MimeBodyPart text2= new MimeBodyPart();
@@ -88,7 +83,6 @@ public class Code64MailApp {
             //Multipart par unir todas las partes
             MimeMultipart multipart= new MimeMultipart();
             multipart.addBodyPart(text1);
-            multipart.addBodyPart(imagen);
             multipart.addBodyPart(text2);
 
             //Enviar mensaje

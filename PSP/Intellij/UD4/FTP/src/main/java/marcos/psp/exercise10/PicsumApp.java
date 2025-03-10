@@ -31,24 +31,34 @@ public class PicsumApp {
         File directory = new File(LOCAL_PATH);
         File[] imagenes = directory.listFiles();
 
-        for (File imagen: imagenes){
-            uploadImageToServer(imagen);
-        }
-    }
-
-
-    private static void uploadImageToServer(File imagen) {
-        String remotePath = "/data";
         JSch jsch = new JSch();
         Session session;
 
+        //Establecer conexion SSH
         try {
-            //Establecer conexion SSH
             session = jsch.getSession(USER, HOST, PORT);
             session.setPassword(PASSWORD);
             session.setConfig("StrictHostKeyChecking", "no");
             session.connect();
+            showSftpServerLogs(session);
+        } catch (JSchException e) {
+            throw new RuntimeException(e);
+        }
 
+
+        for (File imagen: imagenes){
+            uploadImageToServer(imagen, session);
+            imagen.delete();
+        }
+
+        session.disconnect();
+    }
+
+
+    private static void uploadImageToServer(File imagen, Session session) {
+        String remotePath = "/data";
+
+        try {
             //Abrir canal SFTP
             Channel canal = session.openChannel("sftp");
             canal.connect();

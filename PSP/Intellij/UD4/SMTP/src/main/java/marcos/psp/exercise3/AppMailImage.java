@@ -61,7 +61,7 @@ public class AppMailImage {
                         "<p>Today, we have another mini lesson about suffixes that talk about people. " +
                         "As you may know, 'suffixes' are little groups of letters that we put on the end " +
                         "of other words.</p>"+
-                        "<img src='cid:ProfesionalsImagen' style='width: 200px; height: 200px;'>";
+                        "<img src='cid:ProesionalsImagen' style='width: 200px; height: 200px;'>";
                 textpart1.setContent(htmlContent1,"text/html");
 
 
