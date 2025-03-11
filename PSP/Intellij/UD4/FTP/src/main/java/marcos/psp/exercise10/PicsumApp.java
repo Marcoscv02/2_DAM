@@ -17,16 +17,10 @@ public class PicsumApp {
     public static final String USER = "tester";
     public static final String PASSWORD = "password";
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Random random = new Random();
         int iteraciones = random.nextInt(30);
         ExecutorService pool = Executors.newFixedThreadPool(16);
-
-        for (int i = 0; i < iteraciones; i++) {
-            Runnable task = new DownloadImage(URL, LOCAL_PATH, i);
-            pool.execute(task);
-        }
-        pool.shutdown();
 
         File directory = new File(LOCAL_PATH);
         File[] imagenes = directory.listFiles();
@@ -45,9 +39,17 @@ public class PicsumApp {
             throw new RuntimeException(e);
         }
 
+        for (int i = 0; i < iteraciones; i++) {
+//            Runnable task = new DownloadImage(URL, LOCAL_PATH, i);
+//            pool.execute(task);
 
-        for (File imagen: imagenes){
+            Thread th = new Thread(new DownloadImage(URL, LOCAL_PATH, i));
+            th.start();
+
+            File imagen = imagenes[i];
+            System.out.println(imagen.getName());
             uploadImageToServer(imagen, session);
+
             imagen.delete();
         }
 
@@ -56,7 +58,6 @@ public class PicsumApp {
 
 
     private static void uploadImageToServer(File imagen, Session session) {
-        String remotePath = "/data";
 
         try {
             //Abrir canal SFTP
@@ -65,7 +66,7 @@ public class PicsumApp {
             //Conversion a canal sftp
             ChannelSftp canalSftp = (ChannelSftp) canal;
 
-            canalSftp.put(imagen.getPath(), remotePath);
+            canalSftp.put(imagen.getPath(), imagen.getName());
             showSftpServerLogs(session);
             System.out.println("imagen subida correctamente");
 
