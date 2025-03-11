@@ -1,26 +1,25 @@
-package marcos.psp.exercise10;
+package repaso.exrcise10;
 
 import com.jcraft.jsch.*;
+import marcos.psp.exercise10.DownloadImage;
 
 import java.io.File;
 import java.util.Random;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class PicsumApp {
-    //Conexion
+    //Constantes de conexion
     public static final String URL = "https://picsum.photos/200/300";
     public static final String LOCAL_PATH = "src/main/resources/Exercise10";
-    public static final String PRIVATE_KEY_PATH = "src/main/resources/ClavePrivadaMarcos.ppk";
+    public static final String PRIVATE_KEY_PATH = "src/main/resources/MarcosPrivate.ppk";
 
-    //Servidor
+    //Constantes de servidor
     public static final String HOST = "192.168.56.1";
     public static final int PORT = 60000;
     public static final String USER = "tester";
-    public static final String PASSWORD = "password";
 
-    public static void main(String[] args) throws InterruptedException {
-        Random random = new Random();
+
+    public static void main(String[] args) {
+        java.util.Random random = new Random();
         int iteraciones = random.nextInt(30);
 
         File directory = new File(LOCAL_PATH);
@@ -29,19 +28,21 @@ public class PicsumApp {
         JSch jsch = new JSch();
         Session session = null;
 
-        //Establecer conexion SSH
-        try {
+        try{
+            jsch .addIdentity(PRIVATE_KEY_PATH);
+            showSftpServerLogs(session);
             session = jsch.getSession(USER, HOST, PORT);
-            session.setPassword(PASSWORD);
-            session.setConfig("StrictHostKeyChecking", "no");
+            session.setConfig("PreferredAuthentications", "publickey,keyboardinteractive,password");
 
+            java.util.Properties config = new java.util.Properties();
+            config.put("StrictHostKeyChecking", "no");
+            session.setConfig(config);
 
             session.connect();
-            showSftpServerLogs(session);
-
             System.out.println("Connected");
+
         } catch (JSchException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Failed to create Jsch Session object.", e);
         }
 
         for (int i = 0; i < iteraciones; i++) {
