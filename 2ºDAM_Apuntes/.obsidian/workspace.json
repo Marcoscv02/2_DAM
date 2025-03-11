@@ -181,13 +181,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "JAVA/Expresiones Regulares.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Esquema de Expresiones Regulares"
+              "title": "Esquema"
             }
           },
           {
@@ -245,7 +244,7 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "80e0d561389a761f",
+  "active": "58a5fb6010b98332",
   "lastOpenFiles": [
     "JAVA/Formatos de Cadena.md",
     "JAVA/Expresiones Regulares.md",
