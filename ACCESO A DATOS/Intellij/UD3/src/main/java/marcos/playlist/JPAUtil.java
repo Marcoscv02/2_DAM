@@ -27,8 +27,4 @@ public class JPAUtil {
         System.out.println("Ya hay una instancia abierta de EntityManager");
         return null;
     }
-
-    public static EntityManager getEntityManager (EntityManagerFactory emf){
-        
-    }
 }

@@ -4,7 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efb560e1-3ed5-42d9-bb9f-9dff0c28c7de" name="Changes" comment="" />
+    <list default="true" id="efb560e1-3ed5-42d9-bb9f-9dff0c28c7de" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/marcos/Peliculas/JPAUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/marcos/Peliculas/model/claves/ClavePeliculaActor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/marcos/Peliculas/model/claves/PeliculaActor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/marcos/Peliculas/model/entities/Actor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/marcos/Peliculas/model/entities/Pelicula.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UD4/Ejercicios_Spring/src/main/java/marcos/ad/vehiculos/model/Coche.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UD4/Ejercicios_Spring/src/main/java/marcos/ad/vehiculos/model/Moto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UD4/Ejercicios_Spring/src/main/java/marcos/ad/vehiculos/model/Propietario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UD4/Ejercicios_Spring/src/main/java/marcos/ad/vehiculos/model/Vehiculo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../2ºDAM_Apuntes/.obsidian/plugins/colored-text/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2ºDAM_Apuntes/.obsidian/plugins/colored-text/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../2ºDAM_Apuntes/.obsidian/plugins/recent-files-obsidian/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2ºDAM_Apuntes/.obsidian/plugins/recent-files-obsidian/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../2ºDAM_Apuntes/.obsidian/workspace.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2ºDAM_Apuntes/.obsidian/workspace.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../2ºDAM_Apuntes/Acceso a Datos/UD3/4. Mapeo de entidades.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2ºDAM_Apuntes/Acceso a Datos/UD3/4. Mapeo de entidades.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../2ºDAM_Apuntes/Acceso a Datos/UD3/5. Relaciones JPA.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2ºDAM_Apuntes/Acceso a Datos/UD3/5. Relaciones JPA.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../2ºDAM_Apuntes/Acceso a Datos/UD4/1.Spring Boot.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2ºDAM_Apuntes/Acceso a Datos/UD4/1.Spring Boot.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DB/JPA-hibernate/peliculas.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DB/JPA-hibernate/playlist.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/../../DB/JPA-hibernate/playlist.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DB/JPA-hibernate/playlist.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/../../DB/JPA-hibernate/playlist.trace.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Peliculas/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/marcos/Peliculas/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Peliculas/model/Pelicula.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Peliculas/model/Personaxe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Peliculas/model/claves/clavePeliculaPesonaxe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Peliculas/model/embebidos/DetallePelicula.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Peliculas/model/relaciones/PeliculaPersonaxe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/embebidos_clavesCompuestas/JPAUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/marcos/embebidos_clavesCompuestas/JPAUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/playlist/JPAUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/marcos/playlist/JPAUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,16 +64,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.App.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/a24marcoscv/Documents/2_DAM/PSP/Intellij/UD4/FTP"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.App.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Usuario/Documentos/DAM/2_DAM/2_DAM/ACCESO A DATOS/Intellij/UD3&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

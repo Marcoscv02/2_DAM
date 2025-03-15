@@ -1,12 +1,68 @@
 {
   "recentFiles": [
     {
-      "basename": "FTP",
-      "path": "Programación de Servicios y procesos/UD4/FTP.md"
+      "basename": "08. Consultas en JPA",
+      "path": "Acceso a Datos/UD3/08. Consultas en JPA.md"
+    },
+    {
+      "basename": "07. Mapeo de colecciones.",
+      "path": "Acceso a Datos/UD3/07. Mapeo de colecciones..md"
+    },
+    {
+      "basename": "6. Objetos Embebidos",
+      "path": "Acceso a Datos/UD3/6. Objetos Embebidos.md"
+    },
+    {
+      "basename": "5. Relaciones JPA",
+      "path": "Acceso a Datos/UD3/5. Relaciones JPA.md"
+    },
+    {
+      "basename": "4. Mapeo de entidades",
+      "path": "Acceso a Datos/UD3/4. Mapeo de entidades.md"
+    },
+    {
+      "basename": "2. JPA vs Hibernate",
+      "path": "Acceso a Datos/UD3/2. JPA vs Hibernate.md"
+    },
+    {
+      "basename": "1.Spring Boot",
+      "path": "Acceso a Datos/UD4/1.Spring Boot.md"
+    },
+    {
+      "basename": "2. Spring Data JPA",
+      "path": "Acceso a Datos/UD4/2. Spring Data JPA.md"
     },
     {
       "basename": "Expresiones Regulares",
       "path": "JAVA/Expresiones Regulares.md"
+    },
+    {
+      "basename": "5. Paginación y Ordenación de Spring Data Repository en Spring Data REST",
+      "path": "Acceso a Datos/UD4/5. Paginación y Ordenación de Spring Data Repository en Spring Data REST.md"
+    },
+    {
+      "basename": "4. Paginación y Ordenación",
+      "path": "Acceso a Datos/UD4/4. Paginación y Ordenación.md"
+    },
+    {
+      "basename": "3. Repositorios Spring Data",
+      "path": "Acceso a Datos/UD4/3. Repositorios Spring Data.md"
+    },
+    {
+      "basename": "Introducción a Spring MVC (seminario)",
+      "path": "Acceso a Datos/UD4/Introducción a Spring MVC (seminario).md"
+    },
+    {
+      "basename": "1. Programación de Comunicación en Redes",
+      "path": "Programación de Servicios y procesos/UD3/1. Programación de Comunicación en Redes.md"
+    },
+    {
+      "basename": "SMTP",
+      "path": "Programación de Servicios y procesos/UD4/SMTP.md"
+    },
+    {
+      "basename": "FTP",
+      "path": "Programación de Servicios y procesos/UD4/FTP.md"
     },
     {
       "basename": "Formatos de Cadena",
@@ -17,24 +73,8 @@
       "path": "JAVA/Expresiones Lambda.md"
     },
     {
-      "basename": "SMTP",
-      "path": "Programación de Servicios y procesos/UD4/SMTP.md"
-    },
-    {
       "basename": "OpenSSL connection from Git bash command line",
       "path": "Programación de Servicios y procesos/UD4/RESOURCES/OpenSSL connection from Git bash command line.md"
-    },
-    {
-      "basename": "1. Programación de Comunicación en Redes",
-      "path": "Programación de Servicios y procesos/UD3/1. Programación de Comunicación en Redes.md"
-    },
-    {
-      "basename": "1.Spring Boot",
-      "path": "Acceso a Datos/UD4/1.Spring Boot.md"
-    },
-    {
-      "basename": "Introducción a Spring MVC (seminario)",
-      "path": "Acceso a Datos/UD4/Introducción a Spring MVC (seminario).md"
     },
     {
       "basename": "Apuntes AD",
@@ -65,24 +105,8 @@
       "path": "Acceso a Datos/UD3/11. Herencia.md"
     },
     {
-      "basename": "08. Consultas en JPA",
-      "path": "Acceso a Datos/UD3/08. Consultas en JPA.md"
-    },
-    {
-      "basename": "07. Mapeo de colecciones.",
-      "path": "Acceso a Datos/UD3/07. Mapeo de colecciones..md"
-    },
-    {
       "basename": "9. JPQL.",
       "path": "Acceso a Datos/UD3/9. JPQL..md"
-    },
-    {
-      "basename": "6. Objetos Embebidos",
-      "path": "Acceso a Datos/UD3/6. Objetos Embebidos.md"
-    },
-    {
-      "basename": "4. Mapeo de entidades",
-      "path": "Acceso a Datos/UD3/4. Mapeo de entidades.md"
     },
     {
       "basename": "1. Threads Programming",
@@ -91,10 +115,6 @@
     {
       "basename": "Pasted image 20250218112557",
       "path": "Programación de Servicios y procesos/images/Pasted image 20250218112557.png"
-    },
-    {
-      "basename": "5. Relaciones JPA",
-      "path": "Acceso a Datos/UD3/5. Relaciones JPA.md"
     },
     {
       "basename": "Telnet connection -Putty",
@@ -153,10 +173,6 @@
       "path": "Acceso a Datos/UD3/1. Jakarta Persistence API.md"
     },
     {
-      "basename": "2. JPA vs Hibernate",
-      "path": "Acceso a Datos/UD3/2. JPA vs Hibernate.md"
-    },
-    {
       "basename": "3. Gestión de entidades con EntityManager",
       "path": "Acceso a Datos/UD3/3. Gestión de entidades con EntityManager.md"
     },
@@ -183,22 +199,6 @@
     {
       "basename": "1. PROCESAMIENTO DE SENTENCAS SQL",
       "path": "Acceso a Datos/UD2/3. Procesamiento de Sentencias SQL/1. PROCESAMIENTO DE SENTENCAS SQL.md"
-    },
-    {
-      "basename": "2. PostgreSQL - Características y Operadores",
-      "path": "Acceso a Datos/UD2/2. PostgreSQL - Características y Operadores.md"
-    },
-    {
-      "basename": "1. JDBC Introducción a las bases de datos relacionales",
-      "path": "Acceso a Datos/UD2/1. JDBC Introducción a las bases de datos relacionales.md"
-    },
-    {
-      "basename": "Pasted image 20250211210451",
-      "path": "Acceso a Datos/UD1/images/Pasted image 20250211210451.png"
-    },
-    {
-      "basename": "Java.IO",
-      "path": "Acceso a Datos/UD1/Java.IO.md"
     }
   ],
   "omittedPaths": [],

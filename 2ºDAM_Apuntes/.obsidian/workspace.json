@@ -4,53 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "4832d2231f7fd1d3",
+        "id": "6636bd5abcd0803e",
         "type": "tabs",
         "children": [
           {
-            "id": "1c4955deb4bc02cc",
+            "id": "c6a2e0fc9b053102",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JAVA/Expresiones Regulares.md",
+                "file": "Acceso a Datos/UD3/08. Consultas en JPA.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Expresiones Regulares"
-            }
-          },
-          {
-            "id": "80e0d561389a761f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Programación de Servicios y procesos/UD4/FTP.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "FTP"
-            }
-          },
-          {
-            "id": "a748a658f1223f7f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Programación de Servicios y procesos/UD3/1. Programación de Comunicación en Redes.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "1. Programación de Comunicación en Redes"
+              "title": "08. Consultas en JPA"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -181,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Programación de Servicios y procesos/UD4/FTP.md",
+                "file": "Acceso a Datos/UD3/08. Consultas en JPA.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Esquema de FTP"
+              "title": "Esquema de 08. Consultas en JPA"
             }
           },
           {
@@ -245,17 +216,28 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "80e0d561389a761f",
+  "active": "c6a2e0fc9b053102",
   "lastOpenFiles": [
+    "Acceso a Datos/UD3/07. Mapeo de colecciones..md",
+    "Acceso a Datos/UD3/6. Objetos Embebidos.md",
+    "Acceso a Datos/UD3/5. Relaciones JPA.md",
+    "Acceso a Datos/UD3/4. Mapeo de entidades.md",
+    "Acceso a Datos/UD3/2. JPA vs Hibernate.md",
+    "Acceso a Datos/UD4/1.Spring Boot.md",
+    "Acceso a Datos/UD4/2. Spring Data JPA.md",
     "JAVA/Expresiones Regulares.md",
+    "Acceso a Datos/UD4/5. Paginación y Ordenación de Spring Data Repository en Spring Data REST.md",
+    "Acceso a Datos/UD4/4. Paginación y Ordenación.md",
+    "Acceso a Datos/UD4/3. Repositorios Spring Data.md",
+    "Acceso a Datos/UD4/images",
+    "Acceso a Datos/UD4/images/Pasted image 20250312183843.png",
+    "Acceso a Datos/UD4/Introducción a Spring MVC (seminario).md",
+    "Programación de Servicios y procesos/UD3/1. Programación de Comunicación en Redes.md",
+    "Programación de Servicios y procesos/UD4/SMTP.md",
+    "Programación de Servicios y procesos/UD4/FTP.md",
     "JAVA/Formatos de Cadena.md",
     "JAVA/Expresiones Lambda.md",
-    "Programación de Servicios y procesos/UD4/FTP.md",
-    "Programación de Servicios y procesos/UD4/SMTP.md",
     "Programación de Servicios y procesos/UD4/RESOURCES/OpenSSL connection from Git bash command line.md",
-    "Programación de Servicios y procesos/UD3/1. Programación de Comunicación en Redes.md",
-    "Acceso a Datos/UD4/1.Spring Boot.md",
-    "Acceso a Datos/UD4/Introducción a Spring MVC (seminario).md",
     "Acceso a Datos/Apuntes AD.md",
     "JAVA/Pareadigma de Programacion funcional.md",
     "JAVA/Colecciones de Datos.md",
@@ -267,31 +249,20 @@
     "Acceso a Datos/UD3/10.Paginacion de Consultas.md",
     "Acceso a Datos/UD3/11. Herencia.md",
     "Acceso a Datos/UD3/08. Consultas en JPA.md",
-    "Acceso a Datos/UD3/07. Mapeo de colecciones..md",
-    "Acceso a Datos/UD3/9. JPQL..md",
-    "Acceso a Datos/UD3/6. Objetos Embebidos.md",
-    "Acceso a Datos/UD3/4. Mapeo de entidades.md",
     "Acceso a Datos/UD3/images/Pasted image 20250220092740.png",
     "Programación de Servicios y procesos/images/Pasted image 20250218112557.png",
     "Programación de Servicios y procesos/images/Pasted image 20250218111415.png",
-    "Acceso a Datos/UD3/5. Relaciones JPA.md",
-    "Programación de Servicios y procesos/UD4/RESOURCES/Telnet connection -Putty.md",
     "Programación de Servicios y procesos/images/Pasted image 20250214085754.png",
     "Programación de Servicios y procesos/images/Pasted image 20250214085747.png",
     "Programación de Servicios y procesos/images/Pasted image 20250214085738.png",
-    "Programación de Servicios y procesos/UD2/2. Threads Pools.md",
     "Programación de Servicios y procesos/UD4/RESOURCES",
-    "Programación de Servicios y procesos/UD2/3. Thread synchronization and communication.md",
-    "Programación de Servicios y procesos/UD2/1. Threads Programming.md",
     "Programación de Servicios y procesos/images/Pasted image 20250213110725.png",
     "Programación de Servicios y procesos/images/Pasted image 20250213104817.png",
-    "Programación de Servicios y procesos/images/Pasted image 20250213104752.png",
     "Programación de Servicios y procesos/UD4",
     "Programación de Servicios y procesos/UD3",
     "Programación de Servicios y procesos/UD2",
     "Nueva carpeta",
     "Programación de Servicios y procesos/images",
-    "Programación de Servicios y procesos/UD1",
-    "Programación de Servicios y procesos"
+    "Programación de Servicios y procesos/UD1"
   ]
 }
