@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Acceso a Datos/UD3/08. Consultas en JPA.md",
+                "file": "Acceso a Datos/UD3/4. Mapeo de entidades.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "08. Consultas en JPA"
+              "title": "4. Mapeo de entidades"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Acceso a Datos/UD3/08. Consultas en JPA.md",
+                "file": "Acceso a Datos/UD3/4. Mapeo de entidades.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Esquema de 08. Consultas en JPA"
+              "title": "Esquema de 4. Mapeo de entidades"
             }
           },
           {
@@ -218,20 +218,22 @@
   },
   "active": "c6a2e0fc9b053102",
   "lastOpenFiles": [
+    "Acceso a Datos/UD4/3. Repositorios Spring Data.md",
+    "Acceso a Datos/UD4/2. Spring Data JPA.md",
+    "Acceso a Datos/UD4/1.Spring Boot.md",
+    "Acceso a Datos/UD3/11. Herencia.md",
+    "Acceso a Datos/UD4/Introducción a Spring MVC (seminario).md",
+    "Acceso a Datos/UD4/5. Paginación y Ordenación de Spring Data Repository en Spring Data REST.md",
+    "Acceso a Datos/UD4/4. Paginación y Ordenación.md",
     "Acceso a Datos/UD3/07. Mapeo de colecciones..md",
+    "Acceso a Datos/UD3/08. Consultas en JPA.md",
     "Acceso a Datos/UD3/6. Objetos Embebidos.md",
     "Acceso a Datos/UD3/5. Relaciones JPA.md",
     "Acceso a Datos/UD3/4. Mapeo de entidades.md",
     "Acceso a Datos/UD3/2. JPA vs Hibernate.md",
-    "Acceso a Datos/UD4/1.Spring Boot.md",
-    "Acceso a Datos/UD4/2. Spring Data JPA.md",
     "JAVA/Expresiones Regulares.md",
-    "Acceso a Datos/UD4/5. Paginación y Ordenación de Spring Data Repository en Spring Data REST.md",
-    "Acceso a Datos/UD4/4. Paginación y Ordenación.md",
-    "Acceso a Datos/UD4/3. Repositorios Spring Data.md",
     "Acceso a Datos/UD4/images",
     "Acceso a Datos/UD4/images/Pasted image 20250312183843.png",
-    "Acceso a Datos/UD4/Introducción a Spring MVC (seminario).md",
     "Programación de Servicios y procesos/UD3/1. Programación de Comunicación en Redes.md",
     "Programación de Servicios y procesos/UD4/SMTP.md",
     "Programación de Servicios y procesos/UD4/FTP.md",
@@ -247,8 +249,6 @@
     "JAVA/Imagenes/Pasted image 20250227175413.png",
     "JAVA",
     "Acceso a Datos/UD3/10.Paginacion de Consultas.md",
-    "Acceso a Datos/UD3/11. Herencia.md",
-    "Acceso a Datos/UD3/08. Consultas en JPA.md",
     "Acceso a Datos/UD3/images/Pasted image 20250220092740.png",
     "Programación de Servicios y procesos/images/Pasted image 20250218112557.png",
     "Programación de Servicios y procesos/images/Pasted image 20250218111415.png",

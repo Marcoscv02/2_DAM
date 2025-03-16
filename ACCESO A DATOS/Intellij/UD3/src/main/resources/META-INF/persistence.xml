@@ -360,8 +360,10 @@
         <provider> org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <class>marcos.Peliculas.model.entities.Pelicula</class>
+        <class>marcos.Peliculas.model.entities.Serie</class>
         <class>marcos.Peliculas.model.entities.Actor</class>
-        <class>marcos.Peliculas.model.claves.PeliculaActor</class>
+        <class>marcos.Peliculas.model.claves.peliculaActor.PeliculaActor</class>
+        <class>marcos.Peliculas.model.claves.serieActor.SerieActor</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
 
         <properties>
@@ -375,6 +377,41 @@
 
             <!--Esta propiedad genera el esquema de la base de datos  -->
             <property name="jakarta.persistence.schema-generation.database.action" value="none" />
+
+            <!--Dialecto de SGBD para optimizar-->
+            <property name="hibernate.dialect"    value="org.hibernate.dialect.H2Dialect" />
+
+            <!--Mostrar y formatear sentencias Sql-->
+            <property name="hibernate.show_sql"   value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.highlight_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+
+    <!--Unidad de Persistencia para EJERCICIO VEHICULOS H2-->
+    <persistence-unit name="jpa-vehiculos-h2">
+        <description>
+            Unidad de persistencia para jakarta persistencia en ejercicio de vehículos para precticar herencia con SGBD h2
+        </description>
+        <provider> org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <class>marcos.Vehiculos.model.vehiculo.Coche</class>
+        <class>marcos.Vehiculos.model.vehiculo.Moto</class>
+        <class>marcos.Vehiculos.model.propietario.Propietario</class>
+        <class>marcos.Vehiculos.model.propietario.Direccion</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            <!--Driver y url a base de  datos -->
+            <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver" />
+            <property name="jakarta.persistence.jdbc.url"    value="jdbc:h2:C:\Users\Usuario\Documentos\DAM\2_DAM\2_DAM\ACCESO A DATOS\DB\JPA-hibernate\vehiculos;DATABASE_TO_UPPER=FALSE" />
+
+            <!--Sin usuario y contraseña para base de datos-->
+            <property name="jakarta.persistence.jdbc.user"   value="" />
+            <property name="jakarta.persistence.jdbc.password" value="" />
+
+            <!--Esta propiedad genera el esquema de la base de datos  -->
+            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create" />
 
             <!--Dialecto de SGBD para optimizar-->
             <property name="hibernate.dialect"    value="org.hibernate.dialect.H2Dialect" />

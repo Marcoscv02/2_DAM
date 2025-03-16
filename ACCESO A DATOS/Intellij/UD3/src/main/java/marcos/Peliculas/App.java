@@ -1,11 +1,9 @@
 package marcos.Peliculas;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.EntityTransaction;
-import jakarta.persistence.Query;
-import marcos.Peliculas.model.claves.ClavePeliculaActor;
-import marcos.Peliculas.model.claves.PeliculaActor;
+import jakarta.persistence.*;
+import marcos.Peliculas.model.claves.peliculaActor.ClavePeliculaActor;
+import marcos.Peliculas.model.claves.peliculaActor.PeliculaActor;
+import marcos.Peliculas.model.embebidos.Multimedia;
 import marcos.Peliculas.model.entities.Actor;
 import marcos.Peliculas.model.entities.Pelicula;
 
@@ -13,16 +11,27 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class App {
+
     public static EntityManagerFactory emf = JPAUtil.getInstance(JPAUtil.PERSISTENCE_H2);
     public static EntityManager em = emf.createEntityManager();
     public static EntityTransaction transaction = em.getTransaction();
 
     public static void main(String[] args) {
-        //createInitialData();
 
+        //createInitialData();
+        queryesPeliculas();
+
+         
+
+    }
+
+    /**
+     *Este metodo ejecuta distintas consultas sobre las peliculas
+     */
+    public static void queryesPeliculas(){
         //Consultas
         System.out.println("___Películas con duracion mayor a 120 minutos___");
-        Query q = em.createQuery("SELECT p FROM Pelicula p WHERE p.duracion >= :duracion", Pelicula.class);
+        TypedQuery<Pelicula> q = em.createQuery("SELECT p FROM Pelicula p WHERE p.duracion >= :duracion", Pelicula.class);
         q.setParameter("duracion",120);
         List<Pelicula> resultQuery1 = q.getResultList();
         for (Pelicula p:resultQuery1)
@@ -30,7 +39,7 @@ public class App {
 
 
         System.out.println("___Películas de género 'Drama'___");
-        Query a = em.createQuery("SELECT p FROM Pelicula p WHERE p.xenero = :xenero", Pelicula.class);
+        TypedQuery<Pelicula> a = em.createQuery("SELECT p FROM Pelicula p WHERE p.multimedia.xenero = :xenero", Pelicula.class);
         a.setParameter("xenero", "Drama");
         List<Pelicula> resultQuery2 = a.getResultList();
         for (Pelicula p: resultQuery2)
@@ -38,7 +47,7 @@ public class App {
 
 
         System.out.println("___Películas de mas de 120 minutos con genero 'Drama'___");
-        Query b = em.createQuery("SELECT p FROM Pelicula p WHERE p.xenero = :xenero AND p.duracion >= :duracion", Pelicula.class);
+        TypedQuery<Pelicula> b = em.createQuery("SELECT p FROM Pelicula p WHERE p.multimedia.xenero = :xenero AND p.duracion >= :duracion", Pelicula.class);
         b.setParameter("xenero", "Drama");
         b.setParameter("duracion", 120);
         List<Pelicula> resultQuery3 = b.getResultList();
@@ -47,7 +56,7 @@ public class App {
 
 
         System.out.println("___Peliculas en las que sale Javier Bardem___");
-        Query c = em.createQuery(
+        TypedQuery<Pelicula> c = em.createQuery(
                 "SELECT p FROM Pelicula p " +
                         "JOIN p.personaxes pp " +      // Relación Pelicula -> PeliculaPersonaxe
                         "JOIN pp.actor a " +          // Relación PeliculaPersonaxe -> Actor
@@ -59,27 +68,45 @@ public class App {
 
 
         System.out.println("___Solicitar nombre d una pelicula por id___");
-        Query d = em.createQuery("SELECT p.nome FROM Pelicula p WHERE id = :id", String.class);
+        TypedQuery<String> d = em.createQuery("SELECT p.multimedia.nome FROM Pelicula p WHERE id = :id", String.class);
         d.setParameter("id",4);
-        String result = d.getSingleResult().toString();
+        String result = d.getSingleResult();
         System.out.println(result);
 
 
         System.out.println("___Solicitar todas las peliculas en las que Ricardo Darín fue protagonista");
-        Query e = em.createQuery(
+        TypedQuery<Pelicula>  e = em.createQuery(
                 "SELECT p FROM Pelicula p " +
                         "JOIN p.personaxes pp " +   //Accediendo a PeliculaPersonaxe
                         "JOIN pp.actor a " +        //Accediendo a Actor
                         "WHERE pp.importancia = :importancia " +
                         "AND  a.nome = :nome"
-        , Pelicula.class);
+                , Pelicula.class);
         e.setParameter("importancia", "protagonista");
         e.setParameter("nome", "Ricardo Darín");
         List<Pelicula>resultQuery6 = e.getResultList();
         for (Pelicula p: resultQuery6)
             System.out.println(p+"\n");
 
+
+        System.out.println("___Solicitar el titulo de todas las series en las que ha trabajado Lupita Nyong'o___");
+        TypedQuery<String> f = em.createQuery("SELECT s.multimedia.nome FROM Serie s " +
+                        "JOIN s.actores sa " +
+                        "JOIN sa.actor a " +
+                        "WHERE a.nome = :nome"
+                , String.class);
+        f.setParameter("nome","Lupita Nyong'o");
+        List<String>nomes = f.getResultList();
+        for (String nome: nomes){
+            System.out.println(nome+"\n");
+        }
+
+
     }
+
+
+
+
 
 
     /**
@@ -165,58 +192,37 @@ public class App {
 
             // ===== 2. Crear Películas =====
             Pelicula pelicula1 = new Pelicula(
-                    "El laberinto del fauno",
-                    "Fantasía oscura",
-                    "México",
-                    LocalDate.of(2006, 10, 11),
+                    new Multimedia("El laberinto del fauno", "Fantasía oscura","México", LocalDate.of(2006, 10, 11)),
                     118
             );
 
             Pelicula pelicula2 = new Pelicula(
-                    "Los lunes al sol",
-                    "Drama social",
-                    "España",
-                    LocalDate.of(2002, 9, 27),
+                    new Multimedia("Los lunes al sol", "Drama social", "España", LocalDate.of(2002, 9, 27)),
                     113
             );
 
             Pelicula pelicula3 = new Pelicula(
-                    "Volver",
-                    "Drama",
-                    "España",
-                    LocalDate.of(2006, 3, 17),
+                    new Multimedia("Volver", "Drama", "España", LocalDate.of(2006, 3, 17)),
                     121
             );
 
             Pelicula pelicula4 = new Pelicula(
-                    "El faro",
-                    "Psicológico",
-                    "Estados Unidos",
-                    LocalDate.of(2019, 10, 18),
+                    new Multimedia("El faro", "Psicológico", "Estados Unidos", LocalDate.of(2019, 10, 18)),
                     109
             );
 
             Pelicula pelicula5 = new Pelicula(
-                    "La Vie en Rose",
-                    "Biográfico",
-                    "Francia",
-                    LocalDate.of(2007, 2, 14),
+                    new Multimedia("La Vie en Rose", "Biográfico", "Francia", LocalDate.of(2007, 2, 14)),
                     140
             );
 
             Pelicula pelicula6 = new Pelicula(
-                    "El secreto de sus ojos",
-                    "Thriller",
-                    "Argentina",
-                    LocalDate.of(2009, 8, 13),
+                    new Multimedia("El secreto de sus ojos", "Thriller", "Argentina", LocalDate.of(2009, 8, 13)),
                     129
             );
 
             Pelicula pelicula7 = new Pelicula(
-                    "Black Panther",
-                    "Superhéroes",
-                    "Estados Unidos",
-                    LocalDate.of(2018, 2, 16),
+                    new Multimedia("Black Panther", "Superhéroes", "Estados Unidos", LocalDate.of(2018, 2, 16)),
                     134
             );
 
@@ -305,4 +311,8 @@ public class App {
             e.printStackTrace();
         }
     }
+
+
+
+
 }

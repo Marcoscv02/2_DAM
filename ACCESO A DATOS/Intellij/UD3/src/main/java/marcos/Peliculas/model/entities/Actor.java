@@ -1,7 +1,8 @@
 package marcos.Peliculas.model.entities;
 
 import jakarta.persistence.*;
-import marcos.Peliculas.model.claves.PeliculaActor;
+import marcos.Peliculas.model.claves.peliculaActor.PeliculaActor;
+import marcos.Peliculas.model.claves.serieActor.SerieActor;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -23,7 +24,10 @@ public class Actor {
     private String paisNacemento;
 
     @OneToMany (mappedBy = "actor")
-    private List<PeliculaActor> peliculasPersonaxe;
+    private List<PeliculaActor> peliculas;
+
+    @OneToMany(mappedBy = "actor")
+    private List<SerieActor> series;
 
     public Actor(String nome, String sexo, LocalDate dataNacemento, String paisNacemento) {
     }
@@ -47,7 +51,7 @@ public class Actor {
         this.paisNacemento = paisNacemento;
     }
 
-    public Actor(Long idActor, String nome, String sexo, LocalDate dataNacemento, String descripcion, String filmografia, String paisNacemento, List<PeliculaActor> peliculasPersonaxe) {
+    public Actor(Long idActor, String nome, String sexo, LocalDate dataNacemento, String descripcion, String filmografia, String paisNacemento, List<PeliculaActor> peliculas) {
         this.idActor = idActor;
         this.nome = nome;
         this.sexo = sexo;
@@ -55,7 +59,7 @@ public class Actor {
         this.descripcion = descripcion;
         this.filmografia = filmografia;
         this.paisNacemento = paisNacemento;
-        this.peliculasPersonaxe = peliculasPersonaxe;
+        this.peliculas = peliculas;
     }
 
     public Long getIdActor() {
@@ -114,12 +118,12 @@ public class Actor {
         this.paisNacemento = paisNacemento;
     }
 
-    public List<PeliculaActor> getPeliculasPersonaxe() {
-        return peliculasPersonaxe;
+    public List<PeliculaActor> getPeliculas() {
+        return peliculas;
     }
 
-    public void setPeliculasPersonaxe(List<PeliculaActor> peliculasPersonaxe) {
-        this.peliculasPersonaxe = peliculasPersonaxe;
+    public void setPeliculas(List<PeliculaActor> peliculas) {
+        this.peliculas = peliculas;
     }
 
     @Override
