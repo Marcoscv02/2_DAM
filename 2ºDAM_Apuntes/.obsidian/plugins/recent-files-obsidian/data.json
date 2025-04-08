@@ -1,6 +1,70 @@
 {
   "recentFiles": [
     {
+      "basename": "1. Programación de Comunicación en Redes",
+      "path": "Programación de Servicios y procesos/UD3/1. Programación de Comunicación en Redes.md"
+    },
+    {
+      "basename": "Apuntes Hibermate (seminario)",
+      "path": "Acceso a Datos/UD3/Apuntes Hibermate (seminario).md"
+    },
+    {
+      "basename": "11. Herencia",
+      "path": "Acceso a Datos/UD3/11. Herencia.md"
+    },
+    {
+      "basename": "Apuntes AD",
+      "path": "Acceso a Datos/Apuntes AD.md"
+    },
+    {
+      "basename": "08. Consultas en JPA",
+      "path": "Acceso a Datos/UD3/08. Consultas en JPA.md"
+    },
+    {
+      "basename": "5. GSON Creación y lectura de objetos JSON",
+      "path": "Acceso a Datos/UD1/JSON/5. GSON Creación y lectura de objetos JSON.md"
+    },
+    {
+      "basename": "3. GSON Introducción",
+      "path": "Acceso a Datos/UD1/JSON/3. GSON Introducción.md"
+    },
+    {
+      "basename": "2. JSON con el API JavaScript de Java",
+      "path": "Acceso a Datos/UD1/JSON/2. JSON con el API JavaScript de Java.md"
+    },
+    {
+      "basename": "0. Introducción a JSON",
+      "path": "Acceso a Datos/UD1/JSON/0. Introducción a JSON.md"
+    },
+    {
+      "basename": "1. Bibliotecas JSON para JAVA",
+      "path": "Acceso a Datos/UD1/JSON/1. Bibliotecas JSON para JAVA.md"
+    },
+    {
+      "basename": "Pasted image 20250211204115",
+      "path": "Acceso a Datos/UD1/images/Pasted image 20250211204115.png"
+    },
+    {
+      "basename": "Pasted image 20250211193945",
+      "path": "Acceso a Datos/UD1/images/Pasted image 20250211193945.png"
+    },
+    {
+      "basename": "Telnet connection -Putty",
+      "path": "Programación de Servicios y procesos/UD4/RESOURCES/Telnet connection -Putty.md"
+    },
+    {
+      "basename": "OpenSSL connection from Git bash command line",
+      "path": "Programación de Servicios y procesos/UD4/RESOURCES/OpenSSL connection from Git bash command line.md"
+    },
+    {
+      "basename": "SMTP",
+      "path": "Programación de Servicios y procesos/UD4/SMTP.md"
+    },
+    {
+      "basename": "FTP",
+      "path": "Programación de Servicios y procesos/UD4/FTP.md"
+    },
+    {
       "basename": "4. Mapeo de entidades",
       "path": "Acceso a Datos/UD3/4. Mapeo de entidades.md"
     },
@@ -15,10 +79,6 @@
     {
       "basename": "1.Spring Boot",
       "path": "Acceso a Datos/UD4/1.Spring Boot.md"
-    },
-    {
-      "basename": "11. Herencia",
-      "path": "Acceso a Datos/UD3/11. Herencia.md"
     },
     {
       "basename": "Introducción a Spring MVC (seminario)",
@@ -37,10 +97,6 @@
       "path": "Acceso a Datos/UD3/07. Mapeo de colecciones..md"
     },
     {
-      "basename": "08. Consultas en JPA",
-      "path": "Acceso a Datos/UD3/08. Consultas en JPA.md"
-    },
-    {
       "basename": "6. Objetos Embebidos",
       "path": "Acceso a Datos/UD3/6. Objetos Embebidos.md"
     },
@@ -57,32 +113,12 @@
       "path": "JAVA/Expresiones Regulares.md"
     },
     {
-      "basename": "1. Programación de Comunicación en Redes",
-      "path": "Programación de Servicios y procesos/UD3/1. Programación de Comunicación en Redes.md"
-    },
-    {
-      "basename": "SMTP",
-      "path": "Programación de Servicios y procesos/UD4/SMTP.md"
-    },
-    {
-      "basename": "FTP",
-      "path": "Programación de Servicios y procesos/UD4/FTP.md"
-    },
-    {
       "basename": "Formatos de Cadena",
       "path": "JAVA/Formatos de Cadena.md"
     },
     {
       "basename": "Expresiones Lambda",
       "path": "JAVA/Expresiones Lambda.md"
-    },
-    {
-      "basename": "OpenSSL connection from Git bash command line",
-      "path": "Programación de Servicios y procesos/UD4/RESOURCES/OpenSSL connection from Git bash command line.md"
-    },
-    {
-      "basename": "Apuntes AD",
-      "path": "Acceso a Datos/Apuntes AD.md"
     },
     {
       "basename": "Pareadigma de Programacion funcional",
@@ -115,10 +151,6 @@
     {
       "basename": "Pasted image 20250218112557",
       "path": "Programación de Servicios y procesos/images/Pasted image 20250218112557.png"
-    },
-    {
-      "basename": "Telnet connection -Putty",
-      "path": "Programación de Servicios y procesos/UD4/RESOURCES/Telnet connection -Putty.md"
     },
     {
       "basename": "2. Threads Pools",
@@ -167,38 +199,6 @@
     {
       "basename": "Pasted image 20250212173004",
       "path": "Acceso a Datos/UD3/images/Pasted image 20250212173004.png"
-    },
-    {
-      "basename": "1. Jakarta Persistence API",
-      "path": "Acceso a Datos/UD3/1. Jakarta Persistence API.md"
-    },
-    {
-      "basename": "3. Gestión de entidades con EntityManager",
-      "path": "Acceso a Datos/UD3/3. Gestión de entidades con EntityManager.md"
-    },
-    {
-      "basename": "4. GSON Creación de instancias Gson",
-      "path": "Acceso a Datos/UD1/JSON/4. GSON Creación de instancias Gson.md"
-    },
-    {
-      "basename": "2. CONEXIÓN A BD",
-      "path": "Acceso a Datos/UD2/3. Procesamiento de Sentencias SQL/2. CONEXIÓN A BD.md"
-    },
-    {
-      "basename": "4. RESULTSET",
-      "path": "Acceso a Datos/UD2/3. Procesamiento de Sentencias SQL/4. RESULTSET.md"
-    },
-    {
-      "basename": "Apuntes Hibermate (seminario)",
-      "path": "Acceso a Datos/UD3/Apuntes Hibermate (seminario).md"
-    },
-    {
-      "basename": "3. MANEJO DE EXCEPCIONES EN SQL",
-      "path": "Acceso a Datos/UD2/3. Procesamiento de Sentencias SQL/3. MANEJO DE EXCEPCIONES EN SQL.md"
-    },
-    {
-      "basename": "1. PROCESAMIENTO DE SENTENCAS SQL",
-      "path": "Acceso a Datos/UD2/3. Procesamiento de Sentencias SQL/1. PROCESAMIENTO DE SENTENCAS SQL.md"
     }
   ],
   "omittedPaths": [],

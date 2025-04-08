@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Acceso a Datos/UD3/4. Mapeo de entidades.md",
+                "file": "Programación de Servicios y procesos/UD3/1. Programación de Comunicación en Redes.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "4. Mapeo de entidades"
+              "title": "1. Programación de Comunicación en Redes"
             }
           }
         ]
@@ -80,8 +80,8 @@
             "state": {
               "type": "recent-files",
               "state": {},
-              "icon": "clock",
-              "title": "Recent Files"
+              "icon": "lucide-file",
+              "title": "Complemento no activo"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Acceso a Datos/UD3/4. Mapeo de entidades.md",
+                "file": "Programación de Servicios y procesos/UD3/1. Programación de Comunicación en Redes.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Esquema de 4. Mapeo de entidades"
+              "title": "Esquema de 1. Programación de Comunicación en Redes"
             }
           },
           {
@@ -167,8 +167,8 @@
             "state": {
               "type": "advanced-tables-toolbar",
               "state": {},
-              "icon": "spreadsheet",
-              "title": "Advanced Tables"
+              "icon": "lucide-file",
+              "title": "Complemento no activo"
             }
           },
           {
@@ -187,12 +187,12 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
+              "icon": "lucide-file",
+              "title": "Complemento no activo"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -200,7 +200,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "quickadd:QuickAdd": false,
       "switcher:Abrir selector rápido": false,
       "graph:Abrir vista gráfica": false,
       "canvas:Crear nuevo lienzo": false,
@@ -213,42 +212,45 @@
       "obsidian-excalidraw-plugin:New drawing": false,
       "obsidian-git:Open Git source control": false,
       "obsidian-kanban:Create new board": false,
-      "mermaid-tools:Open Mermaid Toolbar": false
+      "mermaid-tools:Open Mermaid Toolbar": false,
+      "quickadd:QuickAdd": false
     }
   },
   "active": "c6a2e0fc9b053102",
   "lastOpenFiles": [
+    "Acceso a Datos/UD3/Apuntes Hibermate (seminario).md",
+    "Acceso a Datos/UD3/11. Herencia.md",
+    "Acceso a Datos/Apuntes AD.md",
+    "Acceso a Datos/UD3/08. Consultas en JPA.md",
+    "Acceso a Datos/UD1/JSON/5. GSON Creación y lectura de objetos JSON.md",
+    "Acceso a Datos/UD1/JSON/3. GSON Introducción.md",
+    "Acceso a Datos/UD1/JSON/2. JSON con el API JavaScript de Java.md",
+    "Acceso a Datos/UD1/JSON/0. Introducción a JSON.md",
+    "Acceso a Datos/UD1/JSON/1. Bibliotecas JSON para JAVA.md",
+    "Acceso a Datos/UD1/images/Pasted image 20250211204115.png",
+    "Acceso a Datos/UD1/images/Pasted image 20250211193945.png",
+    "Programación de Servicios y procesos/UD4/RESOURCES/Telnet connection -Putty.md",
+    "Programación de Servicios y procesos/UD4/RESOURCES/OpenSSL connection from Git bash command line.md",
+    "Programación de Servicios y procesos/UD3/1. Programación de Comunicación en Redes.md",
+    "Programación de Servicios y procesos/UD4/SMTP.md",
+    "Programación de Servicios y procesos/UD4/FTP.md",
+    "Acceso a Datos/UD3/4. Mapeo de entidades.md",
     "Acceso a Datos/UD4/3. Repositorios Spring Data.md",
     "Acceso a Datos/UD4/2. Spring Data JPA.md",
     "Acceso a Datos/UD4/1.Spring Boot.md",
-    "Acceso a Datos/UD3/11. Herencia.md",
     "Acceso a Datos/UD4/Introducción a Spring MVC (seminario).md",
     "Acceso a Datos/UD4/5. Paginación y Ordenación de Spring Data Repository en Spring Data REST.md",
     "Acceso a Datos/UD4/4. Paginación y Ordenación.md",
     "Acceso a Datos/UD3/07. Mapeo de colecciones..md",
-    "Acceso a Datos/UD3/08. Consultas en JPA.md",
     "Acceso a Datos/UD3/6. Objetos Embebidos.md",
     "Acceso a Datos/UD3/5. Relaciones JPA.md",
-    "Acceso a Datos/UD3/4. Mapeo de entidades.md",
     "Acceso a Datos/UD3/2. JPA vs Hibernate.md",
     "JAVA/Expresiones Regulares.md",
     "Acceso a Datos/UD4/images",
     "Acceso a Datos/UD4/images/Pasted image 20250312183843.png",
-    "Programación de Servicios y procesos/UD3/1. Programación de Comunicación en Redes.md",
-    "Programación de Servicios y procesos/UD4/SMTP.md",
-    "Programación de Servicios y procesos/UD4/FTP.md",
-    "JAVA/Formatos de Cadena.md",
-    "JAVA/Expresiones Lambda.md",
-    "Programación de Servicios y procesos/UD4/RESOURCES/OpenSSL connection from Git bash command line.md",
-    "Acceso a Datos/Apuntes AD.md",
-    "JAVA/Pareadigma de Programacion funcional.md",
-    "JAVA/Colecciones de Datos.md",
-    "JAVA/Patrón Factory.md",
-    "JAVA/patrones de Diseño.md",
     "JAVA/Imagenes",
     "JAVA/Imagenes/Pasted image 20250227175413.png",
     "JAVA",
-    "Acceso a Datos/UD3/10.Paginacion de Consultas.md",
     "Acceso a Datos/UD3/images/Pasted image 20250220092740.png",
     "Programación de Servicios y procesos/images/Pasted image 20250218112557.png",
     "Programación de Servicios y procesos/images/Pasted image 20250218111415.png",
@@ -256,8 +258,6 @@
     "Programación de Servicios y procesos/images/Pasted image 20250214085747.png",
     "Programación de Servicios y procesos/images/Pasted image 20250214085738.png",
     "Programación de Servicios y procesos/UD4/RESOURCES",
-    "Programación de Servicios y procesos/images/Pasted image 20250213110725.png",
-    "Programación de Servicios y procesos/images/Pasted image 20250213104817.png",
     "Programación de Servicios y procesos/UD4",
     "Programación de Servicios y procesos/UD3",
     "Programación de Servicios y procesos/UD2",
