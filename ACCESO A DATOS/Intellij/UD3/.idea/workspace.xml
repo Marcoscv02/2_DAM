@@ -5,53 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="efb560e1-3ed5-42d9-bb9f-9dff0c28c7de" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/marcos/Peliculas/model/claves/serieActor/ClaveSerieActor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/marcos/Peliculas/model/claves/serieActor/SerieActor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/marcos/Peliculas/model/embebidos/Multimedia.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/marcos/Peliculas/model/entities/Serie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/marcos/Peliculas/model/enums/Plataforma.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/marcos/Peliculas/model/enums/PlataformaConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/marcos/Vehiculos/APP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/marcos/Vehiculos/JPAUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/marcos/Vehiculos/model/propietario/Direccion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/marcos/Vehiculos/model/propietario/Propietario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/marcos/Vehiculos/model/vehiculo/Coche.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/marcos/Vehiculos/model/vehiculo/Moto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/marcos/Vehiculos/model/vehiculo/Vehiculo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../UD4/Ejercicios_Spring/src/main/java/marcos/ad/Ejercicios_Spring/Coche.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../UD4/Ejercicios_Spring/src/main/java/marcos/ad/Ejercicios_Spring/CocheRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../UD4/Ejercicios_Spring/src/main/java/marcos/ad/Ejercicios_Spring/CocheServide.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../2ºDAM_Apuntes/.obsidian/plugins/recent-files-obsidian/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2ºDAM_Apuntes/.obsidian/plugins/recent-files-obsidian/data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../2ºDAM_Apuntes/.obsidian/workspace.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2ºDAM_Apuntes/.obsidian/workspace.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../2ºDAM_Apuntes/Acceso a Datos/UD4/3. Repositorios Spring Data.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2ºDAM_Apuntes/Acceso a Datos/UD4/3. Repositorios Spring Data.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../DB/JPA-hibernate/peliculas.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/../../DB/JPA-hibernate/peliculas.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../DB/JPA-hibernate/peliculas.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/../../DB/JPA-hibernate/peliculas.trace.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../DB/JPA-hibernate/playlist.mv.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../DB/JPA-hibernate/playlist.trace.db" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Peliculas/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/marcos/Peliculas/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Peliculas/model/claves/ClavePeliculaActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/marcos/Peliculas/model/claves/peliculaActor/ClavePeliculaActor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Peliculas/model/claves/PeliculaActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/marcos/Peliculas/model/claves/peliculaActor/PeliculaActor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Peliculas/model/entities/Actor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/marcos/Peliculas/model/entities/Actor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/Peliculas/model/entities/Pelicula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/marcos/Peliculas/model/entities/Pelicula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/herencia/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/herencia/model/Propietario.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/herencia/model/vehiculo/Camion.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/herencia/model/vehiculo/Coche.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/herencia/model/vehiculo/Moto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/herencia/model/vehiculo/Vehiculo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/playlist/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/playlist/JPAUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/playlist/model/MediaSong.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/playlist/model/Playlist.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marcos/playlist/model/superclases/Cancion.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UD4/Ejercicios_Spring/src/main/java/marcos/ad/Ejercicios_Spring/EjerciciosSpringApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../UD4/Ejercicios_Spring/src/main/java/marcos/ad/Ejercicios_Spring/EjerciciosSpringApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UD4/Ejercicios_Spring/src/main/java/marcos/ad/vehiculos/model/Coche.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UD4/Ejercicios_Spring/src/main/java/marcos/ad/vehiculos/model/Moto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UD4/Ejercicios_Spring/src/main/java/marcos/ad/vehiculos/model/Propietario.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UD4/Ejercicios_Spring/src/main/java/marcos/ad/vehiculos/model/Vehiculo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UD4/Ejercicios_Spring/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../UD4/Ejercicios_Spring/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DEV.INTERFACES/UD2/Prueba Diseño Estatico/fotoTenis.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DEV.INTERFACES/UD2/Prueba Diseño Estatico/teniChica.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DEV.INTERFACES/UD2/Prueba Diseño Estatico/teniNiño.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DEV.INTERFACES/UD2/Prueba Diseño Estatico/teniNiño.xcf" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,17 +42,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.APP.executor&quot;: &quot;Run&quot;,
-    &quot;Application.App.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Usuario/Documentos/DAM/2_DAM/2_DAM/ACCESO A DATOS/Intellij/UD4/Ejercicios_Spring&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.APP.executor": "Run",
+    "Application.App.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Usuario/Documentos/DAM/2_DAM/HorariosDI/backEnd"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
