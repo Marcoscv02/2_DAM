@@ -4,11 +4,19 @@
     "type": "split",
     "children": [
       {
+<<<<<<< Updated upstream
         "id": "9262eddb8dc5857a",
         "type": "tabs",
         "children": [
           {
             "id": "85785006ba5afbcb",
+=======
+        "id": "40241032c8b6714c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1effb495d9602400",
+>>>>>>> Stashed changes
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -142,6 +150,39 @@
               },
               "icon": "lucide-list",
               "title": "Esquema"
+<<<<<<< Updated upstream
+=======
+            }
+          },
+          {
+            "id": "0cd078a9c77b00ed",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
+            }
+          },
+          {
+            "id": "2af66e23e31e0128",
+            "type": "leaf",
+            "state": {
+              "type": "quiet-outline",
+              "state": {},
+              "icon": "lines-of-text",
+              "title": "Quiet Outline"
+            }
+          },
+          {
+            "id": "5a76e34cf1749393",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+>>>>>>> Stashed changes
             }
           }
         ]
@@ -169,6 +210,58 @@
       "quickadd:QuickAdd": false
     }
   },
+<<<<<<< Updated upstream
   "active": "85785006ba5afbcb",
   "lastOpenFiles": []
+=======
+  "active": "58a5fb6010b98332",
+  "lastOpenFiles": [
+    "Arquitecturas en Programación.md",
+    "Acceso a Datos/Apuntes AD.md",
+    "JAVA/patrones de Diseño.md",
+    "JAVA/Patrón Factory.md",
+    "JAVA/Pareadigma de Programacion funcional.md",
+    "JAVA/Colecciones de Datos.md",
+    "Acceso a Datos/UD3/4. Mapeo de entidades.md",
+    "Acceso a Datos/UD4/3. Repositorios Spring Data.md",
+    "Acceso a Datos/UD4/2. Spring Data JPA.md",
+    "Acceso a Datos/UD4/1.Spring Boot.md",
+    "Acceso a Datos/UD3/11. Herencia.md",
+    "Acceso a Datos/UD4/Introducción a Spring MVC (seminario).md",
+    "Acceso a Datos/UD4/5. Paginación y Ordenación de Spring Data Repository en Spring Data REST.md",
+    "Acceso a Datos/UD4/4. Paginación y Ordenación.md",
+    "Acceso a Datos/UD3/07. Mapeo de colecciones..md",
+    "Acceso a Datos/UD3/08. Consultas en JPA.md",
+    "Acceso a Datos/UD3/6. Objetos Embebidos.md",
+    "Acceso a Datos/UD3/5. Relaciones JPA.md",
+    "Acceso a Datos/UD3/2. JPA vs Hibernate.md",
+    "JAVA/Expresiones Regulares.md",
+    "Acceso a Datos/UD4/images",
+    "Acceso a Datos/UD4/images/Pasted image 20250312183843.png",
+    "Programación de Servicios y procesos/UD3/1. Programación de Comunicación en Redes.md",
+    "Programación de Servicios y procesos/UD4/SMTP.md",
+    "Programación de Servicios y procesos/UD4/FTP.md",
+    "JAVA/Formatos de Cadena.md",
+    "JAVA/Expresiones Lambda.md",
+    "Programación de Servicios y procesos/UD4/RESOURCES/OpenSSL connection from Git bash command line.md",
+    "JAVA/Imagenes",
+    "JAVA/Imagenes/Pasted image 20250227175413.png",
+    "JAVA",
+    "Acceso a Datos/UD3/images/Pasted image 20250220092740.png",
+    "Programación de Servicios y procesos/images/Pasted image 20250218112557.png",
+    "Programación de Servicios y procesos/images/Pasted image 20250218111415.png",
+    "Programación de Servicios y procesos/images/Pasted image 20250214085754.png",
+    "Programación de Servicios y procesos/images/Pasted image 20250214085747.png",
+    "Programación de Servicios y procesos/images/Pasted image 20250214085738.png",
+    "Programación de Servicios y procesos/UD4/RESOURCES",
+    "Programación de Servicios y procesos/images/Pasted image 20250213110725.png",
+    "Programación de Servicios y procesos/images/Pasted image 20250213104817.png",
+    "Programación de Servicios y procesos/UD4",
+    "Programación de Servicios y procesos/UD3",
+    "Programación de Servicios y procesos/UD2",
+    "Nueva carpeta",
+    "Programación de Servicios y procesos/images",
+    "Programación de Servicios y procesos/UD1"
+  ]
+>>>>>>> Stashed changes
 }
