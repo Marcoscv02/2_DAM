@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "SMTP",
+      "path": "Programación de Servicios y procesos/UD4/SMTP.md"
+    },
+    {
       "basename": "1. Programación de Comunicación en Redes",
       "path": "Programación de Servicios y procesos/UD3/1. Programación de Comunicación en Redes.md"
     },
@@ -55,10 +59,6 @@
     {
       "basename": "OpenSSL connection from Git bash command line",
       "path": "Programación de Servicios y procesos/UD4/RESOURCES/OpenSSL connection from Git bash command line.md"
-    },
-    {
-      "basename": "SMTP",
-      "path": "Programación de Servicios y procesos/UD4/SMTP.md"
     },
     {
       "basename": "FTP",
