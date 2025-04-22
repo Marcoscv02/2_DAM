@@ -13,9 +13,9 @@ import java.util.List;
 public class RaffleServerWorker implements Runnable{
     private final Socket clientSocket;
     private final List <Ticket> soldTickets;
-    private final Winner winner;
+    private Winner winner;
 
-    String name = null;
+
 
     public RaffleServerWorker (Socket clientSocket, List<Ticket> soldTickets, Winner winner) {
         this.clientSocket = clientSocket;
@@ -25,53 +25,74 @@ public class RaffleServerWorker implements Runnable{
 
     @Override
     public void run() {
+        String name = null;
+
         try(BufferedReader reader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             PrintWriter writter = new PrintWriter(clientSocket.getOutputStream(), true)) {
 
-            String fullInput = reader.readLine();
-            String[]splitInput = fullInput.split(" ");
-            String command = splitInput[0];
+            while (true){
+                String fullInput = reader.readLine();
+                String[]splitInput = fullInput.split(" ");
+                String command = splitInput[0];
 
-
-            switch (command){
-                case "client":
-                    if (name==null){
-                        name = splitInput[1];
-                        writter.println("Hello "+name);
-                        break;
-                    }else {
-                        writter.println("Name is not modiable");
-                        break;
-                    }
-
-                case "buy":
-                    if (name!=null){
-                        if (RaffleServer.canStillBuy()) {
-                            Ticket ticket = RaffleServer.buyTicket(name);
-                            writter.println(name+"- "+name+" has got the raffle "+ticket.getValue()+".");
+                switch (command){
+                    case "client":
+                        if (name==null){
+                            name = splitInput[1];
+                            writter.println("Hello "+name);
+                            break;
                         }else {
-                            writter.println(name+"- Ticket sales are closed.");
+                            writter.println("Name is not modiable");
+                            break;
                         }
 
-                    }else {
-                       writter.println("Client name required");
-                       break;
-                    }
+                    case "buy":
+                        if (name!=null){
 
-                case "calc":
-                    if (name!=null){
-                        writter.println(name+"- The odds are 1/"+soldTickets+".");
+                            if (RaffleServer.canStillBuy()) {
+                                Ticket ticket = RaffleServer.buyTicket(name);
+                                writter.println(name+"- "+name+" has got the raffle "+ticket.getValue()+".");
+                            }else {
+                                writter.println(name+"- Ticket sales are closed.");
+                            }
+                            break;
 
-                    }else {
-                        writter.println("Client name required");
+                        }else {
+                            writter.println("Client name required");
+                            break;
+                        }
+
+                    case "calc":
+                        if (name!=null){
+
+                            if (RaffleServer.canStillBuy()) {
+                                writter.println(name+"- The odds are 1/"+soldTickets.size()+".");
+                            }else {
+                                writter.println(name+"- The raffle has ended");
+                            }
+                            break;
+
+                        }else {
+                            writter.println("Client name required");
+                            break;
+                        }
+
+                    case "quit":
                         break;
-                    }
 
-                case "quit":
+                    default:
+                        writter.println(name+"- Unknown command");
+                        break;
+                }
+
+                if (command.equalsIgnoreCase("quit")){
+                    writter.close();
+                    reader.close();
                     break;
-                default:
-                    break;
+                }
             }
+
+
 
 
         } catch (IOException e) {

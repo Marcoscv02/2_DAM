@@ -1,5 +1,7 @@
 package marcos.psp.clemenRaffle_examen.model;
 
+import java.util.Random;
+
 public class Ticket {
     private String clientName;
     private int numChars;
@@ -36,12 +38,22 @@ public class Ticket {
 
     public String generatedValue (){
         StringBuilder sb = new StringBuilder();
+        Random random= new Random();
         char[] chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".toCharArray();
 
         for (int i = 0; i < numChars; i++) {
-            sb.append(chars[(int) Math.random()*chars.length]);
+            sb.append(chars[random.nextInt(chars.length)]);
         }
 
         return sb.toString();
+    }
+
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "clientName='" + clientName + '\'' +
+                ", numChars=" + numChars +
+                ", value='" + value + '\'' +
+                '}';
     }
 }

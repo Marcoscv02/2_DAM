@@ -20,7 +20,7 @@
             <artifactId>commons-net</artifactId>
             <version>3.11.1</version>
         </dependency>
-
+        <!--Dependencia json -->
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
@@ -31,6 +31,13 @@
             <groupId>com.jcraft</groupId>
             <artifactId>jsch</artifactId>
             <version>0.1.55</version>
+        </dependency>
+
+        <!--Dependencia angus Mail -->
+        <dependency>
+            <groupId>org.eclipse.angus</groupId>
+            <artifactId>angus-mail</artifactId>
+            <version>2.0.3</version>
         </dependency>
 
     </dependencies>

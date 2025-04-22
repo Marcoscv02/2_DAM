@@ -1,4 +1,4 @@
-
+[[11. Herencia]]
 🎯 _Guía completa para aprender Hibernate, sus características, configuración y optimización._
 
 ---

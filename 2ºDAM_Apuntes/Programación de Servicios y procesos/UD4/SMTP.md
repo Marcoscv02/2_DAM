@@ -1,3 +1,4 @@
+[[FTP]]
 <aside style="border: 2px solid purple; padding: 10px; border-radius: 5px;"> 
 Los <b>servicios de red</b> consisten en <span style="color: rgb(234, 169, 169)"><u>aplicaciones que utilizan protocolos para facilitar diversas funciones en un entorno de red</u></span>. Estos protocolos incluyen, pero no se limitan a, SSH, SMTP, DNS, Telnet, FTP, entre otros. A continuación se detallan algunos aspectos relevantes:
 </aside>

@@ -8,10 +8,6 @@ Los formatos de cadena son herramientas que permiten crear cadenas de texto din�
 
 En la mayoría de los lenguajes, los formatos de cadena siguen una estructura similar:
 
-Copy
-
-%[indicadores][ancho][.precisión]tipo
-
 - **`%`**: Inicia el especificador de formato.
     
 - **`indicadores`**: Modificadores opcionales (por ejemplo, relleno con ceros).

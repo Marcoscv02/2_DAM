@@ -13,7 +13,7 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
+    <!--Dependencia angus Mail -->
     <dependencies>
         <dependency>
             <groupId>org.eclipse.angus</groupId>

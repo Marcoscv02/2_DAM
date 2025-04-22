@@ -1,3 +1,4 @@
+[[Introducción a Spring MVC (seminario)]]
 ### 🎯 **Objetivo de Spring MVC**
 
 El objetivo principal de Spring MVC es proporcionar un marco modular, flexible y fácilmente escalable para el desarrollo de aplicaciones web. Se basa en dos patrones esenciales:
