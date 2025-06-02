@@ -7,6 +7,8 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 
 public class FundraisingServerTCPWorker implements Runnable{
+    
+
     SSLSocket socket;
 
     public FundraisingServerTCPWorker(SSLSocket socket) {

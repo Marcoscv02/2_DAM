@@ -58,10 +58,8 @@ public class JokeDeserialize implements JsonDeserializer<Joke> {
             joke.setSafe(chisteObject.get("safe").getAsBoolean());
             joke.setId(chisteObject.get("id").getAsInt());
             joke.setLenguaje(chisteObject.get("lang").getAsString());
-
         }
 
         return joke;
     }
-
 }

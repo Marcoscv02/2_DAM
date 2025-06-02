@@ -1,0 +1,11 @@
+Reporte de reservas para este bus: 
+Seat:	number: 1	userName:null
+Seat:	number: 2	userName:null
+Seat:	number: 3	userName:null
+Seat:	number: 4	userName:null
+Seat:	number: 5	userName:null
+Seat:	number: 6	userName:null
+Seat:	number: 7	userName:null
+Seat:	number: 8	userName:null
+Seat:	number: 9	userName:null
+Seat:	number: 10	userName:null
