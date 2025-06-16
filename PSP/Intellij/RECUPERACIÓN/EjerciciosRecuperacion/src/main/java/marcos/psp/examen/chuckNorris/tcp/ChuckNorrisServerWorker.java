@@ -63,13 +63,12 @@ public class ChuckNorrisServerWorker implements Runnable{
                         }
                         break;
                     case "send":
-                        if (userInput.length!=3){
+                        if (userInput.length!=2){
                             writer.println("User Input format incorrect");
                         }else {
                             if (joke!=null){
                                 String sender = userInput[1];
-                                String receptor = userInput[2];
-                                new Thread(new SendChuckNorris(sender,receptor, joke));
+                                new Thread(new SendChuckNorris(sender, joke)).start();
                                 writer.println("Joke was send to your friend");
                             }else {
                                 writer.println("There arent still a joke to send");

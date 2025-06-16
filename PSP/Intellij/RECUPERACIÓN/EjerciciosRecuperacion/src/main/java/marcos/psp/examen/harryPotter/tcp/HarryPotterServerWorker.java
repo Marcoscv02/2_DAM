@@ -177,6 +177,12 @@ public class HarryPotterServerWorker implements Runnable{
                             writter.println("Good bye");
                         }
                         break;
+
+                    case "SEND":
+
+                        break;
+                    case "DOWNLOAD":
+                        break;
                     default:
                         writter.println("Unknow command");
                         break;

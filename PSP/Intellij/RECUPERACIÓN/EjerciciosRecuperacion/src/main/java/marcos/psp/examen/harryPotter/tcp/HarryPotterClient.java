@@ -34,7 +34,7 @@ public class HarryPotterClient {
                     "- HOUSE <index> give information about this house\n" +
                     "- SEESPELLS get all spell names\n" +
                     "- SPELL <index> give information about this spell\n" +
-                    "- SEND <type> <index> to send information about any thing (type*: book, house, character, spell )\n" +
+                    "- SEND <type> <index> <email> to send information about any thing (type*: book, house, character, spell )\n" +
                     "- DOWNLOAD <type> <index> to download information about any thing (type*: book, house, character, spell )\n" +
                     "- EXIT close program"
             );

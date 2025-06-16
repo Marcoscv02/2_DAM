@@ -10,12 +10,10 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class SendChuckNorris implements Runnable{
-    private final String sender;
     private final String receptor;
     private final Joke joke;
 
-    public SendChuckNorris(String sender, String receptor, Joke joke) {
-        this.sender = sender;
+    public SendChuckNorris(String receptor, Joke joke) {
         this.receptor = receptor;
         this.joke = joke;
     }
@@ -28,7 +26,7 @@ public class SendChuckNorris implements Runnable{
         System.out.println("se inicia proceso de envío de mensaje smtp");
         Properties props = new Properties();
 
-        try (FileReader propsReader = new FileReader("src/main/resources/smtp.properties")){
+        try (FileReader propsReader = new FileReader("src/main/resources/chuckNorris/chuckNorrisSMTP.properties")){
             props.load(propsReader);
         } catch (IOException e) {
             System.out.println("Error en la lectura del archivo de propiedades smtp");
@@ -46,7 +44,7 @@ public class SendChuckNorris implements Runnable{
 
         Message message = new MimeMessage(session);
         try {
-            message.setFrom(new InternetAddress(sender));
+            message.setFrom(new InternetAddress(user));
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(receptor));
             message.setSubject("Chiste Chuck Norris");
 

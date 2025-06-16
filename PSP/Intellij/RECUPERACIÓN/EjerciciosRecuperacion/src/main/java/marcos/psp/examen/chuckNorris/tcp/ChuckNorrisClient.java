@@ -21,7 +21,7 @@ public class ChuckNorrisClient {
             System.out.println("---CHUCK NORRIS APP---\n" +
                     "-JOKE <Category> To send an Email with a Chuck Norris Joke (Category can be null for a random category)\n" +
                     "-CATEGORIES To show all categories\n" +
-                    "-SEND <your email> <friend email> To send That joke to a friend\n" +
+                    "-SEND <friend email> To send That joke to a friend\n" +
                     "-DOWNLOAD To download that joke to an ftp server\n" +
                     "-EXIT");
 
