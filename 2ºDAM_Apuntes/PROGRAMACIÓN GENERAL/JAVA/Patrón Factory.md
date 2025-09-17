@@ -1,3 +1,5 @@
+[[Pareadigma de Programacion funcional]]
+
 Como sugiere el nombre(`Factory`), es como _una fábrica_ . **La entrada** es un identificador (materia prima) y **la salida** es un producto (producto terminado).
 
 Los patrones de Factory son “ **constructores inteligentes** ”.

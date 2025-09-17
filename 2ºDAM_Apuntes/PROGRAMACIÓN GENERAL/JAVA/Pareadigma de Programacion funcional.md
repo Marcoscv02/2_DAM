@@ -1,3 +1,4 @@
+[[Formatos de Cadena]]
 ### **1. ¿Qué es un paradigma de programación?**
 
 - Un enfoque o filosofía para diseñar soluciones en programación.

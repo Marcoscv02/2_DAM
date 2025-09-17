@@ -1,3 +1,4 @@
+[[Colecciones de Datos]]
 ## **1. Introducción a la Programación Funcional en Java**
 
 Desde Java 8, es posible programar siguiendo principios funcionales. Los conceptos clave son:

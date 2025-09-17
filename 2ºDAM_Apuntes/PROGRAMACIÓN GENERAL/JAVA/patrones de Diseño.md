@@ -1,3 +1,4 @@
+[[Patrón Factory]]
 Los patrones de diseño son soluciones comprobadas a problemas recurrentes en el desarrollo de software. A continuación, veremos los más conocidos y cómo se aplican, junto con ejemplos y detalles visuales.
 
 ---

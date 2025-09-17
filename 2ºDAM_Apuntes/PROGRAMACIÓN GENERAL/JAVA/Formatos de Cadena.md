@@ -1,3 +1,4 @@
+[[Expresiones Regulares]]
 ## 📝 **Formatos de Cadena**
 
 Los formatos de cadena son herramientas que permiten crear cadenas de texto dinámicas, insertando valores de variables en posiciones específicas. Son útiles para dar formato a salidas de texto, como números, fechas, tablas, etc.

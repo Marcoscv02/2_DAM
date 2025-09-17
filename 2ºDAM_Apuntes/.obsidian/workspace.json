@@ -4,39 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "5192217cfb0e5d11",
+        "id": "d42e30c5b85f117b",
         "type": "tabs",
         "children": [
           {
-            "id": "f85b8895001153d5",
+            "id": "01c78c47d26f6a56",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programación de Servicios y procesos/UD3/1. Programación de Comunicación en Redes.md",
-                "mode": "preview",
+                "file": "PROGRAMACIÓN GENERAL/kOTLIN/Apuntes Kotlin.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1. Programación de Comunicación en Redes"
-            }
-          },
-          {
-            "id": "68c58305855a27f3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Programación de Servicios y procesos/UD4/SMTP.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "SMTP"
+              "title": "Apuntes Kotlin"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -157,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Programación de Servicios y procesos/UD4/SMTP.md",
+                "file": "PROGRAMACIÓN GENERAL/kOTLIN/Apuntes Kotlin.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Esquema de SMTP"
+              "title": "Esquema de Apuntes Kotlin"
             }
           }
         ],
@@ -191,33 +176,49 @@
       "quickadd:QuickAdd": false
     }
   },
-  "active": "68c58305855a27f3",
+  "active": "01c78c47d26f6a56",
   "lastOpenFiles": [
-    "Programación de Servicios y procesos/UD2/1. Threads Programming.md",
-    "Programación de Servicios y procesos/UD3/1. Programación de Comunicación en Redes.md",
-    "Programación de Servicios y procesos/UD2/3. Thread synchronization and communication.md",
-    "Programación de Servicios y procesos/UD2/2. Threads Pools.md",
-    "Programación de Servicios y procesos/UD4/SMTP.md",
-    "Programación de Servicios y procesos/UD4/FTP.md",
-    "Acceso a Datos/UD1/JSON/0. Introducción a JSON.md",
-    "Acceso a Datos/UD1/JSON/Drawing 2025-04-17 19.25.44.excalidraw.md",
-    "Acceso a Datos/UD3/4. Mapeo de entidades.md",
-    "Acceso a Datos/Apuntes AD.md",
-    "Acceso a Datos/UD4/Introducción a Spring MVC (seminario).md",
-    "Acceso a Datos/UD4/5. Paginación y Ordenación de Spring Data Repository en Spring Data REST.md",
-    "Acceso a Datos/UD4/4. Paginación y Ordenación.md",
-    "Acceso a Datos/UD4/3. Repositorios Spring Data.md",
-    "Acceso a Datos/UD4/2. Spring Data JPA.md",
-    "Acceso a Datos/UD4/1.Spring Boot.md",
-    "Acceso a Datos/UD3/Apuntes Hibermate (seminario).md",
-    "Acceso a Datos/UD3/11. Herencia.md",
-    "Acceso a Datos/UD3/10.Paginacion de Consultas.md",
-    "Acceso a Datos/UD3/9. JPQL..md",
-    "Acceso a Datos/UD3/08. Consultas en JPA.md",
-    "Acceso a Datos/UD3/07. Mapeo de colecciones..md",
-    "Acceso a Datos/UD3/6. Objetos Embebidos.md",
-    "Acceso a Datos/UD3/5. Relaciones JPA.md",
-    "Acceso a Datos/UD3/3. Gestión de entidades con EntityManager.md",
-    "Acceso a Datos/UD3/2. JPA vs Hibernate.md"
+    "DAM/Acceso a Datos/Apuntes AD.md",
+    "PROGRAMACIÓN GENERAL/kOTLIN/Apuntes Kotlin.md",
+    "PROGRAMACIÓN GENERAL/kOTLIN",
+    "PROGRAMACIÓN GENERAL/DOCKER/images/Pasted image 20250915203724.png",
+    "PROGRAMACIÓN GENERAL/DOCKER/images/Pasted image 20250915205220.png",
+    "PROGRAMACIÓN GENERAL/DOCKER/images/Pasted image 20250915200619.png",
+    "PROGRAMACIÓN GENERAL/DOCKER/images/Pasted image 20250915200604.png",
+    "PROGRAMACIÓN GENERAL/DOCKER/images/Pasted image 20250915190202.png",
+    "PROGRAMACIÓN GENERAL/DOCKER/images/Pasted image 20250915190020.png",
+    "PROGRAMACIÓN GENERAL/DOCKER/Docker.md",
+    "DAW",
+    "DAM",
+    "DAM/Programación de Servicios y procesos/UD3/1. Programación de Comunicación en Redes.md",
+    "DAM/Acceso a Datos/UD4/1.Spring Boot.md",
+    "DAM/Acceso a Datos/UD4/Introducción a Spring MVC (seminario).md",
+    "PROGRAMACIÓN GENERAL/JAVA/Expresiones Lambda.md",
+    "PROGRAMACIÓN GENERAL/JAVA/Expresiones Regulares.md",
+    "PROGRAMACIÓN GENERAL/JAVA/Formatos de Cadena.md",
+    "PROGRAMACIÓN GENERAL/JAVA/Pareadigma de Programacion funcional.md",
+    "PROGRAMACIÓN GENERAL/JAVA/Patrón Factory.md",
+    "PROGRAMACIÓN GENERAL/JAVA/patrones de Diseño.md",
+    "DAM/Acceso a Datos/UD1/JSON/5. GSON Creación y lectura de objetos JSON.md",
+    "DAM/Acceso a Datos/UD1/JSON/6. GSON TypeAdapter.md",
+    "DAM/Acceso a Datos/UD1/JSON/7. GSON JsonReader.md",
+    "DAM/Acceso a Datos/UD1/JSON/0. Introducción a JSON.md",
+    "DAM/Acceso a Datos/UD1/JSON/1. Bibliotecas JSON para JAVA.md",
+    "DAM/Acceso a Datos/UD1/JSON/2. JSON con el API JavaScript de Java.md",
+    "DAM/Acceso a Datos/UD1/Java.IO.md",
+    "PROGRAMACIÓN GENERAL/JAVA/Colecciones de Datos.md",
+    "DAM/Acceso a Datos/UD3/1. Jakarta Persistence API.md",
+    "DAM/Acceso a Datos/UD3/2. JPA vs Hibernate.md",
+    "DAM/Acceso a Datos/UD4/4. Paginación y Ordenación.md",
+    "DAM/Acceso a Datos/UD4/2. Spring Data JPA.md",
+    "DAM/Programación de Servicios y procesos/UD4/SMTP.md",
+    "PROGRAMACIÓN GENERAL/DOCKER/images",
+    "Utils Programación/DOCKER/Enlace apuntes Docker.md",
+    "PROGRAMACIÓN GENERAL/DOCKER/images/Pasted image 20250912112154.png",
+    "Utils Programación/DOCKER/1. Introducción",
+    "Utils Programación/Sin nombre",
+    "PROGRAMACIÓN GENERAL/DOCKER",
+    "PROGRAMACIÓN GENERAL",
+    "DAW/Dev. Web Contorno Cliente"
   ]
 }
